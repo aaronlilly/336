@@ -1,0 +1,19 @@
+{
+  "employees": {
+    "atU": {
+      "aaron": {
+        "pokemonWant": [
+          {
+            "name": "voltorb",
+            "type": "electric"
+          },
+          {
+            "name": "pidgey",
+            "type": "normal"
+          }
+        ],
+        "auth": "this"
+      }
+    }
+  }
+}
