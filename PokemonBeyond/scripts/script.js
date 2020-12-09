@@ -8,12 +8,11 @@ var regEnt1 = dowP[0];
 
  var crEx2 = crEx1.toUpperCase();
 
+while (wantP[i]) {
+ 			 te3xt += wantP[i] + "\n";
+  				i++;}
+  				alert(crEx2 + " " + regEnt1 + " " + te3xt);
 
-if(i < wantP.length){ 
-te3xt += wantP[i] + "\n";
-
-alert(crEx2 + " " + regEnt1 + " " + te3xt);
-};
 };
 
 $(document).ready(function(){
