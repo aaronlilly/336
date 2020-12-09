@@ -2,10 +2,7 @@
 <head>
 	<title>Pokemon Trading Center </title>
 
-	
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
 
 
 
@@ -17,4 +14,50 @@
 
 
 Initial html for the Pokemon Trading Center.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+//https://api.jsonbin.io/b/5fd06dfa2946d2126f005628 -->
+
+
+<script src="./scripts/jquery-3.4.1.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</script>
+
+<script>
+
+  $(document).ready(function ()  
+            {
+                    $.ajax
+                        ({
+                    method: "GET",
+                    url: "https://api.jsonbin.io/b/5fd06dfa2946d2126f005628"
+                         }).done(function(data) 
+
+                               {
+                        // for (var i = 0; i < data.results.length; i++) 
+                        // {
+                                    console.log(data);       
+    
+                        // }            
+                              });
+            });
+           
+</script>
+
 </html>
