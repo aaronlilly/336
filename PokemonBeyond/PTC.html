@@ -8,6 +8,12 @@
 
 <script src="./scripts/script.js"></script>
 <link rel="stylesheet" href="./scripts/style.css">
+<script>
+            	const myURL = "5fd06dfa2946d2126f005628";
+            	const mySecretKey = "$2b$10$JywQev3IusqVotDLlxhgfu2PkCmJtO1vB4U6Y51b9XqbnmAO6ggh2";
+                 
+</script>
+
 
 </head>
 
@@ -43,10 +49,14 @@ Initial html for the Pokemon Trading Center.
 
   $(document).ready(function ()  
             {
-                    $.ajax
+			   $.ajax
                         ({
                     method: "GET",
-                    url: "https://api.jsonbin.io/b/5fd06dfa2946d2126f005628"
+
+					beforeSend: function (xhr) {
+   					 xhr.setRequestHeader("secret-key", mySecretKey);
+					},
+                    url: "https://api.jsonbin.io/b/" + myURL
                          }).done(function(data) 
 
                                {
