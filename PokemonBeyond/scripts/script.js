@@ -1,77 +1,33 @@
 
-//create remove coll id to go to generic bin
-//   let req = new XMLHttpRequest();
+$(document).ready(function(){
+    $("button").click(function(){
+      var currentId = $(this).attr('id');
+      // /$("#append").html("");
 
-// req.onreadystatechange = () => {
-//   if (req.readyState == XMLHttpRequest.DONE) {
-//     console.log(req.responseText);
-//   }
-// };
+//$("#append").append(currentId + "\t"); 
 
-// req.open("POST", "https://api.jsonbin.io/b", true);
-// req.setRequestHeader("Content-Type", "application/json");
-// // req.setRequestHeader("collection-id",myCol);
-// req.setRequestHeader("secret-key", mySecretKey);
-// req.send('{"Sample": "bin creatio 355"}');
-
-//working create
-
-
-//read //added latest 
-  // $(document).ready(function ()  
-  //           {
-		// 	   $.ajax
-  //                       ({
-  //                   method: "GET",
-
-		// 			beforeSend: function (xhr) {
-  //  					 xhr.setRequestHeader("secret-key", mySecretKey);
-		// 			},
-  //                   url: "https://api.jsonbin.io/b/" + Bin1 + "/latest"
-  //                        }).done(function(data) 
-
-  //                              {
-
-  //                                   console.log(data);              
-  //                             });
-  //           });
-          
-//working read 
-
-
-//update
-////update updates seemingly work on generic bins but idk bout collections.
-// let req = new XMLHttpRequest();
-
-// req.onreadystatechange = () => {
-//   if (req.readyState == XMLHttpRequest.DONE) {
-//     console.log(req.responseText);
-//   }
-// };
-
-// req.open("PUT", "https://api.jsonbin.io/b/" + Bin1, true);
-// req.setRequestHeader("secret-key", mySecretKey);
-// req.setRequestHeader("Content-Type", "application/json");
-// req.send('{"Sample": "An Update ON a BIN 2"}');
+if ($("#" + currentId +"box").prop('checked')) {
+  $("#" + currentId +"span").html("");
+  $("#" + currentId+"box").prop('checked',false)
+  for (i = 0; i < wantP.length; i++) {
+      if(wantP[i] == currentId){
+        wantP.splice(i,1);
+      }
+    }
+ 
+}
+  else{
+    $("#append").append("<span id ='" + currentId + "span'></span>"); 
+    $("#" + currentId +"span").append(currentId + "\t"); 
+    $("#" + currentId +"box").prop('checked',true);
+ wantP.push(currentId);
+  }
+      
+  
+  
+    });
+});
 
 
 
 
-//update works
-
-///delete
-// let req = new XMLHttpRequest();
-
-// req.onreadystatechange = () => {
-//   if (req.readyState == XMLHttpRequest.DONE) {
-//     console.log(req.responseText);
-//   }
-// };
-
-// req.open("DELETE", "https://api.jsonbin.io/b/" + ColBin3, true);
-// req.setRequestHeader("secret-key", mySecretKey);
-// req.send();
-
-
-
-///delete works
