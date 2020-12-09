@@ -1,0 +1,1 @@
+var pokemonlist =["magikarp","voltorb","pidgey"];
