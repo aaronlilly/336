@@ -3,22 +3,9 @@
 	<title>Pokemon Trading Center </title>
 
 <script src="./scripts/script.js"></script>
+<script src="./scripts/vars.js"></script>
+<script src="./scripts/sec/retz.js"></script>
 <link rel="stylesheet" href="./scripts/style.css">
-<script>
-            	
-            	const mySecretKey = "$2b$10$JywQev3IusqVotDLlxhgfu2PkCmJtO1vB4U6Y51b9XqbnmAO6ggh2";
-				//const myCol = "5fd07c59516f9d12702a3bc3";      		
-				const Bin1 = "5fd09101516f9d12702a424c";
-				        
-</script>
-<style>
-	#firs{margin:2%;}
-</style>
-
-<script>
-var wantP = [];
-var haveP =[];
-</script>
 
 </head>
 
@@ -28,12 +15,15 @@ Pokemon List
 
 <div id ="btnns">
 
-<button> Magikarp </button>
-<button> Voltorb </button>
-<button> Pidgey </button>
+<button type="button" class="btn btn-primary" id="magikarp">Magikarp</button>
+<button type="button" class="btn btn-info" id="voltorb">Voltorb</button>
+<button type="button" class="btn btn-success" id="pdigey">Pidgey</button>
 
 </div>
 </div>
+
+
+
 
 
 
@@ -44,135 +34,6 @@ Pokemon List
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </script>
-
-<script>
-
-//create remove coll id to go to generic bin
-//   let req = new XMLHttpRequest();
-
-// req.onreadystatechange = () => {
-//   if (req.readyState == XMLHttpRequest.DONE) {
-//     console.log(req.responseText);
-//   }
-// };
-
-// req.open("POST", "https://api.jsonbin.io/b", true);
-// req.setRequestHeader("Content-Type", "application/json");
-// // req.setRequestHeader("collection-id",myCol);
-// req.setRequestHeader("secret-key", mySecretKey);
-// req.send('{"Sample": "bin creatio 355"}');
-
-//working create
-
-
-//read //added latest 
-  // $(document).ready(function ()  
-  //           {
-		// 	   $.ajax
-  //                       ({
-  //                   method: "GET",
-
-		// 			beforeSend: function (xhr) {
-  //  					 xhr.setRequestHeader("secret-key", mySecretKey);
-		// 			},
-  //                   url: "https://api.jsonbin.io/b/" + Bin1 + "/latest"
-  //                        }).done(function(data) 
-
-  //                              {
-
-  //                                   console.log(data);              
-  //                             });
-  //           });
-          
-//working read 
-
-
-//update
-////update updates seemingly work on generic bins but idk bout collections.
-// let req = new XMLHttpRequest();
-
-// req.onreadystatechange = () => {
-//   if (req.readyState == XMLHttpRequest.DONE) {
-//     console.log(req.responseText);
-//   }
-// };
-
-// req.open("PUT", "https://api.jsonbin.io/b/" + Bin1, true);
-// req.setRequestHeader("secret-key", mySecretKey);
-// req.setRequestHeader("Content-Type", "application/json");
-// req.send('{"Sample": "An Update ON a BIN 2"}');
-
-
-
-
-//update works
-
-///delete
-// let req = new XMLHttpRequest();
-
-// req.onreadystatechange = () => {
-//   if (req.readyState == XMLHttpRequest.DONE) {
-//     console.log(req.responseText);
-//   }
-// };
-
-// req.open("DELETE", "https://api.jsonbin.io/b/" + ColBin3, true);
-// req.setRequestHeader("secret-key", mySecretKey);
-// req.send();
-
-
-
-///delete works
-
-
-// =====================================================
-
-
-
-
-
-                        // for (var i = 0; i < data.results.length; i++) 
-                        // {
-
-                       // }
-
-
-
-// let req = new XMLHttpRequest();
-
-// req.onreadystatechange = () => {
-//   if (req.readyState == XMLHttpRequest.DONE) {
-//     console.log(req.responseText);
-//   }
-// };
-
-// req.open("PUT", "https://api.jsonbin.io/c/" + myCol, true);
-// req.setRequestHeader("Content-Type", "application/json");
-// req.setRequestHeader("secret-key", mySecretKey);
-// req.send('{"name": "Sample Collection Updated"}');
-
-
-
-  // $(document).ready(function ()  
-  //           {var sendData = '{"Sample": "Hello World"}';
-
-		// 	   $.ajax
-  //                       ({
-  //                   method: "POST",
-		// 			data: sendData,
-		// 			id: BinID,
-		// 			dataType: "json",
-		// 			beforeSend: function (xhr) {
-  //  					 xhr.setRequestHeader("secret-key", mySecretKey);
-		// 			},
-  //                   url: "https://api.jsonbin.io/b" 
-  //                             });
-  //           });
-</script>
-
-
-
-
 </html>
 
 
