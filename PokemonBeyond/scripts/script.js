@@ -1,18 +1,30 @@
 
+function psh(){
+var i=0;
+var te3xt ="";
+
+var crEx1 = uP[0];
+var regEnt1 = dowP[0];
+
+ var crEx2 = crEx1.toUpperCase();
+
+
+if(i < wantP.length){ 
+te3xt += wantP[i] + "\n";
+
+alert(crEx2 + " " + regEnt1 + " " + te3xt);
+};
+};
+
 $(document).ready(function(){
   for (i = 0; i < pokemonlist.length; i++) {
-  $('#btnns').append('<button type="button" id="'+pokemonlist[i]+ '\" class="btn btn-' +bsl[i] +' "style="margin:3px">'+ pokemonlist[i] + '</button>')};
+  $('#btnns').append('<button type="button" name ="bt" id="'+pokemonlist[i]+ '\" class="btn btn-' +bsl[i] +' "style="margin:3px">'+ pokemonlist[i] + '</button>')};
 });
 
 
-
-
-// <button type="button" class="btn btn-info" id="voltorb">Voltorb</button>
-
-
-
+//issue here, 
 $(document).ready(function(){
-    $("button").click(function(){
+    $("button[name='bt']").click(function(){
       var currentId = $(this).attr('id');
 
 if ($("#" + currentId +"box").prop('checked')) {
@@ -31,6 +43,19 @@ if ($("#" + currentId +"box").prop('checked')) {
  wantP.push(currentId);
   }
     });
+});
+
+
+
+$(document).ready(function(){
+$("#sendMe").click(function(){
+
+
+uP.push($('#igname').val());
+dowP.push($('#xpx').val());
+psh();
+
+});
 });
 
 
