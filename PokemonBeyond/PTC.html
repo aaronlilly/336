@@ -15,12 +15,24 @@
 	#firs{margin:2%;}
 </style>
 
+<script>
+var wantP = [];
+var haveP =[];
+</script>
+
 </head>
 
 
 <div id="firs">
-Initial html for the Pokemon Trading Center.
+Pokemon List
 
+<div id ="btnns">
+
+<button> Magikarp </button>
+<button> Voltorb </button>
+<button> Pidgey </button>
+
+</div>
 </div>
 
 
@@ -54,23 +66,23 @@ Initial html for the Pokemon Trading Center.
 
 
 //read //added latest 
-  $(document).ready(function ()  
-            {
-			   $.ajax
-                        ({
-                    method: "GET",
+  // $(document).ready(function ()  
+  //           {
+		// 	   $.ajax
+  //                       ({
+  //                   method: "GET",
 
-					beforeSend: function (xhr) {
-   					 xhr.setRequestHeader("secret-key", mySecretKey);
-					},
-                    url: "https://api.jsonbin.io/b/" + Bin1 + "/latest"
-                         }).done(function(data) 
+		// 			beforeSend: function (xhr) {
+  //  					 xhr.setRequestHeader("secret-key", mySecretKey);
+		// 			},
+  //                   url: "https://api.jsonbin.io/b/" + Bin1 + "/latest"
+  //                        }).done(function(data) 
 
-                               {
+  //                              {
 
-                                    console.log(data);              
-                              });
-            });
+  //                                   console.log(data);              
+  //                             });
+  //           });
           
 //working read 
 
