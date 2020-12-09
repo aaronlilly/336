@@ -9,10 +9,16 @@
 <script src="./scripts/script.js"></script>
 <link rel="stylesheet" href="./scripts/style.css">
 <script>
-            	const myURL = "5fd06dfa2946d2126f005628";
+            	// const myURL = "5fd06dfa2946d2126f005628";
             	const mySecretKey = "$2b$10$JywQev3IusqVotDLlxhgfu2PkCmJtO1vB4U6Y51b9XqbnmAO6ggh2";
 				const myCol = "5fd07c59516f9d12702a3bc3";      
-				const BinID ="123abc"           
+				const ColBin1 = "5fd08277e0402744b370358b";
+				const ColBin2 = "5fd089f9e0402744b37037de";
+				const ColBin3 = "5fd08bece0402744b3703882";
+				const ColBin4 = "5fd08cba516f9d12702a40d7";
+
+				const Bin1 = "5fd09101516f9d12702a424c";
+				        
 </script>
 
 
@@ -29,25 +35,32 @@ Initial html for the Pokemon Trading Center.
 
 
 
-
-
-
-
-
-
-<!-- 
-
-
-//https://api.jsonbin.io/b/5fd06dfa2946d2126f005628 -->
-
-
 <script src="./scripts/jquery-3.4.1.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </script>
 
 <script>
-//get
+
+//create remove coll id to go to generic bin
+//   let req = new XMLHttpRequest();
+
+// req.onreadystatechange = () => {
+//   if (req.readyState == XMLHttpRequest.DONE) {
+//     console.log(req.responseText);
+//   }
+// };
+
+// req.open("POST", "https://api.jsonbin.io/b", true);
+// req.setRequestHeader("Content-Type", "application/json");
+// // req.setRequestHeader("collection-id",myCol);
+// req.setRequestHeader("secret-key", mySecretKey);
+// req.send('{"Sample": "bin creatio 355"}');
+
+//working create
+
+
+//read //added latest 
   $(document).ready(function ()  
             {
 			   $.ajax
@@ -57,19 +70,68 @@ Initial html for the Pokemon Trading Center.
 					beforeSend: function (xhr) {
    					 xhr.setRequestHeader("secret-key", mySecretKey);
 					},
-                    url: "https://api.jsonbin.io/b/" + myURL
+                    url: "https://api.jsonbin.io/b/" + Bin1 + "/latest"
                          }).done(function(data) 
 
                                {
-                        // for (var i = 0; i < data.results.length; i++) 
-                        // {
-                                    console.log(data);       
-    
-                        // }            
+
+                                    console.log(data);              
                               });
             });
-           
-//create
+          
+//working read 
+
+
+//update
+////update updates seemingly work on generic bins but idk bout collections.
+// let req = new XMLHttpRequest();
+
+// req.onreadystatechange = () => {
+//   if (req.readyState == XMLHttpRequest.DONE) {
+//     console.log(req.responseText);
+//   }
+// };
+
+// req.open("PUT", "https://api.jsonbin.io/b/" + Bin1, true);
+// req.setRequestHeader("secret-key", mySecretKey);
+// req.setRequestHeader("Content-Type", "application/json");
+// req.send('{"Sample": "An Update ON a BIN 2"}');
+
+
+
+
+//update works
+
+
+
+
+// =====================================================
+
+
+
+
+
+                        // for (var i = 0; i < data.results.length; i++) 
+                        // {
+
+                       // }
+
+
+
+// let req = new XMLHttpRequest();
+
+// req.onreadystatechange = () => {
+//   if (req.readyState == XMLHttpRequest.DONE) {
+//     console.log(req.responseText);
+//   }
+// };
+
+// req.open("PUT", "https://api.jsonbin.io/c/" + myCol, true);
+// req.setRequestHeader("Content-Type", "application/json");
+// req.setRequestHeader("secret-key", mySecretKey);
+// req.send('{"name": "Sample Collection Updated"}');
+
+
 
   // $(document).ready(function ()  
   //           {var sendData = '{"Sample": "Hello World"}';
@@ -86,36 +148,11 @@ Initial html for the Pokemon Trading Center.
   //                   url: "https://api.jsonbin.io/b" 
   //                             });
   //           });
-
-  let req = new XMLHttpRequest();
-
-req.onreadystatechange = () => {
-  if (req.readyState == XMLHttpRequest.DONE) {
-    console.log(req.responseText);
-  }
-};
-
-req.open("POST", "https://api.jsonbin.io/b", true);
-req.setRequestHeader("Content-Type", "application/json");
-req.setRequestHeader("collection-id",myCol);
-req.setRequestHeader("secret-key", mySecretKey);
-req.send('{"Sample": "Hello World"}');
-
-//5fd07ffb516f9d12702a3cd2
-
-// let req = new XMLHttpRequest();
-
-// req.onreadystatechange = () => {
-//   if (req.readyState == XMLHttpRequest.DONE) {
-//     console.log(req.responseText);
-//   }
-// };
-
-// req.open("PUT", "https://api.jsonbin.io/c/" + myCol, true);
-// req.setRequestHeader("Content-Type", "application/json");
-// req.setRequestHeader("secret-key", mySecretKey);
-// req.send('{"name": "Sample Collection Updated"}');
-
 </script>
 
+
+
+
 </html>
+
+
