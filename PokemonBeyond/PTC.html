@@ -11,7 +11,8 @@
 <script>
             	const myURL = "5fd06dfa2946d2126f005628";
             	const mySecretKey = "$2b$10$JywQev3IusqVotDLlxhgfu2PkCmJtO1vB4U6Y51b9XqbnmAO6ggh2";
-                 
+				const myCol = "5fd07c59516f9d12702a3bc3";      
+				const BinID ="123abc"           
 </script>
 
 
@@ -46,7 +47,7 @@ Initial html for the Pokemon Trading Center.
 </script>
 
 <script>
-
+//get
   $(document).ready(function ()  
             {
 			   $.ajax
@@ -68,6 +69,53 @@ Initial html for the Pokemon Trading Center.
                               });
             });
            
+//create
+
+  // $(document).ready(function ()  
+  //           {var sendData = '{"Sample": "Hello World"}';
+
+		// 	   $.ajax
+  //                       ({
+  //                   method: "POST",
+		// 			data: sendData,
+		// 			id: BinID,
+		// 			dataType: "json",
+		// 			beforeSend: function (xhr) {
+  //  					 xhr.setRequestHeader("secret-key", mySecretKey);
+		// 			},
+  //                   url: "https://api.jsonbin.io/b" 
+  //                             });
+  //           });
+
+  let req = new XMLHttpRequest();
+
+req.onreadystatechange = () => {
+  if (req.readyState == XMLHttpRequest.DONE) {
+    console.log(req.responseText);
+  }
+};
+
+req.open("POST", "https://api.jsonbin.io/b", true);
+req.setRequestHeader("Content-Type", "application/json");
+req.setRequestHeader("collection-id",myCol);
+req.setRequestHeader("secret-key", mySecretKey);
+req.send('{"Sample": "Hello World"}');
+
+//5fd07ffb516f9d12702a3cd2
+
+// let req = new XMLHttpRequest();
+
+// req.onreadystatechange = () => {
+//   if (req.readyState == XMLHttpRequest.DONE) {
+//     console.log(req.responseText);
+//   }
+// };
+
+// req.open("PUT", "https://api.jsonbin.io/c/" + myCol, true);
+// req.setRequestHeader("Content-Type", "application/json");
+// req.setRequestHeader("secret-key", mySecretKey);
+// req.send('{"name": "Sample Collection Updated"}');
+
 </script>
 
 </html>
