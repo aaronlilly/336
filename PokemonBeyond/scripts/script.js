@@ -11,15 +11,29 @@ ptwo();
 }
 
 function pone(x){
-alert(x);
+var start = '{"employees": {"atU": { "';
+var mid = '": { "pokemonWant": [{ "name": "';
+var miB = '", "type": "none"}';
+var BotM = '],"xan": "';
+var nD = '" } }}}'
+
+    var tn = uP[0];
+  var zw = dowP[0];
+  //tn.toUpperCase()
+
+alert(start + tn.toUpperCase() +mid + x + miB + BotM + zw + nD);
 }
 
 function ptwo(){
+  var tn = uP[0];
+  var zw = dowP[0];
+
 var text = "";
 for(i= 0; i < wantP.length;){
-text +=  wantP[i];i++;
+text += wantP[i];
+i++;
 }
-alert(text);
+alert( tn + zw.toUpperCase() +text);
 }
 
 $(document).ready(function(){
@@ -28,7 +42,7 @@ $(document).ready(function(){
 });
 
 
-//issue here, 
+
 $(document).ready(function(){
     $("button[name='bt']").click(function(){
       var currentId = $(this).attr('id');
