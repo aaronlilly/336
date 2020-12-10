@@ -3,17 +3,18 @@ function psh(){
 x=wantP.length;
 
 if(x==1){
-pone(wantP[0]);
+pone(wantP[0].name,wantP[0].type);
 
 }else if(x>1){
 ptwo();
 }
 }
 
-function pone(x){
+function pone(x,y){
 var start = '{"employees": {"atU": { "';
 var mid = '": { "pokemonWant": [{ "name": "';
-var miB = '", "type": "none"}';
+var miB = '", "type": "'
+var miB2 = '"}';
 var BotM = '],"xan": "';
 var nD = '" } }}}'
 
@@ -21,7 +22,7 @@ var nD = '" } }}}'
   var zw = dowP[0];
   //tn.toUpperCase()
 
-alert(start + tn.toUpperCase() +mid + x + miB + BotM + zw + nD);
+alert(start + tn.toUpperCase() +mid + x + miB + y + miB2+ BotM + zw + nD);
 }
 
 function ptwo(){
@@ -30,7 +31,7 @@ function ptwo(){
 
 var text = "";
 for(i= 0; i < wantP.length;){
-text += wantP[i];
+text += wantP[i].name;
 i++;
 }
 alert( tn + zw.toUpperCase() +text);
@@ -38,33 +39,50 @@ alert( tn + zw.toUpperCase() +text);
 
 $(document).ready(function(){
   for (i = 0; i < pokemonlist.length; i++) {
-  $('#btnns').append('<button type="button" name ="bt" id="'+pokemonlist[i]+ '\" class="btn btn-' +bsl[i] +' "style="margin:3px">'+ pokemonlist[i] + '</button>')};
+  $('#btnns').append('<button type="button" name ="bt" id="'+pokemonlist[i].name+ '\" class="btn btn-' +bsl[i] +' "style="margin:3px">'+ pokemonlist[i].name + '</button>')};
 });
 
 
+
+// $(document).ready(function(){
+//     $("button[name='bt']").click(function(){
+//       var currentId = $(this).attr('id');
+
+// if ($("#" + currentId +"box").prop('checked')) {
+//   $("#" + currentId +"span").html("");
+//   $("#" + currentId+"box").prop('checked',false)
+//   for (i = 0; i < wantP.length; i++) {
+//       if(wantP[i].name == currentId){
+//         wantP.splice(i,1);
+//       }
+//     }
+// }
+//   else{
+//     $("#append").append("<span id ='" + currentId + "span'></span>"); 
+//     $("#" + currentId +"span").append(currentId + "\t"); 
+//     $("#" + currentId +"box").prop('checked',true);
+//  wantP.push('"name":"' currentId +'","type"');
+//   }
+//     });
+// });
 
 $(document).ready(function(){
-    $("button[name='bt']").click(function(){
-      var currentId = $(this).attr('id');
-
-if ($("#" + currentId +"box").prop('checked')) {
-  $("#" + currentId +"span").html("");
-  $("#" + currentId+"box").prop('checked',false)
-  for (i = 0; i < wantP.length; i++) {
-      if(wantP[i] == currentId){
-        wantP.splice(i,1);
-      }
+for(i= 0; i < pokemonlist.length;i++)
+{
+  $("#magikarp").click(function(){
+    var currentId = $(this).attr('id');
+    if ($("#" + currentId +"box").prop('checked')) {
+   $("#" + currentId +"span").html("");
+   $("#" + currentId+"box").prop('checked',false)
+   for (x= x; i < wantP.length; x++) {
+      if(wantP[i].name == currentId){
+         wantP.splice(i,1);
+       }
+     }
     }
+  });
 }
-  else{
-    $("#append").append("<span id ='" + currentId + "span'></span>"); 
-    $("#" + currentId +"span").append(currentId + "\t"); 
-    $("#" + currentId +"box").prop('checked',true);
- wantP.push(currentId);
-  }
-    });
 });
-
 
 
 $(document).ready(function(){
