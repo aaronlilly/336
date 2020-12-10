@@ -1,19 +1,26 @@
 
 function psh(){
-var i=0;
-var te3xt ="";
+x=wantP.length;
 
-var crEx1 = uP[0];
-var regEnt1 = dowP[0];
+if(x==1){
+pone(wantP[0]);
 
- var crEx2 = crEx1.toUpperCase();
+}else if(x>1){
+ptwo();
+}
+}
 
-while (wantP[i]) {
- 			 te3xt += wantP[i] + "\n";
-  				i++;}
-  				alert(crEx2 + " " + regEnt1 + " " + te3xt);
+function pone(x){
+alert(x);
+}
 
-};
+function ptwo(){
+var text = "";
+for(i= 0; i < wantP.length;){
+text +=  wantP[i];i++;
+}
+alert(text);
+}
 
 $(document).ready(function(){
   for (i = 0; i < pokemonlist.length; i++) {
@@ -56,7 +63,3 @@ psh();
 
 });
 });
-
-
-
-
