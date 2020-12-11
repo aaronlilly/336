@@ -43,40 +43,12 @@ $(document).ready(function(){
 });
 
 
-
-// $(document).ready(function(){
-//     $("button[name='bt']").click(function(){
-//       var currentId = $(this).attr('id');
-
-// if ($("#" + currentId +"box").prop('checked')) {
-//   $("#" + currentId +"span").html("");
-//   $("#" + currentId+"box").prop('checked',false)
-//   for (i = 0; i < wantP.length; i++) {
-//       if(wantP[i].name == currentId){
-//         wantP.splice(i,1);
-//       }
-//     }
-// }
-//   else{
-//     $("#append").append("<span id ='" + currentId + "span'></span>"); 
-//     $("#" + currentId +"span").append(currentId + "\t"); 
-//     $("#" + currentId +"box").prop('checked',true);
-//  wantP.push('"name":"' currentId +'","type"');
-//   }
-//     });
-// });
-
-
-
-
-
 $(document).ready(function(){
   for(let i= 0; i < pokemonlist.length;i++){
  $("#"+ pokemonlist[i].name).click(function(){
   var pName = pokemonlist[i].name;
   var pType = pokemonlist[i].type;
 var currentId = $(this).attr('id');
-
 
 
 //if checked
@@ -116,13 +88,22 @@ $("#sendMe").click(function(){
 uP.push($('#igname').val());
 dowP.push($('#xpx').val());
 psh();
-
+udt();
 });
 });
 
-function psh(){
-  var o = '{  "employees": {     "atU": {';
 
-  alert(o + uP[0] + wantP)
+//checking trainer name if match a trainer name that exists
+function udt(){
+for (i = 0; i < label[0].bNs.length; i++) {
+//console.log(label[i].bNs[i].trainer)
+
+if (uP[0] == label[0].bNs[i].trainer)
+binuPdt();
+
+}
+}
+
+function binuPdt(){
 
 };
