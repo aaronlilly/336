@@ -66,23 +66,6 @@ $(document).ready(function(){
 //     });
 // });
 
-// $(document).ready(function(){
-// for(i= 0; i < pokemonlist.length;i++)
-// {
-//   $("#" + pokemonlist[i].name).click(function(){
-//     var currentId = $(this).attr('id');
-//     if ($("#" + currentId +"box").prop('checked')) {
-//    $("#" + currentId +"span").html("");
-//    $("#" + currentId+"box").prop('checked',false)
-//    for (x= x; i < wantP.length; x++) {
-//       if(wantP[i].name == currentId){
-//          wantP.splice(i,1);
-//        }
-//      }
-//     }
-//   });
-// }
-// });
 
 
 
@@ -136,3 +119,10 @@ psh();
 
 });
 });
+
+function psh(){
+  var o = '{  "employees": {     "atU": {';
+
+  alert(o + uP[0] + wantP)
+
+};
