@@ -66,23 +66,65 @@ $(document).ready(function(){
 //     });
 // });
 
+// $(document).ready(function(){
+// for(i= 0; i < pokemonlist.length;i++)
+// {
+//   $("#" + pokemonlist[i].name).click(function(){
+//     var currentId = $(this).attr('id');
+//     if ($("#" + currentId +"box").prop('checked')) {
+//    $("#" + currentId +"span").html("");
+//    $("#" + currentId+"box").prop('checked',false)
+//    for (x= x; i < wantP.length; x++) {
+//       if(wantP[i].name == currentId){
+//          wantP.splice(i,1);
+//        }
+//      }
+//     }
+//   });
+// }
+// });
+
+
+
+
 $(document).ready(function(){
-for(i= 0; i < pokemonlist.length;i++)
-{
-  $("#magikarp").click(function(){
-    var currentId = $(this).attr('id');
-    if ($("#" + currentId +"box").prop('checked')) {
+  for(let i= 0; i < pokemonlist.length;i++){
+ $("#"+ pokemonlist[i].name).click(function(){
+  var pName = pokemonlist[i].name;
+  var pType = pokemonlist[i].type;
+var currentId = $(this).attr('id');
+
+//alert(currentId);
+
+//if checked
+console.log(currentId);
+if ($("#" + currentId +"box").prop('checked')) {
    $("#" + currentId +"span").html("");
-   $("#" + currentId+"box").prop('checked',false)
-   for (x= x; i < wantP.length; x++) {
-      if(wantP[i].name == currentId){
-         wantP.splice(i,1);
-       }
-     }
+    $("#" + currentId+"box").prop('checked',false)
+    
+    for (x = 0; x < wantP.length; x++) {
+      console.log(currentId);
+      if(wantP[x].name == currentId){
+        wantP.splice(x,1);
+        wantPtype.splice(x,1);
+      }
     }
-  });
+  }
+  //if not checked
+   else{
+    console.log(i);
+    $("#append").append("<span id ='" + currentId + "span'></span>"); 
+    $("#" + currentId +"span").append(currentId + "\t"); 
+    $("#" + currentId +"box").prop('checked',true);
+  wantP.push(pName);
+  wantPtype.push(pType);
+  }
+
+});
 }
 });
+
+
 
 
 $(document).ready(function(){
