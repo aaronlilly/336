@@ -94,17 +94,16 @@ $(document).ready(function(){
   var pType = pokemonlist[i].type;
 var currentId = $(this).attr('id');
 
-//alert(currentId);
+
 
 //if checked
-console.log(currentId);
 if ($("#" + currentId +"box").prop('checked')) {
    $("#" + currentId +"span").html("");
     $("#" + currentId+"box").prop('checked',false)
     
     for (x = 0; x < wantP.length; x++) {
-      console.log(currentId);
-      if(wantP[x].name == currentId){
+     
+      if(wantP[x] == currentId){
         wantP.splice(x,1);
         wantPtype.splice(x,1);
       }
@@ -112,7 +111,7 @@ if ($("#" + currentId +"box").prop('checked')) {
   }
   //if not checked
    else{
-    console.log(i);
+   
     $("#append").append("<span id ='" + currentId + "span'></span>"); 
     $("#" + currentId +"span").append(currentId + "\t"); 
     $("#" + currentId +"box").prop('checked',true);
