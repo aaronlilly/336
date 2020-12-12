@@ -34,7 +34,7 @@ checkIt()
 });
 
 function IsSame(){
-
+alert("not new");
 }
 
 function IsDifferent(){
@@ -52,20 +52,26 @@ function IsDifferent(){
   req.setRequestHeader("secret-key", mySecretKey);
   req.setRequestHeader("Content-Type", "application/json");
   data2 = JSON.stringify(upLabel[0]);
-  console.log(upLabel[0]);
+  // console.log(upLabel[0]);
   req.send(data2);
 }
 
-function checkIt()
+
+function checkIt(){
+  //
+}
+
+
+function checkIt2()
 {
 //if(gN == label[0].bNs[0].trainer)
-
-if(tNam == label[0].bns[0].tname)
+// for(i= 0; i <label[0].bns.length;){
+if(tNam == label[0].bns[i].tname)}
 {
 IsSame();
 }else {
 IsDifferent();
 }
-}
+// }
 
 
