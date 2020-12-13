@@ -57,21 +57,23 @@ function IsDifferent(){
 }
 
 
-function checkIt(){
+function checkIt2(){
   //
 }
 
 
-function checkIt2()
+function checkIt()
 {
 //if(gN == label[0].bNs[0].trainer)
-// for(i= 0; i <label[0].bns.length;){
-if(tNam == label[0].bns[i].tname)}
-{
-IsSame();
-}else {
-IsDifferent();
+ for(i= 0; i <label[0].bns.length;i++;)
+    {
+        if(tNam == label[0].bns[i].tname)
+        {
+            IsSame();
+        }else {
+                IsDifferent();
+              }           
+    }
 }
-// }
 
 
