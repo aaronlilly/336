@@ -2,7 +2,8 @@
 var col = '5fd56a5afbb23c2e36a608b1';
 var label = [];
 var upLabel = [];
-var tNam = $('#igname').val();
+var labelTname = [];
+
 
 
  $(document).ready(function ()  
@@ -24,6 +25,10 @@ var tNam = $('#igname').val();
 
 function next(){
 upLabel.push(label[0]);
+
+  for(i= 0; i < upLabel[0].bns.length;i++){
+labelTname.push(upLabel[0].bns[i].tname)
+}
 }
 
 
@@ -35,10 +40,10 @@ checkIt()
 });
 
 function IsSame(){
-alert("not new");
+console.log("not new");
 }
 
-function IsDifferent(){
+function IsDifferenty(){
   var tNam = $('#igname').val();
   var bin = "259"
   let req = new XMLHttpRequest();
@@ -58,12 +63,16 @@ function IsDifferent(){
 }
 
 
-
+function IsDifferent(){
+  alert("different")
+}
 
 
 function checkIt()
 {
-        if(tlabel[0].bns.includes(tNam))
+var tNam = $('#igname').val();
+  //bins[0].bns.includes(name)
+        if(labelTname.includes(tNam))
         {
             IsSame();
         }else {
