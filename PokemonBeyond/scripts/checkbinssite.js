@@ -66,10 +66,10 @@ function checkIt()
         if(tlabel[0].bns.includes(tNam))
         {
             IsSame();
-        }else if  {
+        }else {
                 IsDifferent();
               }           
-    }
+    };
 
 
 // {
@@ -77,38 +77,6 @@ function checkIt()
 //     {
 //       "tname": "`123",
 //       "bin": "a"
-//     },
-//     {
-//       "tname": "`345",
-//       "bin": "b"
-//     },
-//     {
-//       "tname": "12654125",
-//       "bin": ""
-//     },
-//     {
-//       "tname": "twofive9",
-//       "bin": "259"
-//     },
-//     {
-//       "tname": "twofive9",
-//       "bin": "259"
-//     },
-//     {
-//       "tname": "twofive9",
-//       "bin": "259"
-//     },
-//     {
-//       "tname": "threeoo",
-//       "bin": "259"
-//     },
-//     {
-//       "tname": "threeoo",
-//       "bin": "259"
-//     },
-//     {
-//       "tname": "threeo1",
-//       "bin": "259"
 //     }
 //   ]
 // }
