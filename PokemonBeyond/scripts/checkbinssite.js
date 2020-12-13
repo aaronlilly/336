@@ -1,4 +1,5 @@
-var col = '5fd3a4b982e9306ae60054c3';
+//var col = '5fd3a4b982e9306ae60054c3';
+var col = '5fd56a5afbb23c2e36a608b1';
 var label = [];
 var upLabel = [];
 var tNam = $('#igname').val();
@@ -57,23 +58,57 @@ function IsDifferent(){
 }
 
 
-function checkIt2(){
-  //
-}
+
 
 
 function checkIt()
 {
-//if(gN == label[0].bNs[0].trainer)
- for(i= 0; i <label[0].bns.length;i++;)
-    {
-        if(tNam == label[0].bns[i].tname)
+        if(tlabel[0].bns.includes(tNam))
         {
             IsSame();
-        }else {
+        }else if  {
                 IsDifferent();
               }           
     }
-}
 
 
+// {
+//   "bns": [
+//     {
+//       "tname": "`123",
+//       "bin": "a"
+//     },
+//     {
+//       "tname": "`345",
+//       "bin": "b"
+//     },
+//     {
+//       "tname": "12654125",
+//       "bin": ""
+//     },
+//     {
+//       "tname": "twofive9",
+//       "bin": "259"
+//     },
+//     {
+//       "tname": "twofive9",
+//       "bin": "259"
+//     },
+//     {
+//       "tname": "twofive9",
+//       "bin": "259"
+//     },
+//     {
+//       "tname": "threeoo",
+//       "bin": "259"
+//     },
+//     {
+//       "tname": "threeoo",
+//       "bin": "259"
+//     },
+//     {
+//       "tname": "threeo1",
+//       "bin": "259"
+//     }
+//   ]
+// }
