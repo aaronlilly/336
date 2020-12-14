@@ -3,40 +3,56 @@ $(document).ready(function(){
   $('#btnns').append('<button type="button" name ="bt" id="'+pokemonlist[i].name+ '\" class="btn btn-' +bsl[i] +' "style="margin:3px">'+ pokemonlist[i].name + '</button>')};
 });
 
+function chk(current,i){
+
+  var pName = pokemonlist[i].name;
+  var pType = pokemonlist[i].type;
+ $("#" + current +"span").html("");
+    $("#" + current +"box").prop('checked',false)
+    
+	let cur = current;
+	//alert(cur);
+
+    for (j = 0; j < wantP.length; j++) {
+  
+      if(wantP[j].Name == cur){
+
+        wantP.splice(j,1);}
+}
+}
+
+function notchk(current,i){
+  var pName = pokemonlist[i].name;
+  var pType = pokemonlist[i].type;
+$("#append").append("<span id ='" + current + "span'></span>"); 
+    $("#" + current +"span").append(current + "\t"); 
+    $("#" + current +"box").prop('checked',true);
+  wantP.push({"Name" : pName, "Type" : pType});
+  // {"tname": tNam,"bin": bin}
+}
+
 
 $(document).ready(function(){
+var current = "";
   for(let i= 0; i < pokemonlist.length;i++){
  $("#"+ pokemonlist[i].name).click(function(){
   var pName = pokemonlist[i].name;
   var pType = pokemonlist[i].type;
 var currentId = $(this).attr('id');
+let current = currentId;
 
 
 //if checked
-if ($("#" + currentId +"box").prop('checked')) {
-   $("#" + currentId +"span").html("");
-    $("#" + currentId+"box").prop('checked',false)
-    
-    for (x = 0; x < wantP.length+1; x++) {
-     
-      if(wantP[x] == currentId){
-        wantP.splice(x,1);
-       
-      }
+if ($("#" + currentId +"box").prop('checked')) 
+   {
+  chk(current,i);
     }
-
-
-  }
-  //if not checked
+    
+ //if not checked
    else{
-   
-    $("#append").append("<span id ='" + currentId + "span'></span>"); 
-    $("#" + currentId +"span").append(currentId + "\t"); 
-    $("#" + currentId +"box").prop('checked',true);
-  wantP.push({"Name" : pName, "Type" : pType});
-  // {"tname": tNam,"bin": bin}
-  }
-//
+   notchk(current,i);
+     }
+
 });
 }
 });
