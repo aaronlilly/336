@@ -1,5 +1,4 @@
-//var col = '5fd3a4b982e9306ae60054c3';
-var col = '5fd56a5afbb23c2e36a608b1';
+var col = '5fd6cf0a7e2e9559b15c7deb';
 var label = [];
 var upLabel = [];
 var labelTname = [];
@@ -43,7 +42,7 @@ function IsSame(){
 console.log("not new");
 }
 
-function IsDifferenty(){
+function IsDifferent(){
   var tNam = $('#igname').val();
   var bin = "259"
   let req = new XMLHttpRequest();
@@ -63,9 +62,9 @@ function IsDifferenty(){
 }
 
 
-function IsDifferent(){
-  alert("different")
-}
+// function IsDifferent(){
+//   alert("different")
+// }
 
 
 function checkIt()
