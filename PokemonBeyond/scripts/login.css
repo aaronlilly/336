@@ -123,3 +123,21 @@ transform: translate(0%,0%);
   
 }
 
+/*.half-circle {
+    width: 200px;
+    height: 100px;
+    background-color: gold;
+    border-top-left-radius: 110px;
+    border-top-right-radius: 110px;
+    border: 10px solid gray;
+    border-bottom: 0;
+}
+.half-circle2 {
+    width: 200px;
+    height: 95px;
+    background-color: blue;
+    border-bottom-left-radius: 110px;
+    border-bottom-right-radius: 110px;
+    border: 10px solid gray;
+    border-bottom: 0;
+}*/
