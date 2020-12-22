@@ -39,7 +39,7 @@ checkIt()
 });
 
 function IsSame(){
-console.log("not new");
+alert("user name already exists, \n chose another name or login.")
 }
 
 function IsDifferent(){
