@@ -1,4 +1,4 @@
-window.location.href = "webpage.htm";
+//window.location.href = "webpage.htm";
 
 var col = '5fd6cf0a7e2e9559b15c7deb';
 var label = [];
