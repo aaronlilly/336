@@ -1,5 +1,5 @@
 function cNBlank(COOKI){
-    if(COOKI !=== undefined){
+    if(COOKI !== undefined){
     alert("Welcome again " + COOKI);
     }
   }
