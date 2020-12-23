@@ -36,24 +36,26 @@ labelTname.push(upLabel[0].bns[i].tname)
 ///end infoget
 /////////////login/newclick
 
-
+//create
 function IsSameNew(){
 alert("user name already exists, \n chose another name or login.");
 }
 
 function IsDifferentNew(){
-  
+  //create new bin 
 }
+
+//end create
 
 //login
 function IsSame(){
-
+//log in funciton here
 }
 
 function IsDifferent(){
   alert(" no account found with user name, \n chose another name or create new                                                                                                                                                                                             .");
 }
-
+//end new
 
 //new
 function checkItNew()
