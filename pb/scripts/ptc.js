@@ -1,3 +1,5 @@
+//window.location.href = "webpage.htm";
+
 var col = '5fd6cf0a7e2e9559b15c7deb';
 var label = [];
 var upLabel = [];
@@ -31,42 +33,42 @@ labelTname.push(upLabel[0].bns[i].tname)
 }
 
 
-$(document).ready(function(){
-$("#sendMeI").click(function(){
-checkIt()
+///end infoget
+/////////////login/newclick
 
-});
-});
 
+function IsSameNew(){
+alert("user name already exists, \n chose another name or login.");
+}
+
+function IsDifferentNew(){
+  
+}
+
+//login
 function IsSame(){
-alert("user name already exists, \n chose another name or login.")
+
 }
 
 function IsDifferent(){
-  var tNam = $('#igname').val();
-  var bin = "259"
-  let req = new XMLHttpRequest();
-
-  req.onreadystatechange = () => {
-  if (req.readyState == XMLHttpRequest.DONE) {
-    console.log(req.responseText);
-    upLabel[0].bns.push(  {"tname": tNam,"bin": bin});
-    }
-  };
-  req.open("PUT", "https://api.jsonbin.io/b/" +col , true);
-  req.setRequestHeader("secret-key", mySecretKey);
-  req.setRequestHeader("Content-Type", "application/json");
-  data2 = JSON.stringify(upLabel[0]);
-  // console.log(upLabel[0]);
-  req.send(data2);
+  alert(" no account found with user name, \n chose another name or create new                                                                                                                                                                                             .");
 }
 
 
-// function IsDifferent(){
-//   alert("different")
-// }
+//new
+function checkItNew()
+{
+var tNam = $('#igname').val();
+  //bins[0].bns.includes(name)
+        if(labelTname.includes(tNam))
+        {
+            IsSameNew();
+        }else {
+                IsDifferentNew();
+              }           
+    };
 
-
+//login
 function checkIt()
 {
 var tNam = $('#igname').val();
@@ -80,11 +82,17 @@ var tNam = $('#igname').val();
     };
 
 
-// {
-//   "bns": [
-//     {
-//       "tname": "`123",
-//       "bin": "a"
-//     }
-//   ]
-// }
+
+
+$(document).ready(function() {
+$('#logIn').click(function(){
+checkIt()
+});
+});
+
+
+$(document).ready(function() {
+$('#createNew').click(function(){
+checkItNew()
+});
+});
