@@ -1,5 +1,7 @@
 function cNBlank(COOKI){
+    if(COOKI !=== undefined){
     alert("Welcome again " + COOKI);
+    }
   }
   
    $(document).ready(function () { 
