@@ -124,20 +124,25 @@ checkItNew()
 function newBin(){
 
   alert("created new");
-}
+
+  var myCol = "336";
+
 //create remove coll id to go to generic bin
-//   let req = new XMLHttpRequest();
+  let req = new XMLHttpRequest();
 
-// req.onreadystatechange = () => {
-//   if (req.readyState == XMLHttpRequest.DONE) {
-//     console.log(req.responseText);
-//   }
-// };
+req.onreadystatechange = () => {
+  if (req.readyState == XMLHttpRequest.DONE) {
+    console.log(req.responseText);
+  }
+};
 
-// req.open("POST", "https://api.jsonbin.io/b", true);
-// req.setRequestHeader("Content-Type", "application/json");
-// // req.setRequestHeader("collection-id",myCol);
-// req.setRequestHeader("secret-key", mySecretKey);
-// req.send('{"Sample": "bin creatio 355"}');
+req.open("POST", "https://api.jsonbin.io/b", true);
+req.setRequestHeader("Content-Type", "application/json");
+req.setRequestHeader("collection-id",myCol);
+req.setRequestHeader("secret-key", mySecretKey);
+req.send('{"Sample": "bin creatio 355"}');
 
 //working create
+
+}
+
