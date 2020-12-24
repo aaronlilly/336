@@ -62,9 +62,14 @@ alert("user name already exists, \n chose another name or login.");
   req.setRequestHeader("Content-Type", "application/json");
   //forloop insted of 0
   data2 ="";
-   for(i= 0; i < upLabel[0].bns.length;i++){
-  data2 += JSON.stringify(upLabel[i]);
-}
+//    for(i= 0; i < upLabel[0].bns.length;i++){
+//   data2 += JSON.stringify(upLabel[i]);
+// }
+
+
+ 
+ data2 = upLabel.toString();
+
   // console.log(upLabel[0]);
   req.send(data2);
 }
