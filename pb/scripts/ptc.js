@@ -41,7 +41,7 @@ function IsSameNew(){
 alert("user name already exists, \n chose another name or login.");
 }
 
-function IsDifferentNew(){
+// function IsDifferentNew(){
   //create new bin 
  //add bin to bins list
 
@@ -64,7 +64,7 @@ function IsDifferentNew(){
   // console.log(upLabel[0]);
   req.send(data2);
 }
-}
+// }
 
 //end create
 
