@@ -134,7 +134,7 @@ function newBin(){
 
 req.onreadystatechange = () => {
   if (req.readyState == XMLHttpRequest.DONE) {
- let lunchBox = (req.responseText);
+ let lunchBox = req.responseText;
     //console.log(req.responseText);
   }
 };
