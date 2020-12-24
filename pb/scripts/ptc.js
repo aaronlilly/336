@@ -45,7 +45,7 @@ newBin();
 
   var tNam = $('#username').val();
   //this is where the bin name would go
-  var bin = lunchBox[0];
+  var bin = lunchBox[0].id;
   upLabel[0].bns.push(  {"tname": tNam,"bin": bin});
   let req = new XMLHttpRequest();
   req.onreadystatechange = () => {
