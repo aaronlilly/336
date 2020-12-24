@@ -49,31 +49,24 @@ alert("user name already exists, \n chose another name or login.");
  function IsDifferentNew(){
   var tNam = $('#username').val();
   var bin = "259"
+
+
+  upLabel[0].bns.push(  {"tname": tNam,"bin": bin});
+
   let req = new XMLHttpRequest();
 
   req.onreadystatechange = () => {
   if (req.readyState == XMLHttpRequest.DONE) {
     console.log(req.responseText);
-    upLabel[0].bns.push(  {"tname": tNam,"bin": bin});
     }
   };
   req.open("PUT", "https://api.jsonbin.io/b/" +col , true);
   req.setRequestHeader("secret-key", mySecretKey);
   req.setRequestHeader("Content-Type", "application/json");
-  //forloop insted of 0
-  data2 ="";
-   for(i= 0; i < upLabel[0].bns.length){
-  data2 += JSON.stringify(upLabel[i]);i++;
-}
-
-
- 
- data2 = upLabel.toString();
-
-  // console.log(upLabel[0]);
+  data2 = JSON.stringify(upLabel);
   req.send(data2);
 }
-// }
+
 
 //end create
 
