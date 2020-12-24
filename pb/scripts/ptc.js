@@ -46,7 +46,7 @@ function IsDifferentNew(){
  //add bin to bins list
 
  //this should be the bin list
- function IsDifferent(){
+ function IsDifferentNew(){
   var tNam = $('#username').val();
   var bin = "259"
   let req = new XMLHttpRequest();
