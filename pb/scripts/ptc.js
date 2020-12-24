@@ -60,7 +60,11 @@ alert("user name already exists, \n chose another name or login.");
   req.open("PUT", "https://api.jsonbin.io/b/" +col , true);
   req.setRequestHeader("secret-key", mySecretKey);
   req.setRequestHeader("Content-Type", "application/json");
-  data2 = JSON.stringify(upLabel[0]);
+  //forloop insted of 0
+  data2 ="";
+   for(i= 0; i < upLabel[0].bns.length;i++){
+  data2 += JSON.stringify(upLabel[i]);
+}
   // console.log(upLabel[0]);
   req.send(data2);
 }
