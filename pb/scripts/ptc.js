@@ -39,6 +39,9 @@ alert("user name already exists,\nchose another name or login.");
 
  //add the bin created to the list of bins
  function IsDifferentNew(){
+
+newBin();
+
   var tNam = $('#username').val();
   //this is where the bin name would go
   var bin = "259"
@@ -68,7 +71,7 @@ function IsSame(){
 }
 
 function IsDifferent(){
-  alert(" no account found with user name, \n chose another name or create new                                                                                                                                                                                             .");
+  alert(" no account found with user name,\nchose another name or create new                                                                                                                                                                                             .");
 }
 //end new
 
@@ -76,7 +79,6 @@ function IsDifferent(){
 function checkItNew()
 {
 var tNam = $('#username').val();
-  //bins[0].bns.includes(name)
         if(labelTname.includes(tNam))
         {
             IsSameNew();
@@ -114,5 +116,28 @@ $(document).ready(function() {
 $('#createNew').click(function(){
 checkItNew()
 });
-//////end click events for buttons
 });
+//////end click events for buttons
+
+
+
+function newBin{
+
+  alert("created new");
+}
+//create remove coll id to go to generic bin
+//   let req = new XMLHttpRequest();
+
+// req.onreadystatechange = () => {
+//   if (req.readyState == XMLHttpRequest.DONE) {
+//     console.log(req.responseText);
+//   }
+// };
+
+// req.open("POST", "https://api.jsonbin.io/b", true);
+// req.setRequestHeader("Content-Type", "application/json");
+// // req.setRequestHeader("collection-id",myCol);
+// req.setRequestHeader("secret-key", mySecretKey);
+// req.send('{"Sample": "bin creatio 355"}');
+
+//working create
