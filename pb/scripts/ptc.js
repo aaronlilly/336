@@ -19,7 +19,7 @@ var labelTname = [];
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) 
                      {
-                      label.push(data[0]);      
+                      label.push(data);      
 			                 next();
     });
 });
