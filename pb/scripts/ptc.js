@@ -121,7 +121,7 @@ checkItNew()
 
 
 
-function newBin{
+function newBin(){
 
   alert("created new");
 }
