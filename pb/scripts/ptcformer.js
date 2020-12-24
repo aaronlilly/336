@@ -3,6 +3,7 @@ var col = '5fd6cf0a7e2e9559b15c7deb';
 var label = [];
 var upLabel = [];
 var labelTname = [];
+var lunchBox =[];
 
 // get bins from list of bins, put them in array
  $(document).ready(function ()  
@@ -45,8 +46,15 @@ newBin();
 
 
 }
+
+
+
+
 //end bin list add
 //end createclick
+
+
+
 
 ///////////////is same is different funcitons
 //login
@@ -109,42 +117,42 @@ function newBin(){
 
   var myCol = "5fd07c59516f9d12702a3bc3";
 
-// //create remove coll id to go to generic bin
-//   let req1 = new XMLHttpRequest();
-
-// req1.onreadystatechange = () => {
-//   if (req1.readyState == XMLHttpRequest.DONE) {
-//     console.log(req1.responseText)
-//  var js = JSON.parse(req1.responseText)
-//   //lunchBox.push(js.id);
-// var jbox = js.id;
-
-
-// req1.open("POST", "https://api.jsonbin.io/b", true);
-// req1.setRequestHeader("Content-Type", "application/json");
-// req1.setRequestHeader("collection-id",myCol);
-// req1.setRequestHeader("secret-key", mySecretKey);
-// req1.send('{"Sample": "bin creatio 355"}');
-//   }
-// };
-
 //create remove coll id to go to generic bin
   let req = new XMLHttpRequest();
 
 req.onreadystatechange = () => {
   if (req.readyState == XMLHttpRequest.DONE) {
-    console.log(req.responseText);
+ let js = JSON.parse(req.responseText)
+  lunchBox.push(js.id);
+  console.log(lunchBox);
+   console.log(lunchBox[0]);
   }
 };
 
 req.open("POST", "https://api.jsonbin.io/b", true);
 req.setRequestHeader("Content-Type", "application/json");
-// req.setRequestHeader("collection-id",myCol);
+req.setRequestHeader("collection-id",myCol);
 req.setRequestHeader("secret-key", mySecretKey);
 req.send('{"Sample": "bin creatio 355"}');
 
-//working create
-
+afterthis()
 
 }
 
+function afterthis(){
+  console.log(lunchBox[0])
+   var tNam = $('#username').val();
+
+    upLabel[0].bns.push(  {"tname": tNam,"bin":lunchBox[0]});
+  let req = new XMLHttpRequest();
+  req.onreadystatechange = () => {
+  if (req.readyState == XMLHttpRequest.DONE) {
+    console.log(req.responseText);
+    }
+  };
+  req.open("PUT", "https://api.jsonbin.io/b/" +col , true);
+  req.setRequestHeader("secret-key", mySecretKey);
+  req.setRequestHeader("Content-Type", "application/json");
+  data2 = JSON.stringify(upLabel);
+  req.send(data2);
+}
