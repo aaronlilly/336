@@ -84,7 +84,7 @@ function IsDifferent(){
 //new
 function checkItNew()
 {
-var tNam = $('#igname').val();
+var tNam = $('#username').val();
   //bins[0].bns.includes(name)
         if(labelTname.includes(tNam))
         {
@@ -97,7 +97,7 @@ var tNam = $('#igname').val();
 //login
 function checkIt()
 {
-var tNam = $('#igname').val();
+var tNam = $('#username').val();
   //bins[0].bns.includes(name)
         if(labelTname.includes(tNam))
         {
