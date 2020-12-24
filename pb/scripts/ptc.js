@@ -125,7 +125,7 @@ function newBin(){
 
   alert("created new");
 
-  var myCol = "336";
+  var myCol = "5fd07c59516f9d12702a3bc3";
 
 //create remove coll id to go to generic bin
   let req = new XMLHttpRequest();
