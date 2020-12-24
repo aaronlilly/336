@@ -1,4 +1,5 @@
 //window.location.href = "webpage.htm";
+//is same not quite working...
 
 var col = '5fd6cf0a7e2e9559b15c7deb';
 var label = [];
@@ -25,7 +26,7 @@ var labelTname = [];
 
 
 function next(){
-upLabel.push(label[0]);
+upLabel.push(label[0][0]);
 
   for(i= 0; i < upLabel[0].bns.length;i++){
 labelTname.push(upLabel[0].bns[i].tname)
