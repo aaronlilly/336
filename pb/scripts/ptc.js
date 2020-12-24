@@ -1,13 +1,10 @@
 //window.location.href = "webpage.htm";
-//is same not quite working...
-
 var col = '5fd6cf0a7e2e9559b15c7deb';
 var label = [];
 var upLabel = [];
 var labelTname = [];
 
-
-
+// get bins from list of bins, put them in array
  $(document).ready(function ()  
     {
 			 $.ajax
@@ -23,39 +20,30 @@ var labelTname = [];
 			                 next();
     });
 });
-
-
+//take out of array put in another arry to simplify. i know, i shouldnt have to.
 function next(){
 upLabel.push(label[0][0]);
 
+//take just the names out of that array and put them in yet another array
   for(i= 0; i < upLabel[0].bns.length;i++){
 labelTname.push(upLabel[0].bns[i].tname)
 }
 }
-
-
 ///end infoget
 /////////////login/newclick
 
-//create
+//create new click if same/different
 function IsSameNew(){
-alert("user name already exists, \n chose another name or login.");
+alert("user name already exists,\nchose another name or login.");
 }
 
-// function IsDifferentNew(){
-  //create new bin 
- //add bin to bins list
-
- //this should be the bin list
+ //add the bin created to the list of bins
  function IsDifferentNew(){
   var tNam = $('#username').val();
+  //this is where the bin name would go
   var bin = "259"
-
-
   upLabel[0].bns.push(  {"tname": tNam,"bin": bin});
-
   let req = new XMLHttpRequest();
-
   req.onreadystatechange = () => {
   if (req.readyState == XMLHttpRequest.DONE) {
     console.log(req.responseText);
@@ -67,10 +55,13 @@ alert("user name already exists, \n chose another name or login.");
   data2 = JSON.stringify(upLabel);
   req.send(data2);
 }
+//end bin list add
+//end createclick
 
 
-//end create
 
+
+///////////////is same is different funcitons
 //login
 function IsSame(){
 //log in funciton here
@@ -107,9 +98,11 @@ var tNam = $('#username').val();
               }           
     };
 
+///////////////////////////////////////////////////////////end is same is different functions
 
 
 
+///////////click events for buttons 
 $(document).ready(function() {
 $('#logIn').click(function(){
 checkIt()
@@ -121,4 +114,5 @@ $(document).ready(function() {
 $('#createNew').click(function(){
 checkItNew()
 });
+//////end click events for buttons
 });
