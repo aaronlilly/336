@@ -26,7 +26,7 @@ var labelTname = [];
 
 
 function next(){
-upLabel.push(label[0]);
+upLabel.push(label[0][0]);
 
   for(i= 0; i < upLabel[0].bns.length;i++){
 labelTname.push(upLabel[0].bns[i].tname)
