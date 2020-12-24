@@ -5,7 +5,6 @@ var upLabel = [];
 var labelTname = [];
 var lunchBox =[];
 
-
 // get bins from list of bins, put them in array
  $(document).ready(function ()  
     {
@@ -46,7 +45,7 @@ newBin();
 
   var tNam = $('#username').val();
   //this is where the bin name would go
-  var bin = "259"
+  var bin = lunchBox[0];
   upLabel[0].bns.push(  {"tname": tNam,"bin": bin});
   let req = new XMLHttpRequest();
   req.onreadystatechange = () => {
@@ -134,10 +133,9 @@ function newBin(){
 
 req.onreadystatechange = () => {
   if (req.readyState == XMLHttpRequest.DONE) {
- lunchBox.push(req.responseText);
- js = JSON.parse(req.responseText)
-    console.log(js[0].id);
-     console.log(js.id);
+ let js = JSON.parse(req.responseText)
+  lunchBox.push(js);
+     //console.log(js.id);
   }
 };
 
