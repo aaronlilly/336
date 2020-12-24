@@ -19,14 +19,14 @@ var labelTname = [];
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) 
                      {
-                      label.push(data);      
+                      label.push(data[0]);      
 			                 next();
     });
 });
 
 
 function next(){
-upLabel.push(label[0][0]);
+upLabel.push(label[0]);
 
   for(i= 0; i < upLabel[0].bns.length;i++){
 labelTname.push(upLabel[0].bns[i].tname)
