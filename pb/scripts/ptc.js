@@ -3,7 +3,7 @@ var col = '5fd6cf0a7e2e9559b15c7deb';
 var label = [];
 var upLabel = [];
 var labelTname = [];
-var lunchBox = [];
+var lunchBox;
 
 
 // get bins from list of bins, put them in array
@@ -134,7 +134,7 @@ function newBin(){
 
 req.onreadystatechange = () => {
   if (req.readyState == XMLHttpRequest.DONE) {
- lunchBox.push(req.responseText);
+ let lunchBox = (req.responseText);
     //console.log(req.responseText);
   }
 };
