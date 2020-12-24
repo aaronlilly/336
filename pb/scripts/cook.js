@@ -1,6 +1,6 @@
 function cNBlank(COOKI){
     if(COOKI !== undefined){
-    alert("Welcome again " + COOKI);
+    //alert("Welcome again " + COOKI);
     }
   }
   
