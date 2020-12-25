@@ -3,6 +3,7 @@ var col = '5fd6cf0a7e2e9559b15c7deb';
 var label = [];
 var upLabel = [];
 var labelTname = [];
+var lunchBox = [];
 
 // get bins from list of bins, put them in array
  $(document).ready(function ()  
@@ -107,35 +108,40 @@ checkItNew()
 
 function newBin(){
 
+
+   $(document).ready(function ()  
+    {
+       $.ajax
+         ({
+         method: "GET",
+         complete: function(responseText){
+          lunchBox.push(responseText)
+        },
+         beforeSend: function (xhr) {
+                xhr.setRequestHeader("secret-key", mySecretKey);
+               },
+                  url: "https://api.jsonbin.io/b/" + col + "/latest"
+                  }).done(function(data) 
+                     {
+                      label.push(data);      
+                       next();
+    });
+});
+   // \\\\\\\\\\\\\\\\
+
   var myCol = "5fd07c59516f9d12702a3bc3";
-
-// //create remove coll id to go to generic bin
-//   let req1 = new XMLHttpRequest();
-
-// req1.onreadystatechange = () => {
-//   if (req1.readyState == XMLHttpRequest.DONE) {
-//     console.log(req1.responseText)
-//  var js = JSON.parse(req1.responseText)
-//   //lunchBox.push(js.id);
-// var jbox = js.id;
-
-
-// req1.open("POST", "https://api.jsonbin.io/b", true);
-// req1.setRequestHeader("Content-Type", "application/json");
-// req1.setRequestHeader("collection-id",myCol);
-// req1.setRequestHeader("secret-key", mySecretKey);
-// req1.send('{"Sample": "bin creatio 355"}');
-//   }
-// };
-
-//create remove coll id to go to generic bin
   let req = new XMLHttpRequest();
 
 req.onreadystatechange = () => {
   if (req.readyState == XMLHttpRequest.DONE) {
     console.log(req.responseText);
+           let jbox = JSON.parse(req.responseText)
+           console.log(jbox);
+ //lunchpush(jbox)
   }
 };
+
+
 
 req.open("POST", "https://api.jsonbin.io/b", true);
 req.setRequestHeader("Content-Type", "application/json");
@@ -143,8 +149,16 @@ req.setRequestHeader("Content-Type", "application/json");
 req.setRequestHeader("secret-key", mySecretKey);
 req.send('{"Sample": "bin creatio 355"}');
 
+
 //working create
 
-
+addBintoList(jbox);
 }
 
+// function lunchpush(jbox){
+// lunchBox.push(jbox.id)
+// }
+
+function addBintoList(jbox){
+  console.log(jbox);
+}
