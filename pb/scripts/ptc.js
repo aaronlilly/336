@@ -93,6 +93,9 @@ var tNam = $('#username').val();
 $(document).ready(function() {
 $('#logIn').click(function(){
 checkIt()
+cookiClik()
+var x = document.cookie;
+console.log(x);
 });
 });
 
