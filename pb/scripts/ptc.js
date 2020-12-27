@@ -3,7 +3,7 @@ var col = '5fd6cf0a7e2e9559b15c7deb';
 var label = [];
 var upLabel = [];
 var labelTname = [];
-var lunchBox = [];
+var resp =[];
 
 // get bins from list of bins, put them in array
  $(document).ready(function ()  
@@ -110,55 +110,58 @@ function newBin(){
 
 
    $(document).ready(function ()  
-    {
+    { 
+       var myCol = "5fd07c59516f9d12702a3bc3";
        $.ajax
          ({
-         method: "GET",
-         complete: function(responseText){
-          lunchBox.push(responseText)
-        },
+         method: "POST",
          beforeSend: function (xhr) {
+          xhr.setRequestHeader("collection-id",myCol);
+                xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.setRequestHeader("secret-key", mySecretKey);
                },
-                  url: "https://api.jsonbin.io/b/" + col + "/latest"
-                  }).done(function(data) 
+                  url: "https://api.jsonbin.io/b/",
+                  data:'{"Sample": "bin creatio 355"}',
+                  }).done(function(responseText) 
                      {
-                      label.push(data);      
-                       next();
+                      resp.push(responseText);     
+                      console.log(responseText); 
+                       
     });
 });
+ };
    // \\\\\\\\\\\\\\\\
 
-  var myCol = "5fd07c59516f9d12702a3bc3";
-  let req = new XMLHttpRequest();
+  // var myCol = "5fd07c59516f9d12702a3bc3";
+  // let req = new XMLHttpRequest();
 
-req.onreadystatechange = () => {
-  if (req.readyState == XMLHttpRequest.DONE) {
-    console.log(req.responseText);
-           let jbox = JSON.parse(req.responseText)
-           console.log(jbox);
- //lunchpush(jbox)
-  }
-};
+// req.onreadystatechange = () => {
+//   if (req.readyState == XMLHttpRequest.DONE) {
+//     console.log(req.responseText);
+//            let jbox = JSON.parse(req.responseText)
+//            console.log(jbox);
+//  //lunchpush(jbox)
+//   }
+// };
 
 
 
-req.open("POST", "https://api.jsonbin.io/b", true);
-req.setRequestHeader("Content-Type", "application/json");
-// req.setRequestHeader("collection-id",myCol);
-req.setRequestHeader("secret-key", mySecretKey);
-req.send('{"Sample": "bin creatio 355"}');
+// req.open("POST", "https://api.jsonbin.io/b", true);
+// req.setRequestHeader("Content-Type", "application/json");
+// // req.setRequestHeader("collection-id",myCol);
+// req.setRequestHeader("secret-key", mySecretKey);
+// req.send('{"Sample": "bin creatio 355"}');
 
 
 //working create
 
-addBintoList(jbox);
-}
-
-// function lunchpush(jbox){
-// lunchBox.push(jbox.id)
+// addBintoList(jbox);
 // }
 
-function addBintoList(jbox){
-  console.log(jbox);
-}
+// // function lunchpush(jbox){
+// // lunchBox.push(jbox.id)
+// // }
+
+// function addBintoList(jbox){
+//   console.log(jbox);
+// }
