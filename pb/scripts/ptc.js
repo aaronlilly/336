@@ -43,8 +43,6 @@ alert("user name already exists,\nchose another name or login.");
 
 newBin();
 
-
-
 }
 //end bin list add
 //end createclick
@@ -85,7 +83,7 @@ var tNam = $('#username').val();
               }           
     };
 
-///////////////////////////////////////////////////////////end is same is different functions
+///////////////////////////////////////////////////////////end -is same is different- functions
 
 
 
@@ -110,28 +108,24 @@ checkItNew()
 
 
 function newBin(){
-
-
-   $(document).ready(function ()  
-    { 
        var myCol = "5fd07c59516f9d12702a3bc3";
+       
        $.ajax
          ({
+          url: "https://api.jsonbin.io/b/"+ myCol, 
          method: "POST",
          beforeSend: function (xhr) {
-          xhr.setRequestHeader("collection-id",myCol);
+          //xhr.setRequestHeader("collection-id", myCol);
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.setRequestHeader("secret-key", mySecretKey);
                },
-                  url: "https://api.jsonbin.io/b/",
-                  data:'{"Sample": "bin creatio 355"}',
+                  
+                  data:'{"New Bin function": "092',
                   }).done(function(responseText) 
                      {
                       resp.push(responseText);     
-                      console.log(responseText); 
-                       
+                      console.log(responseText);                 
     });
-});
  };
    // \\\\\\\\\\\\\\\\
 
@@ -157,14 +151,3 @@ function newBin(){
 
 
 //working create
-
-// addBintoList(jbox);
-// }
-
-// // function lunchpush(jbox){
-// // lunchBox.push(jbox.id)
-// // }
-
-// function addBintoList(jbox){
-//   console.log(jbox);
-// }
