@@ -143,7 +143,7 @@ resp.push(responseText)
 
 $.ajax
        ({
-          url: "https://api.jsonbin.io/b/",   + col, 
+          url: "https://api.jsonbin.io/b/"   + col, 
          method: "PUT",
 	versioning: false,
          beforeSend: function (xhr) {
