@@ -1,77 +1,35 @@
 <html>
+<script
+  src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+  integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+  crossorigin="anonymous"></script>
+
 <script>
-	const mySecretKey = "$2b$10$JywQev3IusqVotDLlxhgfu2PkCmJtO1vB4U6Y51b9XqbnmAO6ggh2";
-				
 
-				var array = ["5fe5246fd151a57b8937b28a",
-"5fe52396d151a57b8937b25d",
-"5fe522ad6c160b7b70d90f21",
-"5fe520dcc8f3567b4a1e0184",
-"5fe51fe1d151a57b8937b19a",
-"5fe51f74d151a57b8937b18a",
-"5fe51eebd151a57b8937b16d",
-"15fe51d3ac8f3567b4a1e00c8",
-"15fe51c56d151a57b8937b0a7",
-"15fe51badd151a57b8937b06e",
-"15fe51b316c160b7b70d90d52",
-"15fe51aa96c160b7b70d90d2c",
-"15fe518ded151a57b8937afbb",
-"15fe5186cc8f3567b4a1dff4b",
-"15fe517ccc8f3567b4a1dff2f",
-"15fe517b2c8f3567b4a1dff29",
-"15fe51781d151a57b8937af63",
-"25fe5168bd151a57b8937af27",
-"25fe516436c160b7b70d90c05",
-"25fe515e5d151a57b8937aefc",
-"25fe51466c8f3567b4a1dfe4b",
-"25fe50f8f6c160b7b70d90a86",
-"25fe50f24d151a57b8937ad7e",
-"25fe50b3bd151a57b8937acbb",
-"25fe50af4c8f3567b4a1dfc43",
-"25fe50a8cc8f3567b4a1dfc28",
-"25fe50a676c160b7b70d90971",
-"35fe509f2c8f3567b4a1dfbff",
-"35fe509e5d151a57b8937ac5b",
-"35fe509b7d151a57b8937ac4d",
-"35fe509726c160b7b70d90945",
-"35fe508f5d151a57b8937ac1c",
-"35fe5088cd151a57b8937ac06",
-"35fe507f2c8f3567b4a1dfb8d",
-"35fe5058bd151a57b8937ab51",
-"35fe50174d151a57b8937aa4b",
-"35fe50142d151a57b8937aa3b",
-"45fe500f2c8f3567b4a1df9ec",
-"45fe500bac8f3567b4a1df9d7",
-"45fe500a0d151a57b8937a9f9",
-"45fe4ffc1d151a57b8937a9a8",
-"45fe4f47ec8f3567b4a1df6ee",
-"45fe4f45d6c160b7b70d90418",
-"45fe4f22fd151a57b8937a670",
-"45fe4f07ac8f3567b4a1df61c",
-"45fe4ef8a6c160b7b70d9031e",
-"45fe4ea53d151a57b8937a4cd"];
-
-//var Col = '5fe80713d151a57b89388b27 ' ;
  let req = new XMLHttpRequest();
-
-	  for(i= 0; i < array.length;i++){
-
-		  var element = array[i];
+		 
+$(document).ready(function() {
+$('#clickk').click(function(){
  req.onreadystatechange = () => {
    if (req.readyState == XMLHttpRequest.DONE) {
      console.log(req.responseText);
    }
  };
+var Col = $('#fname').val() ;
 
- req.open("DELETE", "https://api.jsonbin.io/b/" + element, true);
- req.setRequestHeader("secret-key", mySecretKey);
+
+ req.open("DELETE", "https://api.jsonbin.io/b/" + Col, true);
+ req.setRequestHeader("secret-key",notSharingWithYou);
 req.send();
 
-		  
-}
+});
+});
+
+
 
 
 
 </script>
-	updated
+	 <input type="text" id="fname" name="fname"><br><br>
+<button id="clickk">clik</button>
 </html>
