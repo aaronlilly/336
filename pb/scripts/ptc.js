@@ -2,6 +2,7 @@
 var col = '5fea1cc36c160b7b70daa9b8';
 var label = [];
 var upLabel = [];
+var toUdt = [];
 var labelTname = [];
 var resp =[];
 
@@ -24,7 +25,9 @@ var resp =[];
 //take out of array put in another arry to simplify. i know, i shouldnt have to.
 function next(){
 //upLabel.push(label[0][0]);
-upLabel.push(label[0]);
+upLabel.push(label[0])
+toUdt.push(label[0])
+;
 
 //take just the names out of that array and put them in yet another array
   for(i= 0; i < upLabel[0].bns.length;i++){
@@ -102,12 +105,15 @@ console.log(x);
 $(document).ready(function() {
 $('#createNew').click(function(){
 checkItNew()
+cookiClik()
+var x = document.cookie;
+console.log(x);
 });
 });
 //////end click events for buttons
 
 
-
+//creates bin in collection of bins
 function newBin(){
        var myCol = "5fd07c59516f9d12702a3bc3";
        
@@ -125,59 +131,33 @@ function newBin(){
                  data:'{"New Bin function": "092"}',
                   }).done(function(responseText) 
                      {
-                     resp.push(responseText);     
+                     //resp.push(responseText);
+			     updateListFunct(responseText)
                       console.log(responseText);                 
     });
  };
 
+function updateListFunct(responseText){
+resp.push(responseText)
+//console.log(resp[0].id)
 
-  // var myCol = "5fd07c59516f9d12702a3bc3";
-  // let req = new XMLHttpRequest();
+$.ajax
+       ({
+          url: "https://api.jsonbin.io/b/",   + col, 
+         method: "PUT",
+	versioning: false,
+         beforeSend: function (xhr) {
+               xhr.setRequestHeader("Content-Type", "application/json");
+               xhr.setRequestHeader("secret-key", mySecretKey);
+              },
+                  
+                 data:'{"updateput": "092"}',
+                  }).done(function(responseText) 
+                     {
+                     //resp.push(responseText);
+			     updateListFunct(responseText)
+                      console.log(responseText);                 
+    });
 
-// req.onreadystatechange = () => {
-//   if (req.readyState == XMLHttpRequest.DONE) {
-//     console.log(req.responseText);
-//            let jbox = JSON.parse(req.responseText)
-//            console.log(jbox);
-//  //lunchpush(jbox)
-//   }
-// };
-
-
-
-// req.open("POST", "https://api.jsonbin.io/b", true);
-// req.setRequestHeader("Content-Type", "application/json");
-// // req.setRequestHeader("collection-id",myCol);
-// req.setRequestHeader("secret-key", mySecretKey);
-// req.send('{"Sample": "bin creatio 355"}');
-
-
-//working create
-
-
-//also working
-
-
-//function newBin(){
-//let req = new XMLHttpRequest();
-//var myCol = "5fd07c59516f9d12702a3bc3"
-
-//req.onreadystatechange = () => {
-  // if (req.readyState == XMLHttpRequest.DONE) {
- //   console.log(req.responseText);
-
-  // }
-// };
-
-
-
-//req.open("POST", "https://api.jsonbin.io/b", true);
-//req.setRequestHeader("Content-Type", "application/json");
- // req.setRequestHeader("collection-id",myCol);
- //req.setRequestHeader("secret-key", mySecretKey);
-//req.send('{"Sample": "bin creatio 355"}');
-
-
-//}
-
+}
 
