@@ -23,8 +23,8 @@ var resp =[];
 });
 //take out of array put in another arry to simplify. i know, i shouldnt have to.
 function next(){
-// upLabel.push(label[0][0]);
-	upLabel.push(label[0]);
+//upLabel.push(label[0][0]);
+upLabel.push(label[0]);
 
 //take just the names out of that array and put them in yet another array
   for(i= 0; i < upLabel[0].bns.length;i++){
@@ -112,23 +112,24 @@ function newBin(){
        var myCol = "5fd07c59516f9d12702a3bc3";
        
        $.ajax
-         ({
-          url: "https://api.jsonbin.io/b/"+ myCol, 
+       ({
+          url: "https://api.jsonbin.io/b/",   myCol, 
          method: "POST",
+	//collection-id: myCol,
          beforeSend: function (xhr) {
-          //xhr.setRequestHeader("collection-id", myCol);
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader("secret-key", mySecretKey);
-               },
+          xhr.setRequestHeader("collection-id", myCol);
+               xhr.setRequestHeader("Content-Type", "application/json");
+               xhr.setRequestHeader("secret-key", mySecretKey);
+              },
                   
-                  data:'{"New Bin function": "092',
+                 data:'{"New Bin function": "092"}',
                   }).done(function(responseText) 
                      {
-                      resp.push(responseText);     
+                     resp.push(responseText);     
                       console.log(responseText);                 
     });
  };
-   // \\\\\\\\\\\\\\\\
+
 
   // var myCol = "5fd07c59516f9d12702a3bc3";
   // let req = new XMLHttpRequest();
@@ -152,3 +153,31 @@ function newBin(){
 
 
 //working create
+
+
+//also working
+
+
+//function newBin(){
+//let req = new XMLHttpRequest();
+//var myCol = "5fd07c59516f9d12702a3bc3"
+
+//req.onreadystatechange = () => {
+  // if (req.readyState == XMLHttpRequest.DONE) {
+ //   console.log(req.responseText);
+
+  // }
+// };
+
+
+
+//req.open("POST", "https://api.jsonbin.io/b", true);
+//req.setRequestHeader("Content-Type", "application/json");
+ // req.setRequestHeader("collection-id",myCol);
+ //req.setRequestHeader("secret-key", mySecretKey);
+//req.send('{"Sample": "bin creatio 355"}');
+
+
+//}
+
+
