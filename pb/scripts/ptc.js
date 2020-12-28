@@ -23,7 +23,8 @@ var resp =[];
 });
 //take out of array put in another arry to simplify. i know, i shouldnt have to.
 function next(){
-upLabel.push(label[0][0]);
+// upLabel.push(label[0][0]);
+	upLabel.push(label[0]);
 
 //take just the names out of that array and put them in yet another array
   for(i= 0; i < upLabel[0].bns.length;i++){
