@@ -6,19 +6,23 @@
 const mySecretKey = "$2b$10$JywQev3IusqVotDLlxhgfu2PkCmJtO1vB4U6Y51b9XqbnmAO6ggh2";
 				
 
-let req = new XMLHttpRequest();
+// let req = new XMLHttpRequest();
 
-req.onreadystatechange = () => {
-  if (req.readyState == XMLHttpRequest.DONE) {
-    console.log(req.responseText);
-  }
-};
+// req.onreadystatechange = () => {
+//   if (req.readyState == XMLHttpRequest.DONE) {
+//     console.log(req.responseText);
+//   }
+// };
 
-req.open("POST", "https://api.jsonbin.io/b", true);
-req.setRequestHeader("Content-Type", "application/json");
-req.setRequestHeader("secret-key",mySecretKey);
-req.send('{"Sample": "Hello World"}');
+// req.open("POST", "https://api.jsonbin.io/b", true);
+// req.setRequestHeader("Content-Type", "application/json");
+// req.setRequestHeader("secret-key",mySecretKey);
+// req.send('{"Sample": "Hello World"}');
 
+fetch('https://api.github.com/users/manishmshiva', {
+  method: "GET",
+  headers: {"Content-type": "application/json;charset=UTF-8"}
+})
 
 </script>
 
