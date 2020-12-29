@@ -1,10 +1,9 @@
 //window.location.href = "webpage.htm";
-var col = '5fea1cc36c160b7b70daa9b8';
+var col = '5feb2676f801050e4f31f1ba';
 var label = [];
-var upLabel = [];
-var toUdt = [];
 var labelTname = [];
 var resp =[];
+
 
 // get bins from list of bins, put them in array
  $(document).ready(function ()  
@@ -18,20 +17,18 @@ var resp =[];
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) 
                      {
-                      label.push(data);      
-			                 next();
+                      //console.log(data)     
+			                 next(data);
     });
 });
-//take out of array put in another arry to simplify. i know, i shouldnt have to.
-function next(){
-//upLabel.push(label[0][0]);
-upLabel.push(label[0])
-toUdt.push(label[0])
+
+function next(data){
+label.push(data);
 ;
 
-//take just the names out of that array and put them in yet another array
-  for(i= 0; i < upLabel[0].bns.length;i++){
-labelTname.push(upLabel[0].bns[i].tname)
+//take just the names out of the array and put them in another array
+  for(i= 0; i < label[0].bns.length;i++){
+labelTname.push(label[0].bns[i].tname)
 }
 }
 ///end infoget
