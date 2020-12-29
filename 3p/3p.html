@@ -1,0 +1,24 @@
+
+<htm>
+<script>
+
+
+const mySecretKey = "$2b$10$NFBN7ZVKo2p.2hgUrLvYnO3gi.9GgVGM/Hc/iMYxmFkEF/4Ysy5.G";
+				
+
+let req = new XMLHttpRequest();
+
+req.onreadystatechange = () => {
+  if (req.readyState == XMLHttpRequest.DONE) {
+    console.log(req.responseText);
+  }
+};
+
+req.open("GET", "https://api.jsonbin.io/e/requests", true);
+req.setRequestHeader("secret-key", mySecretKey);
+req.send();
+
+</script>
+
+ready
+</htm>
