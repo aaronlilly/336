@@ -1,8 +1,9 @@
 //window.location.href = "webpage.htm";
 var col = '5feb2676f801050e4f31f1ba';
 var label = [];
+var upLabel = [];
 var labelTname = [];
-var resp =[];
+var resp = [];
 
 
 // get bins from list of bins, put them in array
@@ -128,33 +129,41 @@ function newBin(){
                  data:'{"retry since fail": "731"}',
                   }).done(function(responseText) 
                      {
-                     //resp.push(responseText);
-			     //updateListFunct(responseText)
+			     updateListFunct(responseText)
                       console.log(responseText);                 
     });
  };
+//updates list of trainers and bins with bin and trainer name
+//need to push data into array from response along with trainer name
+//then read out of array with json stringify 
 
-// function updateListFunct(responseText){
-// resp.push(responseText)
-// //console.log(resp[0].id)
+function updateListFunct(responseText){
+resp.push(responseText);
+upLabel.push(label[0]);
+var trainerName = $('#username').val();
+var createdBin = resp[0].id;
 
-// $.ajax
-//        ({
-//           url: "https://api.jsonbin.io/b/"   + col, 
-//          method: "PUT",
-// 	versioning: false,
-//          beforeSend: function (xhr) {
-//                xhr.setRequestHeader("Content-Type", "application/json");
-//                xhr.setRequestHeader("secret-key", mySecretKey);
-//               },
+upLabel[0].bns.push({"tname": trainerName,"bin": createdBin});
+
+
+ $.ajax
+       ({
+           url: "https://api.jsonbin.io/b/" + col, 
+          method: "PUT",
+ 	versioning: false,
+          beforeSend: function (xhr) {
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.setRequestHeader("secret-key", mySecretKey);
+               },
                   
-//                  data:'{"updateput": "092"}',
-//                   }).done(function(responseText) 
-//                      {
-//                      //resp.push(responseText);
-// 			     updateListFunct(responseText)
-//                       console.log(responseText);                 
-//     });
+                 data: JSON.stringify(upLabel),
+                  }).done(function(responseText) 
+                     {
+                      console.log(responseText);                 
+    });
 
-// }
+ }
+
+
+
 
