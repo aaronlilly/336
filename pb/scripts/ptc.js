@@ -128,36 +128,36 @@ function newBin(){
                xhr.setRequestHeader("secret-key", mySecretKey);
               },
                   
-                 data:'{"New Bin function": "092"}',
+                 data:'{"retry since fail": "731"}',
                   }).done(function(responseText) 
                      {
                      //resp.push(responseText);
-			     updateListFunct(responseText)
+			     //updateListFunct(responseText)
                       console.log(responseText);                 
     });
  };
 
-function updateListFunct(responseText){
-resp.push(responseText)
-//console.log(resp[0].id)
+// function updateListFunct(responseText){
+// resp.push(responseText)
+// //console.log(resp[0].id)
 
-$.ajax
-       ({
-          url: "https://api.jsonbin.io/b/"   + col, 
-         method: "PUT",
-	versioning: false,
-         beforeSend: function (xhr) {
-               xhr.setRequestHeader("Content-Type", "application/json");
-               xhr.setRequestHeader("secret-key", mySecretKey);
-              },
+// $.ajax
+//        ({
+//           url: "https://api.jsonbin.io/b/"   + col, 
+//          method: "PUT",
+// 	versioning: false,
+//          beforeSend: function (xhr) {
+//                xhr.setRequestHeader("Content-Type", "application/json");
+//                xhr.setRequestHeader("secret-key", mySecretKey);
+//               },
                   
-                 data:'{"updateput": "092"}',
-                  }).done(function(responseText) 
-                     {
-                     //resp.push(responseText);
-			     updateListFunct(responseText)
-                      console.log(responseText);                 
-    });
+//                  data:'{"updateput": "092"}',
+//                   }).done(function(responseText) 
+//                      {
+//                      //resp.push(responseText);
+// 			     updateListFunct(responseText)
+//                       console.log(responseText);                 
+//     });
 
-}
+// }
 
