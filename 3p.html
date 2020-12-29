@@ -14,9 +14,11 @@ req.onreadystatechange = () => {
   }
 };
 
-req.open("GET", "https://api.jsonbin.io/e/requests", true);
-req.setRequestHeader("secret-key", mySecretKey);
-req.send();
+req.open("POST", "https://api.jsonbin.io/b", true);
+req.setRequestHeader("Content-Type", "application/json");
+req.setRequestHeader("secret-key",mySecretKey);
+req.send('{"Sample": "Hello World"}');
+
 
 </script>
 
