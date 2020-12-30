@@ -1,7 +1,6 @@
 <html>
 <head>
 	<title>Pokemon Trading Center  </title>
-	<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 <link rel="icon" href="favicon.ico" type="image/x-icon"/>
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 
@@ -14,10 +13,21 @@
 .bg-red {    background-color: firebrick;}
 #innerBody{ margin-left:1%;}
 </style>
-	<script>var x = document.cookie;
-		console.log(x);
+<script>//var x = document.cookie;
+		//console.log(x);
+	 $(document).ready(function () {
+			 var COOKI = getCookie("name");
+		 if (COOKI != "") {
+         cNBlank(COOKI);
+      }		 
+	});
 	
-	console.log(getCookie("name")); 
+	function cNBlank(COOKI){
+    if(COOKI !== undefined){
+    $('#trainerInfoHere').html(COOKI);
+    }
+  }
+  
 	
 	function getCookie(cname) {
   var name = cname + "=";
