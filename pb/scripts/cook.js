@@ -6,8 +6,10 @@ function cNBlank(COOKI){
   
    function cookiClik(){
      let uInput = $('#username').val();
-       //alert(uInput);
+ let uInput2 = $('#uesrname').val();
+       
  Cookies.set('name', uInput, { expires: 30, path: '' })
+Cookies.set('regentName', uInput2, { expires: 30, path: '' })
 }
      
    
@@ -20,3 +22,8 @@ function cNBlank(COOKI){
          cNBlank(COOKI);
       }
          });
+function cNBlank(COOKI){
+    if(COOKI !== undefined){
+    //alert("Welcome again " + COOKI);
+    }
+  }
