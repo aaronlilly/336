@@ -13,39 +13,7 @@
 .bg-red {    background-color: firebrick;}
 #innerBody{ margin-left:1%;}
 </style>
-<script>//var x = document.cookie;
-		//console.log(x);
-	 $(document).ready(function () {
-			 var COOKI = getCookieD("name");
-		 if (COOKI != "") {
-         cNBlank(COOKI);
-      }		 
-	});
-	
-	function cNBlank(COOKI){
-    if(COOKI !== undefined){
-    $('#trainerInfoHere').html(COOKI);
-    }
-  }
-  function getCookieD(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i <ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-	
-	
-	
-	</script>
+
 
 </head>
 
