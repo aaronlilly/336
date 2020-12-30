@@ -16,7 +16,7 @@
 <script>//var x = document.cookie;
 		//console.log(x);
 	 $(document).ready(function () {
-			 var COOKI = getCookie("name");
+			 var COOKI = getCookieD("name");
 		 if (COOKI != "") {
          cNBlank(COOKI);
       }		 
@@ -27,9 +27,7 @@
     $('#trainerInfoHere').html(COOKI);
     }
   }
-  
-	
-	function getCookie(cname) {
+  function getCookieD(cname) {
   var name = cname + "=";
   var decodedCookie = decodeURIComponent(document.cookie);
   var ca = decodedCookie.split(';');
@@ -44,6 +42,8 @@
   }
   return "";
 }
+	
+	
 	
 	</script>
 
