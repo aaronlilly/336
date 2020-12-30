@@ -1,4 +1,3 @@
-//window.location.href = "webpage.htm";
 var col = '5feb2676f801050e4f31f1ba';
 var label = [];
 var upLabel = [];
@@ -104,8 +103,6 @@ $(document).ready(function() {
 $('#createNew').click(function(){
 checkItNew()
 cookiClik()
-var x = document.cookie;
-console.log(x);
 });
 });
 //////end click events for buttons
@@ -159,11 +156,21 @@ upLabel[0].bns.push({"tname": trainerName,"bin": createdBin});
                  data: JSON.stringify(upLabel),
                   }).done(function(responseText) 
                      {
-                      console.log(responseText);                 
+                      console.log(responseText)
+			toastyFunct();
+			;                 
     });
 
  }
 
+function toastyFunct(){
+
+alert("new account created!");
+
+
+window.location.href = "./ptcOne.html";
+
+}
 
 
 
