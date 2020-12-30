@@ -28,8 +28,8 @@ label.push(data);
 ;
 
 //take just the names out of the array and put them in another array
-  for(i= 0; i < label[0].bns.length;i++){
-labelTname.push(label[0].bns[i].tname)
+  for(i= 0; i < label[0][0].bns.length;i++){
+labelTname.push(label[0][0].bns[i].tname)
 }
 }
 ///end infoget
@@ -139,7 +139,7 @@ function newBin(){
 
 function updateListFunct(responseText){
 resp.push(responseText);
-upLabel.push(label[0]);
+upLabel.push(label[0][0]);
 var trainerName = $('#username').val();
 var createdBin = resp[0].id;
 
