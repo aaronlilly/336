@@ -29,8 +29,11 @@ $(document).ready(function () {
   }
   return "";
 }
+
+
+	function regentFunction() {
 var d234762ger274bfua334fghiudsrt73 = "regentName";
-	function regentFunction {
+
     var C00KI = getCookieD(d234762ger274bfua334fghiudsrt7);
     reGexP.push(C00KI);
     console.log(C00KI);
