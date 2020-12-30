@@ -32,9 +32,7 @@ $(document).ready(function () {
 
 
 	function regentFunction() {
-var d234762ger274bfua334fghiudsrt73 = "regentName";
-
-    var C00KI = getCookieD(d234762ger274bfua334fghiudsrt7);
+    var C00KI = getCookieD("regentName");
     reGexP.push(C00KI);
     console.log(C00KI);
   }
