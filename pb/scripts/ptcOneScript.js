@@ -5,16 +5,16 @@
 
 
 
-   $(document).ready(function () { 
- var COOKI= Cookies.get('name');
-     //alert(COOKI);
-       if (COOKI != "") {
-         cNBlank(COOKI);
-      }
-         });
+//    $(document).ready(function () { 
+//  var COOKI= Cookies.get('name');
+//      //alert(COOKI);
+//        if (COOKI != "") {
+//          cNBlank(COOKI);
+//       }
+//          });
 
-function cNBlank(COOKI){
-    if(COOKI !== undefined){
-    alert("Welcome again " + COOKI);
-    }
-  }
+// function cNBlank(COOKI){
+//     if(COOKI !== undefined){
+//     alert("Welcome again " + COOKI);
+//     }
+//   }
