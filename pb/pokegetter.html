@@ -1,0 +1,42 @@
+<html>
+<head>
+	<script src="./scripts/jquery-3.4.1.min.js"></script>
+<script>
+	var dataTa = [];
+	   $(document).ready(function() {
+                    $.ajax({
+                    method: "GET",
+                    url: "https://pokeapi.co/api/v2/pokemon?limit=3"
+                    }).done(function(data) {
+                        for(var i=0; i < data.results.length; i++) {
+                            $("#pokemonList").append( '<li id="pokemon' + i + '" data-url="'+data.results[i].url +'">' + data.results[i].name +'</li>');
+                         }
+                         //optional to consol
+                          $('#pokemonList li').click(function() {
+             var clickedTextValueInTheDiv = $(this).html();
+             var uRl=$(this).attr('data-url');
+             $.ajax({
+                 type: 'GET',
+                 url: uRl,
+                 success: function(data) {
+                 	dataTa.push(data)
+                     //console.log(data);
+                 }
+                 });
+             });
+                 //end optional to consol
+                         });
+                    });
+	</script>
+</head>
+
+<body>
+<div id="pokemonList">
+</div>
+</body>
+
+
+
+</html>
+
+
