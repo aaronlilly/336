@@ -34,5 +34,13 @@ $(document).ready(function () {
 	function regentFunction() {
     var C00KI = getCookieD("regentName");
     reGexP.push(C00KI);
-    console.log(C00KI);
+    //console.log(C00KI);
   }
+
+
+//push to api
+// $(document).ready(function () {
+//       for(var i = 0; i < reGexP.length; i++) {
+
+//       }
+//   });
