@@ -5,25 +5,55 @@
 <script>
 
 	   
+	// $(document).ready(function() {
+	// 	var uR = "https://pokeapi.co/api/v2/pokemon/"
+ //        $.ajax({
+ //            method: "GET",
+ //            url: "https://pokeapi.co/api/v2/pokemon?limit=3000000"
+ //               }).done(function(data) 
+ //               	  {
+ //               	  	// dataTa.push(data)
+ //               	 // $("#pokemonList").append("<div id ='poklist2'></div>")
+ //               	 // $("#poklist2").append("pokemonNameArray = [");
+ //                    for(var i=0; i < data.results.length; i++) 
+
+ //                      {  	var x  = i+1;
+
+ //                      	console.log(data.results[i].name);
+ //                        // $("#pokemonList").append(data.results[i].name + "array = [<span id ='" + data.results[i].name +"span'></span>]; <br>");
+                        
+ //                         // $("#poklist2").append(" \"" + data.results[i].name + "\",");
+ //                      }
+
+ //                });
+ // 			});
+
 	$(document).ready(function() {
-		var uR = "https://pokeapi.co/api/v2/pokemon/"
+			 for(var p=1; p < pokemonNameArray.length+1; p++) {
+		var uR = "https://pokeapi.co/api/v2/pokemon/"+p +"/";
         $.ajax({
+
             method: "GET",
-            url: "https://pokeapi.co/api/v2/pokemon?limit=3000000"
+
+            url:uR
                }).done(function(data) 
                	  {
-               	  	// dataTa.push(data)
-               	 $("#pokemonList").append("<div id ='poklist2'></div>")
-               	 $("#poklist2").append("pokemonNameArray = [");
-                    for(var i=0; i < data.results.length; i++) 
+               	  	//console.log(data.id);
 
-                      {  	var x  = i+1;
-                        // $("#pokemonList").append(data.results[i].name + "array = [<span id ='" + data.results[i].name +"span'></span>]; <br>");
-                        
-                         $("#poklist2").append(" \"" + data.results[i].name + "\",");
-                      }
+	for(var i=0; i < data.types.length; i++)
+                 					{
+                 		 				 console.log(data.types[i].type.name)
+               	    				}
+
+                    // for(var i=0; i < data.results.length; i++) 
+
+                    //   {  	var x  = i+1;
+
+                    //   	console.log(data.results[i].name);
+                    //      }
 
                 });
+           	 }
  			});
 
 	
