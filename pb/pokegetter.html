@@ -19,7 +19,14 @@
                  type: 'GET',
                  url: uRl,
                  success: function(data) {
-                 	dataTa.push(data)
+                 	//dataTa.push(data)
+                 	//dataTa.push.types[0].type.name
+                 	for(var i=0; i < data.types.length; i++)
+                 	{
+                 	console.log(data.types[i].type.name)
+                 }
+
+
                      //console.log(data);
                  }
                  });
