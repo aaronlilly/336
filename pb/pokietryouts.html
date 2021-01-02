@@ -7,22 +7,34 @@
 	$(document).ready(function() {
         $.ajax({
             method: "GET",
-            url: "https://pokeapi.co/api/v2/pokemon?limit=3000"
+            url: "https://aaronlilly.github.io/336/336ptc.json"
                }).done(function(data) 
                	  {
+
+               	  	console.log(data.PokemonTradingCenter[0]);
                	 
-                    // for(var i=0; i < data.results.length; i++) 
+                     for(var i=0; i < data.PokemonTradingCenter.length; i++) 
 
-                    //   {  	var x  = i+1;
-
+                      {  	
+                       $("#pokemonList").append("<img src ='" + data.PokemonTradingCenter[i].imaj + "'>"+data.PokemonTradingCenter[i].Name);
                       	// console.log(data.results[i].name);
-                       console.log(data);
-                      // }
+                       //console.log(data.PokemonTradingCenter[0]);
+                       //  console.log(data.PokemonTradingCenter[0].Dex);
+                       //  console.log(data.PokemonTradingCenter[0].Name);
+                       //  console.log(data.PokemonTradingCenter[0].Type1);
+                      }
 
                 });
  			});
 
 
-	///https://aaronlilly.github.io/336/336ptc.json
+
 
 	</script>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" id="pokemonList">
+	
+    </div>
+  </div>
+</div>
