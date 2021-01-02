@@ -1,13 +1,14 @@
 <html>
 <head>
 	<script src="./scripts/jquery-3.4.1.min.js"></script>
+  <script src="./scripts/pk.js"></script>
 <script>
 	var dataTa = [];
 	   
 	$(document).ready(function() {
         $.ajax({
             method: "GET",
-            url: "https://pokeapi.co/api/v2/pokemon?limit=3000000"
+            url: "https://pokeapi.co/api/v2/pokemon?limit=3000"
                }).done(function(data) 
                	  {
                	  	dataTa.push(data)
@@ -15,11 +16,12 @@
                     for(var i=0; i < data.results.length; i++) 
 
                       {  	var x  = i+1;
-                        // $("#pokemonList").append( '<li id="pokemon' + i + '" data-url="'+data.results[i].url +'">' + data.results[i].name  + " "+ x +'</li> ');
-                          $("#pokemonList").append(data.results[i].name +" = {"
+                        // $("#pokemonList").append( '<li id="pokemon' + i + '" data-url="'+data.results[i].url +'">' + data.results[i].name  + " "+ x +'</li> ');///
+
+                          $("#pokemonList").append(" {"
                            +'"name" :\"' +data.results[i].name +'",'
 
-                           + " \"xurl\" :\"" +data.results[i].url + '"' +"}<br>");
+                           + " \"xurl\" :\"" +data.results[i].url + '"' +"},<br>");
                       }
                         //optional to consol
                         $('#pokemonList li').click(function() 
@@ -48,6 +50,11 @@
                  //end optional to consol
                 });
  			});
+
+
+  $(document).ready(function() {
+
+    });
 	</script>
 </head>
 
