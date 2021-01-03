@@ -985,7 +985,7 @@
  },
  {
    "Dex": 83,
-   "Name": "Farfetch'd",
+   "Name": "Farfetch-d",
    "Type1": "Normal",
    "Type2": "Flying",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png",
@@ -10369,7 +10369,7 @@
  },
  {
    "Dex": 865,
-   "Name": "Sirfetch'd",
+   "Name": "Sirfetch-d",
    "Type1": "Fighting",
    "Type2": "Fighting",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/865.png",
