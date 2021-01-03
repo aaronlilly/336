@@ -22,9 +22,7 @@
                         //<figcaption>Fig.1 - Trulli, Puglia, Italy.</figcaption>
                        $("#pokemonList").append('<span class="imjs"'+ 'id="'+data.PokemonTradingCenter[i].Name + 'imj">'+ '<figure>'+'<img src ="' +data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</span>');
 
-                        $('#'+data.PokemonTradingCenter[i].Name +'imj').click(function(){
-                              alert(data.PokemonTradingCenter[i].Name)
-                          });
+                     
 
                        //"<img src ='" + data.PokemonTradingCenter[i].imaj + 'id ="' + data.PokemonTradingCenter[i].Name + '">' )
 
@@ -40,9 +38,15 @@
                 });
  			});
                   
+                    $(document).ready(function() {
+ for(var i=0; i <  pokemonNameArray.length; i++) 
 
-
-
+                      { 
+   $('#'+pokemonNameArray +'imj').click(function(){
+                              alert(pokemonNameArray[i])
+                          });
+ }
+});
 	</script>
   <style>
     .imjs{width:12%;float:left;}
