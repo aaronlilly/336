@@ -337,7 +337,7 @@
  },
  {
    "Dex": 29,
-   "Name": "Nidoran(f)",
+   "Name": "Nidoran-f",
    "Type1": "Poison",
    "Type2": "Poison",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/29.png",
@@ -373,7 +373,7 @@
  },
  {
    "Dex": 32,
-   "Name": "Nidoran(m)",
+   "Name": "Nidoran-m",
    "Type1": "Poison",
    "Type2": "Poison",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/32.png",
