@@ -984,7 +984,7 @@
  },
  {
    "Dex": 83,
-   "Name": "Farfetch-d",
+   "Name": "Farfetch'd",
    "Type1": "Normal",
    "Type2": "Flying",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/83.png",
@@ -1452,7 +1452,7 @@
  },
  {
    "Dex": 122,
-   "Name": "Mr.Mime",
+   "Name": "Mr. Mime",
    "Type1": "Psychic",
    "Type2": "Psychic",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/122.png",
@@ -5256,7 +5256,7 @@
  },
  {
    "Dex": 439,
-   "Name": "MimeJr.",
+   "Name": "Mime Jr.",
    "Type1": "Psychic",
    "Type2": "Fairy",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/439.png",
@@ -10368,7 +10368,7 @@
  },
  {
    "Dex": 865,
-   "Name": "Sirfetch-d",
+   "Name": "Sirfetch'd",
    "Type1": "Fighting",
    "Type2": "Fighting",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/865.png",
