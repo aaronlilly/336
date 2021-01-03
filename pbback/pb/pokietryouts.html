@@ -1,0 +1,46 @@
+<html>
+<head>
+	<script src="./scripts/jquery-3.4.1.min.js"></script>
+<script>
+
+	   
+	$(document).ready(function() {
+        $.ajax({
+            method: "GET",
+            url: "https://aaronlilly.github.io/336/336ptc.json"
+               }).done(function(data) 
+               	  {
+
+               	  	console.log(data);
+               	  	console.log(data.PokemonTradingCenter[0]);
+               	 
+                     for(var i=0; i < data.PokemonTradingCenter.length; i++) 
+
+                      {  	
+                       $("#pokemonList").append(data.PokemonTradingCenter[i].imaj);
+
+                       //"<img src ='" + data.PokemonTradingCenter[i].imaj + 'id ="' + data.PokemonTradingCenter[i].Name + '">' )
+
+                       // <figure><img src ='" + data.PokemonTradingCenter[i].imaj + " id = \"" + data.PokemonTradingCenter[i].Name + "imj"+  "\" >"+ '<figcaption>' + data.PokemonTradingCenter[i].Name +"</figcaption></figure>"
+
+                      	// console.log(data.results[i].name);
+                       //console.log(data.PokemonTradingCenter[0]);
+                       //  console.log(data.PokemonTradingCenter[0].Dex);
+                       //  console.log(data.PokemonTradingCenter[0].Name);
+                       //  console.log(data.PokemonTradingCenter[0].Type1);
+                      }
+
+                });
+ 			});
+
+
+
+
+	</script>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" id="pokemonList">
+	
+    </div>
+  </div>
+</div>
