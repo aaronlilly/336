@@ -1,11 +1,14 @@
 <html>
 <head>
   <link rel="stylesheet" href="./scripts/pewestyle.css">
-	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="pokemonNamez.js"></script>
     <script src="./scripts/jvteamtry.js"></script>
      <script src="./scripts/vars.js"></script>
+
     <style>#hideme{display:none;}
     
     #heading2Addr{
@@ -15,11 +18,11 @@
 
 
 
-<span class="badge badge-info" id="heading2Addr" data-toggle="modal" data-target="#myModal3">Click me to </span>
+ <span class="badge badge-info" id="heading2Addr" data-toggle="modal" data-target="#myModal3">Click me to add Heading</span>
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4" id="pokemonList">
+    <div class="col-md-14" id="pokemonList">
 	
     </div>
   </div>
@@ -44,28 +47,20 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" onclick="meanTo();">&times;</button>
-          <h4 class="modal-title"> Heading Adder</h4>
+          <h4 class="modal-title"> Mmodal Open</h4>
         </div>
         <div class="modal-body">
        
-        <input type="text" id="editorHeading2" placeholder="Enter Heading"> <br>
-        <input type='text' id='valueField2' placeholder="Enter # of Bullets to Add"> 
-
-        <span class="badge badge-info" id="bulletAddr2">Click me to add bullet</span> <span class="badge badge-warning" id="bulletRemovr2">Remove Bullets </span>
-
-        <div id='outPut3'>
+       
          </div>
 
           </p>
         </div>
         <div class="modal-footer">
-        <button class="btn btn-success" id="addThisHeadding">Add Heading </button>
-         <button class="btn btn-success" id="addTheseBullets2">Add All Bullets </button>
+       
                   <button type="button"  id="myModal3close" class="btn btn-default" data-dismiss="modal" onclick="addOne();">Close</button>
         </div>
       </div>
      
   
-</div>
-
 </div>
