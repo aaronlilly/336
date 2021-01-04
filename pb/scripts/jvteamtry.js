@@ -11,7 +11,7 @@
                         + '">'+ '<figure>'+'<img src ="' +data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</span>');
 
                       $('#'+ pokemonNameArray[i]).click(function(){
-                        secondary(this.id);
+                        secondary(this.id,i);
                       });
                     }
 

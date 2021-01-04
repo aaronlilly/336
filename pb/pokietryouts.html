@@ -4,15 +4,17 @@
 	<script src="./scripts/jquery-3.4.1.min.js"></script>
   <script src="pokemonNamez.js"></script>
     <script src="./scripts/jvteamtry.js"></script>
+    <style>#hideme{display:none;}
+    </style>
 <script>
 
 
-function chk(CId,i){
+function chk(cId,i){
 
  //  var pName = pokemonlist[i].name;
  //  var pType = pokemonlist[i].type;
  // $("#" + current +"span").html("");
-    $("#" + CId +"box").prop('checked',false)
+    $("#" + cId +"box").prop('checked',false)
     
 //   let cur = current;
 //   //alert(cur);
@@ -24,13 +26,13 @@ function chk(CId,i){
 //         wantP.splice(j,1);}
 // }
 }
-function notchk(CId,i){
-  var pName = pokemonlist[i].name;
-  var pType = pokemonlist[i].type;
-$("#append").append("<span id ='" + current + "span'></span>"); 
-    $("#" + current +"span").append(current + "\t"); 
-    $("#" + current +"box").prop('checked',true);
-  wantP.push({"Name" : pName, "Type" : pType});
+function notchk(cId,i){
+//   var pName = pokemonlist[i].name;
+//   var pType = pokemonlist[i].type;
+// $("#append").append("<span id ='" + current + "span'></span>"); 
+//     $("#" + current +"span").append(current + "\t"); 
+    $("#" + cId +"box").prop('checked',true);
+  // wantP.push({"Name" : pName, "Type" : pType});
   // {"tname": tNam,"bin": bin}
 }
 
@@ -49,9 +51,16 @@ function secondary(cId,i){
     
  //if not checked
    else{
-   notchk(CId,i);
+   notchk(cId,i);
      }
 }          
+
+   $(document).ready(function() {
+for(var i=0; i <  pokemonNameArray.length; i++) 
+                      {
+                        $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'box">');
+                      }
+});
 </script>
 
 <div class="container">
@@ -64,6 +73,7 @@ function secondary(cId,i){
 
 
 <div id="hideme">
-  <input type="checkbox" id="Bulbasaurbox">
-
+  <div id="xboxs">
+ 
+</div>
  </div>
