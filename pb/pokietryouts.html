@@ -1,48 +1,59 @@
 <html>
 <head>
+  <link rel="stylesheet" href="./scripts/pewestyle.css">
 	<script src="./scripts/jquery-3.4.1.min.js"></script>
   <script src="pokemonNamez.js"></script>
+    <script src="./scripts/jvteamtry.js"></script>
 <script>
 
-	   
-	$(document).ready(function() {
-        $.ajax({
-            method: "GET",
-            url: "https://aaronlilly.github.io/336/336ptc.json"
-               }).done(function(data) 
-               	  {
-                     for(var i=0; i <  pokemonNameArray.length; i++) 
-                      {  	
-                        //working
-                       $("#pokemonList").append('<span class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        + '">'+ '<figure>'+'<img src ="' +data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</span>');
 
-                      $('#'+ pokemonNameArray[i]).click(function(){
-                        secondary(this.id);
-                      });
-                    }
+function chk(CId,i){
 
-                });
- 			});
+ //  var pName = pokemonlist[i].name;
+ //  var pType = pokemonlist[i].type;
+ // $("#" + current +"span").html("");
+    $("#" + CId +"box").prop('checked',false)
+    
+//   let cur = current;
+//   //alert(cur);
 
+//     for (j = 0; j < wantP.length; j++) {
+  
+//       if(wantP[j].Name == cur){
 
-
-function secondary(cId){
-  alert(cId);
-}          
-
-	</script>
-  <style>
-    .imjs{width:12%;float:left;}
-    figcaption {
- /* background-color: black;
-  color: white;
-  font-style: italic;*/
-  padding: 2px;
-  text-align: center;
- /* width:80%;*/
+//         wantP.splice(j,1);}
+// }
 }
-  </style>
+function notchk(CId,i){
+  var pName = pokemonlist[i].name;
+  var pType = pokemonlist[i].type;
+$("#append").append("<span id ='" + current + "span'></span>"); 
+    $("#" + current +"span").append(current + "\t"); 
+    $("#" + current +"box").prop('checked',true);
+  wantP.push({"Name" : pName, "Type" : pType});
+  // {"tname": tNam,"bin": bin}
+}
+
+
+
+/////
+
+function secondary(cId,i){
+ // alert(cId);
+
+//if checked
+ if ($("#" + cId +"box").prop('checked')) 
+   {
+  chk(cId,i);
+    }
+    
+ //if not checked
+   else{
+   notchk(CId,i);
+     }
+}          
+</script>
+
 <div class="container">
   <div class="row">
     <div class="col-md-4" id="pokemonList">
@@ -50,3 +61,9 @@ function secondary(cId){
     </div>
   </div>
 </div>
+
+
+<div id="hideme">
+  <input type="checkbox" id="Bulbasaurbox">
+
+ </div>
