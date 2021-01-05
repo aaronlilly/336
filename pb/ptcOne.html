@@ -8,7 +8,9 @@
 	<link rel="icon" sizes="16x16" href="favo.png">
 	
 	<script src="./scripts/sec/retz.js"></script>
-	<script src="./scripts/jquery-3.4.1.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <script src="./scripts/ptcOneScript.js"></script>
 
 <script src="./scripts/pokemonarray.js"></script>
@@ -60,16 +62,20 @@ float:left;}
  <nav class="navbar navbar-expand-md navbar-dark bg-red mb-4">
     </nav>
 
+
+
 <div id ="innerBody">
 Welcome <span id ="trainerInfoHere"></span>.
 </div>
 
-<div id="hav" class ="btn btn-primary" >
+<div id="hav" class ="btn btn-primary" data-toggle="modal" data-target="#myModal1" >
 Pokemon I have.
 </div>
-<div id="wanna" class ="btn btn-success">
+<div id="wanna" class ="btn btn-success" data-toggle="modal" data-target="#myModal2">
 Pokemon I want.
 </div>
+
+
 
 
 <div id ="horz"></div><div id ="midBar"><span id="middy">Save</span></div><div id="horz2"></div>
@@ -86,14 +92,90 @@ x
 
 </div>
 
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+ 
+
+  <!-- Modal 1-->
+  <div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" onclick="meanTo();">&times;</button>
+          <h4 class="modal-title"> Mmodal Open</h4>
+        </div>
+        <div class="modal-body">
+       
+       
+         </div>
+
+          </p>
+        </div>
+        <div class="modal-footer">
+       
+                  <button type="button"  id="myModal1close" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+     
+  
+</div>
+
+<!-- end modal 1 -->
+
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+ 
+
+  <!-- Modal 3-->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" onclick="meanTo();">&times;</button>
+          <h4 class="modal-title"> Mmodal Open</h4>
+        </div>
+        <div class="modal-body">
+       
+       
+         </div>
+
+          </p>
+        </div>
+        <div class="modal-footer">
+       
+                  <button type="button"  id="myModal2close" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+     
+  
+</div>
+
+
+
+
 <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark bg-dark">
     </nav>
 </body>
 
 
 	
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 
 </html>
