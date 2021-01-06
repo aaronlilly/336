@@ -1,0 +1,30 @@
+
+<html>
+<head>
+	
+<!-- Jquery --> 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+
+<!--Toastr Min CSS --> 
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css'> 
+<!--Toastr Min JS -->
+ <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js'></script>
+
+</head>
+<body>
+<div>
+<input type='text' maxlength="25" id='first-name' placeholder="First Name">
+ </div>
+
+   
+
+<button type="button" onclick="toastr.success($('#first-name').val())">Click Me!</button>
+
+
+
+
+
+
+</script>
+</body>
+</html>

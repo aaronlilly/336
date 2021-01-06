@@ -1,0 +1,33 @@
+<html>
+<head>
+	<!-- Jquery --> 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#inPut').click(function() {
+  	var FLname =  "<br>" +
+  		$('#searchField').val() + " ";
+
+    $('#outPut').append(FLname);
+    
+  });
+ 
+});		
+</script>
+</head>
+<body>
+	
+		
+<br>
+			<input type='text' id='searchField' placeholder="Input Text Here">
+				
+					<button id='inPut'>Add to page</button>
+
+<br>
+<div id='outPut'>
+	</div>
+
+   </body>
+</html>
