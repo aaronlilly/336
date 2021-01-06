@@ -68,41 +68,26 @@ x
  
 
   <!-- Modal 1-->
-  <div class="modal fade" id="myModal1" role="dialog">
-   <div class="modal-dialog modal-lg">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" onclick="meanTo();">&times;</button>
-          <h4 class="modal-title">Select Pokemon that you have.</h4>
-        </div>
-       <div class="modal-body">
-  <div class="container-fluid">
-    <div class="row">
-    <div class="col-md-4" id="pokHav">
-	
-	</div>
-    </div>
-  </div>
-</div>
-
-      
-
-
-       </div>
-         </div>
-
-          </p>
-        </div>
-        <div class="modal-footer">
-       
-                  <button type="button"  id="myModal1close" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+  <div class="modal fade"  tabindex="-1" id="myModal1" role="dialog" aria-labelledby="gridSystemModalLabel">
+    <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">Modal title</h4>
       </div>
-     
-  
-</div>
+      <div class="modal-body">
+        <div class="row" id="pokHav">
+         
+
+
+	</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <!-- end modal 1 -->
 
