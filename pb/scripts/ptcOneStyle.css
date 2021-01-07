@@ -2,8 +2,8 @@
 #innerBody{ margin-left:1%;}
 
 #midBar {
-  height: 30px;
-  width: 30px;
+  height: 100px;
+  width: 100px;
   background-color: #fff;
   border-radius: 50%;
   display: inline-block;
@@ -13,34 +13,25 @@ float:left;
 }
 #horz{margin-top:3%;height:3px;background-color:black;width:32%;margin-left:10%;
 float:left;}
-#horz2{margin-top:3%;height:3px;background-color:black;width:32%;;
+#horz2{margin-top:3%;height:3px;background-color:black;width:35%;
 float:left;}
 
-#hav{float:left;margin-top:8%;margin-left:5%;}
-#wanna{float:left;margin-top:8%;margin-left:15%;}
+#hav{float:left;margin-top:8%;margin-left:20%}
+#wanna{float:left;margin-top:8%;margin-left:32%}
 
-#okepoke{margin-top:30%;}
+#okepoke{margin-top:20%;}
 
 #leftP{
-	float:left;height:30%;width:20%;margin:top:10%;margin-left:5%;
+	float:left;margin-left:12%;border:solid;border-color:red;
+	height:50%;width:25%;
 }
 
 #rightP{
-	float:right;height:30%;width:20%;margin:top:10%;margin-right:5%;
-	
-}/*float:right;border:solid;height:30%;width:20%;margin:top:10%;margin-right:5%;*/
+	float:right;margin-right: 20%;border:solid;height:50%;width:25%;
+}
 
-#middy{ margin-left:20%;font-size:30px;font-family: Calibri, sans-serif}
-/*line-height:80px;
-*/
+#middy{line-height:80px; margin-left:20%;font-size:30px;font-family: Calibri, sans-serif}
+
 #midBar:hover {cursor:pointer;background-color:	#C0C0C0;}
 
 #midBar:active{background-color: lightgrey;}
-
-.bottomIsh {
-   position: fixed;
-   left: 0;
-   bottom: 0;
-   background-color: black;
-   width: 100%;
-   }

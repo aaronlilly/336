@@ -48,7 +48,7 @@ $(document).ready(function() {
                      for(var i=0; i <  pokemonNameArray.length; i++) 
                       {   
                         //working
-                       $("#pokHav").append( '<div class="col-sm-4">' +'<span class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                       $("#pokHav").append( '<div class="col-sm-2">' +'<span class="imjs"'+ 'id="'+ pokemonNameArray[i]
                         + '">'+ '<figure>'+'<img src ="' + data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</span></div>');
 
                       $('#'+ pokemonNameArray[i]).click(function(){
