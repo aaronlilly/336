@@ -1,0 +1,96 @@
+body{margin-top:1%;}
+
+.input-small {color: black;}
+#toast-container>div { 
+    width: 850px;
+    height: 450px;}
+
+.my-toast-class {width:800px;}
+
+#toast-container>.toast-success {
+    background-image: url()!important;
+}
+.toast-close-button {font-size:50px; }
+
+.bsPrimary {
+    color: #fff;
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    padding:2px;
+    border-radius: 5px;
+}
+.bsSuccess {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+    padding:3px;
+    border-radius: 5px;
+}
+.bsInfo {
+    color: #fff;
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    padding:3px;
+    border-radius: 5px;
+
+}
+.bsSecondary{
+color: #343a40;
+border-style: solid;
+    border-color: #343a40;
+  padding:3px;
+   padding-bottom: 5px;
+    border-radius: 5px;
+    margin-left:30%;
+  }
+
+.bsSecondary2{
+color: #343a40;
+border-style: solid;
+    border-color: #343a40;
+  padding:3px;
+    border-radius: 5px;
+    margin-left:5%;
+   padding-bottom: 5px;}
+
+#talonHeader 
+{
+        height: 100px; 
+}
+
+#completeSummaryTocHeading{ 
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 21px ; color: #4286f4;
+}
+
+#completeSummaryTitleText{ 
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 16px ;
+}
+
+#completeSummaryHeading {color: blue;  text-decoration: underline;
+
+}
+#editorSummaryHeading {color: blue;  text-decoration: underline;
+
+}
+
+
+#editorSummaryTocHeading{ 
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif; font-size: 21px ; color: #4286f4;
+}
+
+#marginLeft {margin-left:5%;}
+
+/*other */
+
+#allDiv {height:100%; width:95%; margin-left:5%;}
+
+#leftContent {height: 99%;width:49%;float: left;}
+    #leftTop {height:45%;width:100%; }
+        #leftTopBox {height:100%;width:100%; border:solid; overflow-y: scroll;}
+          #boxSpace {height: 5%}
+    #leftBottom {height:45%;width:100%; }
+        #leftBottomBox {height:100%;width:100%; border:solid; overflow-y: scroll;}
+
+#rightTop {height:100%;width:45%; float:left; margin-left: 10px;}
+#rightTopBox {height:100%;width:100%; border:solid; overflow-y: scroll;}
+

@@ -1,0 +1,105 @@
+<html>
+<head>
+  <title>Document Builder </title>
+
+<!-- Bootstrap CSS --> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- Jquery --> 
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+<!--Toastr Min CSS --> 
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css'> 
+
+<!--Toastr Min JS --> 
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js'></script>
+<!--Font Awesome --> 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+<!-- Custom JS and CSS -->
+<link rel="stylesheet" href="./css/docBuilder.css">
+<script type='text/javascript' src='./js/docBuilder2.0.js'></script>
+<!-- End Custom JS and CSS -->
+
+<!-- Editor  Top Left-->
+
+<div id ="allDiv">
+  <div id="leftContent">
+ <div id="leftTop"> <h3> <span class="bsSuccess">Editor</span><span class="bsSecondary" id="editorDocumentTitle">Edit Document Title</span></h3>
+ <div id="leftTopBox"> <a href="#"><img src=https://talonhit.com/wp-content/uploads/2016/09/talon-healthy-support.png" id="talonHeader"></a>
+    <div id ="marginLeft">
+<span id="editorSummaryTocHeading">Summary / Table of Contents</span><br>
+<span id="editorSummaryTitleText">Edit Summary Text </span><br>
+<i class="fas fa-caret-right"></i> <span id="editorSummaryHeading">Edit Heading 1:</span>
+<ul>
+  <li><span id="editorBullet1">Edit Bullet 1 </span></li>
+  <li><span class="badge badge-primary" id="editorAddBullet2">Add Bullet </span> <span class="badge badge-danger" id="editorRemoveBullet2"> Remove Bullets</span>  
+</ul>
+<i class="fas fa-caret-right"></i> <span class="badge badge-primary" id="editorAddHead2">Add Heading </span>
+<ul>
+  <li><span class="badge badge-primary" id="editorAddBullet2plus">Add Bullet </span></li>
+
+<button type="button" id="ulBulletEnd" class="badge badge-warning">Done Adding Bullets</button>
+
+</div>
+    </div>
+ </div>
+<br>
+ <!-- Code Bottom Left-->
+ <div id="boxSpace"></div>
+  <div id="leftBottom"><h3><span class="bsInfo">Code</span></h3>
+    <div id="leftTopBox">&lthtml&gt <br> &lthead&gt <br>&lttitle&gt<span id="codeDocTitle">Title of Document</span>&lt/title&gt
+<br>
+
+
+<!-- &lt!-- Bootstrap CSS --&gt <br>
+&ltlink rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"&gt<br>
+&lt!--End off Bootstrap CSS --&gt <br><br>
+
+<br>
+&lt/head&gt <br>
+&ltbody&gt<br>
+&lta href="#"&gt&ltimg src="https://talonhit.com/wp-content/uploads/2016/09/talon-healthy-support.png" id="talonHeader">&lt/a&gt<br>
+&ltdiv id ="marginLeft&gt<br> -->
+
+&ltdiv id="SummaryTocHeading"&gt<br><span id="codeSummaryTocHeading">
+Summary / Table of Contents</span>&lt/div&gt<br>
+&ltdiv id="SummaryText"&gt<span id="codeSummaryText">Summary Text Here</span>&lt/div&gt<br>&ltbr&gt
+&lti class="fas fa-caret-right"&gt &lt/i&gt &ltspan id="summaryHeading"&gtHeading 1:&lt/span&gt<br>
+&ltul><br>
+  &ltli&gt <span id="codeBullet1">Bullet 1</span> &lt/li&gt<br>
+  <span id="codeAddBullet2"> </span>
+&lt/ul&gt
+<div id="codeAddHead2"> </div>
+
+<span id ="codeAddBullet2Plus"> </span>
+
+
+    </div>
+ </div>
+</div>
+
+<!-- Complete - Top Right -->
+
+<div id="rightTop"><h3> <span class="bsPrimary">Completed Doc</span><span class="bsSecondary2" id="completeDocTitle">Current Document Title</span></h3>
+    <div id="rightTopBox">
+        <a href="#"><img src=https://talonhit.com/wp-content/uploads/2016/09/talon-healthy-support.png" id="talonHeader"></a>
+         <div id ="marginLeft">
+        <div id="completeSummaryTocHeading">Summary / Table of Contents</div>
+        <span id="completeSummaryTitleText">Summary Text </span><br>
+        <i class="fas fa-caret-right"></i> <span id="completeSummaryHeading">Heading 1:</span>
+<ul>
+  <li><span id="completeBullet1">Bullet 1 </span></li>
+  <span id="completeAddBullet2"> </span>
+</ul>
+
+<div id="completeAddHead2">  </div> <span id="completeAddBullet2Plus"> </span>
+
+     
+    </div>
+</div>
+</div>
+
+
+
+
+</body>
+</html>

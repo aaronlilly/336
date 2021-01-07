@@ -1,0 +1,37 @@
+.bg-red {    background-color: firebrick;}
+#innerBody{ margin-left:1%;}
+
+#midBar {
+  height: 100px;
+  width: 100px;
+  background-color: #fff;
+  border-radius: 50%;
+  display: inline-block;
+border-color:#000;
+border:solid;
+float:left;
+}
+#horz{margin-top:3%;height:3px;background-color:black;width:32%;margin-left:10%;
+float:left;}
+#horz2{margin-top:3%;height:3px;background-color:black;width:35%;
+float:left;}
+
+#hav{float:left;margin-top:8%;margin-left:20%}
+#wanna{float:left;margin-top:8%;margin-left:32%}
+
+#okepoke{margin-top:20%;}
+
+#leftP{
+	float:left;margin-left:12%;border:solid;border-color:red;
+	height:50%;width:25%;
+}
+
+#rightP{
+	float:right;margin-right: 20%;border:solid;height:50%;width:25%;
+}
+
+#middy{line-height:80px; margin-left:20%;font-size:30px;font-family: Calibri, sans-serif}
+
+#midBar:hover {cursor:pointer;background-color:	#C0C0C0;}
+
+#midBar:active{background-color: lightgrey;}

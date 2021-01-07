@@ -1,0 +1,40 @@
+<html><!-- This is needed so that your web browser knows what type of file this is --> 
+<head><!-- This is the first thing loaded by your browser, often scripting and styling is inserted here --> 
+<title><!-- This is the title of the Tab within your browser window --> 
+Talon Document Title
+</title> <!-- most every tag that opens, is also closed  --> 
+</head>
+<body> <!-- This is the body of your document --> 
+<!-- I insert some styling below, this is known as CSS or Cascading Style Sheets--> 
+<style>
+#talonHeader /*this is also a comment */ /*the #here looks in the page for id's with the name following, in this case, and id with the name of talonHeader */
+{
+	    height: 100px; /*this makes the talon image a little smaller than it actually is, px is for pixles, % or percentage can also be used here */
+}
+</style>
+	
+	<!-- Everything inside these lessthan & greater than symbols is invisable to the person viewing this page, the purpose of these are to help you understand the code, this is known as a comment. --> 
+<!-- Here (below) I make an Image Link.  The image is clickable and will navigate to wherever the <a href=""> is set to, a webpage URL can go inbetween the "s --> 
+<a href="#"><img src="https://talonofnc.sharepoint.com/SiteAssets/talon-healthy-support.jpg" id="talonHeader"></a><!-- this is the end of the Image link --> 
+
+<!-- h1 is the size of the font, and a span is a way to refer to a selection, this is needed for styling --> 
+<h1><span id ="summaryTableofContents"> Summary<span></h1>
+Summary Text here
+
+<!-- This is how you do bullets in HTML, ul stands for  unordered list and li stands for list item, if you had ol instead of li, they would be a numbered list 1,2,3 etc --> 
+<ul>
+	<li><span id="summaryHeading">Heading 1:</span> Overview</li>
+	<li><span id="summaryHeading">Heading 2:</span> Overview</li>
+</ul>
+
+<div id="paragraphContent"><!-- divs are a way to contain similar to spans, this div ends after the "Text Here" --> 
+	<div id="Heading">Heading 1 </div> <!-- this is a div inside of a div, like a box that is inside of a box, the whole paragraph content may have some styling, and then this portion some additional styling that I do not want applied to the other pieces. --> 
+Text Here
+</div>
+
+<br><!-- This is a line break or carriage return, it creates some space between the paragraphs  --> 
+
+<div id="paragraphContent">
+	<div id="Heading">Heading 2 </div>
+Text Here
+</div>
