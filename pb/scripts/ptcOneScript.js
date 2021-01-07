@@ -39,6 +39,7 @@ $(document).ready(function () {
 
 
 $(document).ready(function() {
+  $('#getList').click(function(){
         $.ajax({
             method: "GET",
             url: "https://aaronlilly.github.io/336/336ptc.json"
@@ -58,6 +59,7 @@ $(document).ready(function() {
 
                 });
       });
+   });
 
 ///
 function chk(cId,i){

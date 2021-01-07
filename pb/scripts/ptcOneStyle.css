@@ -1,10 +1,10 @@
-#innerBody{ margin-left:1%;font-size: 18px;}
+#innerBody{ margin-left:1%;font-size: 20px;}
 
 #hav{float:left;margin-top:8%;margin-left:20%}
 #wanna{float:left;margin-top:8%;margin-left:32%}
 
  body {
-  background-image: url('./images/ballcenter.png');
+  background-image: url('../images/ballcenter.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
