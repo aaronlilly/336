@@ -1,4 +1,4 @@
-#innerBody{ margin-left:1%;font-size: 20px;}
+#innerBody{margin-left:1%;font-size: 20px;}
 
 #hav{float:left;margin-top:8%;margin-left:20%}
 #wanna{float:left;margin-top:8%;margin-left:32%}
@@ -24,4 +24,6 @@
 	background-color: firebrick;
 }
 
-
+#endOfToast{margin-top:30%;}
+#clearly{margin-left:75%;}
+#toastTop{font-size: 18px;margin-left: 20%; text-decoration: underline;};
