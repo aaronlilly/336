@@ -9,7 +9,10 @@
 	<link rel="icon" sizes="16x16" href="favoptc.png">
 	
 	<script src="./scripts/sec/retz.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ -->
+
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
@@ -27,7 +30,7 @@
 
 <script>
 $(document).ready(function() {
-      toastr["success"]('<div id="toastTop">User Options :</div> <div id ="endOfToast"><button type="button" class="btn btn-warning" id="clearly">Close</button></div>')//'<button type="button" id="inPut" class="btn btn-info" style="margin: 0 8px 0 8px";>Make Change</button>
+      toastr["success"]('<div id="toastTop">User Options :</div><div id="myList"> My List - <span id ="myListBtns"> <button type="button" class="btn btn-warning" id="ViewSaved">View</button>   <button type="button" class="btn btn-secondary" id="ShareSaved">Share</button>  </span> </div> <div id ="endOfToast"><button type="button" class="btn btn-outline-warning" id="clearly">Close</button></div>')//'<button type="button" id="inPut" class="btn btn-info" style="margin: 0 8px 0 8px";>Make Change</button>
       $('#clearly').click(function() {
                toastr.remove();
 
@@ -54,7 +57,7 @@ $(document).ready(function() {
 Welcome <span id ="trainerInfoHere"></span>.
 </div>
 <div id="menuButtonz">
-<button type="button" class="btn btn-primary" id="ViewSaved">View my Saved Lists</button>
+
 
 </div>
 
