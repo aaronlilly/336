@@ -30,7 +30,7 @@
 
 <script>
 $(document).ready(function() {
-      toastr["success"]('<div id="toastTop">User Options :</div><div id="myList"> My List - <span id ="myListBtns"> <button type="button" class="btn btn-warning" id="ViewSaved">View</button>   <button type="button" class="btn btn-secondary" id="ShareSaved">Share</button>  </span> </div> <div id ="endOfToast"><button type="button" class="btn btn-outline-warning" id="clearly">Close</button></div>')//'<button type="button" id="inPut" class="btn btn-info" style="margin: 0 8px 0 8px";>Make Change</button>
+      toastr["success"]('<div id="toastTop">User Options :</div><div id="myList"> My List - <span id ="myListBtns">  <button type="button" class="btn btn-info" id="AddSaved">Add</button>  <button type="button" class="btn btn-danger" id="RemoveSaved">Remove</button> <button type="button" class="btn btn-warning" id="ViewSaved">View</button>   <button type="button" class="btn btn-secondary" id="ShareSaved">Share</button>  </span> </div> <div id ="endOfToast"><button type="button" class="btn btn-outline-warning" id="clearly">Close</button></div>')//'<button type="button" id="inPut" class="btn btn-info" style="margin: 0 8px 0 8px";>Make Change</button>
       $('#clearly').click(function() {
                toastr.remove();
 
