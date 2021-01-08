@@ -25,10 +25,10 @@
   <script src="pokemonNamez.js"></script>
 <link rel="stylesheet" href="./scripts/ptcOneStyle.css">
 <style>#endOfToast{margin-top:30%;}
-
-
+#clearly{margin-left:75%;}
+#toastTop{font-size: 18px;margin-left: 20%; text-decoration: underline;};
 </style>
-}
+
 <script>toastr.options = {
   "closeButton": true,
   "debug": false,
@@ -51,7 +51,7 @@
 
 
 $(document).ready(function() {
-      toastr["success"]('<div id ="endOfToast"><button type="button" class="btn btn-info" id="clearly">Close</button></div>')//'<button type="button" id="inPut" class="btn btn-info" style="margin: 0 8px 0 8px";>Make Change</button>
+      toastr["success"]('<div id="toastTop">User Options :</div> <div id ="endOfToast"><button type="button" class="btn btn-warning" id="clearly">Close</button></div>')//'<button type="button" id="inPut" class="btn btn-info" style="margin: 0 8px 0 8px";>Make Change</button>
       $('#clearly').click(function() {
                toastr.remove();
 
