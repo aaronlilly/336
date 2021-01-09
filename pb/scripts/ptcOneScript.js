@@ -186,9 +186,24 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
       //myFunction(this.id);
 
     $('#AddSaved').click(function() {
-                       
+                       $('#topper').append(this.id)
       })
-
+     $('#RemoveSaved').click(function() {
+                       $('#topper').append(this.id)
+      })
+     $('#ViewSaved').click(function() {
+                       $('#topper').append(this.id)
+      })
+     $('#ShareSaved').click(function() {
+                       $('#topper').append(this.id)
+      })
+     $('#Advanced').click(function() {
+                       $('#topper').append(this.id)
+      })
+     $('#trainNam').click(function() {
+                       $('#topper').append(this.id)
+      })
+    
 
   }
 
