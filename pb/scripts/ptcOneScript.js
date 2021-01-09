@@ -187,23 +187,34 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
 
     $('#AddSaved').click(function() {
                        $('#topper').append(this.id)
+                       rePaint();
       })
      $('#RemoveSaved').click(function() {
                        $('#topper').append(this.id)
+                       rePaint();
       })
      $('#ViewSaved').click(function() {
                        $('#topper').append(this.id)
+                       rePaint();
       })
      $('#ShareSaved').click(function() {
                        $('#topper').append(this.id)
+                       rePaint();
       })
      $('#Advanced').click(function() {
                        $('#topper').append(this.id)
+                       rePaint();
       })
      $('#trainNam').click(function() {
                        $('#topper').append(this.id)
+                       rePaint();
       })
     
 
+
+
   }
 
+function rePaint(){ $('#topper').hide();
+$('#topper').get(0).offsetHeight;
+$('#topper').show();};
