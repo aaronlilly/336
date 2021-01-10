@@ -143,10 +143,10 @@ toastr.options = {
   "newestOnTop": false,
   "progressBar": false,
   "positionClass": "toast-top-center",
-  "preventDuplicates": false,
-  //"onclick": null,
+  "preventDuplicates":true,
+  "onclick": null,
   "showDuration": "300",
-  "hideDuration": "1000",
+  "hideDuration": "10",
   "timeOut": "5000",
   "extendedTimeOut": "1000",
   "showEasing": "swing",
@@ -165,14 +165,14 @@ $(document).ready(function() {
   
 
       $('#menYou').click(function() {
-        if ($("#menubox").prop('checked')) 
-   {
+   //      if ($("#menubox").prop('checked')) 
+   // {
  
-    }
-     else{
+   //  }
+     // else{
        toastR();
-        $("#menubox").prop('checked',true);
-     }
+     //    $("#menubox").prop('checked',true);
+     // }
        
          });
               });
@@ -184,6 +184,7 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
                toastr.remove();        
                $("#menubox").prop('checked',false);
                 })
+      toastr.options.onHidden = function(){ $("#menubox").prop('checked',false)}; 
  $('.toast-close-button').click(function() { $("#menubox").prop('checked',false);});
       //myFunction(this.id);
 
@@ -222,6 +223,7 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
      $('#ViewSaved').click(function() {
                        $('#subtractionAl').css({'display':'none'});
                        $('#additionAl').css({'display':'none'});
+                       getHaveWant();
                         $('.ViewAll').css({
         'display':'block'
     });
@@ -279,8 +281,8 @@ $(document).ready(function () {
 /////
 
 
-
- $(document).ready(function ()  
+//want have
+function getHaveWant(){
     { //var col = '5feb2676f801050e4f31f1ba';
      var col = '5ffad00955b359028dbd2a0e'; 
        $.ajax
@@ -294,9 +296,14 @@ $(document).ready(function () {
                      {
                       console.log(data)     
                       // next(data);
-    });
-});
 
-// function next(data){
+                         $('#havePaste').html("");
+                          $('#wantPaste').html("");
+                      $('#havePaste').append();
+                      $('#wantPaste').append();
+    });
+}
+}
+
 // label.push(data);
 // ;
