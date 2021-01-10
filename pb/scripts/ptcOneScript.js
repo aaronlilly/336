@@ -160,8 +160,20 @@ toastr.options = {
 $(document).ready(function() {
       toastR();
 
+
+ 
+  
+
       $('#menYou').click(function() {
-        toastR();
+        if ($("#menubox").prop('checked')) 
+   {
+ 
+    }
+     else{
+       toastR();
+        $("#menubox").prop('checked',true);
+     }
+       
          });
               });
 
@@ -169,8 +181,10 @@ function toastR(){
 toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> <div id="toastTop">User Options :</div><div id="myList"> My List - <span id ="myListBtns" style="margin-bottom:2%;">  <button type="button" class="btn btn-info" id="AddSaved">Add</button>  <button type="button" class="btn btn-danger" id="RemoveSaved">Remove</button> <button type="button" class="btn btn-warning" id="ViewSaved" style="margin-top:2%;">View</button>   <button type="button" class="btn btn-secondary" id="ShareSaved" style="margin-top:2%;">Share</button>  <button type="button" class="btn btn-primary" id="Advanced" style="margin-top:2%;">Advanced</button></span> </div> <hr style="border: 2px solid blue; border-radius: 5px;"> <div id="otherZ">Other Trainers - <input type="text" id="TrainerInput" placeholder="Search By"> <span id ="othersBtns"><button type="button" class="btn btn-light" id="trainNam" style="margin-top:2%;" > Trainer Name</button> </div> <div id ="endOfToast"><button type="button" class="btn btn-dark" id="clearly">Close</button></div>')//'<button type="button" id="inPut" class="btn btn-info" style="margin: 0 8px 0 8px";>Make Change</button>
       $('#clearly').click(function() {
                toastr.remove();        
-      }) //$('.toast-close-button').click(function() {});
-
+               $("#menubox").prop('checked',false);
+                })
+ $('.toast-close-button').click(function() { $("#menubox").prop('checked',false);});
+    
     // $('#').click(function() {
     //                    
     //   })
