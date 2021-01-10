@@ -1,4 +1,52 @@
 var reGexP = [];
+var fakePok = [ {
+   "Dex": 1,
+   "Name": "Bulbasaur",
+   "Type1": "Grass",
+   "Type2": "Poison",
+   "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+   "Region": "Kanto",
+   "shiny": [],
+   "purified": [],
+   "datecaught": [],
+   "notes": []
+ },
+ {
+   "Dex": 2,
+   "Name": "Ivysaur",
+   "Type1": "Grass",
+   "Type2": "Poison",
+   "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+   "Region": "Kanto",
+   "shiny": [],
+   "purified": [],
+   "datecaught": [],
+   "notes": []
+ },
+ {
+   "Dex": 3,
+   "Name": "Venusaur",
+   "Type1": "Grass",
+   "Type2": "Poison",
+   "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+   "Region": "Kanto",
+   "shiny": [],
+   "purified": [],
+   "datecaught": [],
+   "notes": []
+ },
+ {
+   "Dex": 4,
+   "Name": "Charmander",
+   "Type1": "Fire",
+   "Type2": "Fire",
+   "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+   "Region": "Kanto",
+   "shiny": [],
+   "purified": [],
+   "datecaught": [],
+   "notes": []
+ }];
 
 $(document).ready(function () {
 			 var COOKI = getCookieD("name");
@@ -147,8 +195,8 @@ toastr.options = {
   "onclick": null,
   "showDuration": "300",
   "hideDuration": "1000",
-  "timeOut": 0,
-  "extendedTimeOut": 0,
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
   "showEasing": "swing",
   "hideEasing": "linear",
   "showMethod": "fadeIn",
@@ -178,7 +226,8 @@ $(document).ready(function() {
               });
 
 function toastR(){
-toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> <div id="toastTop">User Options :</div><div id="myList"> My List - <span id ="myListBtns" style="margin-bottom:2%;">  <button type="button" class="btn btn-info" id="AddSaved">Add</button>  <button type="button" class="btn btn-danger" id="RemoveSaved">Remove</button> <button type="button" class="btn btn-warning" id="ViewSaved" style="margin-top:2%;">View</button>   <button type="button" class="btn btn-secondary" id="ShareSaved" style="margin-top:2%;">Share</button>  <button type="button" class="btn btn-primary" id="Advanced" style="margin-top:2%;">Advanced</button></span> </div> <hr style="border: 2px solid blue; border-radius: 5px;"> <div id="otherZ">Other Trainers - <input type="text" id="TrainerInput" placeholder="Search By"> <span id ="othersBtns"><button type="button" class="btn btn-light" id="trainNam" style="margin-top:2%;" > Trainer Name</button> </div> <div id ="endOfToast"><button type="button" class="btn btn-dark" id="clearly">Close</button></div>')//'<button type="button" id="inPut" class="btn btn-info" style="margin: 0 8px 0 8px";>Make Change</button>
+toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> <div id="toastTop">User Options :</div><div id="myList"> My List - <span id ="myListBtns" style="margin-bottom:2%;">  <button type="button" class="btn btn-info" id="AddSaved">Add</button>  <button type="button" class="btn btn-danger" id="RemoveSaved">Remove</button> <button type="button" class="btn btn-warning" id="ViewSaved" style="margin-top:2%;">View</button>   <button type="button" class="btn btn-secondary" id="ShareSaved" style="margin-top:2%;">Share</button>  <button type="button" class="btn btn-primary" id="Advanced" style="margin-top:2%;">Advanced</button></span> </div> <hr style="border: 2px solid blue; border-radius: 5px;"> <div id="otherZ">Other Trainers - <input type="text" id="TrainerInput" placeholder="Search By"> <span id ="othersBtns"><button type="button" class="btn btn-light" id="trainNam" style="margin-top:2%;" > Trainer Name</button> </div> <div id ="endOfToast"></div>')
+  //<button type="button" class="btn btn-dark" id="clearly">Close</button></div>')//'<button type="button" id="inPut" class="btn btn-info" style="margin: 0 8px 0 8px";>Make Change</button>
       $('#clearly').click(function() {
                toastr.remove();        
                $("#menubox").prop('checked',false);
@@ -296,4 +345,11 @@ $(document).ready(function () {
         'display':'none'
     });
       });
+});
+
+
+/////
+
+$(document).ready(function () {
+console.log(fakePok);
 });
