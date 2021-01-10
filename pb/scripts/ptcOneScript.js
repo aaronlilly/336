@@ -1,4 +1,5 @@
 var reGexP = [];
+var dataX = [];
 
 $(document).ready(function () {
 			 var COOKI = getCookieD("name");
@@ -138,22 +139,21 @@ for(var i=0; i <  pokemonNameArray.length; i++)
 
 //////////
 toastr.options = {
-  "closeButton": true,
+ "closeButton": true,
   "debug": false,
   "newestOnTop": false,
   "progressBar": false,
   "positionClass": "toast-top-center",
-  "preventDuplicates":true,
+  "preventDuplicates": false,
   "onclick": null,
   "showDuration": "300",
-  "hideDuration": "10",
+  "hideDuration": "1000",
   "timeOut": "5000",
   "extendedTimeOut": "1000",
   "showEasing": "swing",
   "hideEasing": "linear",
   "showMethod": "fadeIn",
-  "hideMethod": "fadeOut",
-  "tapToDismiss": false
+  "hideMethod": "fadeOut"
 }
 
 
@@ -294,7 +294,8 @@ function getHaveWant(){
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) 
                      {
-                      console.log(data)     
+                      console.log(data)  
+                      dataX.push(data);  
                       // next(data);
 
                          $('#havePaste').html("");
