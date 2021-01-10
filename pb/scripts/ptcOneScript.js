@@ -1,52 +1,4 @@
 var reGexP = [];
-var fakePok = [ {
-   "Dex": 1,
-   "Name": "Bulbasaur",
-   "Type1": "Grass",
-   "Type2": "Poison",
-   "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
-   "Region": "Kanto",
-   "shiny": [],
-   "purified": [],
-   "datecaught": [],
-   "notes": []
- },
- {
-   "Dex": 2,
-   "Name": "Ivysaur",
-   "Type1": "Grass",
-   "Type2": "Poison",
-   "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
-   "Region": "Kanto",
-   "shiny": [],
-   "purified": [],
-   "datecaught": [],
-   "notes": []
- },
- {
-   "Dex": 3,
-   "Name": "Venusaur",
-   "Type1": "Grass",
-   "Type2": "Poison",
-   "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
-   "Region": "Kanto",
-   "shiny": [],
-   "purified": [],
-   "datecaught": [],
-   "notes": []
- },
- {
-   "Dex": 4,
-   "Name": "Charmander",
-   "Type1": "Fire",
-   "Type2": "Fire",
-   "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-   "Region": "Kanto",
-   "shiny": [],
-   "purified": [],
-   "datecaught": [],
-   "notes": []
- }];
 
 $(document).ready(function () {
 			 var COOKI = getCookieD("name");
@@ -233,19 +185,6 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
                $("#menubox").prop('checked',false);
                 })
  $('.toast-close-button').click(function() { $("#menubox").prop('checked',false);});
-    
-    // $('#').click(function() {
-    //                    
-    //   })
-
-
-        // <button type="button"  id="AddSaved">Add</button>
-        //   <button type="button"  id="RemoveSaved">Remove</button>
-        //    <button type="button" id="ViewSaved">View</button>  
-        //     <button type="button"  id="ShareSaved">Share</button> 
-        //      <button type="button" id="Advanced">Advanced</button>
-               
-        //        <button type="button"id="trainNam"" > Trainer Name</button> 
       //myFunction(this.id);
 
     $('#AddSaved').click(function() {
@@ -300,22 +239,14 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
                        // $('#topper').append(this.id)
                        // rePaint();
       })
-    
-
-
-
   }
 
 function rePaint(){ $('#topper').hide();
 $('#topper').get(0).offsetHeight;
 $('#topper').show();};
 
-
-
 $(document).ready(function () {
     $('#hideAdd').click(function() {
-                       // $('#topper').append(this.id)
-                       // rePaint();
     $('#additionAl').css({
         'height': '200px',
         'width': '300',
@@ -326,13 +257,10 @@ $(document).ready(function () {
         'float':'left',
         'margin-right':'2%',
         'display':'none'
-        
     });
       });
 
        $('#hideSubtract').click(function() {
-                       // $('#topper').append(this.id)
-                       // rePaint();
     $('#subtractionAl').css({
         'height': '200px',
         'width': '300',
@@ -351,5 +279,8 @@ $(document).ready(function () {
 /////
 
 $(document).ready(function () {
-console.log(fakePok);
+
+
+https://api.jsonbin.io/b/5ffad00955b359028dbd2a0e/2
+
 });
