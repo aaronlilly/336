@@ -294,14 +294,29 @@ function getHaveWant(){
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) 
                      {
-                      console.log(data)  
-                      dataX.push(data);  
+                      
+                      if (dataX == []){
+                      dataX.push(data); 
+                       //console.log(data);
+                    }else {
+                      dataX = [];
+                        dataX.push(data);
+                    }
                       // next(data);
 
                          $('#havePaste').html("");
                           $('#wantPaste').html("");
-                      $('#havePaste').append();
-                      $('#wantPaste').append();
+
+                            for(var i = 0; i <dataX[0].AaronAwezom.Have.length; i++) {
+                      $('#havePaste').append("<img src='" + dataX[0].AaronAwezom.Have[i].imaj +"'>");
+                    }
+                    //console.log(dataX[0].AaronAwezom.Have[0].Name)
+
+                      
+
+                        for(var i = 0; i <dataX[0].AaronAwezom.Have.length; i++) {
+                       $('#wantPaste').append("<img src='" + dataX[0].AaronAwezom.Want[i].imaj +"'>");
+                    }
     });
 }
 }
