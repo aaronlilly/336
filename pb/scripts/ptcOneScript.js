@@ -309,14 +309,14 @@ function getHaveWant(){
 
                             for(var i = 0; i <dataX[0].AaronAwezom.Have.length; i++) {
                       $('#havePaste').append("<img src='" + dataX[0].AaronAwezom.Have[i].imaj +"'>");
-                    }function rePainter();
+                    }rePainter();
                     //console.log(dataX[0].AaronAwezom.Have[0].Name)
 
                       
 
                         for(var i = 0; i <dataX[0].AaronAwezom.Have.length; i++) {
                        $('#wantPaste').append("<img src='" + dataX[0].AaronAwezom.Want[i].imaj +"'>");
-                    }function rePainter1();
+                    }rePainter1();
                     
     });
 
