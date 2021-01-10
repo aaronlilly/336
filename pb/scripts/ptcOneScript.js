@@ -144,7 +144,7 @@ toastr.options = {
   "progressBar": false,
   "positionClass": "toast-top-center",
   "preventDuplicates": false,
-  "onclick": null,
+  //"onclick": null,
   "showDuration": "300",
   "hideDuration": "1000",
   "timeOut": "5000",
