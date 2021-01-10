@@ -188,23 +188,48 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
     $('#AddSaved').click(function() {
                        // $('#topper').append(this.id)
                        // rePaint();
+                       $('#subtractionAl').css({'display':'none'});
     $('#additionAl').css({
         'height': '200px',
-        'width': '300',
+        'width': '275px',
         'border': 'solid',
         'border-color':'#17A2B8',
         'border-radius':'5%',
         'border-width':'thin',
+        'float':'left',
+        'margin-right':'2%',
         'display':'block'
     });
       });
      $('#RemoveSaved').click(function() {
-                       $('#topper').append(this.id)
-                       rePaint();
+      $('#additionAl').css({'display':'none'})
+                      $('#subtractionAl').css({
+        'height': '200px',
+        'width': '275px',
+        'border': 'solid',
+        'border-color':'#DC3545',
+        'border-radius':'5%',
+        'border-width':'thin',
+        'float':'right',
+        'margin-left':'2%',
+        'display':'block'
+    });
       })
      $('#ViewSaved').click(function() {
-                       $('#topper').append(this.id)
-                       rePaint();
+                       $('#subtractionAl').css({'display':'none'});
+                       $('#additionAl').css({'display':'none'});
+                        $('#additionAl').css({
+        'height': '200px',
+        'width': '275px',
+        'border': 'solid',
+        'border-color':'#17A2B8',
+        'border-radius':'5%',
+        'border-width':'thin',
+        'float':'left',
+        'margin-right':'2%',
+        'display':'block'
+    });
+
       })
      $('#ShareSaved').click(function() {
                        $('#topper').append(this.id)
@@ -241,7 +266,26 @@ $(document).ready(function () {
         'border-color':'#17A2B8',
         'border-radius':'5%',
         'border-width':'thin',
+        'float':'left',
+        'margin-right':'2%',
+        'display':'none'
+        
+    });
+      });
+
+       $('#hideSubtract').click(function() {
+                       // $('#topper').append(this.id)
+                       // rePaint();
+    $('#subtractionAl').css({
+        'height': '200px',
+        'width': '300',
+        'border': 'solid',
+        'border-color':'#17A2B8',
+        'border-radius':'5%',
+        'border-width':'thin',
+        'float':'right',
+        'margin-left':'2%',
         'display':'none'
     });
       });
-    });
+});
