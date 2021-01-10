@@ -317,9 +317,19 @@ function getHaveWant(){
                         for(var i = 0; i <dataX[0].AaronAwezom.Have.length; i++) {
                        $('#wantPaste').append("<img src='" + dataX[0].AaronAwezom.Want[i].imaj +"'>");
                     }
+                    function rePainter();
     });
 }
 }
 
 // label.push(data);
 // ;
+
+function rePainter(){ $('#wantPaste').hide();
+$('#wantPaste').get(0).offsetHeight;
+$('#wantPaste').show();
+$('#havePaste').hide();
+$('#havePaste').get(0).offsetHeight;
+$('#havePaste').show();
+
+};
