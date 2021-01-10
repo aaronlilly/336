@@ -227,3 +227,21 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
 function rePaint(){ $('#topper').hide();
 $('#topper').get(0).offsetHeight;
 $('#topper').show();};
+
+
+
+$(document).ready(function () {
+    $('#hideAdd').click(function() {
+                       // $('#topper').append(this.id)
+                       // rePaint();
+    $('#additionAl').css({
+        'height': '200px',
+        'width': '300',
+        'border': 'solid',
+        'border-color':'#17A2B8',
+        'border-radius':'5%',
+        'border-width':'thin',
+        'display':'none'
+    });
+      });
+    });
