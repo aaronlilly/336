@@ -278,9 +278,25 @@ $(document).ready(function () {
 
 /////
 
-$(document).ready(function () {
 
 
-https://api.jsonbin.io/b/5ffad00955b359028dbd2a0e/2
-
+ $(document).ready(function ()  
+    { //var col = '5feb2676f801050e4f31f1ba';
+     var col = '5ffad00955b359028dbd2a0e'; 
+       $.ajax
+         ({
+         method: "GET",
+         beforeSend: function (xhr) {
+                xhr.setRequestHeader("secret-key", mySecretKey);
+               },
+                  url: "https://api.jsonbin.io/b/" + col + "/latest"
+                  }).done(function(data) 
+                     {
+                      console.log(data)     
+                      // next(data);
+    });
 });
+
+// function next(data){
+// label.push(data);
+// ;
