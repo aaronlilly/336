@@ -203,6 +203,7 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
                        // $('#topper').append(this.id)
                        // rePaint();
                        $('#subtractionAl').css({'display':'none'});
+                       $('.ViewAll').css({'display':'none'});
     $('#additionAl').css({
         'height': '200px',
         'width': '275px',
@@ -216,7 +217,8 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
     });
       });
      $('#RemoveSaved').click(function() {
-      $('#additionAl').css({'display':'none'})
+      $('#additionAl').css({'display':'none'});
+      $('.ViewAll').css({'display':'none'});
                       $('#subtractionAl').css({
         'height': '200px',
         'width': '275px',
@@ -232,30 +234,22 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
      $('#ViewSaved').click(function() {
                        $('#subtractionAl').css({'display':'none'});
                        $('#additionAl').css({'display':'none'});
-                        $('#additionAl').css({
-        'height': '200px',
-        'width': '275px',
-        'border': 'solid',
-        'border-color':'#17A2B8',
-        'border-radius':'5%',
-        'border-width':'thin',
-        'float':'left',
-        'margin-right':'2%',
+                        $('.ViewAll').css({
         'display':'block'
     });
 
       })
      $('#ShareSaved').click(function() {
-                       $('#topper').append(this.id)
-                       rePaint();
+                       // $('#topper').append(this.id)
+                       // rePaint();
       })
      $('#Advanced').click(function() {
-                       $('#topper').append(this.id)
-                       rePaint();
+                       // $('#topper').append(this.id)
+                       // rePaint();
       })
      $('#trainNam').click(function() {
-                       $('#topper').append(this.id)
-                       rePaint();
+                       // $('#topper').append(this.id)
+                       // rePaint();
       })
     
 
