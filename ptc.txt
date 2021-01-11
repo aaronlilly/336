@@ -1,0 +1,41 @@
+ptc
+$('#logIn').click(
+checkIt()
+	- IsSame
+		-
+	- IsDifferent
+		- no account found 
+
+cookiClik() -  let uInput = $('#username').val(); - name
+ let uInput2 = $('#uesrname').val(); - regentname
+
+
+
+
+
+
+
+
+
+$('#createNew').click
+checkItNew()
+	- IsSameNew - user name already exists
+	- IsDifferentNew - 
+		newBin(); 
+			-post - 2a3bc3" - 
+				- (edit this data)
+				-updateListFunct (updates list of trainers and bins with bin and trainer name)
+					put- 4f31f1ba
+						-forward to ptOne
+cookiClik() - function cookiClik(){
+     let uInput = $('#username').val(); - name
+ let uInput2 = $('#uesrname').val(); - regentname
+
+
+
+=================
+ptcOne -  var COOKI = getCookieD("name");
+		 if (COOKI != "") {
+        	 cNBlank(COOKI); - if(COOKI !== undefined){
+  		  $('#trainerInfoHere').html(COOKI);
+			 reGexP.push(C00KI);

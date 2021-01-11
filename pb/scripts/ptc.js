@@ -93,8 +93,8 @@ $(document).ready(function() {
 $('#logIn').click(function(){
 checkIt()
 cookiClik()
-var x = document.cookie;
-console.log(x);
+// var x = document.cookie;
+// console.log(x);
 });
 });
 
@@ -127,7 +127,7 @@ function newBin(){
                   }).done(function(responseText) 
                      {
 			     updateListFunct(responseText)
-                      console.log(responseText);                 
+                      //console.log(responseText);                 
     });
  };
 //updates list of trainers and bins with bin and trainer name
@@ -156,7 +156,7 @@ upLabel[0].bns.push({"tname": trainerName,"bin": createdBin});
                  data: JSON.stringify(upLabel),
                   }).done(function(responseText) 
                      {
-                      console.log(responseText)
+                      //console.log(responseText)
 			toastyFunct();
 			;                 
     });

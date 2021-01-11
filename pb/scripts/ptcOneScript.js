@@ -35,7 +35,6 @@ $(document).ready(function () {
 	function regentFunction() {
     var C00KI = getCookieD("regentName");
     reGexP.push(C00KI);
-    //console.log(C00KI);
   }
 
 
@@ -308,14 +307,14 @@ function getHaveWant(){
                           $('#wantPaste').html("");
 
                             for(var i = 0; i <dataX[0].AaronAwezom.Have.length; i++) {
-                      $('#havePaste').append("<img src='" + dataX[0].AaronAwezom.Have[i].imaj +"'>");
+                      $('#havePaste').html("<img src='" + dataX[0].AaronAwezom.Have[i].imaj +"'>");
                     }rePainter();
                     //console.log(dataX[0].AaronAwezom.Have[0].Name)
 
                       
 
                         for(var i = 0; i <dataX[0].AaronAwezom.Have.length; i++) {
-                       $('#wantPaste').append("<img src='" + dataX[0].AaronAwezom.Want[i].imaj +"'>");
+                       $('#wantPaste').html("<img src='" + dataX[0].AaronAwezom.Want[i].imaj +"'>");
                     }rePainter1();
                     
     });
