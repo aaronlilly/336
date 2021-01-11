@@ -39,3 +39,91 @@ ptcOne -  var COOKI = getCookieD("name");
         	 cNBlank(COOKI); - if(COOKI !== undefined){
   		  $('#trainerInfoHere').html(COOKI);
 			 reGexP.push(C00KI);
+
+
+
+
+==========
+5ffbc3a08aa7af359da86a83
+created a86a83 {
+  "retry since fail": "731"
+}
+
+should have been -   2. 5ffad00955b359028dbd2a0e (undefined)
+BIN ID: 5ffad00955b359028dbd2a0e
+{
+  "AwezomAaron": [
+    {
+      "Dex": 1,
+      "Name": "Bulbasaur",
+      "Type1": "Grass",
+      "Type2": "Poison",
+      "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png",
+      "Region": "Kanto",
+      "shiny": [],
+      "purified": [],
+      "datecaught": [],
+      "notes": []
+    },
+    {
+      "Dex": 2,
+      "Name": "Ivysaur",
+      "Type1": "Grass",
+      "Type2": "Poison",
+      "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png",
+      "Region": "Kanto",
+      "shiny": [],
+      "purified": [],
+      "datecaught": [],
+      "notes": []
+    },
+    {
+      "Dex": 3,
+      "Name": "Venusaur",
+      "Type1": "Grass",
+      "Type2": "Poison",
+      "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+      "Region": "Kanto",
+      "shiny": [],
+      "purified": [],
+      "datecaught": [],
+      "notes": []
+    },
+    {
+      "Dex": 4,
+      "Name": "Charmander",
+      "Type1": "Fire",
+      "Type2": "Fire",
+      "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+      "Region": "Kanto",
+      "shiny": [],
+      "purified": [],
+      "datecaught": [],
+      "notes": []
+    },
+    {
+      "Dex": 5,
+      "Name": "Charmeleon",
+      "Type1": "Fire",
+      "Type2": "Fire",
+      "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png",
+      "Region": "Kanto",
+      "shiny": [],
+      "purified": [],
+      "datecaught": [],
+      "notes": []
+    },
+    {
+      "Dex": 6,
+      "Name": "Charizard",
+      "Type1": "Fire",
+      "Type2": "Flying",
+      "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png",
+      "Region": "Kanto",
+      "shiny": [],
+      "purified": [],
+      "datecaught": [],
+      "notes": []
+    }
+  ]
+}
