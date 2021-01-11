@@ -1,6 +1,7 @@
 var reGexP = [];
 var dataX = [];
 
+
 $(document).ready(function () {
 			 var COOKI = getCookieD("name");
 		 if (COOKI != "") {
@@ -13,6 +14,7 @@ $(document).ready(function () {
     if(COOKI !== undefined){
     $('#trainerInfoHere').html(COOKI);
       regentFunction();
+	
     }
   }
   function getCookieD(cname) {
@@ -282,8 +284,27 @@ $(document).ready(function () {
 
 //want have
 function getHaveWant(){
+
+
+	var COOKI2 = getCookieD("name");
+		 if (COOKI2 != "") {
+         cNBlank2(COOKI2);
+    
+      }		 
+	
+	
+	function cNBlank2(COOKI2){
+    if(COOKI2 !== undefined){
+    
+	var trainerName = COOKI2;
+	
+    }
+  }
+
+
     { //var col = '5feb2676f801050e4f31f1ba';
-     var col = '5ffad00955b359028dbd2a0e'; 
+     //var col = '5ffad00955b359028dbd2a0e'; 
+var col = '5ffcb6a1f98f6e35d5fb3e0d'; 
        $.ajax
          ({
          method: "GET",
@@ -295,27 +316,32 @@ function getHaveWant(){
                      {
                       
                       if (dataX == []){
-                      dataX.push(data); 
-                       //console.log(data);
+                      dataX.push(data); ;
                     }else {
                       dataX = [];
                         dataX.push(data);
                     }
-                      // next(data);
+
+		console.log(dataX);
+		//console.log(dataX[0].results[0].trainer);
+
+		
+		//console.log(trainerName);
+			console.log(dataX[0].results[0].have)
 
                          $('#havePaste').html("");
                           $('#wantPaste').html("");
 
-                            for(var i = 0; i <dataX[0].AaronAwezom.Have.length; i++) {
-                      $('#havePaste').html("<img src='" + dataX[0].AaronAwezom.Have[i].imaj +"'>");
-                    }rePainter();
+                           for(var i = 0; i < dataX[0].results[0].have.length; i++) {
+                    $('#havePaste').html("<img src='" + dataX[0].results[0].have[i].imaj +"'>");
+                   }rePainter();
                     //console.log(dataX[0].AaronAwezom.Have[0].Name)
 
                       
 
-                        for(var i = 0; i <dataX[0].AaronAwezom.Have.length; i++) {
-                       $('#wantPaste').html("<img src='" + dataX[0].AaronAwezom.Want[i].imaj +"'>");
-                    }rePainter1();
+                      for(var i = 0; i < dataX[0].results[0].have.length; i++) {
+                     $('#wantPaste').html("<img src='" + dataX[0].results[0].want[i].imaj +"'>");
+                   }rePainter1();
                     
     });
 
