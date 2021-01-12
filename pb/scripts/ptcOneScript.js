@@ -372,7 +372,17 @@ $('#havePaste').show();
 
 $(document).ready(function () {
     $('#DexNumAdd').click(function() {
-	alert();
+      $('.addMenuUp').html("");
+	$('.addMenuUp').append("This Feature Coming soon");
+});
+ $('#PokNamAdd').click(function() {
+      $('.addMenuUp').html("");
+  $('.addMenuUp').append("This Feature Coming soon");
+});
+
+ $('#selectAdd').click(function() {
+      $('.addMenuUp').html("");
+  $('.addMenuUp').append("This Feature Coming soon");
 
 });
 });
