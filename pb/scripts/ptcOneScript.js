@@ -261,6 +261,9 @@ $(document).ready(function () {
         'margin-right':'2%',
         'display':'none'
     });
+
+      $('.addMenuUp').html("");
+      $('#selClick').css({'display':'none'});
       });
 
        $('#hideSubtract').click(function() {
@@ -378,11 +381,12 @@ $(document).ready(function () {
  $('#PokNamAdd').click(function() {
       $('.addMenuUp').html("");
   $('.addMenuUp').append("This Feature Coming soon");
+
 });
 
  $('#selectAdd').click(function() {
       $('.addMenuUp').html("");
-  $('.addMenuUp').append("This Feature Coming soon");
+   $('#selClick').css({'display':'block'});
 
 });
 });
