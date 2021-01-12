@@ -45,7 +45,7 @@ $(document).ready(function () {
 ///
 function chk(cId,i,data){
 
-  console.log(data.PokemonTradingCenter[i].Dex) ;
+  //console.log(data.PokemonTradingCenter[i].Dex) ;
 var pDex = data.PokemonTradingCenter[i].Dex;
 var pName = data.PokemonTradingCenter[i].Name;
 var pReg = data.PokemonTradingCenter[i].Region;
@@ -65,30 +65,31 @@ var pShiny = data.PokemonTradingCenter[i].shiny;
 //   let cur = current;
 //   //alert(cur);
 
-//     for (j = 0; j < wantP.length; j++) {
+     for (j = 0; j < wantP.length; j++) {
   
-//       if(wantP[j].Name == cur){
+      if(wantP[j].Name == pName){
 
-//         wantP.splice(j,1);}
-// }
+        wantP.splice(j,1);}
+ }
 }
-function notchk(cId,i,data){
-    console.log(data.PokemonTradingCenter[i].Dex) ;
-var pDex = data.PokemonTradingCenter[i].Dex;
-var pName = data.PokemonTradingCenter[i].Name;
-var pReg = data.PokemonTradingCenter[i].Region;
-var pType1 = data.PokemonTradingCenter[i].Type1;
-var pType2 = data.PokemonTradingCenter[i].Type2;
-var pImj = data.PokemonTradingCenter[i].imaj;
+function notchk(cId,x,data){
+    //console.log(data.PokemonTradingCenter[i].Dex) ;
+var pDex = data.PokemonTradingCenter[x].Dex;
+var pName = data.PokemonTradingCenter[x].Name;
+var pReg = data.PokemonTradingCenter[x].Region;
+var pType1 = data.PokemonTradingCenter[x].Type1;
+var pType2 = data.PokemonTradingCenter[x].Type2;
+var pImj = data.PokemonTradingCenter[x].imaj;
 var dC = data.PokemonTradingCenter[i].datecaught;
 var pNotes = data.PokemonTradingCenter[i].notes;
 var pPur = data.PokemonTradingCenter[i].purified;
 var pShiny = data.PokemonTradingCenter[i].shiny;
 
-// $("#append").append("<span id ='" + current + "span'></span>"); 
-//     $("#" + current +"span").append(current + "\t"); 
+
+
+ wantP.push({"Name" : cId, "Type" :data.PokemonTradingCenter[x].Type1})
     $("#" + cId +"box").prop('checked',true);
-  // wantP.push({"Name" : pName, "Type" : pType});
+  ;
   // {"tname": tNam,"bin": bin}
 }
 
