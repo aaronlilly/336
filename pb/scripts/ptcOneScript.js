@@ -105,13 +105,14 @@ var current = "";
                      for(let i=0; i <  pokemonNameArray.length; i++) 
                       {   
                         //working
-                       $("#pokHav").append( '<div class="col-sm-3">' +'<span class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        + '">'+ '<figure>'+'<img src ="' + data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</span></div>');
+                       $("#pokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                        + '">'+ '<figure>'+'<img src ="' + data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</div></div>');
 
                       $('#'+ pokemonNameArray[i]).click(function(){
 var currentId = $(this).attr('id');
 let current = currentId;
                         secondary(current,i,data);
+			
                       });
                     }
 
@@ -129,11 +130,15 @@ function secondary(cId,i,data){
  if ($("#" + cId +"box").prop('checked')) 
    {
   chk(cId,i,data);
+$('#'+cId).removeClass('pokSelctd');
     }
+
+
     
  //if not checked
    else{
    notchk(cId,i,data);
+$('#'+cId).addClass('pokSelctd');
      }
 }          
 
@@ -395,9 +400,24 @@ $(document).ready(function () {
  $('#selectAdd').click(function() {
       $('.addMenuUp').html("");
    $('#selClick').css({'display':'block'});
-
+$('#additionAl').css({
+'display':'block',
+'width':'280px',
+'border': 'solid',
+'border-color': '#17A2B8',
+'border-radius': '5%',
+'border-width':'thin',
+'display':'block',
+'float':'left',
+'margin-right':'2%',
+'height': 'auto'}
+);
 });
 });
+//<input type="text" id="addfname" placeholder=" Add By" style="margin-top:5px;border: 3px solid #ccc; border-radius: 4px; width:80%;"></span> 
+//<button type="button" class="btn btn-primary" id="DexNumAdd" style="margin-top:1px;margin-left: 2%;">Dex#</button>
+//<button type="button" class="btn btn-success" id="PokNamAdd" style="margin-top:1px;margin-left: 1%;">Name</button>
+//<button type="button" class="btn btn-info" id="selectAdd" style="margin-top:1px;margin-left: 1%;">Selection</button></span><div id="hideAdd" style="float:right;margin-top:20%;"><button type="button" class="btn btn-outline-warning">Hide This Section</button></div></div>
 
 // function meanTo(){
 
@@ -405,3 +425,7 @@ $(document).ready(function () {
 //  $('#myModal1').modal('hide');}
 //  else {}
 // };
+
+
+
+
