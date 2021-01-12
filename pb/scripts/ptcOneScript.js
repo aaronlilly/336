@@ -364,3 +364,19 @@ $('#havePaste').get(0).offsetHeight;
 $('#havePaste').show();
 
 };
+
+
+
+///////////add- 
+
+
+$(document).ready(function () {
+    $('#DexNumAdd').click(function() {
+	alert();
+
+});
+});
+//<input type="text" id="addfname" placeholder=" Add By" style="margin-top:5px;border: 3px solid #ccc; border-radius: 4px; width:80%;"></span> 
+//<button type="button" class="btn btn-primary" id="DexNumAdd" style="margin-top:1px;margin-left: 2%;">Dex#</button>
+//<button type="button" class="btn btn-success" id="PokNamAdd" style="margin-top:1px;margin-left: 1%;">Name</button>
+//<button type="button" class="btn btn-info" id="selectAdd" style="margin-top:1px;margin-left: 1%;">Selection</button></span><div id="hideAdd" style="float:right;margin-top:20%;"><button type="button" class="btn btn-outline-warning">Hide This Section</button></div></div>
