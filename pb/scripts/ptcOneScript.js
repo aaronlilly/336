@@ -40,28 +40,7 @@ $(document).ready(function () {
   }
 
 
-$(document).ready(function() {
-  $('#getList').click(function(){
-        $.ajax({
-            method: "GET",
-            url: "https://aaronlilly.github.io/336/336ptc.json"
-               }).done(function(data) 
-                  {
-                   
-                     for(var i=0; i <  pokemonNameArray.length; i++) 
-                      {   
-                        //working
-                       $("#pokHav").append( '<div class="col-sm-2">' +'<span class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        + '">'+ '<figure>'+'<img src ="' + data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</span></div>');
 
-                      $('#'+ pokemonNameArray[i]).click(function(){
-                        secondary(this.id,i);
-                      });
-                    }
-
-                });
-      });
-   });
 
 ///
 function chk(cId,i){
@@ -111,6 +90,29 @@ var pShiny = data.PokemonTradingCenter[i].shiny;
   // {"tname": tNam,"bin": bin}
 }
 
+
+ function getallPok(){
+        $.ajax({
+            method: "GET",
+            url: "https://aaronlilly.github.io/336/336ptc.json"
+               }).done(function(data) 
+                  {
+                   
+                     for(var i=0; i <  pokemonNameArray.length; i++) 
+                      {   
+                        //working
+                       $("#pokHav").append( '<div class="col-sm-2">' +'<span class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                        + '">'+ '<figure>'+'<img src ="' + data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</span></div>');
+
+                      $('#'+ pokemonNameArray[i]).click(function(){
+                        secondary(this.id,i);
+                      });
+                    }
+
+                });
+             };
+     
+   
 
 
 /////
@@ -192,6 +194,7 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
     $('#AddSaved').click(function() {
                        // $('#topper').append(this.id)
                        // rePaint();
+                       getallPok();
                        $('#subtractionAl').css({'display':'none'});
                        $('.ViewAll').css({'display':'none'});
     $('#additionAl').css({
