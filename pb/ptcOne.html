@@ -27,6 +27,16 @@
   <script src="pokemonNamez.js"></script>
 <link rel="stylesheet" href="./scripts/ptcOneStyle.css">
 
+</script>
+
+<style>
+
+.pokSelctd{background-color: lightblue;}
+</style>
+
+
+
+
 </head>
 
  
@@ -39,19 +49,31 @@
 
 <div class="footer"></div>
 
-  <div id ="xboxs" style="display: none;"> </div>
+  <div id ="xboxs" style="display: none;"></div>
 
 
 <div id ="innerBody">
-  <div id="topper" style="height:45%;overflow-y:scroll;">
+  <div id="topper" style="height:40%;overflow-y:scroll;">
 
 <div id="additionAl"><span id="addition"> <input type="text" id="addfname" placeholder=" Add By" style="margin-top:5px;border: 3px solid #ccc;
-  border-radius: 4px; width:80%;"></span> <button type="button" class="btn btn-primary" id="DexNumAdd" style="margin-top:1px;margin-left: 2%;">Dex#</button><button type="button" class="btn btn-success" id="PokNamAdd" style="margin-top:1px;margin-left: 1%;">Name</button><button type="button" class="btn btn-info" id="selectAdd" style="margin-top:1px;margin-left: 1%;">Selection</button></span><div id="hideAdd" style="float:right;margin-top:20%;"><button type="button" class="btn btn-outline-warning">Close This Section</button></div></div>
+  border-radius: 4px; width:80%;"></span> <button type="button" class="btn btn-primary" id="DexNumAdd" style="margin-top:1px;margin-left: 2%;">Dex#</button><button type="button" class="btn btn-success" id="PokNamAdd" style="margin-top:1px;margin-left: 1%;">Name</button><button type="button" class="btn btn-info" id="selectAdd" style="margin-top:1px;margin-left: 1%;">Selection</button></span>
+
+<div id="selClick">
+ Add to - 
+<div class="btn btn-Primary"  data-toggle="modal" data-target="#myModal1" style="margin-left:2%;margin-top:2%;">Pokemon I Have.</div>
+
+ <div class="btn btn-Success" style="margin-top:2px;"  data-toggle="modal" data-target="#myModal2"  style="margin-left:2%;">Pokemon I Want.</div>
+ </div>
+
+<div id="hideAdd" style="float:right;margin-top:5%;"><button type="button" class="btn btn-outline-warning">Close This Section</button></div></div>
 
 
 
 <div id="subtractionAl"><span id="subtraction"> <input type="text" id="subtractfname" placeholder=" Remove By" style="margin-top:5px;border: 3px solid #ccc;
-  border-radius: 4px; width:80%;"></span> <button type="button" class="btn btn-primary" id="DexNumSub" style="margin-top:1px;margin-left: 2%;">Dex#</button><button type="button" class="btn btn-success" id="PokNamSub" style="margin-top:1px;margin-left: 1%;">Name</button><button type="button" class="btn btn-info" id="selectSub" style="margin-top:1px;margin-left: 1%;">Selection</button></span><div id="hideSubtract" style="float:right;margin-top:20%;"><button type="button" class="btn btn-outline-warning">Close This Section</button></div></div>
+  border-radius: 4px; width:80%;"></span> <button type="button" class="btn btn-primary" id="DexNumSub" style="margin-top:1px;margin-left: 2%;">Dex#</button><button type="button" class="btn btn-success" id="PokNamSub" style="margin-top:1px;margin-left: 1%;">Name</button><button type="button" class="btn btn-info" id="selectSub" style="margin-top:1px;margin-left: 1%;">Selection</button></span>
+
+
+<div id="hideSubtract" style="float:right;margin-top:5%;"><button type="button" class="btn btn-outline-warning">Close This Section</button></div></div>
 
 
 <div class="ViewAll">
@@ -61,15 +83,10 @@
 <div class="addMenuUp">
 
 </div>
-<div id="selClick">
- 
-<div class="btn btn-Primary"  data-toggle="modal" data-target="#myModal1"> add to Pokemon I Have.</div>
 
- <div class="btn btn-Success" style="margin-top:2px;"  data-toggle="modal" data-target="#myModal2"> add to Pokemon I Want.</div>
- </div>
 
 </div>
-<div id="bottommer" style="height:45%;;overflow-y:scroll;">
+<div id="bottommer" style="height:40%;;overflow-y:scroll;">
   <div class="ViewAll"><span class="badge badge-warning">Pokemon I Want.</span>
   <div id="wantPaste"> </div>
   </div>
