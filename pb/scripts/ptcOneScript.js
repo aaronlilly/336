@@ -43,8 +43,9 @@ $(document).ready(function () {
 
 
 ///
-function chk(cId,i){
+function chk(cId,i,data){
 
+  console.log(data.PokemonTradingCenter[i].Dex) ;
 var pDex = data.PokemonTradingCenter[i].Dex;
 var pName = data.PokemonTradingCenter[i].Name;
 var pReg = data.PokemonTradingCenter[i].Region;
@@ -71,7 +72,8 @@ var pShiny = data.PokemonTradingCenter[i].shiny;
 //         wantP.splice(j,1);}
 // }
 }
-function notchk(cId,i){
+function notchk(cId,i,data){
+    console.log(data.PokemonTradingCenter[i].Dex) ;
 var pDex = data.PokemonTradingCenter[i].Dex;
 var pName = data.PokemonTradingCenter[i].Name;
 var pReg = data.PokemonTradingCenter[i].Region;
@@ -105,7 +107,7 @@ var pShiny = data.PokemonTradingCenter[i].shiny;
                         + '">'+ '<figure>'+'<img src ="' + data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</span></div>');
 
                       $('#'+ pokemonNameArray[i]).click(function(){
-                        secondary(this.id,i);
+                        secondary(this.id,i,data);
                       });
                     }
 
@@ -117,18 +119,17 @@ var pShiny = data.PokemonTradingCenter[i].shiny;
 
 /////
 
-function secondary(cId,i){
+function secondary(cId,i,data){
  //console.log(cId);
-
 //if checked
  if ($("#" + cId +"box").prop('checked')) 
    {
-  chk(cId,i);
+  chk(cId,i,data);
     }
     
  //if not checked
    else{
-   notchk(cId,i);
+   notchk(cId,i,data);
      }
 }          
 
@@ -398,9 +399,9 @@ $(document).ready(function () {
 //<button type="button" class="btn btn-success" id="PokNamAdd" style="margin-top:1px;margin-left: 1%;">Name</button>
 //<button type="button" class="btn btn-info" id="selectAdd" style="margin-top:1px;margin-left: 1%;">Selection</button></span><div id="hideAdd" style="float:right;margin-top:20%;"><button type="button" class="btn btn-outline-warning">Hide This Section</button></div></div>
 
-function meanTo(){
+// function meanTo(){
 
-if (confirm("Click 'OK' to close without saving.")) {
- $('#myModal1').modal('hide');}
- else {}
-};
+// if (confirm("Click 'OK' to close without saving.")) {
+//  $('#myModal1').modal('hide');}
+//  else {}
+// };
