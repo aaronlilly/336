@@ -1,3 +1,27 @@
+  #additionAl{height:200px;width:275px;border: solid;border-color: #17A2B8; border-radius: 5%;border-width:thin;display:none;float:left;margin-right:2%;}
+
+
+
+#addition{margin:2%;}
+
+  #subtractionAl{height:200px;width:275px;border: solid;border-color: #DC3545; border-radius: 5%;border-width:thin;display:none;float:right;margin-left:2%;}
+
+
+
+#subtraction{margin:2%;}
+
+.ViewAll{display: none;}
+
+#selClick{display: none;}
+
+
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+/*//
+*/
+
 #innerBody{margin-left:1%;font-size: 20px;}
 
 #hav{float:left;margin-top:8%;margin-left:20%}

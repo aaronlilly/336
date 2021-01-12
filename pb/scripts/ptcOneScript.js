@@ -101,7 +101,7 @@ var pShiny = data.PokemonTradingCenter[i].shiny;
                      for(var i=0; i <  pokemonNameArray.length; i++) 
                       {   
                         //working
-                       $("#pokHav").append( '<div class="col-sm-2">' +'<span class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                       $("#pokHav").append( '<div class="col-sm-3">' +'<span class="imjs"'+ 'id="'+ pokemonNameArray[i]
                         + '">'+ '<figure>'+'<img src ="' + data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</span></div>');
 
                       $('#'+ pokemonNameArray[i]).click(function(){
@@ -397,3 +397,10 @@ $(document).ready(function () {
 //<button type="button" class="btn btn-primary" id="DexNumAdd" style="margin-top:1px;margin-left: 2%;">Dex#</button>
 //<button type="button" class="btn btn-success" id="PokNamAdd" style="margin-top:1px;margin-left: 1%;">Name</button>
 //<button type="button" class="btn btn-info" id="selectAdd" style="margin-top:1px;margin-left: 1%;">Selection</button></span><div id="hideAdd" style="float:right;margin-top:20%;"><button type="button" class="btn btn-outline-warning">Hide This Section</button></div></div>
+
+function meanTo(){
+
+if (confirm("Click 'OK' to close without saving.")) {
+ $('#myModal1').modal('hide');}
+ else {}
+};

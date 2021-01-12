@@ -29,31 +29,6 @@
   <script src="pokemonNamez.js"></script>
 <link rel="stylesheet" href="./scripts/ptcOneStyle.css">
 
-<style type="text/css">
-  #additionAl{height:200px;width:275px;border: solid;border-color: #17A2B8; border-radius: 5%;border-width:thin;display:none;float:left;margin-right:2%;}
-
-
-
-#addition{margin:2%;}
-
-  #subtractionAl{height:200px;width:275px;border: solid;border-color: #DC3545; border-radius: 5%;border-width:thin;display:none;float:right;margin-left:2%;}
-
-
-
-#subtraction{margin:2%;}
-
-.ViewAll{display: none;}
-
-#selClick{display: none;}
-
-</style>
-
-
-
-<script type="text/javascript">
-
-</script>
-
 </head>
 
  
@@ -172,8 +147,8 @@ Pokemon I want.
          </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+        <button type="button" class="btn btn-secondary" onclick="meanTo();">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
       </div>
     </div>
   </div>
@@ -193,7 +168,8 @@ Pokemon I want.
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" onclick="meanTo();">&times;</button>
+          <!-- <button type="button" class="close" data-dismiss="modal" onclick="meanTo();">&times;</button> -->
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title"> Select Pokemon that you want.</h4>
         </div>
         <div class="modal-body">
