@@ -80,10 +80,10 @@ var pReg = data.PokemonTradingCenter[x].Region;
 var pType1 = data.PokemonTradingCenter[x].Type1;
 var pType2 = data.PokemonTradingCenter[x].Type2;
 var pImj = data.PokemonTradingCenter[x].imaj;
-var dC = data.PokemonTradingCenter[i].datecaught;
-var pNotes = data.PokemonTradingCenter[i].notes;
-var pPur = data.PokemonTradingCenter[i].purified;
-var pShiny = data.PokemonTradingCenter[i].shiny;
+var dC = data.PokemonTradingCenter[x].datecaught;
+var pNotes = data.PokemonTradingCenter[x].notes;
+var pPur = data.PokemonTradingCenter[x].purified;
+var pShiny = data.PokemonTradingCenter[x].shiny;
 
 
 
@@ -95,20 +95,23 @@ var pShiny = data.PokemonTradingCenter[i].shiny;
 
 
  function getallPok(){
+var current = "";
         $.ajax({
             method: "GET",
             url: "https://aaronlilly.github.io/336/336ptc.json"
                }).done(function(data) 
                   {
                    
-                     for(var i=0; i <  pokemonNameArray.length; i++) 
+                     for(let i=0; i <  pokemonNameArray.length; i++) 
                       {   
                         //working
                        $("#pokHav").append( '<div class="col-sm-3">' +'<span class="imjs"'+ 'id="'+ pokemonNameArray[i]
                         + '">'+ '<figure>'+'<img src ="' + data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</span></div>');
 
                       $('#'+ pokemonNameArray[i]).click(function(){
-                        secondary(this.id,i,data);
+var currentId = $(this).attr('id');
+let current = currentId;
+                        secondary(current,i,data);
                       });
                     }
 
@@ -395,10 +398,6 @@ $(document).ready(function () {
 
 });
 });
-//<input type="text" id="addfname" placeholder=" Add By" style="margin-top:5px;border: 3px solid #ccc; border-radius: 4px; width:80%;"></span> 
-//<button type="button" class="btn btn-primary" id="DexNumAdd" style="margin-top:1px;margin-left: 2%;">Dex#</button>
-//<button type="button" class="btn btn-success" id="PokNamAdd" style="margin-top:1px;margin-left: 1%;">Name</button>
-//<button type="button" class="btn btn-info" id="selectAdd" style="margin-top:1px;margin-left: 1%;">Selection</button></span><div id="hideAdd" style="float:right;margin-top:20%;"><button type="button" class="btn btn-outline-warning">Hide This Section</button></div></div>
 
 // function meanTo(){
 
