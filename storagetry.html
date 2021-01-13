@@ -1,0 +1,24 @@
+<html>
+
+
+<div id="result"></div>
+<script>
+
+//sessionStorage.setItem(key,value); to set
+//sessionStorage.getItem(key); to get.
+
+if (typeof(Storage) !== "undefined") {
+  // Store
+  localStorage.setItem("lastname", "Smith");
+  // Retrieve
+  document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+} else {
+  document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+
+</script>
+
+
+
+
+</html>
