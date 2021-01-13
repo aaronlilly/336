@@ -5,7 +5,7 @@ var labelTname = [];
 var resp = [];
 
 
-// get bins from list of bins, put them in array
+// get bins from list of bins, put them in array //this is correct
  $(document).ready(function ()  
     {
 			 $.ajax
@@ -110,7 +110,7 @@ cookiClik()
 
 //creates bin in collection of bins
 function newBin(){
-       var myCol = "5fd07c59516f9d12702a3bc3";
+       var myCol = "5fd07c59516f9d12702a3bc3"; //this is correct //maybe a cookie with is/isnot new too? that expires
        
        $.ajax
        ({
@@ -123,7 +123,7 @@ function newBin(){
                xhr.setRequestHeader("secret-key", mySecretKey);
               },
                   
-                 data:'{"retry since fail": "731"}',
+                 data:'{"results": [{"trainer": "' + $('#username').val() +'","have": [],"want": []}]}',
                   }).done(function(responseText) 
                      {
 			     updateListFunct(responseText)
@@ -132,7 +132,7 @@ function newBin(){
  };
 //updates list of trainers and bins with bin and trainer name
 //need to push data into array from response along with trainer name
-//then read out of array with json stringify 
+//then read out of array with json stringify //also seemingly good
 
 function updateListFunct(responseText){
 resp.push(responseText);
