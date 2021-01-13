@@ -1,5 +1,23 @@
 var reGexP = [];
 var dataX = [];
+var existingContent = [];
+
+
+
+$(document).ready(function () {
+var col = '5ffcb6a1f98f6e35d5fb3e0d'; 
+       $.ajax
+         ({
+         method: "GET",
+         beforeSend: function (xhr) {
+                xhr.setRequestHeader("secret-key", mySecretKey);
+               },
+                  url: "https://api.jsonbin.io/b/" + col + "/latest"
+                  }).done(function(data) {
+                    console.log(data);
+                  });
+});
+
 
 
 $(document).ready(function () {
@@ -41,11 +59,7 @@ $(document).ready(function () {
 
 
 
-
-///
 function chk(cId,i,data){
-
-  //console.log(data.PokemonTradingCenter[i].Dex) ;
 var pDex = data.PokemonTradingCenter[i].Dex;
 var pName = data.PokemonTradingCenter[i].Name;
 var pReg = data.PokemonTradingCenter[i].Region;
@@ -57,23 +71,14 @@ var pNotes = data.PokemonTradingCenter[i].notes;
 var pPur = data.PokemonTradingCenter[i].purified;
 var pShiny = data.PokemonTradingCenter[i].shiny;
 
-
-
- // $("#" + current +"span").html("");
     $("#" + cId +"box").prop('checked',false)
-    
-//   let cur = current;
-//   //alert(cur);
-
      for (j = 0; j < wantP.length; j++) {
-  
       if(wantP[j].Name == pName){
-
         wantP.splice(j,1);}
  }
 }
+
 function notchk(cId,x,data){
-    //console.log(data.PokemonTradingCenter[i].Dex) ;
 var pDex = data.PokemonTradingCenter[x].Dex;
 var pName = data.PokemonTradingCenter[x].Name;
 var pReg = data.PokemonTradingCenter[x].Region;
@@ -87,54 +92,38 @@ var pShiny = data.PokemonTradingCenter[x].shiny;
 
 
  wantP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
-
     $("#" + cId +"box").prop('checked',true);
   ;
-  // {"tname": tNam,"bin": bin}
 }
 
-
- function getallPok(){
+//get all pokemon available
+function getallPok(){
 var current = "";
         $.ajax({
             method: "GET",
             url: "https://aaronlilly.github.io/336/336ptc.json"
                }).done(function(data) 
                   {
-                   
                      for(let i=0; i <  pokemonNameArray.length; i++) 
                       {   
-                        //working
                        $("#pokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
                         + '">'+ '<figure>'+'<img src ="' + data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</div></div>');
-
                       $('#'+ pokemonNameArray[i]).click(function(){
 var currentId = $(this).attr('id');
 let current = currentId;
                         secondary(current,i,data);
-			
                       });
                     }
-
                 });
              };
-     
-   
-
-
-/////
 
 function secondary(cId,i,data){
- //console.log(cId);
 //if checked
  if ($("#" + cId +"box").prop('checked')) 
    {
   chk(cId,i,data);
 $('#'+cId).removeClass('pokSelctd');
-    }
-
-
-    
+    }    
  //if not checked
    else{
    notchk(cId,i,data);
@@ -142,15 +131,14 @@ $('#'+cId).addClass('pokSelctd');
      }
 }          
 
-   $(document).ready(function() {
+$(document).ready(function() {
 for(var i=0; i <  pokemonNameArray.length; i++) 
-                      {
-                        $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'box">');
-                      }
+   {
+     $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'box">');
+    }
 });
 
 
-//////////
 toastr.options = {
  "closeButton": true,
   "debug": false,
@@ -173,37 +161,20 @@ toastr.options = {
 $(document).ready(function() {
       toastR();
 
-
- 
-  
-
       $('#menYou').click(function() {
-   //      if ($("#menubox").prop('checked')) 
-   // {
- 
-   //  }
-     // else{
        toastR();
-     //    $("#menubox").prop('checked',true);
-     // }
-       
          });
-              });
+});
 
 function toastR(){
 toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> <div id="toastTop">User Options :</div><div id="myList"> My List - <span id ="myListBtns" style="margin-bottom:2%;">  <button type="button" class="btn btn-info" id="AddSaved">Add</button>  <button type="button" class="btn btn-danger" id="RemoveSaved">Remove</button> <button type="button" class="btn btn-warning" id="ViewSaved" style="margin-top:2%;">View</button>   <button type="button" class="btn btn-secondary" id="ShareSaved" style="margin-top:2%;">Share</button>  <button type="button" class="btn btn-primary" id="Advanced" style="margin-top:2%;">Advanced</button></span> </div> <hr style="border: 2px solid blue; border-radius: 5px;"> <div id="otherZ">Other Trainers - <input type="text" id="TrainerInput" placeholder="Search By"> <span id ="othersBtns"><button type="button" class="btn btn-light" id="trainNam" style="margin-top:2%;" > Trainer Name</button> </div> <div id ="endOfToast"></div>')
-  //<button type="button" class="btn btn-dark" id="clearly">Close</button></div>')//'<button type="button" id="inPut" class="btn btn-info" style="margin: 0 8px 0 8px";>Make Change</button>
-      $('#clearly').click(function() {
+ $('#clearly').click(function() {
                toastr.remove();        
                $("#menubox").prop('checked',false);
                 })
       toastr.options.onHidden = function(){ $("#menubox").prop('checked',false)}; 
  $('.toast-close-button').click(function() { $("#menubox").prop('checked',false);});
-      //myFunction(this.id);
-
     $('#AddSaved').click(function() {
-                       // $('#topper').append(this.id)
-                       // rePaint();
                        getallPok();
                        $('#subtractionAl').css({'display':'none'});
                        $('.ViewAll').css({'display':'none'});
@@ -237,7 +208,7 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
      $('#ViewSaved').click(function() {
                        $('#subtractionAl').css({'display':'none'});
                        $('#additionAl').css({'display':'none'});
-                       getHaveWant();
+                       getHaveWant();//get current list here
                         $('.ViewAll').css({
         'display':'block'
     });
@@ -294,30 +265,19 @@ $(document).ready(function () {
       });
 });
 
-
-/////
-
-
-//want have
+//want have - existing
 function getHaveWant(){
-
+  //what ill probably do is look thorugh the list of bins, make sure the trainer name matches
 
 	var COOKI2 = getCookieD("name");
 		 if (COOKI2 != "") {
          cNBlank2(COOKI2);
-    
       }		 
-	
-	
 	function cNBlank2(COOKI2){
     if(COOKI2 !== undefined){
-    
 	var trainerName = COOKI2;
-	
     }
   }
-
-
     { //var col = '5feb2676f801050e4f31f1ba';
      //var col = '5ffad00955b359028dbd2a0e'; 
 var col = '5ffcb6a1f98f6e35d5fb3e0d'; 
@@ -330,30 +290,18 @@ var col = '5ffcb6a1f98f6e35d5fb3e0d';
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) 
                      {
-                      
                       if (dataX == []){
                       dataX.push(data); ;
                     }else {
                       dataX = [];
                         dataX.push(data);
                     }
-
-		console.log(dataX);
-		//console.log(dataX[0].results[0].trainer);
-
-		
-		//console.log(trainerName);
-			console.log(dataX[0].results[0].have)
-
                          $('#havePaste').html("");
                           $('#wantPaste').html("");
 
                            for(var i = 0; i < dataX[0].results[0].have.length; i++) {
                     $('#havePaste').html("<img src='" + dataX[0].results[0].have[i].imaj +"'>");
-                   }rePainter();
-                    //console.log(dataX[0].AaronAwezom.Have[0].Name)
-
-                      
+                   }rePainter();                    
 
                       for(var i = 0; i < dataX[0].results[0].have.length; i++) {
                      $('#wantPaste').html("<img src='" + dataX[0].results[0].want[i].imaj +"'>");
