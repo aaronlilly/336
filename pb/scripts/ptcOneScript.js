@@ -86,8 +86,8 @@ var pPur = data.PokemonTradingCenter[x].purified;
 var pShiny = data.PokemonTradingCenter[x].shiny;
 
 
+ wantP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
 
- wantP.push({"Name" : cId, "Type" :data.PokemonTradingCenter[x].Type1})
     $("#" + cId +"box").prop('checked',true);
   ;
   // {"tname": tNam,"bin": bin}
