@@ -1,375 +1,236 @@
-var reGexP = [];
-var dataX = [];
-var existingContent = [];
+<html>
+<head>
+	
+	<title>Pokemon Trading Center  </title>
+   <meta name="viewport" content="width=device-width, initial-scale=0.6">
+<link rel="icon" href="favoptc.png" type="image/x-icon"/>
+<link rel="shortcut icon" href="favoptc.png" type="image/x-icon"/>
+<link rel="apple-touch-icon" sizes="16x16" href="favoptc.png"><html>
+<head>
+	
+	<title>Pokemon Trading Center  </title>
+   <meta name="viewport" content="width=device-width, initial-scale=0.6">
+<link rel="icon" href="favoptc.png" type="image/x-icon"/>
+<link rel="shortcut icon" href="favoptc.png" type="image/x-icon"/>
+<link rel="apple-touch-icon" sizes="16x16" href="favoptc.png">
+	<link rel="icon" sizes="16x16" href="favoptc.png">
+	
+	<script src="./scripts/sec/retz.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+<!--Toastr Min CSS --> 
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css'> 
+
+<!--Toastr Min JS --> 
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js'></script>
+<!--Font Awesome --> 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+
+<script src="./scripts/vars.js"></script>
+  <script src="pokemonNamez.js"></script>
+<link rel="stylesheet" href="./scripts/ptcOneStyle.css">
+
+</script>
+
+<style>
+
+.pokSelctd{background-color: lightblue;}
+
+ 
+</style>
 
 
 
-$(document).ready(function () {
-var col = '5ffcb6a1f98f6e35d5fb3e0d'; 
-       $.ajax
-         ({
-         method: "GET",
-         beforeSend: function (xhr) {
-                xhr.setRequestHeader("secret-key", mySecretKey);
-               },
-                  url: "https://api.jsonbin.io/b/" + col + "/latest"
-                  }).done(function(data) {
-                    console.log(data);
-                  });
-});
+
+</head>
+
+ 
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-red mb-4">
+  <span id="menYou"><button type="button" class="btn btn-success" id="menMe">Menu</button></span>
+  <span style="float:right; margin-left: 2%;">Welcome <span id ="trainerInfoHere" style="font-color:lightblue;"></span>. </span> 
+</nav>
+
+<div class="footer"></div>
+
+  <div id ="xboxs" style="display: none;"></div>
+<input type="text" id="fname" name="fname" placeholder="train"><br><br>
+<button id="update">update</button>
+
+<div id ="innerBody">
+  <div id="topper" style="height:40%;overflow-y:scroll;">
+
+<div id="additionAl"><span id="addition"> <input type="text" id="addfname" placeholder=" Add By" style="margin-top:5px;border: 3px solid #ccc; border-radius: 4px; width:80%;margin-bottom:2px;"></span> 
+
+<div>
+<button type="button" class="btn btn-primary" id="DexNumAdd" style="margin-top:1px;margin-left: 2%;">Dex#</button><button type="button" class="btn btn-success" id="PokNamAdd" style="margin-top:1px;margin-left: 1%;">Name</button><button type="button" class="btn btn-info" id="selectAdd" style="margin-top:1px;margin-left: 1%;">Selection</button>
+</div>
+
+<div id="selClick">
+<span style="margin-left:2%;"> Add to - <br></span>
+<div class="btn btn-Primary"  data-toggle="modal" data-target="#myModal1" style="margin-left:2%;margin-top:2%;">Pokemon I Have.</div>
+
+ <div class="btn btn-Success" data-toggle="modal" data-target="#myModal2"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.</div>
+ </div>
+
+<div id="hideAdd" style="float:right;margin-top:5%;"><button type="button" class="btn btn-outline-warning">Close This Section</button></div></div>
 
 
 
-$(document).ready(function () {
-			 var COOKI = getCookieD("name");
-		 if (COOKI != "") {
-         cNBlank(COOKI);
+<div id="subtractionAl"><span id="subtraction"> <input type="text" id="subtractfname" placeholder=" Remove By" style="margin-top:5px;border: 3px solid #ccc;
+  border-radius: 4px; width:80%;"></span> <button type="button" class="btn btn-primary" id="DexNumSub" style="margin-top:1px;margin-left: 2%;">Dex#</button><button type="button" class="btn btn-success" id="PokNamSub" style="margin-top:1px;margin-left: 1%;">Name</button><button type="button" class="btn btn-info" id="selectSub" style="margin-top:1px;margin-left: 1%;">Selection</button></span>
+
+
+<div id="hideSubtract" style="float:right;margin-top:5%;"><button type="button" class="btn btn-outline-warning">Close This Section</button></div></div>
+
+
+<div class="ViewAll">
+    <span class="badge badge-warning">Pokemon I Have.</span>
+    <div id="havePaste"> </div>
+</div>
+<div class="addMenuUp">
+
+</div>
+
+
+</div>
+<div id="bottommer" style="height:40%;;overflow-y:scroll;">
+  <div class="ViewAll"><span class="badge badge-warning">Pokemon I Want.</span>
+  <div id="wantPaste"> </div>
+  </div>
+  <div class="addMenuUp">
+
+  </div>
+ 
+
+
+</div>
+
+
+</div>
+
+
+
+
+<!-- <div id="hav" class ="btn btn-primary" data-toggle="modal" data-target="#myModal1" >
+Pokemon I have.
+</div>
+<div id="wanna" class ="btn btn-success" data-toggle="modal" data-target="#myModal2">
+Pokemon I want.
+</div>
+ -->
+
+
+
+<!-- <div id="okepoke">
+	<div id="leftP">
+
+	</div>
+
+	<div id ="rightP">
+
+	</div>
+ -->
+
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+
+  <!-- Trigger the modal with a button -->
+ 
+
+
+
+
+
+
+  <!-- Modal 1-->
+     
+<div class="modal fade" id="myModal1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Have.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="row" id="pokHav">
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal">Close</button>
+        <!-- <button type="button" class="btn btn-secondary" onclick="meanTo();">Close
+        --> <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end modal 1 -->
+
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+ 
+
+  <!-- Modal 2-->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
     
-      }		 
-	});
-	
-	function cNBlank(COOKI){
-    if(COOKI !== undefined){
-    $('#trainerInfoHere').html(COOKI);
-      regentFunction();
-	
-    }
-  }
-  function getCookieD(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i <ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <!-- <button type="button" class="close" data-dismiss="modal" onclick="meanTo();">&times;</button> -->
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"> Select Pokemon that you want.</h4>
+        </div>
+        <div class="modal-body">
+        <div id ="pokWant">
 
 
-	function regentFunction() {
-    var C00KI = getCookieD("regentName");
-    reGexP.push(C00KI);
-  }
+       </div>
+       
+         </div>
+
+          </p>
+        </div>
+        <div class="modal-footer">
+       
+                  <button type="button"  id="myModal2close" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+     
+  
+</div>
 
 
+</div>
+</div>
+</div>
 
-function chk(cId,i,data){
-var pDex = data.PokemonTradingCenter[i].Dex;
-var pName = data.PokemonTradingCenter[i].Name;
-var pReg = data.PokemonTradingCenter[i].Region;
-var pType1 = data.PokemonTradingCenter[i].Type1;
-var pType2 = data.PokemonTradingCenter[i].Type2;
-var pImj = data.PokemonTradingCenter[i].imaj;
-var dC = data.PokemonTradingCenter[i].datecaught;
-var pNotes = data.PokemonTradingCenter[i].notes;
-var pPur = data.PokemonTradingCenter[i].purified;
-var pShiny = data.PokemonTradingCenter[i].shiny;
-
-    $("#" + cId +"box").prop('checked',false)
-     for (j = 0; j < wantP.length; j++) {
-      if(wantP[j].Name == pName){
-        wantP.splice(j,1);}
- }
-}
-
-function notchk(cId,x,data){
-var pDex = data.PokemonTradingCenter[x].Dex;
-var pName = data.PokemonTradingCenter[x].Name;
-var pReg = data.PokemonTradingCenter[x].Region;
-var pType1 = data.PokemonTradingCenter[x].Type1;
-var pType2 = data.PokemonTradingCenter[x].Type2;
-var pImj = data.PokemonTradingCenter[x].imaj;
-var dC = data.PokemonTradingCenter[x].datecaught;
-var pNotes = data.PokemonTradingCenter[x].notes;
-var pPur = data.PokemonTradingCenter[x].purified;
-var pShiny = data.PokemonTradingCenter[x].shiny;
-
-
- wantP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
-    $("#" + cId +"box").prop('checked',true);
-  ;
-}
-
-//get all pokemon available
-function getallPok(){
-var current = "";
-        $.ajax({
-            method: "GET",
-            url: "https://aaronlilly.github.io/336/336ptc.json"
-               }).done(function(data) 
-                  {
-                     for(let i=0; i <  pokemonNameArray.length; i++) 
-                      {   
-                       $("#pokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        + '">'+ '<figure>'+'<img src ="' + data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</div></div>');
-                      $('#'+ pokemonNameArray[i]).click(function(){
-var currentId = $(this).attr('id');
-let current = currentId;
-                        secondary(current,i,data);
-                      });
-                    }
-                });
-             };
-
-function secondary(cId,i,data){
-//if checked
- if ($("#" + cId +"box").prop('checked')) 
-   {
-  chk(cId,i,data);
-$('#'+cId).removeClass('pokSelctd');
-    }    
- //if not checked
-   else{
-   notchk(cId,i,data);
-$('#'+cId).addClass('pokSelctd');
-     }
-}          
-
-$(document).ready(function() {
-for(var i=0; i <  pokemonNameArray.length; i++) 
-   {
-     $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'box">');
-    }
-});
-
-
-toastr.options = {
- "closeButton": true,
-  "debug": false,
-  "newestOnTop": false,
-  "progressBar": false,
-  "positionClass": "toast-top-center",
-  "preventDuplicates": false,
-  "onclick": null,
-  "showDuration": "300",
-  "hideDuration": "1000",
-  "timeOut": "5000",
-  "extendedTimeOut": "1000",
-  "showEasing": "swing",
-  "hideEasing": "linear",
-  "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
-}
-
-
-$(document).ready(function() {
-      toastR();
-
-      $('#menYou').click(function() {
-       toastR();
-         });
-});
-
-function toastR(){
-toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> <div id="toastTop">User Options :</div><div id="myList"> My List - <span id ="myListBtns" style="margin-bottom:2%;">  <button type="button" class="btn btn-info" id="AddSaved">Add</button>  <button type="button" class="btn btn-danger" id="RemoveSaved">Remove</button> <button type="button" class="btn btn-warning" id="ViewSaved" style="margin-top:2%;">View</button>   <button type="button" class="btn btn-secondary" id="ShareSaved" style="margin-top:2%;">Share</button>  <button type="button" class="btn btn-primary" id="Advanced" style="margin-top:2%;">Advanced</button></span> </div> <hr style="border: 2px solid blue; border-radius: 5px;"> <div id="otherZ">Other Trainers - <input type="text" id="TrainerInput" placeholder="Search By"> <span id ="othersBtns"><button type="button" class="btn btn-light" id="trainNam" style="margin-top:2%;" > Trainer Name</button> </div> <div id ="endOfToast"></div>')
- $('#clearly').click(function() {
-               toastr.remove();        
-               $("#menubox").prop('checked',false);
-                })
-      toastr.options.onHidden = function(){ $("#menubox").prop('checked',false)}; 
- $('.toast-close-button').click(function() { $("#menubox").prop('checked',false);});
-    $('#AddSaved').click(function() {
-                       getallPok();
-                       $('#subtractionAl').css({'display':'none'});
-                       $('.ViewAll').css({'display':'none'});
-    $('#additionAl').css({
-        'height': '200px',
-        'width': '275px',
-        'border': 'solid',
-        'border-color':'#17A2B8',
-        'border-radius':'5%',
-        'border-width':'thin',
-        'float':'left',
-        'margin-right':'2%',
-        'display':'block'
-    });
-      });
-     $('#RemoveSaved').click(function() {
-      $('#additionAl').css({'display':'none'});
-      $('.ViewAll').css({'display':'none'});
-                      $('#subtractionAl').css({
-        'height': '200px',
-        'width': '275px',
-        'border': 'solid',
-        'border-color':'#DC3545',
-        'border-radius':'5%',
-        'border-width':'thin',
-        'float':'right',
-        'margin-left':'2%',
-        'display':'block'
-    });
-      })
-     $('#ViewSaved').click(function() {
-                       $('#subtractionAl').css({'display':'none'});
-                       $('#additionAl').css({'display':'none'});
-                       getHaveWant();//get current list here
-                        $('.ViewAll').css({
-        'display':'block'
-    });
-
-      })
-     $('#ShareSaved').click(function() {
-                       // $('#topper').append(this.id)
-                       // rePaint();
-      })
-     $('#Advanced').click(function() {
-                       // $('#topper').append(this.id)
-                       // rePaint();
-      })
-     $('#trainNam').click(function() {
-                       // $('#topper').append(this.id)
-                       // rePaint();
-      })
-  }
-
-function rePaint(){ $('#topper').hide();
-$('#topper').get(0).offsetHeight;
-$('#topper').show();};
-
-$(document).ready(function () {
-    $('#hideAdd').click(function() {
-    $('#additionAl').css({
-        'height': '200px',
-        'width': '300',
-        'border': 'solid',
-        'border-color':'#17A2B8',
-        'border-radius':'5%',
-        'border-width':'thin',
-        'float':'left',
-        'margin-right':'2%',
-        'display':'none'
-    });
-
-      $('.addMenuUp').html("");
-      $('#selClick').css({'display':'none'});
-      });
-
-       $('#hideSubtract').click(function() {
-    $('#subtractionAl').css({
-        'height': '200px',
-        'width': '300',
-        'border': 'solid',
-        'border-color':'#17A2B8',
-        'border-radius':'5%',
-        'border-width':'thin',
-        'float':'right',
-        'margin-left':'2%',
-        'display':'none'
-    });
-      });
-});
-
-//want have - existing
-function getHaveWant(){
-  //what ill probably do is look thorugh the list of bins, make sure the trainer name matches
-
-	var COOKI2 = getCookieD("name");
-		 if (COOKI2 != "") {
-         cNBlank2(COOKI2);
-      }		 
-	function cNBlank2(COOKI2){
-    if(COOKI2 !== undefined){
-	var trainerName = COOKI2;
-    }
-  }
-    { //var col = '5feb2676f801050e4f31f1ba';
-     //var col = '5ffad00955b359028dbd2a0e'; 
-var col = '5ffcb6a1f98f6e35d5fb3e0d'; 
-       $.ajax
-         ({
-         method: "GET",
-         beforeSend: function (xhr) {
-                xhr.setRequestHeader("secret-key", mySecretKey);
-               },
-                  url: "https://api.jsonbin.io/b/" + col + "/latest"
-                  }).done(function(data) 
-                     {
-                      if (dataX == []){
-                      dataX.push(data); ;
-                    }else {
-                      dataX = [];
-                        dataX.push(data);
-                    }
-                         $('#havePaste').html("");
-                          $('#wantPaste').html("");
-
-                           for(var i = 0; i < dataX[0].results[0].have.length; i++) {
-                    $('#havePaste').html("<img src='" + dataX[0].results[0].have[i].imaj +"'>");
-                   }rePainter();                    
-
-                      for(var i = 0; i < dataX[0].results[0].have.length; i++) {
-                     $('#wantPaste').html("<img src='" + dataX[0].results[0].want[i].imaj +"'>");
-                   }rePainter1();
-                    
-    });
-
-}
-}
-
-// label.push(data);
-// ;
-
-function rePainter(){ 
-$('#wantPaste').hide();
-$('#wantPaste').get(0).offsetHeight;
-$('#wantPaste').show();
-
-};
-
-function rePainter1(){ 
-$('#havePaste').hide();
-$('#havePaste').get(0).offsetHeight;
-$('#havePaste').show();
-
-};
+</body>
 
 
 
-///////////add- 
 
+<script src="./scripts/ptcOneScript.js"></script>
 
-$(document).ready(function () {
-    $('#DexNumAdd').click(function() {
-      $('.addMenuUp').html("");
-	$('.addMenuUp').append("This Feature Coming soon");
-});
- $('#PokNamAdd').click(function() {
-      $('.addMenuUp').html("");
-  $('.addMenuUp').append("This Feature Coming soon");
-
-});
-
- $('#selectAdd').click(function() {
-      $('.addMenuUp').html("");
-   $('#selClick').css({'display':'block'});
-$('#additionAl').css({
-'display':'block',
-'width':'315px',
-'border': 'solid',
-'border-color': '#17A2B8',
-'border-radius': '5%',
-'border-width':'thin',
-'display':'block',
-'float':'left',
-'margin-right':'2%',
-'height': 'auto'}
-);
-});
-});
-
-// function meanTo(){
-
-// if (confirm("Click 'OK' to close without saving.")) {
-//  $('#myModal1').modal('hide');}
-//  else {}
-// };
-
-
-
+</html>
 
