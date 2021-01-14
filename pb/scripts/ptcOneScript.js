@@ -1,11 +1,14 @@
 var reGexP = [];
 var dataX = [];
 var existingContent = [];
+var dataT = [];
 
 
+//checks list or trainers and bins, based on trainer name.
+var trainername= "AaronAwezom"
 
 $(document).ready(function () {
-var col = '5ffcb6a1f98f6e35d5fb3e0d'; 
+var col = '5feb2676f801050e4f31f1ba'; 
        $.ajax
          ({
          method: "GET",
@@ -14,10 +17,20 @@ var col = '5ffcb6a1f98f6e35d5fb3e0d';
                },
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) {
-                    console.log(data);
+
+		for(let i=0; i <  data[0].bns.length; i++) 
+		
+		if (trainername == data[0].bns[i].tname){
+		gotDBin(data[0].bns[i].bin)
+			;}
+
                   });
 });
+//got the bin based on the user do something with it...
 
+function gotDBin(binny) {
+console.log(binny);
+}
 
 
 $(document).ready(function () {
