@@ -26,10 +26,23 @@ var col = '5feb2676f801050e4f31f1ba';
 
                   });
 });
-//got the bin based on the user do something with it...
+//got the bin based on the user 
 
+//got the users bin with want/have
 function gotDBin(binny) {
-console.log(binny);
+var urlx = "https://api.jsonbin.io/b/"+$.trim(binny) + "/";
+$.ajax
+         ({
+         method: "GET",
+         beforeSend: function (xhr) {
+                xhr.setRequestHeader("secret-key", mySecretKey);
+               },
+                  url:urlx
+                  }).done(function(data) {
+                console.log(data)
+                  //stash this in storage or something...
+                  });
+
 }
 
 
@@ -112,8 +125,7 @@ var pShiny = data.PokemonTradingCenter[x].shiny;
 //get all pokemon available
 function getallPok(){
 var current = "";
-  $.ajax
-       ({
+        $.ajax({
             method: "GET",
             url: "https://aaronlilly.github.io/336/336ptc.json"
                }).done(function(data) 
