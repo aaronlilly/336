@@ -112,7 +112,8 @@ var pShiny = data.PokemonTradingCenter[x].shiny;
 //get all pokemon available
 function getallPok(){
 var current = "";
-        $.ajax({
+  $.ajax
+       ({
             method: "GET",
             url: "https://aaronlilly.github.io/336/336ptc.json"
                }).done(function(data) 
