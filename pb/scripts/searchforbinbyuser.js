@@ -62,13 +62,10 @@ $.ajax
                },
                   url:urlx
                   }).done(function(data) {
-	
-	   //works if(data.results[0].have[0] === undefined){console.log("no data")}
-	
- 		if(data.results[0].have[0] !== undefined){console.log(data.results[0].have[0].Name)}
-		else{console.log("nothing")}                
-
-});
+                console.log(data)
+               
+                  //stash this in storage or something...
+                  });
 
 }
 
