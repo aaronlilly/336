@@ -22,11 +22,10 @@ var col = '5feb2676f801050e4f31f1ba';
                       Eye(data, data[0].bns.length)
                    });
 }
-
 function Eye(data,x){
-var trainername= $('#fname').val()
+var trainername = $('#fname').val().toUpperCase()
 for(let j=0; j <  x; j++) {
-if (trainername == data[0].bns[j].tname){
+if (trainername == data[0].bns[j].tname.toUpperCase()){
 gotDBin(data[0].bns[j].bin)
 }}}
 
