@@ -386,7 +386,7 @@ console.log(existingContent);
 // push this to api
 alert("Pokemon saved");
 deSelectUnchk();
-
+$('#myModal1').modal('hide');
 }
 
 function deSelectUnchk() {
