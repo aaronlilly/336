@@ -4,13 +4,12 @@ var existingContent = [];
 var dataT = [];
 
 
-//checks list or trainers and bins, based on trainer name.
-//var trainername= "AaronAwezom"
- 
-
 $(document).ready(function () {
-  $('#update').click(function(){
-var trainername= $('#fname').val() ;
+  $('#update').click(function()
+    {pageLoad();
+  });  });
+ 
+function pageLoad() {
 var col = '5feb2676f801050e4f31f1ba'; 
        $.ajax
          ({
@@ -20,38 +19,17 @@ var col = '5feb2676f801050e4f31f1ba';
                },
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) {
-                   // console.log(data)
-                   // /console.log(data[0].bns[0].tname)
-
                       Eye(data, data[0].bns.length)
-		// for(let i=0; i <  data[0].bns.length; i++) 
-  //     Eye(data, data[0].bns.length)
-		 
-
-		// if ("AaronAwezom" == data[0].bns[i].tname){
-		// gotDBin(data[0].bns[i].bin)
-		// 	;}
-
                    });
-});
-  });
+}
 
 function Eye(data,x){
 var trainername= $('#fname').val()
 for(let j=0; j <  x; j++) {
-//console.log(data[0].bns[j].tname)}
-
 if (trainername == data[0].bns[j].tname){
-  //console.log(data[0].bns[j].bin)
 gotDBin(data[0].bns[j].bin)
-}
+}}}
 
-}
-}
-
-//got the bin based on the user 
-
-//got the users bin with want/have
 function gotDBin(binny) {
 var urlx = "https://api.jsonbin.io/b/"+$.trim(binny) + "/latest";
 $.ajax
@@ -62,14 +40,12 @@ $.ajax
                },
                   url:urlx
                   }).done(function(data) {
-	
-	   //works if(data.results[0].have[0] === undefined){console.log("no data")}
-	
+
  		if(data.results[0].have[0] !== undefined)
       {
                        $('#havePaste').html("");
                           $('#wantPaste').html("");
-                          
+
                  for(var i = 0; i < data.results[0].have.length; i++) {
                     $('#havePaste').html("<img src='" + data.results[0].have[i].imaj +"'>");
                    }rePainter();                    
@@ -78,20 +54,12 @@ $.ajax
                      $('#wantPaste').html("<img src='" + data.results[0].want[i].imaj +"'>");
                    }rePainter1();            
         //console.log(data.results[0].have[0].Name)
-
         } else{
                         $('#havePaste').html("");
                           $('#wantPaste').html("");
-
          // console.log("nothing")}      
-
-       }
-
-                        
-                              
-
+       }                    
 });
-
 }
 
 
