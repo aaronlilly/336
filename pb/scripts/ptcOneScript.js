@@ -186,6 +186,19 @@ for(var i=0; i <  pokemonNameArray.length; i++)
 });
 
 
+
+
+
+$(document).ready(function() {
+      toastR();
+
+      $('#menYou').click(function() {
+       toastR();
+         });
+});
+
+function toastR(){
+
 toastr.options = {
  "closeButton": true,
   "debug": false,
@@ -204,16 +217,6 @@ toastr.options = {
   "hideMethod": "fadeOut"
 }
 
-
-$(document).ready(function() {
-      toastR();
-
-      $('#menYou').click(function() {
-       toastR();
-         });
-});
-
-function toastR(){
 toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> <div id="toastTop">User Options :</div><div id="myList"> My List - <span id ="myListBtns" style="margin-bottom:2%;">  <button type="button" class="btn btn-info" id="AddSaved">Add</button>  <button type="button" class="btn btn-danger" id="RemoveSaved">Remove</button> <button type="button" class="btn btn-warning" id="ViewSaved" style="margin-top:2%;">View</button>   <button type="button" class="btn btn-secondary" id="ShareSaved" style="margin-top:2%;">Share</button>  <button type="button" class="btn btn-primary" id="Advanced" style="margin-top:2%;">Advanced</button></span> </div> <hr style="border: 2px solid blue; border-radius: 5px;"> <div id="otherZ">Other Trainers - <input type="text" id="TrainerInput" placeholder="Search By"> <span id ="othersBtns"><button type="button" class="btn btn-light" id="trainNam" style="margin-top:2%;" > Trainer Name</button> </div> <div id ="endOfToast"></div>')
  $('#clearly').click(function() {
                toastr.remove();        
@@ -384,7 +387,8 @@ existingContent[0].results[0].have.push(wantP[i]);
 
 console.log(existingContent);
 // push this to api
-alert("Pokemon saved");
+// alert("Pokemon saved");
+alert2();
 deSelectUnchk();
 $('#myModal1').modal('hide');
 }
@@ -405,5 +409,28 @@ function deSelectUnchk() {
     
 
     }
+
+}
+
+function alert2(){
+  toastr.options = {
+ "closeButton": true,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "100",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+toastr["info"]('Pokemon Saved')
+
 
 }
