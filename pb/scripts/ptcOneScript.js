@@ -65,8 +65,30 @@ $.ajax
 	
 	   //works if(data.results[0].have[0] === undefined){console.log("no data")}
 	
- 		if(data.results[0].have[0] !== undefined){console.log(data.results[0].have[0].Name)}
-		else{console.log("nothing")}                
+ 		if(data.results[0].have[0] !== undefined)
+      {
+                       $('#havePaste').html("");
+                          $('#wantPaste').html("");
+                          
+                 for(var i = 0; i < data.results[0].have.length; i++) {
+                    $('#havePaste').html("<img src='" + data.results[0].have[i].imaj +"'>");
+                   }rePainter();                    
+
+                      for(var i = 0; i < data.results[0].have.length; i++) {
+                     $('#wantPaste').html("<img src='" + data.results[0].want[i].imaj +"'>");
+                   }rePainter1();            
+        //console.log(data.results[0].have[0].Name)
+
+        } else{
+                        $('#havePaste').html("");
+                          $('#wantPaste').html("");
+
+         // console.log("nothing")}      
+
+       }
+
+                        
+                              
 
 });
 
@@ -262,7 +284,6 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
      $('#ViewSaved').click(function() {
                        $('#subtractionAl').css({'display':'none'});
                        $('#additionAl').css({'display':'none'});
-                       getHaveWant();//get current list here
                         $('.ViewAll').css({
         'display':'block'
     });
@@ -319,52 +340,6 @@ $(document).ready(function () {
       });
 });
 
-//want have - existing
-function getHaveWant(){
-  //what ill probably do is look thorugh the list of bins, make sure the trainer name matches
-
-	var COOKI2 = getCookieD("name");
-		 if (COOKI2 != "") {
-         cNBlank2(COOKI2);
-      }		 
-	function cNBlank2(COOKI2){
-    if(COOKI2 !== undefined){
-	var trainerName = COOKI2;
-    }
-  }
-    { //var col = '5feb2676f801050e4f31f1ba';
-     //var col = '5ffad00955b359028dbd2a0e'; 
-var col = '5ffcb6a1f98f6e35d5fb3e0d'; 
-       $.ajax
-         ({
-         method: "GET",
-         beforeSend: function (xhr) {
-                xhr.setRequestHeader("secret-key", mySecretKey);
-               },
-                  url: "https://api.jsonbin.io/b/" + col + "/latest"
-                  }).done(function(data) 
-                     {
-                      if (dataX == []){
-                      dataX.push(data); ;
-                    }else {
-                      dataX = [];
-                        dataX.push(data);
-                    }
-                         $('#havePaste').html("");
-                          $('#wantPaste').html("");
-
-                           for(var i = 0; i < dataX[0].results[0].have.length; i++) {
-                    $('#havePaste').html("<img src='" + dataX[0].results[0].have[i].imaj +"'>");
-                   }rePainter();                    
-
-                      for(var i = 0; i < dataX[0].results[0].have.length; i++) {
-                     $('#wantPaste').html("<img src='" + dataX[0].results[0].want[i].imaj +"'>");
-                   }rePainter1();
-                    
-    });
-
-}
-}
 
 // label.push(data);
 // ;
