@@ -457,6 +457,8 @@ $.ajax
 
 }
 
+//idk if updating collections works...
+
 function toastyFunct(){
   pageLoad();
   alert("sent")}
