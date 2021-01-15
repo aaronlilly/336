@@ -1,2 +1,2 @@
-var wantP = [];
-var haveP =[];
+let wantP = [];
+let haveP =[];

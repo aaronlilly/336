@@ -1,15 +1,17 @@
 var reGexP = [];
-var dataX = [];
-var existingContent = [];
-var dataT = [];
+let existingContent = [];
 
 
 $(document).ready(function () {
-  $('#update').click(function()
-    {pageLoad();
-  });  });
+  // $('#update').click(function(){
+    pageLoad();
+  
+  // }); 
+
+   });
  
 function pageLoad() {
+  let existingContent = [];
 var col = '5feb2676f801050e4f31f1ba'; 
        $.ajax
          ({
@@ -23,7 +25,8 @@ var col = '5feb2676f801050e4f31f1ba';
                    });
 }
 function Eye(data,x){
-var trainername = $('#fname').val().toUpperCase()
+// var trainername = $('#fname').val().toUpperCase()
+var trainername = "AARONAWEZOM";
 for(let j=0; j <  x; j++) {
 if (trainername == data[0].bns[j].tname.toUpperCase()){
 gotDBin(data[0].bns[j].bin)
@@ -53,10 +56,12 @@ $.ajax
                      $('#wantPaste').html("<img src='" + data.results[0].want[i].imaj +"'>");
                    }rePainter1();            
         //console.log(data.results[0].have[0].Name)
+        existingContent.push(data);
         } else{
-                        $('#havePaste').html("");
-                          $('#wantPaste').html("");
+                        $('#havePaste').html("Trainer Needs to add Pokemon to 'Have' List");
+                          $('#wantPaste').html("Trainer Needs to add Pokemon to 'Want' List");
          // console.log("nothing")}      
+
        }                    
 });
 }
@@ -307,10 +312,6 @@ $(document).ready(function () {
       });
 });
 
-
-// label.push(data);
-// ;
-
 function rePainter(){ 
 $('#wantPaste').hide();
 $('#wantPaste').get(0).offsetHeight;
@@ -326,10 +327,7 @@ $('#havePaste').show();
 };
 
 
-
 ///////////add- 
-
-
 $(document).ready(function () {
     $('#DexNumAdd').click(function() {
       $('.addMenuUp').html("");
@@ -361,6 +359,18 @@ $('#additionAl').css({
 
 // function meanTo(){
 
+// if (confirm("Click 'OK' to close without saving.")) {
+//  $('#myModal1').modal('hide');}
+//  else {}
+// };
+
+
+function saveSelected(){
+
+console.log(existingContent);//nothing
+console.log(wantP);
+console.log(haveP);//notyet working
+}
 // if (confirm("Click 'OK' to close without saving.")) {
 //  $('#myModal1').modal('hide');}
 //  else {}
