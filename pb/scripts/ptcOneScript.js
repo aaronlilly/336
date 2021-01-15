@@ -1,6 +1,7 @@
 var reGexP = [];
 let existingContent = [];
-let trainerNam = ""
+let trainerNam = "";
+let trainBin = "";
 
 
 $(document).ready(function () {
@@ -67,8 +68,12 @@ function Eye(data,x){
 //var trainername = "T4RYNITUP";
 var trainername = "AARONAWEZOM";
 for(let j=0; j <  x; j++) {
+
 if (trainername == data[0].bns[j].tname.toUpperCase()){
 gotDBin(data[0].bns[j].bin)
+trainBin = data[0].bns[j].bin;
+   console.log(trainBin);
+
 }}}
 
 function gotDBin(binny) {
@@ -385,32 +390,28 @@ existingContent[0].results[0].have.push(wantP[i]);
 //now to deselect the poks. and uncheck the boxes,empy the array,  do an alert, close the modal.
 
 
-console.log(existingContent);
+send2();
+
+
 // push this to api
 // alert("Pokemon saved");
 alert2();
 deSelectUnchk();
 $('#myModal1').modal('hide');
-pageLoad();
+
 }
 
 function deSelectUnchk() {
 
   for(var i=0; i <  pokemonNameArray.length; i++) 
    {
-    //if boxes are checked, uncheck them. if selected, deselect them
-
      if ($("#" + pokemonNameArray[i] +"box").prop('checked'))
      {
       $("#" + pokemonNameArray[i] +"box").prop('checked',false);
      $('#'+pokemonNameArray[i]).removeClass('pokSelctd');
      }
      let wantP = [];
-   
-    
-
-    }
-
+         }
 }
 
 function alert2(){
@@ -432,6 +433,30 @@ function alert2(){
   "hideMethod": "fadeOut"
 }
 toastr["info"]('Pokemon Saved')
+}
 
+function send2(){
+$.ajax
+       ({
+           url: "https://api.jsonbin.io/b/" + $.trim(trainBin), 
+          method: "PUT",
+  versioning: false,
+          beforeSend: function (xhr) {
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.setRequestHeader("secret-key", mySecretKey);
+               },
+                  
+                 data: JSON.stringify(existingContent),
+                  }).done(function(responseText) 
+                     {
+                      console.log(responseText)
+      toastyFunct();
+      ;                 
+    });
 
 }
+
+function toastyFunct(){
+  pageLoad();
+  alert("sent")}
+  ;
