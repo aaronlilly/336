@@ -436,10 +436,11 @@ toastr["info"]('Pokemon Saved')
 }
 
 function send2(){
+  console.log(existingContent);
 $.ajax
        ({
            url: "https://api.jsonbin.io/b/" + $.trim(trainBin), 
-          method: "PUT",
+          method: "POST",
   versioning: false,
           beforeSend: function (xhr) {
                 xhr.setRequestHeader("Content-Type", "application/json");
