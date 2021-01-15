@@ -44,9 +44,7 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-  // $('#update').click(function(){//this was for testing purposes
     pageLoad();
-  // }); //so too this out too
    });
  
 function pageLoad() {
@@ -66,7 +64,7 @@ var col = '5feb2676f801050e4f31f1ba';
 function Eye(data,x){
 
   //cooki testing - trainerNam;
-// var trainername = $('#fname').val().toUpperCase()//testing only
+//var trainername = "T4RYNITUP";
 var trainername = "AARONAWEZOM";
 for(let j=0; j <  x; j++) {
 if (trainername == data[0].bns[j].tname.toUpperCase()){
@@ -98,7 +96,9 @@ $.ajax
                    }rePainter1();            
         //(data.results[0].have[0].Name)
         existingContent.push(data);
+
         } else{
+          existingContent.push(data);//added
                         $('#havePaste').html("Trainer Needs to add Pokemon to 'Have' List");
                           $('#wantPaste').html("Trainer Needs to add Pokemon to 'Want' List");
          // ("nothing")}      
@@ -391,6 +391,7 @@ console.log(existingContent);
 alert2();
 deSelectUnchk();
 $('#myModal1').modal('hide');
+pageLoad();
 }
 
 function deSelectUnchk() {
