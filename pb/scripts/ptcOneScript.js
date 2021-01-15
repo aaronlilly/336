@@ -1,13 +1,52 @@
 var reGexP = [];
 let existingContent = [];
+let trainerNam = ""
 
 
 $(document).ready(function () {
-  // $('#update').click(function(){
-    pageLoad();
+       var COOKI = getCookieD("name");
+     if (COOKI != "") {
+         cNBlank(COOKI);
+         let trainerNam = COOKI;
+    
+      }    
+  });
   
-  // }); 
+  function cNBlank(COOKI){
+    if(COOKI !== undefined){
+    $('#trainerInfoHere').html(COOKI);
 
+      regentFunction();
+  
+    }
+  }
+  function getCookieD(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+
+  function regentFunction() {
+    var C00KI = getCookieD("regentName");
+    reGexP.push(C00KI);
+  }
+
+
+$(document).ready(function () {
+  // $('#update').click(function(){//this was for testing purposes
+    pageLoad();
+  // }); //so too this out too
    });
  
 function pageLoad() {
@@ -25,7 +64,9 @@ var col = '5feb2676f801050e4f31f1ba';
                    });
 }
 function Eye(data,x){
-// var trainername = $('#fname').val().toUpperCase()
+
+  //cooki testing - trainerNam;
+// var trainername = $('#fname').val().toUpperCase()//testing only
 var trainername = "AARONAWEZOM";
 for(let j=0; j <  x; j++) {
 if (trainername == data[0].bns[j].tname.toUpperCase()){
@@ -55,57 +96,15 @@ $.ajax
                       for(var i = 0; i < data.results[0].have.length; i++) {
                      $('#wantPaste').html("<img src='" + data.results[0].want[i].imaj +"'>");
                    }rePainter1();            
-        //console.log(data.results[0].have[0].Name)
+        //(data.results[0].have[0].Name)
         existingContent.push(data);
         } else{
                         $('#havePaste').html("Trainer Needs to add Pokemon to 'Have' List");
                           $('#wantPaste').html("Trainer Needs to add Pokemon to 'Want' List");
-         // console.log("nothing")}      
-
+         // ("nothing")}      
        }                    
 });
 }
-
-
-
-$(document).ready(function () {
-			 var COOKI = getCookieD("name");
-		 if (COOKI != "") {
-         cNBlank(COOKI);
-    
-      }		 
-	});
-	
-	function cNBlank(COOKI){
-    if(COOKI !== undefined){
-    $('#trainerInfoHere').html(COOKI);
-      regentFunction();
-	
-    }
-  }
-  function getCookieD(cname) {
-  var name = cname + "=";
-  var decodedCookie = decodeURIComponent(document.cookie);
-  var ca = decodedCookie.split(';');
-  for(var i = 0; i <ca.length; i++) {
-    var c = ca[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(name) == 0) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return "";
-}
-
-
-	function regentFunction() {
-    var C00KI = getCookieD("regentName");
-    reGexP.push(C00KI);
-  }
-
-
 
 function chk(cId,i,data){
 var pDex = data.PokemonTradingCenter[i].Dex;
@@ -367,15 +366,44 @@ $('#additionAl').css({
 
 function saveSelected(){
 
-console.log(existingContent);//nothing
-console.log(wantP);
-console.log(haveP);//notyet working
+//console.log(existingContent);///working
+// console.log(existingContent[0].results[0].have);//example
+// console.log(wantP);//working
+// console.log(haveP);//notyet working
+
+for(var i = 0; i <haveP.length; i++){
+existingContent[0].results[0].have.push(haveP[i]);
 }
-// if (confirm("Click 'OK' to close without saving.")) {
-//  $('#myModal1').modal('hide');}
-//  else {}
-// };
+
+for(var i = 0; i <wantP.length; i++){
+existingContent[0].results[0].have.push(wantP[i]);
+}
+
+//now to deselect the poks. and uncheck the boxes,empy the array,  do an alert, close the modal.
 
 
+console.log(existingContent);
+// push this to api
+alert("Pokemon saved");
+deSelectUnchk();
 
+}
 
+function deSelectUnchk() {
+
+  for(var i=0; i <  pokemonNameArray.length; i++) 
+   {
+    //if boxes are checked, uncheck them. if selected, deselect them
+
+     if ($("#" + pokemonNameArray[i] +"box").prop('checked'))
+     {
+      $("#" + pokemonNameArray[i] +"box").prop('checked',false);
+     $('#'+pokemonNameArray[i]).removeClass('pokSelctd');
+     }
+     let wantP = [];
+   
+    
+
+    }
+
+}
