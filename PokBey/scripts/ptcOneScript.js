@@ -103,14 +103,15 @@ $.ajax
                        $('#havePaste').html("");
                  for(var i = 0; i < Owned.length; i++) {
                     $('#havePaste').html("<img src='" + Owned[i].imaj +"'>");
-                    rePainterHave();
-                   }
+                   
+                   } rePainterHave();
 
 		if(Covet!== undefined){$('#wantPaste').html("");
                       for(var i = 0; i < Covet.length; i++) {
                      $('#wantPaste').html("<img src='" + Covet[i].imaj +"'>");
-                      rePainterWant();
-                   }}           
+
+                   } rePainterWant();
+                 }           
 	} 
        
 	        existingContent.push(data[0]);
