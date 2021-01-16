@@ -69,8 +69,8 @@ var col = '6001d6a3e31fbc3bdef42055';
 function Eye(data,x){
 
   //cooki testing - trainerNam;
-var trainername = "T4RYNITUP";
-//var trainername = "AARONAWEZOM";
+//var trainername = "T4RYNITUP";
+var trainername = "AARONAWEZOM";
 for(let j=0; j <  x; j++) {
 
 if (trainername == data[0].bns[j].tname.toUpperCase()){
@@ -84,7 +84,7 @@ trainBin = data[0].bns[j].bin;
 function gotDBin(binny){
 console.log(binny);
 
-var urlx = "https://api.jsonbin.io/b/" + binny +"/" ;
+var urlx = "https://api.jsonbin.io/b/" + binny +"/latest" ;
 $.ajax
          ({
          method: "GET",
@@ -319,8 +319,7 @@ var THave = existingContent[0].results[0].have;
 
 for(var i = 0; i < haveP.length; i++){
 existingContent[0].results[0].have.push(haveP[i])}
-console.log(haveP);
-console.log(existingContent);
+//console.log(existingContent);
 // for(var i = 0; i <wantP.length; i++){
 // existingContent[0].results[0].have.push(wantP[i]);
 // }
@@ -338,7 +337,7 @@ console.log(existingContent);
 //now to deselect the poks. and uncheck the boxes,empy the array,  do an alert, close the modal.
 
 
-//send2();
+send2();
 
 
 // push this to api
@@ -362,7 +361,7 @@ function deSelectUnchk() {
       $("#" + pokemonNameArray[i] +"box").prop('checked',false);
      $('#'+pokemonNameArray[i]).removeClass('pokSelctd');
      }
-     let wantP = [];
+     let haveP = [];
          }
 }
 
@@ -402,7 +401,7 @@ function send2(){
 $.ajax
        ({
            url: "https://api.jsonbin.io/b/" + $.trim(trainBin), 
-          method: "POST",
+          method: "PUT",
   versioning: false,
           beforeSend: function (xhr) {
                 xhr.setRequestHeader("Content-Type", "application/json");
