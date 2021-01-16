@@ -100,33 +100,19 @@ $.ajax
 
 	if(Owned !== undefined)
       {
-  //                      $('#havePaste').html("");
-  //                for(var i = 0; i < Owned.length; i++) {
-  //                   $('#havePaste').html("<img src='" + Owned[i].imaj +"'>");
+                       $('#havePaste').html("");
+                for(var i = 0; i < Owned.length; i++) {
+                     $('#havePaste').append("<img src='" + Owned[i].imaj +"'>");
                    
-  //                  } rePainterHave();
+                  } 
 
-		// if(Covet!== undefined){$('#wantPaste').html("");
-  //                     for(var i = 0; i < Covet.length; i++) {
-  //                    $('#wantPaste').html("<img src='" + Covet[i].imaj +"'>");
+		if(Covet!== undefined){$('#wantPaste').html("");
+                       for(var i = 0; i < Covet.length; i++) {
+                   $('#wantPaste').append("<img src='" + Covet[i].imaj +"'>");
 
-  //                  } rePainterWant();
-  //                }   
-   $('#havePaste').html("");
-                          $('#wantPaste').html("");
-
-                 for(var i = 0; i < data.results[0].have.length; i++) {
-                    $('#havePaste').html("<img src='" + data.results[0].have[i].imaj +"'>");
-                   }rePainterWant();                    
-
-                      for(var i = 0; i < data.results[0].have.length; i++) {
-                     $('#wantPaste').html("<img src='" + data.results[0].want[i].imaj +"'>");
-                   }rePainterHave();         
-	} 
-       
-	        existingContent.push(data[0]);
-		// rePainterHave();    
-    // rePainterWant();
+                  } 
+                  }   
+   
 });
 }
 
