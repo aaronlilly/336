@@ -95,21 +95,20 @@ $.ajax
                   }).done(function(data) {
 		
 		existingContent.push(data);
-	var Owned = data.results[0].have
+	var Owned = data.results[0].have;
+  var Covet = data.results[0].want;
 
 	if(Owned !== undefined)
       {
-                       $('#havePaste').html("");
-                         
-
+                       //$('#havePaste').html("");
                  for(var i = 0; i < Owned.length; i++) {
                     $('#havePaste').html("<img src='" + Owned[i].imaj +"'>");
                    }
 
-		$('#wantPaste').html("");
-                      for(var i = 0; i < data.results[0].have.length; i++) {
-                     $('#wantPaste').html("<img src='" + data[0].results[0].want[i].imaj +"'>");
-                   }rePainter1();           
+		if(Covet!== undefined){//$('#wantPaste').html("");
+                      for(var i = 0; i < Covet.length; i++) {
+                     $('#wantPaste').html("<img src='" + Covet[i].imaj +"'>");
+                   }}rePainter1();           
 	} 
        
 	        existingContent.push(data[0]);
