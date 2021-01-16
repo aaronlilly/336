@@ -100,14 +100,14 @@ $.ajax
 
 	if(Owned !== undefined)
       {
-                       //$('#havePaste').html("");
+                       $('#havePaste').html("");
                  for(var i = 0; i < Owned.length; i++) {
-                    $('#havePaste').html("<img src='" + Owned[i].imaj +"'>");
+                    $('#havePaste').append("<img src='" + Owned[i].imaj +"'>");
                    }
 
-		if(Covet!== undefined){//$('#wantPaste').html("");
+		if(Covet!== undefined){$('#wantPaste').html("");
                       for(var i = 0; i < Covet.length; i++) {
-                     $('#wantPaste').html("<img src='" + Covet[i].imaj +"'>");
+                     $('#wantPaste').append("<img src='" + Covet[i].imaj +"'>");
                    }}           
 	} 
        
