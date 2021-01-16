@@ -108,12 +108,12 @@ $.ajax
 		if(Covet!== undefined){//$('#wantPaste').html("");
                       for(var i = 0; i < Covet.length; i++) {
                      $('#wantPaste').html("<img src='" + Covet[i].imaj +"'>");
-                   }}rePainter1();           
+                   }}           
 	} 
        
 	        existingContent.push(data[0]);
 		rePainter();    
-
+    rePainter1();
 });
 }
 
