@@ -93,8 +93,6 @@ $.ajax
                },
                   url:urlx
                   }).done(function(data) {
-		//console.log(data)
-		//console.log(data.results[0].have)
 		
 		existingContent.push(data);
 	var Owned = data.results[0].have
@@ -119,87 +117,6 @@ $.ajax
 
 });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -389,9 +306,119 @@ $('#additionAl').css({
 //save from modal
 
 function saveSelected(){
+var THave = existingContent[0].results[0].have;
+
+
+//console.log(existingContent[0].results[0].trainer);//example//working
+// console.log(wantP);//working
+// console.log(haveP);//notyet working
+
+if(THave !== undefined){
+for(var i = 0; i <haveP.length; i++){
+existingContent[0].results[0].have.push(haveP[i])}
+for(var i = 0; i <wantP.length; i++){
+existingContent[0].results[0].have.push(wantP[i]);
+}
+}
+
+
+//for(var i = 0; i <haveP.length; i++){
+//existingContent[0].results[0].have.push(haveP[i]);
+//}
+
+//for(var i = 0; i <wantP.length; i++){
+//existingContent[0].results[0].have.push(wantP[i]);
+//}
+
+//now to deselect the poks. and uncheck the boxes,empy the array,  do an alert, close the modal.
+
+
+send2();
+
+
+// push this to api
+// alert("Pokemon saved");
+alert2();
+deSelectUnchk();
+$('#myModal1').modal('hide');
 
 }
-//end save selected modal
+
+//end save selected modal /have
+
+
+///deselect what u selected in modal
+function deSelectUnchk() {
+
+  for(var i=0; i <  pokemonNameArray.length; i++) 
+   {
+     if ($("#" + pokemonNameArray[i] +"box").prop('checked'))
+     {
+      $("#" + pokemonNameArray[i] +"box").prop('checked',false);
+     $('#'+pokemonNameArray[i]).removeClass('pokSelctd');
+     }
+     let wantP = [];
+         }
+}
+
+
+
+//end deselect for have. 
+
+
+
+///alert2
+
+function alert2(){
+  toastr.options = {
+ "closeButton": true,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "100",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+toastr["info"]('Pokemon Saved')
+}
+////////end stuff
+
+
+function send2(){
+  console.log(existingContent);
+$.ajax
+       ({
+           url: "https://api.jsonbin.io/b/" + $.trim(trainBin), 
+          method: "POST",
+  versioning: false,
+          beforeSend: function (xhr) {
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.setRequestHeader("secret-key", mySecretKey);
+               },
+                  
+                 data: JSON.stringify(existingContent),
+                  }).done(function(responseText) 
+                     {
+                      console.log(responseText)
+      toastyFunct();
+      ;                 
+    });
+
+}
+
+function toastyFunct(){
+  pageLoad();
+  alert("sent")}
+  ;
+/////end of 
 
 
 
