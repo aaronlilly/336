@@ -306,7 +306,7 @@ $('#additionAl').css({
 //save from modal
 
 function saveSelected(){
-var THave = existingContent[0].results[0].have;
+//var THave = existingContent[0].results[0].have;
 
 // console.log(existingContent[0].results[0]);
 // console.log(existingContent[0].results[0].trainer)
@@ -397,7 +397,7 @@ toastr["info"]('Pokemon Saved')
 
 
 function send2(){
-  console.log(existingContent);
+  //console.log(existingContent);
 $.ajax
        ({
            url: "https://api.jsonbin.io/b/" + $.trim(trainBin), 
@@ -408,7 +408,7 @@ $.ajax
                 xhr.setRequestHeader("secret-key", mySecretKey);
                },
                   
-                 data: JSON.stringify(existingContent),
+                 data: JSON.stringify(existingContent[0]),
                   }).done(function(responseText) 
                      {
                       console.log(responseText)
