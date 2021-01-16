@@ -308,18 +308,23 @@ $('#additionAl').css({
 function saveSelected(){
 var THave = existingContent[0].results[0].have;
 
-
+// console.log(existingContent[0].results[0]);
+// console.log(existingContent[0].results[0].trainer)
+// console.log(existingContent[0].results[0].have)
 //console.log(existingContent[0].results[0].trainer);//example//working
 // console.log(wantP);//working
 // console.log(haveP);//notyet working
 
-if(THave !== undefined){
-for(var i = 0; i <haveP.length; i++){
+
+
+for(var i = 0; i < haveP.length; i++){
 existingContent[0].results[0].have.push(haveP[i])}
-for(var i = 0; i <wantP.length; i++){
-existingContent[0].results[0].have.push(wantP[i]);
-}
-}
+console.log(haveP);
+console.log(existingContent);
+// for(var i = 0; i <wantP.length; i++){
+// existingContent[0].results[0].have.push(wantP[i]);
+// }
+
 
 
 //for(var i = 0; i <haveP.length; i++){
@@ -333,7 +338,7 @@ existingContent[0].results[0].have.push(wantP[i]);
 //now to deselect the poks. and uncheck the boxes,empy the array,  do an alert, close the modal.
 
 
-send2();
+//send2();
 
 
 // push this to api
@@ -506,7 +511,7 @@ var pShiny = data.PokemonTradingCenter[i].shiny;
     $("#" + cId +"box").prop('checked',false)
      for (j = 0; j < wantP.length; j++) {
       if(wantP[j].Name == pName){
-        wantP.splice(j,1);}
+        haveP.splice(j,1);}
  }
 }
 
@@ -523,7 +528,7 @@ var pPur = data.PokemonTradingCenter[x].purified;
 var pShiny = data.PokemonTradingCenter[x].shiny;
 
 
- wantP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+ haveP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
     $("#" + cId +"box").prop('checked',true);
   ;
 }
