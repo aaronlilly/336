@@ -170,6 +170,7 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
                        getallPok();
                        $('#subtractionAl').css({'display':'none'});
                        $('.ViewAll').css({'display':'none'});
+
     $('#additionAl').css({
         'height': '200px',
         'width': '275px',
@@ -283,6 +284,7 @@ $(document).ready(function () {
 });
 
  $('#selectAdd').click(function() {
+   checkThis("additionX");
       $('.addMenuUp').html("");
    $('#selClick').css({'display':'block'});
 $('#additionAl').css({
@@ -531,3 +533,30 @@ var pShiny = data.PokemonTradingCenter[x].shiny;
   ;
 }
 //end checknotcheck
+
+
+// function checkThis(curMenu){
+// if($('#'+ curMenu).prop('checked'))
+//   {alert("checked");}
+// }  
+
+
+
+
+function checkThis(curMenu){
+//if checked
+ if ($("#" + curMenu).prop('checked')) 
+   {
+  chkThis(curMenu);
+
+    }    
+ //if not checked
+   else{
+   notchkThis(curMenu);
+
+     }
+}  
+function chkThis(curMenu){ 
+$("#" + curMenu).prop('checked',false)}
+
+function notchkThis(curMenu){$("#" + curMenu).prop('checked',true);}
