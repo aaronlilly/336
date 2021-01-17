@@ -71,9 +71,9 @@
 
 <div id="selClick">
 <span style="margin-left:2%;"> Add to - <br></span>
-<div class="btn btn-Primary"  data-toggle="modal" data-target="#myModal1" style="margin-left:2%;margin-top:2%;">Pokemon I Have.</div>
+<div class="btn btn-Primary"  data-toggle="modal" data-target="#myModal1" id="addi"style="margin-left:2%;margin-top:2%;">Pokemon I Have.</div>
 
- <div class="btn btn-Success" data-toggle="modal" data-target="#myModal2"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.</div>
+ <div class="btn btn-Success" data-toggle="modal" data-target="#myModal2" id="subi" style="margin-left:2%;margin-top:2%;">Pokemon I Want.</div>
  </div>
 
 <div id="hideAdd" style="float:right;margin-top:5%;"><button type="button" class="btn btn-outline-warning">Close This Section</button></div></div>
@@ -149,7 +149,7 @@
          </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary"  data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelHave()">Cancel</button>
         <!-- <button type="button" class="btn btn-secondary" onclick="meanTo();">Close
         --> <button type="button" class="btn btn-primary" onclick="saveSelected()">Save</button>
       </div>
@@ -199,8 +199,8 @@
 </div>
 </div>
 
-<input type="checkbox" id="additionX" style="display: none;" >
-<input type="checkbox" id="subtractionX" style="display: none;">
+<input type="checkbox" id="haveX" style="display: none;">
+<input type="checkbox" id="wantX" style="display: none;">
 
 
 </body>

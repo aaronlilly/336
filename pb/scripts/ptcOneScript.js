@@ -284,7 +284,6 @@ $(document).ready(function () {
 });
 
  $('#selectAdd').click(function() {
-   checkThis("additionX");
       $('.addMenuUp').html("");
    $('#selClick').css({'display':'block'});
 $('#additionAl').css({
@@ -300,6 +299,10 @@ $('#additionAl').css({
 'height': 'auto'}
 );
 });
+ $('#addi').click(function() {
+  checkThis("haveX");});
+  $('#subi').click(function() {
+  checkThis("wantX");});
 });
 //end selection click form addbybox
 
@@ -320,20 +323,7 @@ function saveSelected(){
 
 for(var i = 0; i < haveP.length; i++){
 existingContent[0].results[0].have.push(haveP[i])}
-//console.log(existingContent);
-// for(var i = 0; i <wantP.length; i++){
-// existingContent[0].results[0].have.push(wantP[i]);
-// }
 
-
-
-//for(var i = 0; i <haveP.length; i++){
-//existingContent[0].results[0].have.push(haveP[i]);
-//}
-
-//for(var i = 0; i <wantP.length; i++){
-//existingContent[0].results[0].have.push(wantP[i]);
-//}
 
 //now to deselect the poks. and uncheck the boxes,empy the array,  do an alert, close the modal.
 
@@ -350,7 +340,10 @@ $('#myModal1').modal('hide');
 }
 
 //end save selected modal /have
-
+function cancelHave(){
+deSelectUnchk()
+$("#haveX").prop('checked',false)
+}
 
 ///deselect what u selected in modal
 function deSelectUnchk() {
@@ -366,6 +359,23 @@ function deSelectUnchk() {
          }
 }
 
+function cancelWant(){
+deSelectUnchkWant()
+}
+
+///deselect what u selected in modal
+function deSelectUnchkWant() {
+
+  for(var i=0; i <  pokemonNameArray.length; i++) 
+   {
+     if ($("#" + pokemonNameArray[i] +"box").prop('checked'))
+     {
+      $("#" + pokemonNameArray[i] +"box").prop('checked',false);
+     $('#'+pokemonNameArray[i]).removeClass('pokSelctd');
+     }
+     let wantP = [];
+         }
+}
 
 
 //end deselect for have. 
