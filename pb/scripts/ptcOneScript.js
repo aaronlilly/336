@@ -299,9 +299,9 @@ $('#additionAl').css({
 'height': 'auto'}
 );
 });
- $('#addi').click(function() {
+ $('#havi').click(function() {
   checkThis("haveX");});
-  $('#subi').click(function() {
+  $('#wanti').click(function() {
   checkThis("wantX");});
 });
 //end selection click form addbybox
