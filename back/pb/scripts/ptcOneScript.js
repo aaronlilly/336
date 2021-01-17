@@ -44,17 +44,13 @@ $(document).ready(function () {
   }
 
 
-
-///get list of bins
-//if trainer name same as what is in the list of bins, get the bin for that trainer
-
 $(document).ready(function () {
     pageLoad();
    });
  
 function pageLoad() {
   let existingContent = [];
-var col = '6001d6a3e31fbc3bdef42055'; 
+var col = '5feb2676f801050e4f31f1ba'; 
        $.ajax
          ({
          method: "GET",
@@ -76,15 +72,12 @@ for(let j=0; j <  x; j++) {
 if (trainername == data[0].bns[j].tname.toUpperCase()){
 gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
-  
+   console.log(trainBin);
 
 }}}
 
-
-function gotDBin(binny){
-console.log(binny);
-
-var urlx = "https://api.jsonbin.io/b/" + binny +"/latest" ;
+function gotDBin(binny) {
+var urlx = "https://api.jsonbin.io/b/"+$.trim(binny) + "/latest";
 $.ajax
          ({
          method: "GET",
@@ -93,44 +86,114 @@ $.ajax
                },
                   url:urlx
                   }).done(function(data) {
-		
-		existingContent.push(data);
-	var Owned = data.results[0].have;
-  var Covet = data.results[0].want;
 
-	if(Owned !== undefined)
+ 		if(data.results[0].have[0] !== undefined)
       {
                        $('#havePaste').html("");
-                for(var i = 0; i < Owned.length; i++) {
-                     $('#havePaste').append("<img src='" + Owned[i].imaj +"'>");
-                   
-                  } 
+                          $('#wantPaste').html("");
 
-		if(Covet!== undefined){$('#wantPaste').html("");
-                       for(var i = 0; i < Covet.length; i++) {
-                   $('#wantPaste').append("<img src='" + Covet[i].imaj +"'>");
+                 for(var i = 0; i < data.results[0].have.length; i++) {
+                    $('#havePaste').html("<img src='" + data.results[0].have[i].imaj +"'>");
+                   }rePainter();                    
 
-                  } 
-                  }   
-   
-      };
+                      for(var i = 0; i < data.results[0].have.length; i++) {
+                     $('#wantPaste').html("<img src='" + data.results[0].want[i].imaj +"'>");
+                   }rePainter1();            
+        //(data.results[0].have[0].Name)
+        existingContent.push(data);
+
+        } else{
+          existingContent.push(data);//added
+                        $('#havePaste').html("Trainer Needs to add Pokemon to 'Have' List");
+                          $('#wantPaste').html("Trainer Needs to add Pokemon to 'Want' List");
+         // ("nothing")}      
+       }                    
 });
 }
 
+function chk(cId,i,data){
+var pDex = data.PokemonTradingCenter[i].Dex;
+var pName = data.PokemonTradingCenter[i].Name;
+var pReg = data.PokemonTradingCenter[i].Region;
+var pType1 = data.PokemonTradingCenter[i].Type1;
+var pType2 = data.PokemonTradingCenter[i].Type2;
+var pImj = data.PokemonTradingCenter[i].imaj;
+var dC = data.PokemonTradingCenter[i].datecaught;
+var pNotes = data.PokemonTradingCenter[i].notes;
+var pPur = data.PokemonTradingCenter[i].purified;
+var pShiny = data.PokemonTradingCenter[i].shiny;
+
+    $("#" + cId +"box").prop('checked',false)
+     for (j = 0; j < wantP.length; j++) {
+      if(wantP[j].Name == pName){
+        wantP.splice(j,1);}
+ }
+}
+
+function notchk(cId,x,data){
+var pDex = data.PokemonTradingCenter[x].Dex;
+var pName = data.PokemonTradingCenter[x].Name;
+var pReg = data.PokemonTradingCenter[x].Region;
+var pType1 = data.PokemonTradingCenter[x].Type1;
+var pType2 = data.PokemonTradingCenter[x].Type2;
+var pImj = data.PokemonTradingCenter[x].imaj;
+var dC = data.PokemonTradingCenter[x].datecaught;
+var pNotes = data.PokemonTradingCenter[x].notes;
+var pPur = data.PokemonTradingCenter[x].purified;
+var pShiny = data.PokemonTradingCenter[x].shiny;
+
+
+ wantP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+    $("#" + cId +"box").prop('checked',true);
+  ;
+}
+
+//get all pokemon available
+function getallPok(){
+var current = "";
+        $.ajax({
+            method: "GET",
+            url: "https://aaronlilly.github.io/336/336ptc.json"
+               }).done(function(data) 
+                  {
+                     for(let i=0; i <  pokemonNameArray.length; i++) 
+                      {   
+                       $("#pokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                        + '">'+ '<figure>'+'<img src ="' + data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</div></div>');
+                      $('#'+ pokemonNameArray[i]).click(function(){
+var currentId = $(this).attr('id');
+let current = currentId;
+                        secondary(current,i,data);
+                      });
+                    }
+                });
+             };
+
+function secondary(cId,i,data){
+//if checked
+ if ($("#" + cId +"box").prop('checked')) 
+   {
+  chk(cId,i,data);
+$('#'+cId).removeClass('pokSelctd');
+    }    
+ //if not checked
+   else{
+   notchk(cId,i,data);
+$('#'+cId).addClass('pokSelctd');
+     }
+}          
+
+$(document).ready(function() {
+for(var i=0; i <  pokemonNameArray.length; i++) 
+   {
+     $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'box">');
+    }
+});
 
 
 
 
 
-
-
-
-
-
-
-
-
-////first toast -menu click
 $(document).ready(function() {
       toastR();
 
@@ -223,240 +286,6 @@ function rePaint(){ $('#topper').hide();
 $('#topper').get(0).offsetHeight;
 $('#topper').show();};
 
-////end first toast -menu click
-
-
-
-///add click within menu
-
-//get all pokemon available
-function getallPok(){
-var current = "";
-        $.ajax({
-            method: "GET",
-            url: "https://aaronlilly.github.io/336/336ptc.json"
-               }).done(function(data) 
-                  {
-                     for(let i=0; i <  pokemonNameArray.length; i++) 
-                      {   
-                       $("#pokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        + '">'+ '<figure>'+'<img src ="' + data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</div></div>');
-                      $('#'+ pokemonNameArray[i]).click(function(){
-var currentId = $(this).attr('id');
-let current = currentId;
-                        secondary(current,i,data);
-                      });
-                    }
-                });
-             };
-
-function secondary(cId,i,data){
-//if checked
- if ($("#" + cId +"box").prop('checked')) 
-   {
-  chk(cId,i,data);
-$('#'+cId).removeClass('pokSelctd');
-    }    
- //if not checked
-   else{
-   notchk(cId,i,data);
-$('#'+cId).addClass('pokSelctd');
-     }
-}          
-
-///end add click menu
-
-
-///selection click form addby box
-
-
-///////////add- 
-$(document).ready(function () {
-    $('#DexNumAdd').click(function() {
-      $('.addMenuUp').html("");
-	$('.addMenuUp').append("This Feature Coming soon");
-});
- $('#PokNamAdd').click(function() {
-      $('.addMenuUp').html("");
-  $('.addMenuUp').append("This Feature Coming soon");
-
-});
-
- $('#selectAdd').click(function() {
-      $('.addMenuUp').html("");
-   $('#selClick').css({'display':'block'});
-$('#additionAl').css({
-'display':'block',
-'width':'315px',
-'border': 'solid',
-'border-color': '#17A2B8',
-'border-radius': '5%',
-'border-width':'thin',
-'display':'block',
-'float':'left',
-'margin-right':'2%',
-'height': 'auto'}
-);
-});
-});
-//end selection click form addbybox
-
-
-//save from modal
-
-function saveSelected(){
-//var THave = existingContent[0].results[0].have;
-
-// console.log(existingContent[0].results[0]);
-// console.log(existingContent[0].results[0].trainer)
-// console.log(existingContent[0].results[0].have)
-//console.log(existingContent[0].results[0].trainer);//example//working
-// console.log(wantP);//working
-// console.log(haveP);//notyet working
-
-
-
-for(var i = 0; i < haveP.length; i++){
-existingContent[0].results[0].have.push(haveP[i])}
-//console.log(existingContent);
-// for(var i = 0; i <wantP.length; i++){
-// existingContent[0].results[0].have.push(wantP[i]);
-// }
-
-
-
-//for(var i = 0; i <haveP.length; i++){
-//existingContent[0].results[0].have.push(haveP[i]);
-//}
-
-//for(var i = 0; i <wantP.length; i++){
-//existingContent[0].results[0].have.push(wantP[i]);
-//}
-
-//now to deselect the poks. and uncheck the boxes,empy the array,  do an alert, close the modal.
-
-
-send2();
-
-
-// push this to api
-// alert("Pokemon saved");
-alert2();
-deSelectUnchk();
-$('#myModal1').modal('hide');
-
-}
-
-//end save selected modal /have
-
-
-///deselect what u selected in modal
-function deSelectUnchk() {
-
-  for(var i=0; i <  pokemonNameArray.length; i++) 
-   {
-     if ($("#" + pokemonNameArray[i] +"box").prop('checked'))
-     {
-      $("#" + pokemonNameArray[i] +"box").prop('checked',false);
-     $('#'+pokemonNameArray[i]).removeClass('pokSelctd');
-     }
-     let haveP = [];
-         }
-}
-
-
-
-//end deselect for have. 
-
-
-
-///alert2
-
-function alert2(){
-  toastr.options = {
- "closeButton": true,
-  "debug": false,
-  "newestOnTop": false,
-  "progressBar": false,
-  "positionClass": "toast-top-right",
-  "preventDuplicates": false,
-  "onclick": null,
-  "showDuration": "100",
-  "hideDuration": "1000",
-  "timeOut": "5000",
-  "extendedTimeOut": "1000",
-  "showEasing": "swing",
-  "hideEasing": "linear",
-  "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
-}
-toastr["info"]('Pokemon Saved')
-}
-////////end stuff
-
-
-function send2(){
-  //console.log(existingContent);
-$.ajax
-       ({
-           url: "https://api.jsonbin.io/b/" + $.trim(trainBin), 
-          method: "PUT",
-  versioning: false,
-          beforeSend: function (xhr) {
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader("secret-key", mySecretKey);
-               },
-                  
-                 data: JSON.stringify(existingContent[0]),
-                  }).done(function(responseText) 
-                     {
-                      console.log(responseText)
-      toastyFunct();
-      ;                 
-    });
-
-}
-
-function toastyFunct(){
-  pageLoad();
-  alert("sent")}
-  ;
-/////end of 
-
-
-
-//check boxset up
-$(document).ready(function() {
-for(var i=0; i <  pokemonNameArray.length; i++) 
-   {
-     $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'box">');
-    }
-});
-
-//end check box
-
-
-///needed for initial paste of current pokemon list
-
-function rePainterWant(){ 
-$('#wantPaste').hide();
-$('#wantPaste').get(0).offsetHeight;
-$('#wantPaste').show();
-
-};
-function rePainterHave(){ 
-$('#havePaste').hide();
-$('#havePaste').get(0).offsetHeight;
-$('#havePaste').show();
-
-};
-///end current list paste
-
-//add paste
-function rePaint(){ $('#topper').hide();
-$('#topper').get(0).offsetHeight;
-$('#topper').show();};
-
 $(document).ready(function () {
     $('#hideAdd').click(function() {
     $('#additionAl').css({
@@ -489,45 +318,148 @@ $(document).ready(function () {
     });
       });
 });
-///end add paste
+
+function rePainter(){ 
+$('#wantPaste').hide();
+$('#wantPaste').get(0).offsetHeight;
+$('#wantPaste').show();
+
+};
+
+function rePainter1(){ 
+$('#havePaste').hide();
+$('#havePaste').get(0).offsetHeight;
+$('#havePaste').show();
+
+};
 
 
+///////////add- 
+$(document).ready(function () {
+    $('#DexNumAdd').click(function() {
+      $('.addMenuUp').html("");
+	$('.addMenuUp').append("This Feature Coming soon");
+});
+ $('#PokNamAdd').click(function() {
+      $('.addMenuUp').html("");
+  $('.addMenuUp').append("This Feature Coming soon");
 
-//checknotheck
-function chk(cId,i,data){
-var pDex = data.PokemonTradingCenter[i].Dex;
-var pName = data.PokemonTradingCenter[i].Name;
-var pReg = data.PokemonTradingCenter[i].Region;
-var pType1 = data.PokemonTradingCenter[i].Type1;
-var pType2 = data.PokemonTradingCenter[i].Type2;
-var pImj = data.PokemonTradingCenter[i].imaj;
-var dC = data.PokemonTradingCenter[i].datecaught;
-var pNotes = data.PokemonTradingCenter[i].notes;
-var pPur = data.PokemonTradingCenter[i].purified;
-var pShiny = data.PokemonTradingCenter[i].shiny;
+});
 
-    $("#" + cId +"box").prop('checked',false)
-     for (j = 0; j < wantP.length; j++) {
-      if(wantP[j].Name == pName){
-        haveP.splice(j,1);}
- }
+ $('#selectAdd').click(function() {
+      $('.addMenuUp').html("");
+   $('#selClick').css({'display':'block'});
+$('#additionAl').css({
+'display':'block',
+'width':'315px',
+'border': 'solid',
+'border-color': '#17A2B8',
+'border-radius': '5%',
+'border-width':'thin',
+'display':'block',
+'float':'left',
+'margin-right':'2%',
+'height': 'auto'}
+);
+});
+});
+
+// function meanTo(){
+
+// if (confirm("Click 'OK' to close without saving.")) {
+//  $('#myModal1').modal('hide');}
+//  else {}
+// };
+
+
+function saveSelected(){
+
+//console.log(existingContent);///working
+// console.log(existingContent[0].results[0].have);//example
+// console.log(wantP);//working
+// console.log(haveP);//notyet working
+
+for(var i = 0; i <haveP.length; i++){
+existingContent[0].results[0].have.push(haveP[i]);
 }
 
-function notchk(cId,x,data){
-var pDex = data.PokemonTradingCenter[x].Dex;
-var pName = data.PokemonTradingCenter[x].Name;
-var pReg = data.PokemonTradingCenter[x].Region;
-var pType1 = data.PokemonTradingCenter[x].Type1;
-var pType2 = data.PokemonTradingCenter[x].Type2;
-var pImj = data.PokemonTradingCenter[x].imaj;
-var dC = data.PokemonTradingCenter[x].datecaught;
-var pNotes = data.PokemonTradingCenter[x].notes;
-var pPur = data.PokemonTradingCenter[x].purified;
-var pShiny = data.PokemonTradingCenter[x].shiny;
+for(var i = 0; i <wantP.length; i++){
+existingContent[0].results[0].have.push(wantP[i]);
+}
+
+//now to deselect the poks. and uncheck the boxes,empy the array,  do an alert, close the modal.
 
 
- haveP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
-    $("#" + cId +"box").prop('checked',true);
+send2();
+
+
+// push this to api
+// alert("Pokemon saved");
+alert2();
+deSelectUnchk();
+$('#myModal1').modal('hide');
+
+}
+
+function deSelectUnchk() {
+
+  for(var i=0; i <  pokemonNameArray.length; i++) 
+   {
+     if ($("#" + pokemonNameArray[i] +"box").prop('checked'))
+     {
+      $("#" + pokemonNameArray[i] +"box").prop('checked',false);
+     $('#'+pokemonNameArray[i]).removeClass('pokSelctd');
+     }
+     let wantP = [];
+         }
+}
+
+function alert2(){
+  toastr.options = {
+ "closeButton": true,
+  "debug": false,
+  "newestOnTop": false,
+  "progressBar": false,
+  "positionClass": "toast-top-right",
+  "preventDuplicates": false,
+  "onclick": null,
+  "showDuration": "100",
+  "hideDuration": "1000",
+  "timeOut": "5000",
+  "extendedTimeOut": "1000",
+  "showEasing": "swing",
+  "hideEasing": "linear",
+  "showMethod": "fadeIn",
+  "hideMethod": "fadeOut"
+}
+toastr["info"]('Pokemon Saved')
+}
+
+function send2(){
+  console.log(existingContent);
+$.ajax
+       ({
+           url: "https://api.jsonbin.io/b/" + $.trim(trainBin), 
+          method: "POST",
+  versioning: false,
+          beforeSend: function (xhr) {
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.setRequestHeader("secret-key", mySecretKey);
+               },
+                  
+                 data: JSON.stringify(existingContent),
+                  }).done(function(responseText) 
+                     {
+                      console.log(responseText)
+      toastyFunct();
+      ;                 
+    });
+
+}
+
+//idk if updating collections works...
+
+function toastyFunct(){
+  pageLoad();
+  alert("sent")}
   ;
-}
-//end checknotcheck

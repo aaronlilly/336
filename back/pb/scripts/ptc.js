@@ -108,16 +108,17 @@ cookiClik()
 //////end click events for buttons
 
 
-//creates bin in collection of bins (not a collection now)
+//creates bin in collection of bins
 function newBin(){
-      
+       var myCol = "5fd07c59516f9d12702a3bc3"; //this is correct //maybe a cookie with is/isnot new too? that expires
+       
        $.ajax
        ({
-          url: "https://api.jsonbin.io/b/",    
+          url: "https://api.jsonbin.io/b/",   myCol, 
          method: "POST",
 	//collection-id: myCol,
          beforeSend: function (xhr) {
-          //xhr.setRequestHeader("collection-id", myCol);
+          xhr.setRequestHeader("collection-id", myCol);
                xhr.setRequestHeader("Content-Type", "application/json");
                xhr.setRequestHeader("secret-key", mySecretKey);
               },
