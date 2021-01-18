@@ -517,10 +517,10 @@ function chk(cId,i,data){
 
 var pName = data.PokemonTradingCenter[i].Name;
 
-///keep em seperate
+///keep em seperate//this removes from array and uncecks
     $("#" + cId +"box").prop('checked',false)
 
-     if($("#havi").prop('checked'))
+     if($("#havi").prop('checked',true))
         {
           for (j = 0; j < haveP.length; j++) 
           {
@@ -530,7 +530,7 @@ var pName = data.PokemonTradingCenter[i].Name;
               }
           }
         }
-      if($("#wanti").prop('checked'))
+      if($("#wanti").prop('checked',true))
          {
           for (j = 0; j < wantP.length; j++) 
             {
@@ -554,12 +554,12 @@ var pNotes = data.PokemonTradingCenter[x].notes;
 var pPur = data.PokemonTradingCenter[x].purified;
 var pShiny = data.PokemonTradingCenter[x].shiny;
 
-    if($("#havi").prop('checked'))
+    if($("#havi").prop('checked',true))
     {
      haveP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
      $("#" + cId +"box").prop('checked',true);
     }
-    else if($("#wanti").prop('checked'))
+    else if($("#wanti").prop('checked',true))
     {
      wantP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
     $("#" + cId +"box").prop('checked',true);
