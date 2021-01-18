@@ -300,9 +300,15 @@ $('#additionAl').css({
 );
 });
  $('#havi').click(function() {
-  checkThis("haveX");});
+  checkThis("haveX");
+  uncheckThat("wantX");
+
+
+});
   $('#wanti').click(function() {
-  checkThis("wantX");});
+  checkThis("wantX");
+     uncheckThat("haveX");
+});
 });
 //end selection click form addbybox
 
@@ -570,3 +576,11 @@ function chkThis(curMenu){
 $("#" + curMenu).prop('checked',false)}
 
 function notchkThis(curMenu){$("#" + curMenu).prop('checked',true);}
+
+
+function uncheckThat(otherMenu)
+{
+  if ($("#" + otherMenu).prop('checked')){
+    $("#" + otherMenu).prop('checked',false)
+  }
+}
