@@ -93,12 +93,12 @@ $.ajax
                },
                   url:urlx
                   }).done(function(data) {
-		
-		existingContent.push(data);
-	var Owned = data.results[0].have;
+    
+    existingContent.push(data);
+  var Owned = data.results[0].have;
   var Covet = data.results[0].want;
 
-	if(Owned !== undefined)
+  if(Owned !== undefined)
       {
                        $('#havePaste').html("");
                 for(var i = 0; i < Owned.length; i++) {
@@ -106,7 +106,7 @@ $.ajax
                    
                   } 
 
-		if(Covet!== undefined){$('#wantPaste').html("");
+    if(Covet!== undefined){$('#wantPaste').html("");
                        for(var i = 0; i < Covet.length; i++) {
                    $('#wantPaste').append("<img src='" + Covet[i].imaj +"'>");
 
@@ -170,6 +170,7 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
                        getallPok();
                        $('#subtractionAl').css({'display':'none'});
                        $('.ViewAll').css({'display':'none'});
+
     $('#additionAl').css({
         'height': '200px',
         'width': '275px',
@@ -274,7 +275,7 @@ $('#'+cId).addClass('pokSelctd');
 $(document).ready(function () {
     $('#DexNumAdd').click(function() {
       $('.addMenuUp').html("");
-	$('.addMenuUp').append("This Feature Coming soon");
+  $('.addMenuUp').append("This Feature Coming soon");
 });
  $('#PokNamAdd').click(function() {
       $('.addMenuUp').html("");
@@ -298,6 +299,16 @@ $('#additionAl').css({
 'height': 'auto'}
 );
 });
+ $('#havi').click(function() {
+  checkThis("haveX");
+  uncheckThat("wantX");
+
+
+});
+  $('#wanti').click(function() {
+  checkThis("wantX");
+     uncheckThat("haveX");
+});
 });
 //end selection click form addbybox
 
@@ -318,20 +329,7 @@ function saveSelected(){
 
 for(var i = 0; i < haveP.length; i++){
 existingContent[0].results[0].have.push(haveP[i])}
-//console.log(existingContent);
-// for(var i = 0; i <wantP.length; i++){
-// existingContent[0].results[0].have.push(wantP[i]);
-// }
 
-
-
-//for(var i = 0; i <haveP.length; i++){
-//existingContent[0].results[0].have.push(haveP[i]);
-//}
-
-//for(var i = 0; i <wantP.length; i++){
-//existingContent[0].results[0].have.push(wantP[i]);
-//}
 
 //now to deselect the poks. and uncheck the boxes,empy the array,  do an alert, close the modal.
 
@@ -348,7 +346,10 @@ $('#myModal1').modal('hide');
 }
 
 //end save selected modal /have
-
+function cancelHave(){
+deSelectUnchk()
+$("#haveX").prop('checked',false)
+}
 
 ///deselect what u selected in modal
 function deSelectUnchk() {
@@ -364,6 +365,23 @@ function deSelectUnchk() {
          }
 }
 
+function cancelWant(){
+deSelectUnchkWant()
+}
+
+///deselect what u selected in modal
+function deSelectUnchkWant() {
+
+  for(var i=0; i <  pokemonNameArray.length; i++) 
+   {
+     if ($("#" + pokemonNameArray[i] +"box").prop('checked'))
+     {
+      $("#" + pokemonNameArray[i] +"box").prop('checked',false);
+     $('#'+pokemonNameArray[i]).removeClass('pokSelctd');
+     }
+     let wantP = [];
+         }
+}
 
 
 //end deselect for have. 
@@ -531,3 +549,38 @@ var pShiny = data.PokemonTradingCenter[x].shiny;
   ;
 }
 //end checknotcheck
+
+
+// function checkThis(curMenu){
+// if($('#'+ curMenu).prop('checked'))
+//   {alert("checked");}
+// }  
+
+
+
+
+function checkThis(curMenu){
+//if checked
+ if ($("#" + curMenu).prop('checked')) 
+   {
+  chkThis(curMenu);
+
+    }    
+ //if not checked
+   else{
+   notchkThis(curMenu);
+
+     }
+}  
+function chkThis(curMenu){ 
+$("#" + curMenu).prop('checked',false)}
+
+function notchkThis(curMenu){$("#" + curMenu).prop('checked',true);}
+
+
+function uncheckThat(otherMenu)
+{
+  if ($("#" + otherMenu).prop('checked')){
+    $("#" + otherMenu).prop('checked',false)
+  }
+}
