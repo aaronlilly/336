@@ -93,12 +93,12 @@ $.ajax
                },
                   url:urlx
                   }).done(function(data) {
-    
-    existingContent.push(data);
-  var Owned = data.results[0].have;
+		
+		existingContent.push(data);
+	var Owned = data.results[0].have;
   var Covet = data.results[0].want;
 
-  if(Owned !== undefined)
+	if(Owned !== undefined)
       {
                        $('#havePaste').html("");
                 for(var i = 0; i < Owned.length; i++) {
@@ -106,7 +106,7 @@ $.ajax
                    
                   } 
 
-    if(Covet!== undefined){$('#wantPaste').html("");
+		if(Covet!== undefined){$('#wantPaste').html("");
                        for(var i = 0; i < Covet.length; i++) {
                    $('#wantPaste').append("<img src='" + Covet[i].imaj +"'>");
 
@@ -237,19 +237,37 @@ var current = "";
             method: "GET",
             url: "https://aaronlilly.github.io/336/336ptc.json"
                }).done(function(data) 
-                  {
-                     for(let i=0; i <  pokemonNameArray.length; i++) 
+                  { $("#pokHav").html("");
+                  $("#pokWan").html("");
+
+                      for(let i=0; i <  pokemonNameArray.length; i++) 
                       {   
                        $("#pokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        + '">'+ '<figure>'+'<img src ="' + data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</div></div>');
-                      $('#'+ pokemonNameArray[i]).click(function(){
-var currentId = $(this).attr('id');
-let current = currentId;
+                        + '">'+ '<figure>'+
+                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '">'
+                         + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>');
+                     
+                         $("#pokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                        + '">'+ '<figure>'+
+                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '">'
+                         + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>');
+
+
+                         $('#'+ pokemonNameArray[i]).click(function(){
+                            var currentId = $(this).attr('id');
+                            let current = currentId;
                         secondary(current,i,data);
-                      });
-                    }
+                          });
+                      }
+                   
+                     
+                    
                 });
              };
+
+
 
 function secondary(cId,i,data){
 //if checked
@@ -275,7 +293,7 @@ $('#'+cId).addClass('pokSelctd');
 $(document).ready(function () {
     $('#DexNumAdd').click(function() {
       $('.addMenuUp').html("");
-  $('.addMenuUp').append("This Feature Coming soon");
+	$('.addMenuUp').append("This Feature Coming soon");
 });
  $('#PokNamAdd').click(function() {
       $('.addMenuUp').html("");
@@ -314,31 +332,13 @@ $('#additionAl').css({
 
 
 //save from modal
-
 function saveSelected(){
-//var THave = existingContent[0].results[0].have;
-
-// console.log(existingContent[0].results[0]);
-// console.log(existingContent[0].results[0].trainer)
-// console.log(existingContent[0].results[0].have)
-//console.log(existingContent[0].results[0].trainer);//example//working
-// console.log(wantP);//working
-// console.log(haveP);//notyet working
-
-
 
 for(var i = 0; i < haveP.length; i++){
 existingContent[0].results[0].have.push(haveP[i])}
-
-
-//now to deselect the poks. and uncheck the boxes,empy the array,  do an alert, close the modal.
-
-
 send2();
 
-
 // push this to api
-// alert("Pokemon saved");
 alert2();
 deSelectUnchk();
 $('#myModal1').modal('hide');
@@ -513,22 +513,33 @@ $(document).ready(function () {
 
 //checknotheck
 function chk(cId,i,data){
-var pDex = data.PokemonTradingCenter[i].Dex;
-var pName = data.PokemonTradingCenter[i].Name;
-var pReg = data.PokemonTradingCenter[i].Region;
-var pType1 = data.PokemonTradingCenter[i].Type1;
-var pType2 = data.PokemonTradingCenter[i].Type2;
-var pImj = data.PokemonTradingCenter[i].imaj;
-var dC = data.PokemonTradingCenter[i].datecaught;
-var pNotes = data.PokemonTradingCenter[i].notes;
-var pPur = data.PokemonTradingCenter[i].purified;
-var pShiny = data.PokemonTradingCenter[i].shiny;
 
+var pName = data.PokemonTradingCenter[i].Name;
+
+
+
+///keep em seperate
     $("#" + cId +"box").prop('checked',false)
-     for (j = 0; j < wantP.length; j++) {
-      if(wantP[j].Name == pName){
-        haveP.splice(j,1);}
- }
+
+     if($("#havi").prop('checked'))
+        {
+          for (j = 0; j < haveP.length; j++) 
+          {
+             if(haveP[j].Name == pName)
+              {
+                haveP.splice(j,1);
+              }
+          }
+             }if($("#wanti").prop('checked'))
+    
+              {
+               for (j = 0; j < wantP.length; j++) 
+               {
+                if(wantP[j].Name == pName)
+                {
+                  wantP.splice(j,1);
+                }
+    }
 }
 
 function notchk(cId,x,data){
@@ -543,10 +554,16 @@ var pNotes = data.PokemonTradingCenter[x].notes;
 var pPur = data.PokemonTradingCenter[x].purified;
 var pShiny = data.PokemonTradingCenter[x].shiny;
 
-
- haveP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+    if($("#havi").prop('checked'))
+    {
+     haveP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+     $("#" + cId +"box").prop('checked',true);
+    }
+    else if($("#wanti").prop('checked'))
+    {
+     wantP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
     $("#" + cId +"box").prop('checked',true);
-  ;
+    }
 }
 //end checknotcheck
 
