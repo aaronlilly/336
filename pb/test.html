@@ -22,11 +22,19 @@ var ArrayD =[
 $(document).ready(function () {
 	  for(var i = 0; i <ArrayD.length; i++) {
 $('#oney').append("<div id='" + ArrayD[i] + "'>"+ ArrayD[i]+"</div>");
-
+$('#twoy').append("<div id='" + ArrayD[i] + "x'>"+ ArrayD[i]+"</div>");
 
  $("#xbox").append('<input type="checkbox" id="' +ArrayD[i] +'box">');
+$("#xbox").append('<input type="checkbox" id="' +ArrayD[i] +'xbox">');
 
  $('#'+ ArrayD[i]).click(function(){
+                            var currentId = $(this).attr('id');
+                             let current = currentId;
+                        secondary(current);
+
+});
+
+ $('#'+ ArrayD[i]+'x').click(function(){
                             var currentId = $(this).attr('id');
                              let current = currentId;
                         secondary(current);
