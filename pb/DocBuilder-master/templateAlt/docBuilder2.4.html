@@ -1,0 +1,240 @@
+<html>
+<head>
+  <title>Document Builder </title>
+
+<!-- Bootstrap CSS  & JS--> 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!--Toastr Min CSS --> 
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css'> 
+
+<!--Toastr Min JS --> 
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js'></script>
+<!--Font Awesome --> 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+<!-- Custom JS and CSS -->
+<link rel="stylesheet" href="./css/docBuilder2.3.css">
+<script type='text/javascript' src='./js/docBuilder2.4.js'></script>
+<!-- End Custom JS and CSS -->
+
+<body>
+
+
+
+
+
+<div id ="pageDiv">
+
+<!-- Left hand side of page -->
+    <div id ="leftDiv"> <span class="bsSuccess">Editor</span>  
+<div id ="leftDivBox">  <!-- <a href="#"><img src=https://talonhit.com/wp-content/uploads/2016/09/talon-healthy-support.png" id="talonHeader"></a> -->
+       Document Title 
+       <input type="text" id="editorTitleHere" oninput= "titleHere()" placeholder="Enter Document TItle">
+<br>
+
+
+<br><br>
+
+<span id="editorSummaryTocHeading" class="summaryTocHeading">Summary / Table of Contents</span> <input type="text" id="editorSummaryToc" oninput= "summaryToc()" placeholder="Enter Summary / TOC"><br>
+      <br>
+       <div id ="marginLeft">
+ 
+  <span class ="headingBU"> Heading</span>
+<input type="text" id="editorHeading1" oninput= "fHeading1()" placeholder="Enter First Heading">
+<br>
+
+  <ul><li>Bullet  <input type='text' id='valueField' placeholder="Enter # of Bullets to Add"> <span class="badge badge-info" id="bulletAddr" data-toggle="modal" data-target="#myModal2">Click me to add bullet</span> <span class="badge badge-warning" id="bulletRemovr">Remove Bullets </span></li>
+
+</div>
+<br>
+   
+   <span class="badge badge-info" id="heading2Addr" data-toggle="modal" data-target="#myModal3">Click me to add Heading</span>
+
+
+<!-- <span class="bsFireBrick" id='inPut' data-toggle="modal" data-target="#myModal2"><button>Bullet</button></span>
+ -->
+
+
+      </div>
+
+
+        </div>
+    </div>
+
+
+
+<!-- /right hand side of page completed -->
+
+<div id ="rightDiv"><span class="bsPrimary">Completed Doc</span> <span class="bsFireBrick" id="clickForCode" data-toggle="modal" data-target="#myModal">Click for Raw Code</span> 
+    <div id ="rightDivBox">  <!-- <a href="#"><img src=https://talonhit.com/wp-content/uploads/2016/09/talon-healthy-support.png" id="talonHeader"></a> -->
+       <p id="completeSummaryTOC" class="summaryTocHeading"></p> 
+
+
+       <div id ="marginLeft"><p id="completeHeading1" class="headingBU"></p> <span id="completeAddBullet"> </span> <br>
+      <br>
+
+      <span id="completeHeading2"> </span>
+       <span id ="completeBullet2"> </span> <br>
+
+      </div>
+    </div>
+</div>
+
+
+<!-- //code below -->
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+ 
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Code Below</h4>
+        </div>
+        <div class="modal-body">
+          <p>  &ltHTML&gt <br> &ltHEAD&gt <br> &ltTITLE&gt <span id="codeTitleHere">  </span> &lt/TITLE&gt <br> &ltSTYLE&gt <br> .headingBU {color: blue;  text-decoration: underline;} <br> &lt/STYLE&gt
+            <br> &ltBODY&gt <br> <span id="codeSummaryTOC"> </span> <br> <span id="codeHeading1"> </span> <br> <span id="codeAddBullet"> </span><br>
+            <br>  
+
+            <span id="codeHeading2"> </span> <br>
+          <span id ="codeBullet2"> </span> <br>
+
+
+
+
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+
+<!-- // -->
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+ 
+
+  <!-- Modal 2-->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title"> Bullet Adder</h4>
+        </div>
+        <div class="modal-body">
+       
+          <div id='outPut'>
+         </div>
+
+
+
+          </p>
+        </div>
+        <div class="modal-footer">
+        <button class="btn btn-success" id="addTheseBullets">Add All Bullets </button>
+                  <button type="button"  id="myModal2close" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+     
+  
+</div>
+
+</div>
+<!-- 
+end modal 2
+ -->
+
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+ 
+
+  <!-- Modal 3-->
+  <div class="modal fade" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" onclick="meanTo();">&times;</button>
+          <h4 class="modal-title"> Pokemon you won</h4>
+        </div>
+        <div class="modal-body">
+       
+       
+         </div>
+
+          </p>
+        </div>
+        <div class="modal-footer">
+       
+                  <button type="button"  id="myModal3close" class="btn btn-default" data-dismiss="modal" onclick="addOne();">Close</button>
+        </div>
+      </div>
+     
+  
+</div>
+
+</div>
+
+<!-- //score modal -->
+
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+ 
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModalscore" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Score</h4>
+        </div>
+        <div class="modal-body">
+        <input type="text" id="inc" value="2"></input>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+</div>
+
+</body>
+</html>

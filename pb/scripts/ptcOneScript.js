@@ -173,7 +173,7 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
 
     $('#additionAl').css({
         'height': '200px',
-        'width': '320px',
+        'width': '275px',
         'border': 'solid',
         'border-color':'#17A2B8',
         'border-radius':'5%',
@@ -233,23 +233,42 @@ $('#topper').show();};
 //get all pokemon available
 function getallPok(){
 var current = "";
+$("#pokHav").html("");
+                  $("#pokWan").html("");
         $.ajax({
             method: "GET",
             url: "https://aaronlilly.github.io/336/336ptc.json"
                }).done(function(data) 
-                  {
-                     for(let i=0; i <  pokemonNameArray.length; i++) 
+                  { 
+
+                      for(let i=0; i <  pokemonNameArray.length; i++) 
                       {   
                        $("#pokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        + '">'+ '<figure>'+'<img src ="' + data.PokemonTradingCenter[i].imaj + '">' + '<figcaption>' +data.PokemonTradingCenter[i].Name + '</figcaption>'+'</figure>'+'</div></div>');
-                      $('#'+ pokemonNameArray[i]).click(function(){
-var currentId = $(this).attr('id');
-let current = currentId;
+                        + '">'+ '<figure>'+
+                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '">'
+                         + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>');
+                     
+                         $("#pokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                        + '">'+ '<figure>'+
+                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '">'
+                         + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>');
+
+
+                         $('#'+ pokemonNameArray[i]).click(function(){
+                            var currentId = $(this).attr('id');
+                            let current = currentId;
                         secondary(current,i,data);
-                      });
-                    }
+                          });
+                      }
+                   
+                     
+                    
                 });
              };
+
+
 
 function secondary(cId,i,data){
 //if checked
@@ -314,31 +333,13 @@ $('#additionAl').css({
 
 
 //save from modal
-
 function saveSelected(){
-//var THave = existingContent[0].results[0].have;
-
-// console.log(existingContent[0].results[0]);
-// console.log(existingContent[0].results[0].trainer)
-// console.log(existingContent[0].results[0].have)
-//console.log(existingContent[0].results[0].trainer);//example//working
-// console.log(wantP);//working
-// console.log(haveP);//notyet working
-
-
 
 for(var i = 0; i < haveP.length; i++){
 existingContent[0].results[0].have.push(haveP[i])}
-
-
-//now to deselect the poks. and uncheck the boxes,empy the array,  do an alert, close the modal.
-
-
 send2();
 
-
 // push this to api
-// alert("Pokemon saved");
 alert2();
 deSelectUnchk();
 $('#myModal1').modal('hide');
@@ -513,23 +514,33 @@ $(document).ready(function () {
 
 //checknotheck
 function chk(cId,i,data){
-var pDex = data.PokemonTradingCenter[i].Dex;
-var pName = data.PokemonTradingCenter[i].Name;
-var pReg = data.PokemonTradingCenter[i].Region;
-var pType1 = data.PokemonTradingCenter[i].Type1;
-var pType2 = data.PokemonTradingCenter[i].Type2;
-var pImj = data.PokemonTradingCenter[i].imaj;
-var dC = data.PokemonTradingCenter[i].datecaught;
-var pNotes = data.PokemonTradingCenter[i].notes;
-var pPur = data.PokemonTradingCenter[i].purified;
-var pShiny = data.PokemonTradingCenter[i].shiny;
 
+var pName = data.PokemonTradingCenter[i].Name;
+
+///keep em seperate
     $("#" + cId +"box").prop('checked',false)
-     for (j = 0; j < wantP.length; j++) {
-      if(wantP[j].Name == pName){
-        haveP.splice(j,1);}
- }
-}
+
+     if($("#havi").prop('checked'))
+        {
+          for (j = 0; j < haveP.length; j++) 
+          {
+             if(haveP[j].Name == pName)
+              {
+                haveP.splice(j,1);
+              }
+          }
+        }
+      if($("#wanti").prop('checked'))
+         {
+          for (j = 0; j < wantP.length; j++) 
+            {
+              if(wantP[j].Name == pName)
+                {
+                  wantP.splice(j,1);
+                }
+            }
+          }
+        }
 
 function notchk(cId,x,data){
 var pDex = data.PokemonTradingCenter[x].Dex;
@@ -543,10 +554,16 @@ var pNotes = data.PokemonTradingCenter[x].notes;
 var pPur = data.PokemonTradingCenter[x].purified;
 var pShiny = data.PokemonTradingCenter[x].shiny;
 
-
- haveP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+    if($("#havi").prop('checked'))
+    {
+     haveP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+     $("#" + cId +"box").prop('checked',true);
+    }
+    else if($("#wanti").prop('checked'))
+    {
+     wantP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
     $("#" + cId +"box").prop('checked',true);
-  ;
+    }
 }
 //end checknotcheck
 
@@ -584,3 +601,40 @@ function uncheckThat(otherMenu)
     $("#" + otherMenu).prop('checked',false)
   }
 }
+
+
+
+
+//////////////////////remove
+
+///////////add- 
+$(document).ready(function () {
+ $('#selectSub').click(function() {
+      // $('.addMenuUp').html("");
+      $('.subMenuUp').html("");
+   $('#selClick').css({'display':'block'});
+$('#additionAl').css({
+'display':'block',
+'width':'315px',
+'border': 'solid',
+'border-color': '#17A2B8',
+'border-radius': '5%',
+'border-width':'thin',
+'display':'block',
+'float':'left',
+'margin-right':'2%',
+'height': 'auto'}
+);
+});
+ $('#havi').click(function() {
+  checkThis("haveX");
+  uncheckThat("wantX");
+
+
+});
+  $('#wanti').click(function() {
+  checkThis("wantX");
+     uncheckThat("haveX");
+});
+});
+//end selection click form addbybox

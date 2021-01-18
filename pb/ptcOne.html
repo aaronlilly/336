@@ -161,11 +161,12 @@
   <!-- Trigger the modal with a button -->
  
 
+
+
   <!-- Modal 2-->
+     
 <div class="modal fade" id="myModal2" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="gridSystemModalLabel">
   <div class="modal-dialog"  role="document">
-    
-      <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Want.</h5>
@@ -173,13 +174,15 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-        <div class="modal-body">
-        <div id ="pokWant">
- </div>
+      <div class="modal-body">
+         <div class="row" id="pokWan">
+         </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary"  data-dismiss="modal">Close</button>
-      <button type="button" class="btn btn-primary" onclick="saveSelected()">Save</button>
+        <!-- <button type="button" class="btn btn-secondary" onclick="meanTo();">Close
+        --> <button type="button" class="btn btn-primary">Save</button>  
+         <!-- onclick="saveSelected() -->
       </div>
     </div>
   </div>
