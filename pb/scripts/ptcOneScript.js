@@ -250,7 +250,7 @@ $("#pokHav").html("");
                          '</figcaption>'+'</figure>'+'</div></div>');
                      
                          $("#pokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        + '">'+ '<figure>'+
+                        + 'x">'+ '<figure>'+
                         '<img src ="' + data.PokemonTradingCenter[i].imaj + '">'
                          + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
@@ -261,6 +261,15 @@ $("#pokHav").html("");
                             let current = currentId;
                         secondary(current,i,data);
                           });
+			
+			$('#'+ pokemonNameArray[i]+'x').click(function(){
+			
+                            var currentId = $(this).attr('id');
+                            let current = currentId;
+		//console.log(current); Ivysaurx
+                        secondary(current,i,data);
+                          });
+
                       }
                    
                      
@@ -279,6 +288,7 @@ $('#'+cId).removeClass('pokSelctd');
     }    
  //if not checked
    else{
+	//console.log(cId);IvysaurX
    notchk(cId,i,data);
 $('#'+cId).addClass('pokSelctd');
      }
@@ -318,7 +328,12 @@ $('#additionAl').css({
 'height': 'auto'}
 );
 });
- $('#havi').click(function() {
+ 
+});
+//end selection click form addbybox
+
+$(document).ready(function () {
+$('#havi').click(function() {
   checkThis("haveX");
   uncheckThat("wantX");
 
@@ -329,7 +344,6 @@ $('#additionAl').css({
      uncheckThat("haveX");
 });
 });
-//end selection click form addbybox
 
 
 //save from modal
@@ -449,6 +463,9 @@ $(document).ready(function() {
 for(var i=0; i <  pokemonNameArray.length; i++) 
    {
      $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'box">');
+//want
+ $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'xbox">');
+
     }
 });
 
@@ -554,12 +571,16 @@ var pNotes = data.PokemonTradingCenter[x].notes;
 var pPur = data.PokemonTradingCenter[x].purified;
 var pShiny = data.PokemonTradingCenter[x].shiny;
 
-    if($("#havi").prop('checked',true))
+	if($("#havX").prop('checked',true))
+    {alert('true');
+}
+
+    if($("#havX").prop('checked',true))
     {
      haveP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
      $("#" + cId +"box").prop('checked',true);
     }
-    else if($("#wanti").prop('checked',true))
+    else if($("#wantX").prop('checked',true))
     {
      wantP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
     $("#" + cId +"box").prop('checked',true);
