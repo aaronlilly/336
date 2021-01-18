@@ -173,7 +173,7 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
 
     $('#additionAl').css({
         'height': '200px',
-        'width': '275px',
+        'width': '320px',
         'border': 'solid',
         'border-color':'#17A2B8',
         'border-radius':'5%',
