@@ -267,7 +267,7 @@ $("#pokHav").html("");
                             var currentId = $(this).attr('id');
                             let current = currentId;
 		//console.log(current); Ivysaurx
-                        secondary(current,i,data);
+                        secondary2(current,i,data);
                           });
 
                       }
@@ -293,6 +293,22 @@ $('#'+cId).removeClass('pokSelctd');
 $('#'+cId).addClass('pokSelctd');
      }
 }          
+
+function secondary2(cId,i,data){
+//if checked
+ if ($("#" + cId +"box").prop('checked')) 
+   {
+  chk2(cId,i,data);
+$('#'+cId).removeClass('pokSelctd');
+    }    
+ //if not checked
+   else{
+	//console.log(cId);IvysaurX
+   notchk2(cId,i,data);
+$('#'+cId).addClass('pokSelctd');
+     }
+}          
+
 
 ///end add click menu
 
@@ -332,18 +348,6 @@ $('#additionAl').css({
 });
 //end selection click form addbybox
 
-$(document).ready(function () {
-$('#havi').click(function() {
-  checkThis("haveX");
-  uncheckThat("wantX");
-
-
-});
-  $('#wanti').click(function() {
-  checkThis("wantX");
-     uncheckThat("haveX");
-});
-});
 
 
 //save from modal
@@ -537,7 +541,7 @@ var pName = data.PokemonTradingCenter[i].Name;
 ///keep em seperate//this removes from array and uncecks
     $("#" + cId +"box").prop('checked',false)
 
-     if($("#havi").prop('checked',true))
+     if($("#havX").prop('checked',true))
         {
           for (j = 0; j < haveP.length; j++) 
           {
@@ -547,16 +551,27 @@ var pName = data.PokemonTradingCenter[i].Name;
               }
           }
         }
-      if($("#wanti").prop('checked',true))
-         {
+      
+        }
+
+function chk2(cId,i,data){
+
+var pName = data.PokemonTradingCenter[i].Name;
+
+///keep em seperate//this removes from array and uncecks
+    $("#" + cId +"box").prop('checked',false)
+
+     if($("#wantX").prop('checked',true))
+        {
           for (j = 0; j < wantP.length; j++) 
-            {
-              if(wantP[j].Name == pName)
-                {
-                  wantP.splice(j,1);
-                }
-            }
+          {
+             if(wantP[j].Name == pName)
+              {
+                wantP.splice(j,1);
+              }
           }
+        }
+      
         }
 
 function notchk(cId,x,data){
@@ -571,62 +586,32 @@ var pNotes = data.PokemonTradingCenter[x].notes;
 var pPur = data.PokemonTradingCenter[x].purified;
 var pShiny = data.PokemonTradingCenter[x].shiny;
 
-	if($("#havX").prop('checked',true))
-    {alert('true');
-}
-
-    if($("#havX").prop('checked',true))
-    {
      haveP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
      $("#" + cId +"box").prop('checked',true);
-    }
-    else if($("#wantX").prop('checked',true))
-    {
+    
+    
+}
+
+function notchk2(cId,x,data){
+var pDex = data.PokemonTradingCenter[x].Dex;
+var pName = data.PokemonTradingCenter[x].Name;
+var pReg = data.PokemonTradingCenter[x].Region;
+var pType1 = data.PokemonTradingCenter[x].Type1;
+var pType2 = data.PokemonTradingCenter[x].Type2;
+var pImj = data.PokemonTradingCenter[x].imaj;
+var dC = data.PokemonTradingCenter[x].datecaught;
+var pNotes = data.PokemonTradingCenter[x].notes;
+var pPur = data.PokemonTradingCenter[x].purified;
+var pShiny = data.PokemonTradingCenter[x].shiny;
+
+ 
+    
      wantP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
     $("#" + cId +"box").prop('checked',true);
     }
-}
+
 //end checknotcheck
 
-
-// function checkThis(curMenu){
-// if($('#'+ curMenu).prop('checked'))
-//   {alert("checked");}
-// }  
-
-
-
-
-function checkThis(curMenu){
-//if checked
- if ($("#" + curMenu).prop('checked')) 
-   {
-  chkThis(curMenu);
-
-    }    
- //if not checked
-   else{
-   notchkThis(curMenu);
-
-     }
-}  
-function chkThis(curMenu){ 
-$("#" + curMenu).prop('checked',false)}
-
-function notchkThis(curMenu){$("#" + curMenu).prop('checked',true);}
-
-
-function uncheckThat(otherMenu)
-{
-  if ($("#" + otherMenu).prop('checked')){
-    $("#" + otherMenu).prop('checked',false)
-  }
-}
-
-
-
-
-//////////////////////remove
 
 ///////////add- 
 $(document).ready(function () {
@@ -647,7 +632,13 @@ $('#additionAl').css({
 'height': 'auto'}
 );
 });
- $('#havi').click(function() {
+ 
+});
+//end selection click form addbybox
+
+
+$(document).ready(function () {
+$('#havi').click(function() {
   checkThis("haveX");
   uncheckThat("wantX");
 
@@ -658,4 +649,35 @@ $('#additionAl').css({
      uncheckThat("haveX");
 });
 });
-//end selection click form addbybox
+
+
+
+
+function checkThis(curMenu){
+//if checked
+ if ($("#" + curMenu).prop('checked')) 
+   {
+  chkThis(curMenu);
+
+    }    
+ //if not checked
+  else{
+  notchkThis(curMenu);
+
+    }
+}  
+
+
+function uncheckThat(otherMenu)
+{
+ if ($("#" + otherMenu).prop('checked')){
+    $("#" + otherMenu).prop('checked',false)
+  }
+}
+
+
+
+function chkThis(curMenu){ 
+$("#" + curMenu).prop('checked',false)}
+
+function notchkThis(curMenu){$("#" + curMenu).prop('checked',true);}
