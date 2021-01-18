@@ -233,12 +233,13 @@ $('#topper').show();};
 //get all pokemon available
 function getallPok(){
 var current = "";
+$("#pokHav").html("");
+                  $("#pokWan").html("");
         $.ajax({
             method: "GET",
             url: "https://aaronlilly.github.io/336/336ptc.json"
                }).done(function(data) 
-                  { $("#pokHav").html("");
-                  $("#pokWan").html("");
+                  { 
 
                       for(let i=0; i <  pokemonNameArray.length; i++) 
                       {   
@@ -516,8 +517,6 @@ function chk(cId,i,data){
 
 var pName = data.PokemonTradingCenter[i].Name;
 
-
-
 ///keep em seperate
     $("#" + cId +"box").prop('checked',false)
 
@@ -530,17 +529,18 @@ var pName = data.PokemonTradingCenter[i].Name;
                 haveP.splice(j,1);
               }
           }
-             }if($("#wanti").prop('checked'))
-    
-              {
-               for (j = 0; j < wantP.length; j++) 
-               {
-                if(wantP[j].Name == pName)
+        }
+      if($("#wanti").prop('checked'))
+         {
+          for (j = 0; j < wantP.length; j++) 
+            {
+              if(wantP[j].Name == pName)
                 {
                   wantP.splice(j,1);
                 }
-    }
-}
+            }
+          }
+        }
 
 function notchk(cId,x,data){
 var pDex = data.PokemonTradingCenter[x].Dex;
@@ -601,3 +601,40 @@ function uncheckThat(otherMenu)
     $("#" + otherMenu).prop('checked',false)
   }
 }
+
+
+
+
+//////////////////////remove
+
+///////////add- 
+$(document).ready(function () {
+ $('#selectSub').click(function() {
+      // $('.addMenuUp').html("");
+      $('.subMenuUp').html("");
+   $('#selClick').css({'display':'block'});
+$('#additionAl').css({
+'display':'block',
+'width':'315px',
+'border': 'solid',
+'border-color': '#17A2B8',
+'border-radius': '5%',
+'border-width':'thin',
+'display':'block',
+'float':'left',
+'margin-right':'2%',
+'height': 'auto'}
+);
+});
+ $('#havi').click(function() {
+  checkThis("haveX");
+  uncheckThat("wantX");
+
+
+});
+  $('#wanti').click(function() {
+  checkThis("wantX");
+     uncheckThat("haveX");
+});
+});
+//end selection click form addbybox
