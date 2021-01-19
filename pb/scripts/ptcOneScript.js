@@ -119,17 +119,6 @@ $.ajax
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 ////first toast -menu click
 $(document).ready(function() {
       toastR();
@@ -159,7 +148,8 @@ toastr.options = {
   "hideMethod": "fadeOut"
 }
 
-toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> <div id="toastTop">User Options :</div><div id="myList"> My List - <span id ="myListBtns" style="margin-bottom:2%;">  <button type="button" class="btn btn-info" id="AddSaved">Add</button>  <button type="button" class="btn btn-danger" id="RemoveSaved">Remove</button> <button type="button" class="btn btn-warning" id="ViewSaved" style="margin-top:2%;">View</button>   <button type="button" class="btn btn-secondary" id="ShareSaved" style="margin-top:2%;">Share</button>  <button type="button" class="btn btn-primary" id="Advanced" style="margin-top:2%;">Advanced</button></span> </div> <hr style="border: 2px solid blue; border-radius: 5px;"> <div id="otherZ">Other Trainers - <input type="text" id="TrainerInput" placeholder="Search By"> <span id ="othersBtns"><button type="button" class="btn btn-light" id="trainNam" style="margin-top:2%;" > Trainer Name</button> </div> <div id ="endOfToast"></div>')
+toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> <div id="toastTop">User Options :</div><div id="myList"> My List - <span id ="myListBtns" style="margin-bottom:2%;">  <button type="button" class="btn btn-info" id="AddSaved">Add</button>  <button type="button" class="btn btn-danger" id="RemoveSaved">Remove</button> <button type="button" class="btn btn-warning" id="ViewSaved" style="margin-top:2%;">View</button>   <button type="button" class="btn btn-secondary" id="ShareSaved" style="margin-top:2%;">Share</button>  <button type="button" class="btn btn-primary" id="Advanced" style="margin-top:2%;">Advanced</button></span> </div> <hr style="border: 2px solid blue; border-radius: 5px;"> <div id="otherZ">Other Trainers -  <span id ="othersBtns"> <button type="button" class="btn btn-light" id="trainNam" style="margin-top:2%;" > Search</button> </div> <hr style="border: 2px solid white; border-radius: 5px;"><div> Save Data  -  <button type="button" id="dbSend" class="btn btn-dark">Save Lists</button></div> <div id ="endOfToast"></div>')
+//<input type="text" id="TrainerInput" placeholder="Search By">
  $('#clearly').click(function() {
                toastr.remove();        
                $("#menubox").prop('checked',false);
@@ -218,6 +208,10 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
                        // $('#topper').append(this.id)
                        // rePaint();
       })
+    $('#dbSend').click(function() {
+          send2();
+       });
+
   }
 
 function rePaint(){ $('#topper').hide();
@@ -355,7 +349,7 @@ function saveSelected(){
 
 for(var i = 0; i < haveP.length; i++){
 existingContent[0].results[0].have.push(haveP[i])}
-send2();
+
 
 // push this to api
 alert2();
@@ -363,6 +357,22 @@ deSelectUnchk();
 $('#myModal1').modal('hide');
 
 }
+
+
+function saveSelected2(){
+
+for(var i = 0; i < wantP.length; i++){
+existingContent[0].results[0].want.push(wantP[i])}
+
+
+// push this to api
+alert2();
+deSelectUnchk2();
+$('#myModal2').modal('hide');
+
+}
+
+
 
 //end save selected modal /have
 function cancelHave(){
@@ -384,19 +394,22 @@ function deSelectUnchk() {
          }
 }
 
+
+
 function cancelWant(){
-deSelectUnchkWant()
+deSelectUnchk2()
+$("#wantX").prop('checked',false)
 }
 
 ///deselect what u selected in modal
-function deSelectUnchkWant() {
+function deSelectUnchk2() {
 
   for(var i=0; i <  pokemonNameArray.length; i++) 
    {
-     if ($("#" + pokemonNameArray[i] +"box").prop('checked'))
+     if ($("#" + pokemonNameArray[i] +"xbox").prop('checked'))
      {
-      $("#" + pokemonNameArray[i] +"box").prop('checked',false);
-     $('#'+pokemonNameArray[i]).removeClass('pokSelctd');
+      $("#" + pokemonNameArray[i] +"xbox").prop('checked',false);
+     $('#'+pokemonNameArray[i]+"x").removeClass('pokSelctd');
      }
      let wantP = [];
          }
@@ -431,10 +444,32 @@ toastr["info"]('Pokemon Saved')
 }
 ////////end stuff
 
-
 function send2(){
+if(existingContent[0] !== undefined)
+  {send2a();} else{alert("Allow a few more seconds for this feature to work...")}
+}
+
+function send2a(){
+if(existingContent[0].results[0].have[0] === undefined){
+alert("Add Pokemon to 'have' list.");
+}else if(existingContent[0].results[0].have[0] !== undefined) {
+   send2b();
+  
+}
+}
+
+function send2b(){
+  if(existingContent[0].results[0].want[0] !== undefined){
+   send3();
+}else{
+  alert("Add Pokemon to 'want' list.")
+}
+}
+
+
+function send3(){
   //console.log(existingContent);
-$.ajax
+  $.ajax
        ({
            url: "https://api.jsonbin.io/b/" + $.trim(trainBin), 
           method: "PUT",
@@ -453,6 +488,7 @@ $.ajax
     });
 
 }
+
 
 function toastyFunct(){
   pageLoad();
@@ -674,3 +710,9 @@ function chkThis(curMenu){
 $("#" + curMenu).prop('checked',false)}
 
 function notchkThis(curMenu){$("#" + curMenu).prop('checked',true);}
+
+
+// dbSend
+// send2();
+
+
