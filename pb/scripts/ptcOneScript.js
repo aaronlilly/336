@@ -640,13 +640,12 @@ $('#additionAl').css({
 $(document).ready(function () {
 $('#havi').click(function() {
   checkThis("haveX");
-  uncheckThat("wantX");
 
 
 });
   $('#wanti').click(function() {
   checkThis("wantX");
-     uncheckThat("haveX");
+ 
 });
 });
 
@@ -668,12 +667,6 @@ function checkThis(curMenu){
 }  
 
 
-function uncheckThat(otherMenu)
-{
- if ($("#" + otherMenu).prop('checked')){
-    $("#" + otherMenu).prop('checked',false)
-  }
-}
 
 
 
