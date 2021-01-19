@@ -13,7 +13,7 @@
 .ViewAll{display: none;}
 
 #selClick{display: none;}
-
+#subClick{display: none;}
 
 .modal-body {
     max-height: calc(100vh - 210px);

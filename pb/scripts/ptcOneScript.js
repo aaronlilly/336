@@ -652,9 +652,8 @@ var pShiny = data.PokemonTradingCenter[x].shiny;
 $(document).ready(function () {
  $('#selectSub').click(function() {
       // $('.addMenuUp').html("");
-      $('.subMenuUp').html("");
-   $('#selClick').css({'display':'block'});
-$('#additionAl').css({
+   $('#subClick').css({'display':'block'});
+$('#subtractionAl').css({
 'display':'block',
 'width':'315px',
 'border': 'solid',
@@ -662,7 +661,7 @@ $('#additionAl').css({
 'border-radius': '5%',
 'border-width':'thin',
 'display':'block',
-'float':'left',
+'float':'right',
 'margin-right':'2%',
 'height': 'auto'}
 );
