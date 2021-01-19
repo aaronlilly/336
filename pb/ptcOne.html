@@ -84,8 +84,12 @@
 
 
 
-<div id="subtractionAl"><span id="subtraction"> <input type="text" id="subtractfname" placeholder=" Remove By" style="margin-top:5px;border: 3px solid #ccc;
-  border-radius: 4px; width:80%;"></span> <button type="button" class="btn btn-primary" id="DexNumSub" style="margin-top:1px;margin-left: 2%;">Dex#</button><button type="button" class="btn btn-success" id="PokNamSub" style="margin-top:1px;margin-left: 1%;">Name</button><button type="button" class="btn btn-info" id="selectSub" style="margin-top:1px;margin-left: 1%;">Selection</button></span>
+<div id="subtractionAl"><span id="subtraction"> 
+Remove By - <br>
+<!--   <input type="text" id="subtractfname" placeholder=" Remove By" style="margin-top:5px;border: 3px solid #ccc;
+  border-radius: 4px; width:80%;"></span> <button type="button" class="btn btn-primary" id="DexNumSub" style="margin-top:1px;margin-left: 2%;">Dex#</button><button type="button" class="btn btn-success" id="PokNamSub" style="margin-top:1px;margin-left: 1%;">Name</button> -->
+
+  <button type="button" class="btn btn-info" id="selectSub" style="margin-top:1px;margin-left: 1%;">Selection</button></span>
 
 
 <div id="hideSubtract" style="float:right;margin-top:5%;"><button type="button" class="btn btn-outline-warning">Close This Section</button></div></div>
@@ -191,6 +195,70 @@
     </div>
   </div>
 </div>
+
+
+<!-- end modal 2 -->
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+ 
+
+
+
+  <!-- Modal 3-->
+     
+<div class="modal fade" id="myModal3" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon To Remove from "Want" list.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div id="wantPaste">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cancel </button>
+        <!-- <button type="button" class="btn btn-secondary" onclick="meanTo();">Close
+        --> <button type="button" class="btn btn-primary" onclick="saveSelected2()">Save</button>  
+         <!-- onclick="saveSelected() -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- end of modal 3 -->
+
+ <!-- Modal 3-->
+     
+<div class="modal fade" id="myModal4" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon To Remove from "Have" list.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div id="havPaste">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cancel </button>
+        <!-- <button type="button" class="btn btn-secondary" onclick="meanTo();">Close
+        --> <button type="button" class="btn btn-primary" onclick="saveSelected2()">Save</button>  
+         <!-- onclick="saveSelected() -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- end -->
 
 </div>
 <input type="checkbox" id="haveX" style="display:none;">

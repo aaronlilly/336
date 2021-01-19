@@ -82,7 +82,6 @@ trainBin = data[0].bns[j].bin;
 
 
 function gotDBin(binny){
-console.log(binny);
 
 var urlx = "https://api.jsonbin.io/b/" + binny +"/latest" ;
 $.ajax
