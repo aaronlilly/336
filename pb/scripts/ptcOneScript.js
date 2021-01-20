@@ -108,6 +108,11 @@ $.ajax
                         '<img src ="' + Owned[i].imaj + '">'
                          + '<figcaption>' + Owned[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
+                   $("#xboxs").append('<input type="checkbox" id="' + Owned[i].Name +'obox">');
+
+                        $('#' + Owned[i].Name + "o")click(function() {
+                                ownedClick(data,i);
+                       });
                   } 
 
     if(Covet!== undefined){$('#wantPaste').html("");
@@ -117,8 +122,13 @@ $.ajax
                     $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
                         + '">'+ '<figure>'+
                         '<img src ="' + Covet[i].imaj + '">'
-                         + '<figcaption>' +Covet[i].Name + 
+                         + '<figcaption>' + Covet[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
+
+
+
+     $("#xboxs").append('<input type="checkbox" id="' + Covet[i].Name +'cbox">');
+
                   } 
                   }   
    
@@ -518,6 +528,14 @@ for(var i=0; i <  pokemonNameArray.length; i++)
     }
 });
 
+
+
+$(document).ready(function() {
+for(var i=0; i <  pokemonNameArray.length; i++) 
+   {
+     $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'box">');
+    }
+});
 //end check box
 
 
