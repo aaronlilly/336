@@ -104,15 +104,16 @@ $.ajax
                 for(var i = 0; i < Owned.length; i++) {
                      $('#havePaste').append("<img src='" + Owned[i].imaj +"'>");
                    $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        + '">'+ '<figure>'+
+                        + 'own">'+ '<figure>'+
                         '<img src ="' + Owned[i].imaj + '">'
                          + '<figcaption>' + Owned[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
-                   $("#xboxs").append('<input type="checkbox" id="' + Owned[i].Name +'obox">');
+                   $("#xboxs").append('<input type="checkbox" id="' + Owned[i].Name +'ownbox">');
 
-                        $('#' + Owned[i].Name + "o")click(function() {
+                        $('#' + Owned[i].Name + "own")click(function() {
                                 ownedClick(data,i);
                        });
+
                   } 
 
     if(Covet!== undefined){$('#wantPaste').html("");
@@ -120,12 +121,14 @@ $.ajax
                        for(var i = 0; i < Covet.length; i++) {
                    $('#wantPaste').append("<img src='" + Covet[i].imaj +"'>");
                     $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        + '">'+ '<figure>'+
+                        + '"cov>'+ '<figure>'+
                         '<img src ="' + Covet[i].imaj + '">'
                          + '<figcaption>' + Covet[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
 
-
+                       $('#' + Covet[i].Name + "cov")click(function() {
+                                covetClick(data,i);
+                       });
 
      $("#xboxs").append('<input type="checkbox" id="' + Covet[i].Name +'cbox">');
 
@@ -738,7 +741,9 @@ $("#" + curMenu).prop('checked',false)}
 function notchkThis(curMenu){$("#" + curMenu).prop('checked',true);}
 
 
-// dbSend
-// send2();
+//
+ // $('#' + Owned[i].Name + "own")click(function() {
+ //                                ownedClick(data,i);
+ //                       });
 
 
