@@ -103,15 +103,22 @@ $.ajax
                        $('#havePaste').html("");
                 for(var i = 0; i < Owned.length; i++) {
                      $('#havePaste').append("<img src='" + Owned[i].imaj +"'>");
-                   $('#havPaste2').append("<img src='" + Owned[i].imaj +"'>")
+                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                        + '">'+ '<figure>'+
+                        '<img src ="' + Owned[i].imaj + '">'
+                         + '<figcaption>' + Owned[i].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>')
                   } 
 
     if(Covet!== undefined){$('#wantPaste').html("");
     $('#wantPaste2').html("");
                        for(var i = 0; i < Covet.length; i++) {
                    $('#wantPaste').append("<img src='" + Covet[i].imaj +"'>");
-                    $('#wantPaste2').append("<img src='" + Covet[i].imaj +"'>");
-
+                    $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                        + '">'+ '<figure>'+
+                        '<img src ="' + Covet[i].imaj + '">'
+                         + '<figcaption>' +Covet[i].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>');
                   } 
                   }   
    
