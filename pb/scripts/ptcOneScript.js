@@ -99,15 +99,18 @@ $.ajax
 
   if(Owned !== undefined)
       {
+         $('#havPaste2').html("");
                        $('#havePaste').html("");
                 for(var i = 0; i < Owned.length; i++) {
                      $('#havePaste').append("<img src='" + Owned[i].imaj +"'>");
-                   
+                   $('#havPaste2').append("<img src='" + Owned[i].imaj +"'>")
                   } 
 
     if(Covet!== undefined){$('#wantPaste').html("");
+    $('#wantPaste2').html("");
                        for(var i = 0; i < Covet.length; i++) {
                    $('#wantPaste').append("<img src='" + Covet[i].imaj +"'>");
+                    $('#wantPaste2').append("<img src='" + Covet[i].imaj +"'>");
 
                   } 
                   }   
