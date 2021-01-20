@@ -102,16 +102,17 @@ $.ajax
          $('#havPaste2').html("");
                        $('#havePaste').html("");
                 for(var i = 0; i < Owned.length; i++) {
-                     $('#havePaste').append("<img src='" + Owned[i].imaj +"'>");
-                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                    $('#havePaste').append("<img src='" + Owned[i].imaj +"'>");
+                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[i].Name
                         + 'own">'+ '<figure>'+
-                        '<img src ="' + Owned[i].imaj + '">'
-                         + '<figcaption>' + Owned[i].Name + 
+                        '<img src ="' + data.results[0].have[i].imaj + '">'
+                         + '<figcaption>' + data.results[0].have[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
-                   $("#xboxs").append('<input type="checkbox" id="' + Owned[i].Name +'ownbox">');
+                   $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[i].Name +'ownbox">');
 
-                        $('#' + Owned[i].Name + "own")click(function() {
-                                ownedClick(data,i);
+                        $('#' + data.results[0].have[i].Name + "own").click(function() {
+                          var currentId = $(this).attr('id');
+                                ownedClick(data,i,currentId);
                        });
 
                   } 
@@ -120,14 +121,15 @@ $.ajax
     $('#wantPaste2').html("");
                        for(var i = 0; i < Covet.length; i++) {
                    $('#wantPaste').append("<img src='" + Covet[i].imaj +"'>");
-                    $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                    $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[i].Name
                         + '"cov>'+ '<figure>'+
                         '<img src ="' + Covet[i].imaj + '">'
                          + '<figcaption>' + Covet[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
 
-                       $('#' + Covet[i].Name + "cov")click(function() {
-                                covetClick(data,i);
+                       $('#' + Covet[i].Name + "cov").click(function() {
+                        var currentId = $(this).attr('id');
+                                covetClick(data,i,currentId);
                        });
 
      $("#xboxs").append('<input type="checkbox" id="' + Covet[i].Name +'cbox">');
@@ -185,7 +187,7 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
 
     $('#additionAl').css({
         'height': '200px',
-        'width': '275px',
+        'width': '320px',
         'border': 'solid',
         'border-color':'#17A2B8',
         'border-radius':'5%',
@@ -200,7 +202,7 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
       $('.ViewAll').css({'display':'none'});
                       $('#subtractionAl').css({
         'height': '200px',
-        'width': '275px',
+        'width': '320px',
         'border': 'solid',
         'border-color':'#DC3545',
         'border-radius':'5%',
@@ -746,4 +748,10 @@ function notchkThis(curMenu){$("#" + curMenu).prop('checked',true);}
  //                                ownedClick(data,i);
  //                       });
 
+function ownedClick(data, i,currentId){
+alert(currentId);
+}
 
+function covClick(data, i,currentId){
+alert(currentId);
+}
