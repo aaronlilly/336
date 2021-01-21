@@ -104,7 +104,7 @@ $.ajax
                        $('#havePaste').html("");
                 for(var i = 0; i < Owned.length; i++) {
                     $('#havePaste').append("<img src='" + Owned[i].imaj +"'>");
-                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[i].Name                 + 'own">'+ '<figure>'+
+                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[i].Name    + 'own">'+ '<figure>'+
                         '<img src ="' + data.results[0].have[i].imaj + '">'
                          + '<figcaption>' + data.results[0].have[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
@@ -120,9 +120,9 @@ $.ajax
     if(Covet!== undefined){$('#wantPaste').html("");
     $('#wantPaste2').html("");
                        for(var i = 0; i < Covet.length; i++) {
-console.log( data.results[0].want[i].Name )
+
                    $('#wantPaste').append("<img src='" + Covet[i].imaj +"'>");
-                  $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[i].Name                 + 'own">'+ '<figure>'+
+                  $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[i].Name                 + 'cov">'+ '<figure>'+
                         '<img src ="' + data.results[0].want[i].imaj + '">'
                          + '<figcaption>' + data.results[0].want[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
@@ -654,7 +654,7 @@ var pNotes = data.PokemonTradingCenter[x].notes;
 var pPur = data.PokemonTradingCenter[x].purified;
 var pShiny = data.PokemonTradingCenter[x].shiny;
 
-     haveP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+     haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
      $("#" + cId +"box").prop('checked',true);
     
     
@@ -673,8 +673,8 @@ var pPur = data.PokemonTradingCenter[x].purified;
 var pShiny = data.PokemonTradingCenter[x].shiny;
 
  
-    
-     wantP.push({"Dex" :pDex, "Name" : cId, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+    //console.log(cId);
+     wantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
     $("#" + cId +"box").prop('checked',true);
     }
 
