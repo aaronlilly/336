@@ -758,8 +758,18 @@ amiChecked(currentId);
 
 
 function amiChecked(cur){
-//if($("#"+cur).prop('checked',true))
-alert(cur);
+if($("#"+cur +"box").prop('checked'))
+{
+  //if checked - and uncheckit
+  //alert("checked")
+  $("#"+cur +"box").prop('checked',false)
+  //else (if its not checked) check it.
+} else { 
+//alert("unchecked");
+  $("#"+cur +"box").prop('checked',true)
+
+}
+
 }
 
 
