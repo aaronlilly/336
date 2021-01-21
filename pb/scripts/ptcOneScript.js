@@ -762,10 +762,14 @@ if($("#"+cur +"box").prop('checked'))
 {
   //if checked - and uncheckit
   //alert("checked")
+  $('#'+cur).removeClass('pokRemov');
+
   $("#"+cur +"box").prop('checked',false)
   //else (if its not checked) check it.
 } else { 
+$('#'+cur).addClass('pokRemov');
 //alert("unchecked");
+
   $("#"+cur +"box").prop('checked',true)
 
 }
