@@ -4,6 +4,7 @@ let trainerNam = "";
 let trainBin = "";
 
 
+
 $(document).ready(function () {
        var COOKI = getCookieD("name");
      if (COOKI != "") {
@@ -103,8 +104,7 @@ $.ajax
                        $('#havePaste').html("");
                 for(var i = 0; i < Owned.length; i++) {
                     $('#havePaste').append("<img src='" + Owned[i].imaj +"'>");
-                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[i].Name
-                        + 'own">'+ '<figure>'+
+                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[i].Name                 + 'own">'+ '<figure>'+
                         '<img src ="' + data.results[0].have[i].imaj + '">'
                          + '<figcaption>' + data.results[0].have[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
@@ -120,19 +120,19 @@ $.ajax
     if(Covet!== undefined){$('#wantPaste').html("");
     $('#wantPaste2').html("");
                        for(var i = 0; i < Covet.length; i++) {
+console.log( data.results[0].want[i].Name )
                    $('#wantPaste').append("<img src='" + Covet[i].imaj +"'>");
-                    $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[i].Name
-                        + '"cov>'+ '<figure>'+
-                        '<img src ="' + Covet[i].imaj + '">'
-                         + '<figcaption>' + Covet[i].Name + 
-                         '</figcaption>'+'</figure>'+'</div></div>');
+                  $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[i].Name                 + 'own">'+ '<figure>'+
+                        '<img src ="' + data.results[0].want[i].imaj + '">'
+                         + '<figcaption>' + data.results[0].want[i].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>')
 
                        $('#' + Covet[i].Name + "cov").click(function() {
                         var currentId = $(this).attr('id');
                                 covetClick(data,i,currentId);
                        });
 
-     $("#xboxs").append('<input type="checkbox" id="' + Covet[i].Name +'cbox">');
+     $("#xboxs").append('<input type="checkbox" id="' + Covet[i].Name +'covbox">');
 
                   } 
                   }   
@@ -743,15 +743,33 @@ $("#" + curMenu).prop('checked',false)}
 function notchkThis(curMenu){$("#" + curMenu).prop('checked',true);}
 
 
-//
- // $('#' + Owned[i].Name + "own")click(function() {
- //                                ownedClick(data,i);
- //                       });
+/////////413
+
 
 function ownedClick(data, i,currentId){
-alert(currentId);
+amiChecked(currentId);
+
+   
 }
 
-function covClick(data, i,currentId){
-alert(currentId);
+function covetClick(data, i,currentId){
+amiChecked(currentId);
 }
+
+
+function amiChecked(cur){
+//if($("#"+cur).prop('checked',true))
+alert(cur);
+}
+
+
+// $("#" + cId +"box").prop('checked',false)
+
+    // if($("#wantX").prop('checked',true))
+      //  {
+      //    for (j = 0; j < wantP.length; j++) 
+      //    {
+        //     if(wantP[j].Name == pName)
+         //     {
+          //      wantP.splice(j,1);
+          //    }
