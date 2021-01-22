@@ -111,14 +111,17 @@ $.ajax
                    $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[i].Name +'ownbox">');
 
                         $('#' + data.results[0].have[i].Name + "own").click(function() {
+                          var whatC = "own";
                           var currentId = $(this).attr('id');
-                                ownedClick(data,i,currentId,"own");
+                                ownedClick(data,i,currentId,whatC);
                        });
 
                   } 
 
     if(Covet!== undefined){$('#wantPaste').html("");
     $('#wantPaste2').html("");
+
+                
                        for(var i = 0; i < Covet.length; i++) {
 
                    $('#wantPaste').append("<img src='" + Covet[i].imaj +"'>");
@@ -128,8 +131,9 @@ $.ajax
                          '</figcaption>'+'</figure>'+'</div></div>')
 
                        $('#' + Covet[i].Name + "cov").click(function() {
+                        var whatC = "cov";
                         var currentId = $(this).attr('id');
-                                covetClick(data,i,currentId,"cov");
+                                covetClick(data,i,currentId,whatC);
                        });
 
      $("#xboxs").append('<input type="checkbox" id="' + Covet[i].Name +'covbox">');
@@ -279,12 +283,12 @@ $("#pokHav").html("");
                             let current = currentId;
                         secondary(current,i,data);
                           });
-			
-			$('#'+ pokemonNameArray[i]+'x').click(function(){
-			
+      
+      $('#'+ pokemonNameArray[i]+'x').click(function(){
+      
                             var currentId = $(this).attr('id');
                             let current = currentId;
-		//console.log(current); Ivysaurx
+    //console.log(current); Ivysaurx
                         secondary2(current,i,data);
                           });
 
@@ -306,7 +310,7 @@ $('#'+cId).removeClass('pokSelctd');
     }    
  //if not checked
    else{
-	//console.log(cId);IvysaurX
+  //console.log(cId);IvysaurX
    notchk(cId,i,data);
 $('#'+cId).addClass('pokSelctd');
      }
@@ -321,7 +325,7 @@ $('#'+cId).removeClass('pokSelctd');
     }    
  //if not checked
    else{
-	//console.log(cId);IvysaurX
+  //console.log(cId);IvysaurX
    notchk2(cId,i,data);
 $('#'+cId).addClass('pokSelctd');
      }
@@ -654,7 +658,7 @@ var pNotes = data.PokemonTradingCenter[x].notes;
 var pPur = data.PokemonTradingCenter[x].purified;
 var pShiny = data.PokemonTradingCenter[x].shiny;
 
-     haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+     haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified" : pPur, "datecaught" : dC, "notes": pNotes})
      $("#" + cId +"box").prop('checked',true);
     
     
@@ -746,65 +750,31 @@ function notchkThis(curMenu){$("#" + curMenu).prop('checked',true);}
 /////////413
 
 
-function ownedClick(data, i,currentId,variableR){
-amiChecked(data,i,currentId);
+function ownedClick(data, i,currentId,whatC){
+amiChecked(currentId,whatC);
 
    
 }
 
-function covetClick(data,i,currentId,variableR){
-amiChecked(data,i,currentId,vaR);
+function covetClick(data, i,currentId,whatC){
+amiChecked(currentId,whatC);
 }
 
 
-function amiChecked(data,i,cur,vaR){
+function amiChecked(cur,whatC){
 if($("#"+cur +"box").prop('checked'))
 {
   //if checked - and uncheckit
-  //alert("checked")
-//splice
 
-}
- 
-    //console.log(cId);
-    
-    
   $('#'+cur).removeClass('pokRemov');
 
   $("#"+cur +"box").prop('checked',false)
+  
   //else (if its not checked) check it.
 } else { 
 $('#'+cur).addClass('pokRemov');
-//alert("unchecked");
+alert(whatC);
 
-if(vaR == "cov"){
-
-  var rDex = data.results[0].want[i].Dex;
-var rName = data.results[0].want[i].Name;
-var rReg = data.results[0].want[i].Region;
-var rType1 =data.results[0].want[i].Type1;
-var rType2 = data.results[0].want[i].Type2;
-var rImj = data.results[0].want[i].imaj;
-var rdC = data.results[0].want[i].datecaught;
-var rNotes = data.results[0].want[i].notes;
-var rPur = data.results[0].want[i].purified;
-var rShiny = data.results[0].want[i].shiny;
- RwantP.push({"Dex" :rDex, "Name" : rName, "Type1" : rType1, "Type2" : rType2, "imaj" : rImj, "Region" :rReg, "shiny" :rShiny,  "purified" : rPur, "datecaught" : rdC, "notes": rNotes})
-  
-}else if(vaR =="own"){
-
-var rDex = data.results[0].want[i].Dex;
-var rName = data.results[0].want[i].Name;
-var rReg = data.results[0].want[i].Region;
-var rType1 =data.results[0].want[i].Type1;
-var rType2 = data.results[0].want[i].Type2;
-var rImj = data.results[0].want[i].imaj;
-var rdC = data.results[0].want[i].datecaught;
-var rNotes = data.results[0].want[i].notes;
-var rPur = data.results[0].want[i].purified;
-var rShiny = data.results[0].want[i].shiny;
- RhaveP.push({"Dex" :rDex, "Name" : rName, "Type1" : rType1, "Type2" : rType2, "imaj" : rImj, "Region" :rReg, "shiny" :rShiny,  "purified" : rPur, "datecaught" : rdC, "notes": rNotes})
-   
   $("#"+cur +"box").prop('checked',true)
 
 }
@@ -812,3 +782,22 @@ var rShiny = data.results[0].want[i].shiny;
 }
 
 
+
+
+// function notchk(cId,x,data){
+// var pDex = data.PokemonTradingCenter[x].Dex;
+// var pName = data.PokemonTradingCenter[x].Name;
+// var pReg = data.PokemonTradingCenter[x].Region;
+// var pType1 = data.PokemonTradingCenter[x].Type1;
+// var pType2 = data.PokemonTradingCenter[x].Type2;
+// var pImj = data.PokemonTradingCenter[x].imaj;
+// var dC = data.PokemonTradingCenter[x].datecaught;
+// var pNotes = data.PokemonTradingCenter[x].notes;
+// var pPur = data.PokemonTradingCenter[x].purified;
+// var pShiny = data.PokemonTradingCenter[x].shiny;
+
+//      haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified" : pPur, "datecaught" : dC, "notes": pNotes})
+//      $("#" + cId +"box").prop('checked',true);
+    
+    
+// }
