@@ -120,6 +120,20 @@ if($("#"+currentId +"box").prop('checked'))
   $('#'+currentId).removeClass('pokRemov');
 
   $("#"+currentId +"box").prop('checked',false)
+
+
+var rpName = data.results[0].have[o].Name;;
+
+//setting up splice
+    for (k = 0; k < RhaveP.length; k++) 
+           {
+              if(RhaveP[k].Name == rpName)
+              {
+                RhaveP.splice(k,1);
+               }
+           }
+
+
   //else (if its not checked) check it.
 } else { 
 $('#'+currentId).addClass('pokRemov');
@@ -167,14 +181,16 @@ if($("#"+currentId  +"box").prop('checked'))
 
   $("#"+currentId  +"box").prop('checked',false);
 
+var rpName = data.results[0].want[c].Name;
+
 //setting up splice
-   // for (j = 0; j < haveP.length; j++) 
-   //        {
-   //           if(haveP[j].Name == pName)
-   //            {
-   //              haveP.splice(j,1);
-   //            }
-   //        }
+    for (j = 0; j < RwantP.length; j++) 
+           {
+              if(RwantP[j].Name == rpName)
+              {
+                RwantP.splice(j,1);
+               }
+           }
 
 
   //else (if its not checked) check it.
@@ -813,7 +829,3 @@ function chkThis(curMenu){
 $("#" + curMenu).prop('checked',false)}
 
 function notchkThis(curMenu){$("#" + curMenu).prop('checked',true);}
-
-
-
-
