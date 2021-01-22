@@ -102,15 +102,15 @@ $.ajax
       {
          $('#havPaste2').html("");
                        $('#havePaste').html("");
-                for(var i = 0; i < Owned.length; i++) {
-                    $('#havePaste').append("<img src='" + Owned[i].imaj +"'>");
-                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[i].Name    + 'own">'+ '<figure>'+
-                        '<img src ="' + data.results[0].have[i].imaj + '">'
-                         + '<figcaption>' + data.results[0].have[i].Name + 
+                for(let o = 0; o < Owned.length; o++) {
+                    $('#havePaste').append("<img src='" + Owned[o].imaj +"'>");
+                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name    + 'own">'+ '<figure>'+
+                        '<img src ="' + data.results[0].have[o].imaj + '">'
+                         + '<figcaption>' + data.results[0].have[o].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
-                   $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[i].Name +'ownbox">');
+                   $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[o].Name +'ownbox">');
 
-                        $('#' + data.results[0].have[i].Name + "own").click(function() {
+                        $('#' + data.results[0].have[o].Name + "own").click(function() {
                           var currentId = $(this).attr('id');
 
 if($("#"+currentId +"box").prop('checked'))
@@ -127,6 +127,19 @@ $('#'+currentId).addClass('pokRemov');
 
   $("#"+currentId +"box").prop('checked',true)
 
+  var pDex = data.results[0].have[o].Dex;
+var pName = data.results[0].have[o].Name;
+var pReg = data.results[0].have[o].Region;
+var pType1 = data.results[0].have[o].Type1;
+var pType2 = data.results[0].have[o].Type2;
+var pImj = data.results[0].have[o].imaj;
+var dC = data.results[0].have[o].datecaught;
+var pNotes = data.results[0].have[o].notes;
+var pPur = data.results[0].have[o].purified;
+var pShiny = data.results[0].have[o].shiny;
+
+     RhaveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+    
 }
                        });
 
@@ -134,15 +147,15 @@ $('#'+currentId).addClass('pokRemov');
 
     if(Covet!== undefined){$('#wantPaste').html("");
     $('#wantPaste2').html("");
-                       for(var i = 0; i < Covet.length; i++) {
+                       for(let c = 0; c < Covet.length; c++) {
 
-                   $('#wantPaste').append("<img src='" + Covet[i].imaj +"'>");
-                  $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[i].Name  + 'cov">'+ '<figure>'+
-                        '<img src ="' +Covet[i].imaj + '">'
-                         + '<figcaption>' + Covet[i].Name + 
+                   $('#wantPaste').append("<img src='" + Covet[c].imaj +"'>");
+                  $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[c].Name  + 'cov">'+ '<figure>'+
+                        '<img src ="' +Covet[c].imaj + '">'
+                         + '<figcaption>' + Covet[c].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
 
-                       $('#' + Covet[i].Name + "cov").click(function() {
+                       $('#' + Covet[c].Name + "cov").click(function() {
                         var currentId = $(this).attr('id');
                                ///////this console.log(data.results[0].want[0].Dex)
 
@@ -161,16 +174,16 @@ $('#'+currentId ).addClass('pokRemov');
   $("#"+currentId  +"box").prop('checked',true)
 
   ///
-  var pDex = data.results[0].want[0].Dex;
-var pName = data.results[0].want[0].Name;
-var pReg = data.results[0].want[0].Region;
-var pType1 = data.results[0].want[0].Type1;
-var pType2 = data.results[0].want[0].Type2;
-var pImj = data.results[0].want[0].imaj;
-var dC = data.results[0].want[0].datecaught;
-var pNotes = data.results[0].want[0].notes;
-var pPur = data.results[0].want[0].purified;
-var pShiny = data.results[0].want[0].shiny;
+   var pDex = data.results[0].want[c].Dex;
+var pName = data.results[0].want[c].Name;
+var pReg = data.results[0].want[c].Region;
+var pType1 = data.results[0].want[c].Type1;
+var pType2 = data.results[0].want[c].Type2;
+var pImj = data.results[0].want[c].imaj;
+var dC = data.results[0].want[c].datecaught;
+var pNotes = data.results[0].want[c].notes;
+var pPur = data.results[0].want[c].purified;
+var pShiny = data.results[0].want[c].shiny;
 
      RwantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
     
@@ -180,7 +193,7 @@ var pShiny = data.results[0].want[0].shiny;
 }
                        });
 
-     $("#xboxs").append('<input type="checkbox" id="' + Covet[i].Name +'covbox">');
+     $("#xboxs").append('<input type="checkbox" id="' + Covet[c].Name +'covbox">');
 
                   } 
                   }   
