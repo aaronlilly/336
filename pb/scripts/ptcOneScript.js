@@ -95,8 +95,8 @@ $.ajax
                   }).done(function(data) {
     
     existingContent.push(data);
-  var Owned = data.results[0].have;
-  var Covet = data.results[0].want;
+  let Owned = data.results[0].have;
+  let Covet = data.results[0].want;
 
   if(Owned !== undefined)
       {
@@ -112,7 +112,22 @@ $.ajax
 
                         $('#' + data.results[0].have[i].Name + "own").click(function() {
                           var currentId = $(this).attr('id');
-                                ownedClick(data,i,currentId);
+
+if($("#"+currentId +"box").prop('checked'))
+{
+  //if checked - and uncheckit
+  //alert("checked")
+  $('#'+currentId).removeClass('pokRemov');
+
+  $("#"+currentId +"box").prop('checked',false)
+  //else (if its not checked) check it.
+} else { 
+$('#'+currentId).addClass('pokRemov');
+//alert("unchecked");
+
+  $("#"+currentId +"box").prop('checked',true)
+
+}
                        });
 
                   } 
@@ -122,14 +137,47 @@ $.ajax
                        for(var i = 0; i < Covet.length; i++) {
 
                    $('#wantPaste').append("<img src='" + Covet[i].imaj +"'>");
-                  $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[i].Name                 + 'cov">'+ '<figure>'+
-                        '<img src ="' + data.results[0].want[i].imaj + '">'
-                         + '<figcaption>' + data.results[0].want[i].Name + 
+                  $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[i].Name  + 'cov">'+ '<figure>'+
+                        '<img src ="' +Covet[i].imaj + '">'
+                         + '<figcaption>' + Covet[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
 
                        $('#' + Covet[i].Name + "cov").click(function() {
                         var currentId = $(this).attr('id');
-                                covetClick(data,i,currentId);
+                               ///////this console.log(data.results[0].want[0].Dex)
+
+if($("#"+currentId  +"box").prop('checked'))
+{
+  //if checked - and uncheckit
+  //alert("checked")
+  $('#'+currentId ).removeClass('pokRemov');
+
+  $("#"+currentId  +"box").prop('checked',false)
+  //else (if its not checked) check it.
+} else { 
+$('#'+currentId ).addClass('pokRemov');
+//alert("unchecked");
+
+  $("#"+currentId  +"box").prop('checked',true)
+
+  ///
+  var pDex = data.results[0].want[0].Dex;
+var pName = data.results[0].want[0].Name;
+var pReg = data.results[0].want[0].Region;
+var pType1 = data.results[0].want[0].Type1;
+var pType2 = data.results[0].want[0].Type2;
+var pImj = data.results[0].want[0].imaj;
+var dC = data.results[0].want[0].datecaught;
+var pNotes = data.results[0].want[0].notes;
+var pPur = data.results[0].want[0].purified;
+var pShiny = data.results[0].want[0].shiny;
+
+     RwantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+    
+    
+    
+
+}
                        });
 
      $("#xboxs").append('<input type="checkbox" id="' + Covet[i].Name +'covbox">');
@@ -743,36 +791,5 @@ $("#" + curMenu).prop('checked',false)}
 function notchkThis(curMenu){$("#" + curMenu).prop('checked',true);}
 
 
-/////////413
 
-
-function ownedClick(data, i,currentId){
-amiChecked(currentId);
-
-   
-}
-
-function covetClick(data, i,currentId){
-amiChecked(data, i,currentId);
-}
-
-
-function amiChecked(data, i, cur){
-if($("#"+cur +"box").prop('checked'))
-{
-  //if checked - and uncheckit
-  //alert("checked")
-  $('#'+cur).removeClass('pokRemov');
-
-  $("#"+cur +"box").prop('checked',false)
-  //else (if its not checked) check it.
-} else { 
-$('#'+cur).addClass('pokRemov');
-//alert("unchecked");
-
-  $("#"+cur +"box").prop('checked',true)
-
-}
-
-}
 
