@@ -165,7 +165,18 @@ if($("#"+currentId  +"box").prop('checked'))
   //alert("checked")
   $('#'+currentId ).removeClass('pokRemov');
 
-  $("#"+currentId  +"box").prop('checked',false)
+  $("#"+currentId  +"box").prop('checked',false);
+
+//setting up splice
+   // for (j = 0; j < haveP.length; j++) 
+   //        {
+   //           if(haveP[j].Name == pName)
+   //            {
+   //              haveP.splice(j,1);
+   //            }
+   //        }
+
+
   //else (if its not checked) check it.
 } else { 
 $('#'+currentId ).addClass('pokRemov');
