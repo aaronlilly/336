@@ -831,3 +831,64 @@ $("#" + curMenu).prop('checked',false)}
 function notchkThis(curMenu){$("#" + curMenu).prop('checked',true);}
 
 
+//want
+function removeSelected(){
+
+//for(var i = 0; i < RwantP.length; i++){
+//existingContent[0].results[0].want.push(wantP[i])}
+
+//come back here and make it more than name matching
+//if (existingContent[0].results[0].want.Name ==  RwantP)
+
+console.log(RwantP);
+
+// push this to api
+//alert2();
+//deSelectUnchk2();
+//$('#myModal2').modal('hide');
+
+}
+
+
+
+//
+ //modal4
+function removeSelected2(){
+
+
+
+for(var e = 0; e < existingContent[0].results[0].have.length; e++){
+	for(var i = 0; i < RhaveP.length; i++){
+//if (existingContent[0].results[0].have[e].Name == RhaveP[i].Name)
+
+var CT = existingContent[0].results[0].have[e];
+var RT = RhaveP[i];
+
+		if (CT.Name == RT.Name)
+		{
+		existingContent[0].results[0].have.splice(e,1);
+		} else { } 
+	}
+
+}
+
+// push this to api
+//alert2();
+//deSelectUnchk2();
+$('#myModal4').modal('hide');
+
+//}
+}
+
+
+//splice example
+///if($("#wantX").prop('checked',true))
+   //     {
+     //     for (j = 0; j < wantP.length; j++) 
+       //   {
+         //    if(wantP[j].Name == pName)
+           //   {
+             //   wantP.splice(j,1);
+              //}
+         // }
+        //}
