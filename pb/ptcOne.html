@@ -865,7 +865,10 @@ var CT = existingContent[0].results[0].have[e];
 var RT = RhaveP[i];
 
 		if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
-		{$('#'+existingContent[0].results[0].have[e].Name +"own").addClass('hidMe');
+
+		{
+$('#'+existingContent[0].results[0].have[e].Name +"own").parent('div').remove();
+$('#'+existingContent[0].results[0].have[e].Name +"own").addClass('hidMe');
 		existingContent[0].results[0].have.splice(e,1);
 
 		} else { } 
@@ -918,7 +921,9 @@ var CT = existingContent[0].results[0].want[e];
 var RT = RwantP[i];
 
 		if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
-		{$('#'+existingContent[0].results[0].want[e].Name +"cov").addClass('hidMe');
+		{
+$('#'+existingContent[0].results[0].want[i].Name +"cov").parent('div').remove();
+$('#'+existingContent[0].results[0].want[e].Name +"cov").addClass('hidMe');
 		existingContent[0].results[0].want.splice(e,1);
 
 		} else { } 
