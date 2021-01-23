@@ -855,7 +855,7 @@ console.log(RwantP);
  //modal4
 function removeSelected2(){
 
-
+deSelectUnchk3();
 
 for(var e = 0; e < existingContent[0].results[0].have.length; e++){
 	for(var i = 0; i < RhaveP.length; i++){
@@ -874,7 +874,7 @@ var RT = RhaveP[i];
 
 
 alert3();
-deSelectUnchk3();
+
 $('#myModal4').modal('hide');
 
 //}
@@ -886,15 +886,15 @@ function deSelectUnchk3() {
 
   for(var i=0; i <  existingContent[0].results[0].have.length; i++) 
    {
-//console.log(existingContent[0].results[0].have[i].Name);
+if($("#" + existingContent[0].results[0].have[i].Name +"ownbox").prop('checked',true))
+{
 
-     if ($("#" + existingContent[0].results[0].have[i].Name +"ownbox").prop('checked'))
-     {
-      $("#" + existingContent[0].results[0].have[i].Name +"ownbox").prop('checked',false);
+$("#" + existingContent[0].results[0].have[i].Name +"ownbox").prop('checked',false);
 
-     $('#'+existingContent[0].results[0].have[i].Name +"own").removeClass('pokRemov');
-     }
-    let Rhavep =[];
+$('#'+existingContent[0].results[0].have[i].Name +"own").removeClass('pokRemov');
+}
+
+    let RhaveP =[];
          }
 }
 
