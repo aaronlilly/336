@@ -899,3 +899,53 @@ $('#'+existingContent[0].results[0].have[i].Name +"own").removeClass('pokRemov')
 }
 
 function alert3(){alert("Pokemon will be removed when the list updated using the menu button")};
+
+
+/////
+//modal3
+function removeSelected(){
+
+deSelectUnchk3();
+
+for(var e = 0; e < existingContent[0].results[0].want.length; e++){
+	for(var i = 0; i < RwantP.length; i++){
+//if (existingContent[0].results[0].want[e].Name == RwantP[i].Name)
+
+var CT = existingContent[0].results[0].want[e];
+var RT = RwantP[i];
+
+		if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
+		{
+		existingContent[0].results[0].want.splice(e,1);
+		} else { } 
+	}
+
+}
+
+
+alert4();
+
+$('#myModal3').modal('hide');
+
+//}
+}
+
+
+///deselect what u selected in modal-remove-want
+function deSelectUnchk3() {
+
+  for(var i=0; i <  existingContent[0].results[0].want.length; i++) 
+   {
+if($("#" + existingContent[0].results[0].want[i].Name +"covbox").prop('checked',true))
+{
+
+$("#" + existingContent[0].results[0].want[i].Name +"covbox").prop('checked',false);
+
+$('#'+existingContent[0].results[0].want[i].Name +"cov").removeClass('pokRemov');
+}
+
+    let RwantP =[];
+         }
+}
+
+function alert4(){alert("Pokemon will be removed when the list updated using the menu button")};
