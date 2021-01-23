@@ -864,7 +864,7 @@ for(var e = 0; e < existingContent[0].results[0].have.length; e++){
 var CT = existingContent[0].results[0].have[e];
 var RT = RhaveP[i];
 
-		if (CT.Name == RT.Name)
+		if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
 		{
 		existingContent[0].results[0].have.splice(e,1);
 		} else { } 
@@ -872,23 +872,30 @@ var RT = RhaveP[i];
 
 }
 
-// push this to api
-//alert2();
-//deSelectUnchk2();
+
+alert3();
+deSelectUnchk3();
 $('#myModal4').modal('hide');
 
 //}
 }
 
 
-//splice example
-///if($("#wantX").prop('checked',true))
-   //     {
-     //     for (j = 0; j < wantP.length; j++) 
-       //   {
-         //    if(wantP[j].Name == pName)
-           //   {
-             //   wantP.splice(j,1);
-              //}
-         // }
-        //}
+///deselect what u selected in modal-remove-have
+function deSelectUnchk3() {
+
+  for(var i=0; i <  existingContent[0].results[0].have.length; i++) 
+   {
+//console.log(existingContent[0].results[0].have[i].Name);
+
+     if ($("#" + existingContent[0].results[0].have[i].Name +"ownbox").prop('checked'))
+     {
+      $("#" + existingContent[0].results[0].have[i].Name +"ownbox").prop('checked',false);
+
+     $('#'+existingContent[0].results[0].have[i].Name +"own").removeClass('pokRemov');
+     }
+    let Rhavep =[];
+         }
+}
+
+function alert3(){alert("Pokemon will be removed when the list updated using the menu button")};
