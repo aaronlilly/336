@@ -1,2 +1,0 @@
-var wantP = [];
-var haveP =[];

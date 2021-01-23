@@ -1,1 +1,0 @@
-var bsl =["primary","success","info"];
