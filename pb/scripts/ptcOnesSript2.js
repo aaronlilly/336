@@ -1,9 +1,7 @@
-let reGexP = [];
+var reGexP = [];
 let existingContent = [];
 let trainerNam = "";
 let trainBin = "";
-let trainBin2 ="";
-
 
 
 
@@ -14,7 +12,6 @@ $(document).ready(function () {
          let trainerNam = COOKI;
     
       }    
-
   });
   
   function cNBlank(COOKI){
@@ -22,7 +19,7 @@ $(document).ready(function () {
     $('#trainerInfoHere').html(COOKI);
 
       regentFunction();
-  pageLaod();
+  
     }
   }
   function getCookieD(cname) {
@@ -45,11 +42,13 @@ $(document).ready(function () {
   function regentFunction() {
     var C00KI = getCookieD("regentName");
     reGexP.push(C00KI);
+    ////let trainBin2 = window.btoa(low)
   }
+
+
 
 ///get list of bins
 //if trainer name same as what is in the list of bins, get the bin for that trainer
-
 
 $(document).ready(function () {
     pageLoad();
@@ -106,13 +105,13 @@ $.ajax
                        $('#havePaste').html("");
                 for(let o = 0; o < Owned.length; o++) {
                     $('#havePaste').append("<img src='" + Owned[o].imaj +"'>");
-                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name    + 'own">'+ '<figure>'+
+                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
                         '<img src ="' + data.results[0].have[o].imaj + '">'
                          + '<figcaption>' + data.results[0].have[o].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
                    $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[o].Name +'ownbox">');
 
-                        $('#' + data.results[0].have[o].Name + "own").click(function() {
+                        $('#' + data.results[0].have[o].Name + [o]+ "own").click(function() {
                           var currentId = $(this).attr('id');
 
 if($("#"+currentId +"box").prop('checked'))
@@ -166,12 +165,12 @@ var pShiny = data.results[0].have[o].shiny;
                        for(let c = 0; c < Covet.length; c++) {
 
                    $('#wantPaste').append("<img src='" + Covet[c].imaj +"'>");
-                  $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[c].Name  + 'cov">'+ '<figure>'+
+                  $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[c].Name + [c] + 'cov">'+ '<figure>'+
                         '<img src ="' +Covet[c].imaj + '">'
                          + '<figcaption>' + Covet[c].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
 
-                       $('#' + Covet[c].Name + "cov").click(function() {
+                       $('#' + Covet[c].Name + [c] + "cov").click(function() {
                         var currentId = $(this).attr('id');
                                ///////this console.log(data.results[0].want[0].Dex)
 
@@ -231,12 +230,7 @@ var pShiny = data.results[0].want[c].shiny;
 });
 }
 
-function pageLaod(){ 
-var load = reGexP[0];
-paqeLoad(load);
 
-
-}
 
 ////first toast -menu click
 $(document).ready(function() {
@@ -332,10 +326,6 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
        });
 
   }
-
-function paqeLoad(low){
-let trainBin2 = window.btoa(low)
-}
 
 function rePaint(){ $('#topper').hide();
 $('#topper').get(0).offsetHeight;
@@ -868,22 +858,19 @@ function removeSelected2(){
 
 deSelectUnchk3();
 
+for(var i = 0; i < RhaveP.length; i++){
 for(var e = 0; e < existingContent[0].results[0].have.length; e++){
-	for(var i = 0; i < RhaveP.length; i++){
+  // for(var i = 0; i < RhaveP.length; i++){
 //if (existingContent[0].results[0].have[e].Name == RhaveP[i].Name)
 
 var CT = existingContent[0].results[0].have[e];
 var RT = RhaveP[i];
 
-		if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
-
-		{
-$('#'+existingContent[0].results[0].have[e].Name +"own").parent('div').remove();
-$('#'+existingContent[0].results[0].have[e].Name +"own").addClass('hidMe');
-		existingContent[0].results[0].have.splice(e,1);
-
-		} else { } 
-	}
+    if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
+    {
+    existingContent[0].results[0].have.splice(e,1);
+    } else { } 
+  }
 
 }
 
@@ -907,8 +894,6 @@ if($("#" + existingContent[0].results[0].have[i].Name +"ownbox").prop('checked',
 $("#" + existingContent[0].results[0].have[i].Name +"ownbox").prop('checked',false);
 
 $('#'+existingContent[0].results[0].have[i].Name +"own").removeClass('pokRemov');
-
-
 }
 
     let RhaveP =[];
@@ -922,23 +907,21 @@ function alert3(){alert("Pokemon will be removed when the list updated using the
 //modal3
 function removeSelected(){
 
-deSelectUnchk4();
+deSelectUnchk3();
 
+for(var i = 0; i < RwantP.length; i++){
 for(var e = 0; e < existingContent[0].results[0].want.length; e++){
-	for(var i = 0; i < RwantP.length; i++){
+  
 //if (existingContent[0].results[0].want[e].Name == RwantP[i].Name)
 
 var CT = existingContent[0].results[0].want[e];
 var RT = RwantP[i];
 
-		if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
-		{
-$('#'+existingContent[0].results[0].want[i].Name +"cov").parent('div').remove();
-$('#'+existingContent[0].results[0].want[e].Name +"cov").addClass('hidMe');
-		existingContent[0].results[0].want.splice(e,1);
-
-		} else { } 
-	}
+    if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
+    {
+    existingContent[0].results[0].want.splice(e,1);
+    } else { } 
+  }
 
 }
 
@@ -952,7 +935,7 @@ $('#myModal3').modal('hide');
 
 
 ///deselect what u selected in modal-remove-want
-function deSelectUnchk4() {
+function deSelectUnchk3() {
 
   for(var i=0; i <  existingContent[0].results[0].want.length; i++) 
    {
@@ -962,7 +945,6 @@ if($("#" + existingContent[0].results[0].want[i].Name +"covbox").prop('checked',
 $("#" + existingContent[0].results[0].want[i].Name +"covbox").prop('checked',false);
 
 $('#'+existingContent[0].results[0].want[i].Name +"cov").removeClass('pokRemov');
-
 }
 
     let RwantP =[];

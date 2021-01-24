@@ -42,6 +42,7 @@ $(document).ready(function () {
   function regentFunction() {
     var C00KI = getCookieD("regentName");
     reGexP.push(C00KI);
+    ////let trainBin2 = window.btoa(low)
   }
 
 
@@ -71,10 +72,10 @@ function Eye(data,x){
 
   //cooki testing - trainerNam;
 //var trainername = "T4RYNITUP";
-var trainername = "AARONAWEZOM";
+//var trainername = "AARONAWEZOM";
 for(let j=0; j <  x; j++) {
 
-if (trainername == data[0].bns[j].tname.toUpperCase()){
+if (trainerNam == data[0].bns[j].tname.toUpperCase()){
 gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
   
