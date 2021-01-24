@@ -65,14 +65,21 @@ var col = '600cd1c7bca934583e40dc83';
                },
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) {
+                   
+                   if (data[0].bns.length !== undefined){
                       Eye(data, data[0].bns.length)
+                   } else {alert("Because this is free, sometimes things take a moment to load,\nI will automatically try agian to load everything in 10 seconds.")
+
+                        setTimeout(function(){pageLoad();},10000);
+                        }
+
                    });
 }
 function Eye(data,x){
 
   //cooki testing - trainerNam;
-//var trainername = "T4RYNITUP";
-var trainername = "AARONAWEZOM";
+var trainername = "T4RYNITUP";
+//var trainername = "AARONAWEZOM";
 for(let j=0; j <  x; j++) {
 
 if (trainername == data[0].bns[j].tname.toUpperCase()){
