@@ -108,9 +108,9 @@ $.ajax
                         '<img src ="' + data.results[0].have[o].imaj + '">'
                          + '<figcaption>' + data.results[0].have[o].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
-                   $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[o].Name +'ownbox">');
+                   $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[o].Name + [o]+'ownbox">');
 
-                        $('#' + data.results[0].have[o].Name + "own").click(function() {
+                        $('#' + data.results[0].have[o].Name + [o]+ "own").click(function() {
                           var currentId = $(this).attr('id');
 
 if($("#"+currentId +"box").prop('checked'))
@@ -164,12 +164,12 @@ var pShiny = data.results[0].have[o].shiny;
                        for(let c = 0; c < Covet.length; c++) {
 
                    $('#wantPaste').append("<img src='" + Covet[c].imaj +"'>");
-                  $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[c].Name  + 'cov">'+ '<figure>'+
+                  $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[c].Name + [c] + 'cov">'+ '<figure>'+
                         '<img src ="' +Covet[c].imaj + '">'
                          + '<figcaption>' + Covet[c].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
 
-                       $('#' + Covet[c].Name + "cov").click(function() {
+                       $('#' + Covet[c].Name + [c] + "cov").click(function() {
                         var currentId = $(this).attr('id');
                                ///////this console.log(data.results[0].want[0].Dex)
 
