@@ -71,8 +71,8 @@ var col = '6001d6a3e31fbc3bdef42055';
 function Eye(data,x){
 
   //cooki testing - trainerNam;
-var trainername = "T4RYNITUP";
-//var trainername = "AARONAWEZOM";
+//var trainername = "T4RYNITUP";
+var trainername = "AARONAWEZOM";
 for(let j=0; j <  x; j++) {
 
 if (trainername == data[0].bns[j].tname.toUpperCase()){
