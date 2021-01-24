@@ -104,11 +104,11 @@ $.ajax
                        $('#havePaste').html("");
                 for(let o = 0; o < Owned.length; o++) {
                     $('#havePaste').append("<img src='" + Owned[o].imaj +"'>");
-                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name    + 'own">'+ '<figure>'+
+                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
                         '<img src ="' + data.results[0].have[o].imaj + '">'
                          + '<figcaption>' + data.results[0].have[o].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
-                   $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[o].Name + [o]+'ownbox">');
+                   $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[o].Name +'ownbox">');
 
                         $('#' + data.results[0].have[o].Name + [o]+ "own").click(function() {
                           var currentId = $(this).attr('id');
@@ -857,8 +857,9 @@ function removeSelected2(){
 
 deSelectUnchk3();
 
+for(var i = 0; i < RhaveP.length; i++){
 for(var e = 0; e < existingContent[0].results[0].have.length; e++){
-	for(var i = 0; i < RhaveP.length; i++){
+	// for(var i = 0; i < RhaveP.length; i++){
 //if (existingContent[0].results[0].have[e].Name == RhaveP[i].Name)
 
 var CT = existingContent[0].results[0].have[e];
@@ -907,8 +908,9 @@ function removeSelected(){
 
 deSelectUnchk3();
 
+for(var i = 0; i < RwantP.length; i++){
 for(var e = 0; e < existingContent[0].results[0].want.length; e++){
-	for(var i = 0; i < RwantP.length; i++){
+	
 //if (existingContent[0].results[0].want[e].Name == RwantP[i].Name)
 
 var CT = existingContent[0].results[0].want[e];
