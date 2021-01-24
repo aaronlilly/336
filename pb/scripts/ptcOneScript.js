@@ -71,11 +71,11 @@ var col = '6001d6a3e31fbc3bdef42055';
 function Eye(data,x){
 
   //cooki testing - trainerNam;
-//var trainername = "T4RYNITUP";
+var trainername = "T4RYNITUP";
 //var trainername = "AARONAWEZOM";
 for(let j=0; j <  x; j++) {
 
-if (trainerNam == data[0].bns[j].tname.toUpperCase()){
+if (trainername == data[0].bns[j].tname.toUpperCase()){
 gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
   
