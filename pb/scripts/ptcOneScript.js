@@ -78,7 +78,8 @@ var col = '600cd1c7bca934583e40dc83';
 function Eye(data,x){
 
   //cooki testing - trainerNam;
-var trainername = "T4RYNITUP";
+// var trainername = "T4RYNITUP";
+var trainername = "TRYANEW";
 //var trainername = "AARONAWEZOM";
 for(let j=0; j <  x; j++) {
 
