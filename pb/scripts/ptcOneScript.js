@@ -68,7 +68,7 @@ var col = '600cd1c7bca934583e40dc83';
                    console.log(data[0].bns.length);
                    console.log(data[0].bns[j].tname.toUpperCase());
                    if (data[0].bns.length !== undefined){
-                      Eye(data, data[0].bns.length)
+                      Eye(data)
                    } else {alert("Because this is free, sometimes things take a moment to load,\nI will automatically try agian to load everything in 10 seconds.")
 
                         setTimeout(function(){pageLoad();},10000);
@@ -76,7 +76,7 @@ var col = '600cd1c7bca934583e40dc83';
 
                    });
 }
-function Eye(data,x){
+function Eye(data){
 
   //cooki testing - trainerNam;
 // var trainername = "T4RYNITUP";
@@ -84,9 +84,10 @@ function Eye(data,x){
 //var trainername = "AARONAWEZOM";
 
 //var trainername = 'aaronawezom';
-for(let j=0; j <  x; j++) {
-  console.log(trainerNam);
+console.log(trainerNam);
   console.log(trainerNam.toUpperCase());
+for(let j=0; j < data[0].bns.length; j++) {
+  
   console.log(data[0].bns[j].tname.toUpperCase());
 
 if (trainerNam.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
