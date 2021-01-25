@@ -7,7 +7,7 @@ function cNBlank(COOKI){
    function cookiClik(){
      let uInput = $('#username').val();
  let uInput2 = $('#uesrname').val();
- var page = toUpperCase(uInput);
+ var page = uInput;
  var paqe = window.btoa(uInput2);
        
  Cookies.set('name', page, { expires: 30, path: '' })

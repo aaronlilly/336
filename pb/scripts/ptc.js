@@ -29,6 +29,7 @@ label.push(data);
 //take just the names out of the array and put them in another array
   for(i= 0; i < label[0][0].bns.length;i++){
 labelTname.push(label[0][0].bns[i].tname)
+
 }
 }
 ///end infoget
@@ -42,7 +43,7 @@ alert("user name already exists,\nchose another name or login.");
  //add the bin created to the list of bins
  function IsDifferentNew(){
 
-newBin();
+//newBin();
 
 }
 //end bin list add
@@ -62,7 +63,8 @@ function IsDifferent(){
 //new
 function checkItNew()
 {
-var tNam = $('#username').val();
+var tNam = $('#username').val().toUpperCase();
+console.log(tNam);
         if(labelTname.includes(tNam))
         {
             IsSameNew();
