@@ -1,4 +1,3 @@
-var reGexP = [];
 let existingContent = [];
 let trainBin = "";
 
@@ -17,7 +16,7 @@ $(document).ready(function () {
     if(COOKI !== undefined){
     $('#trainerInfoHere').html(COOKI);
 
-      regentFunction();
+      rFunction();
   
     }
   }
@@ -38,10 +37,12 @@ $(document).ready(function () {
 }
 
 
-  function regentFunction() {
-    var C00KI = getCookieD("regentName");
-    reGexP.push(C00KI);
+  function rFunction() {
+    var C00KI = getCookieD("Name");
+    
     ////let trainBin2 = window.btoa(low)
+
+
      pageLoad();
   }
 
@@ -77,21 +78,12 @@ var col = '600cd1c7bca934583e40dc83';
 }
 function Eye(data){
 
-  //cooki testing - trainerNam;
-// var trainername = "T4RYNITUP";
-//var trainername = "TRYANEW";
-//var trainername = "AARONAWEZOM";
-
-//var trainername = 'aaronawezom';
-
 var COOKI = getCookieD("name");
      if (COOKI != "") {
        
          if(COOKI !== undefined){
 
-       
-
-  
+      
 for(let j=0; j < data[0].bns.length; j++) {
   
   console.log(data[0].bns[j].tname.toUpperCase());
@@ -102,7 +94,9 @@ trainBin = data[0].bns[j].bin;
   
 
 }}
-  }//end undefined cooki
+  } else {COOKI = "GUEST"
+  alert("You are currently using the guest account,\n anything you do won't be saved to your trainer info.\n make sure you are using/enabling cookies to allow this site to work correctly. ")
+  }//end undefined cooki 
   }//end cooki blank
     
       }    
