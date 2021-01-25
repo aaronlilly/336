@@ -3,7 +3,8 @@ var label = [];
 var upLabel = [];
 var labelTname = [];
 var resp = [];
-
+var uqLabel = [];
+var resq = [];
 
 // get bins from list of bins, put them in array //this is correct
  $(document).ready(function ()  
@@ -64,7 +65,7 @@ function IsDifferent(){
 function checkItNew()
 {
 var tNam = $('#username').val().toUpperCase();
-console.log(tNam);
+console.log(tNam)
         if(labelTname.includes(tNam))
         {
             IsSameNew();
@@ -111,7 +112,7 @@ cookiClik()
 
 
 //creates bin in collection of bins (not a collection now)
-function newBin(){
+function newBin(url){
       
        $.ajax
        ({
@@ -127,7 +128,9 @@ function newBin(){
                  data:'{"results": [{"trainer": "' + $('#username').val() +'","have": [],"want": []}]}',
                   }).done(function(responseText) 
                      {
-			     updateListFunct(responseText)
+                     
+			     updateListFunct(responseText,url)
+         
                       //console.log(responseText);                 
     });
  };
@@ -135,20 +138,46 @@ function newBin(){
 //need to push data into array from response along with trainer name
 //then read out of array with json stringify //also seemingly good
 
-function updateListFunct(responseText){
+function updateListFunct(responseText,url){
+ 
+ if(url =="one"){
 resp.push(responseText);
 upLabel.push(label[0][0]);
 var trainerName = $('#username').val();
 var createdBin = resp[0].id;
 
 upLabel[0].bns.push({"tname": trainerName,"bin": createdBin});
+}else if(url =="two"){
+  resq.push(responseText);
+//what? uqLabel.push(label[0][0]); //600cd7113126bb747e9e2252
 
+var trainerName = $('#username').val();
+var createdBin = resp[0].id;
+
+}
+
+
+ //updatBin(col);
+// toastyFunct();
+ }
+
+function toastyFunct(){
+alert("new account created!");
+window.location.href = "./ptcOne.html";
+}
+
+
+
+
+
+
+function updatBin(url){
 
  $.ajax
        ({
-           url: "https://api.jsonbin.io/b/" + col, 
+           url: "https://api.jsonbin.io/b/" + url, 
           method: "PUT",
- 	versioning: false,
+  versioning: false,
           beforeSend: function (xhr) {
                 xhr.setRequestHeader("Content-Type", "application/json");
                 xhr.setRequestHeader("secret-key", mySecretKey);
@@ -158,21 +187,8 @@ upLabel[0].bns.push({"tname": trainerName,"bin": createdBin});
                   }).done(function(responseText) 
                      {
                       //console.log(responseText)
-			toastyFunct();
-			;                 
+      
+      ;                 
     });
 
  }
-
-function toastyFunct(){
-
-alert("new account created!");
-
-
-window.location.href = "./ptcOne.html";
-
-}
-
-
-
-
