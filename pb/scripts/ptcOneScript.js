@@ -79,11 +79,11 @@ function Eye(data,x){
 
   //cooki testing - trainerNam;
 // var trainername = "T4RYNITUP";
-var trainername = "TRYANEW";
+//var trainername = "TRYANEW";
 //var trainername = "AARONAWEZOM";
 for(let j=0; j <  x; j++) {
 
-if (trainername == data[0].bns[j].tname.toUpperCase()){
+if (trainerNam.toUpperCase() == data[0].bns[j].tname.toUpperCase()){
 gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
   
