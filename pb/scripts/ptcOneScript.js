@@ -43,6 +43,7 @@ $(document).ready(function () {
     var C00KI = getCookieD("regentName");
     reGexP.push(C00KI);
     ////let trainBin2 = window.btoa(low)
+     pageLoad();
   }
 
 
@@ -50,9 +51,7 @@ $(document).ready(function () {
 ///get list of bins
 //if trainer name same as what is in the list of bins, get the bin for that trainer
 
-$(document).ready(function () {
-    pageLoad();
-   });
+
  
 function pageLoad() {
   let existingContent = [];
@@ -65,7 +64,7 @@ var col = '600cd1c7bca934583e40dc83';
                },
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) {
-                   
+                   console.log(data);
                    if (data[0].bns.length !== undefined){
                       Eye(data, data[0].bns.length)
                    } else {alert("Because this is free, sometimes things take a moment to load,\nI will automatically try agian to load everything in 10 seconds.")
@@ -81,6 +80,8 @@ function Eye(data,x){
 // var trainername = "T4RYNITUP";
 //var trainername = "TRYANEW";
 //var trainername = "AARONAWEZOM";
+
+//var trainername = 'aaronawezom';
 for(let j=0; j <  x; j++) {
 
 if (trainerNam.toUpperCase() == data[0].bns[j].tname.toUpperCase()){
