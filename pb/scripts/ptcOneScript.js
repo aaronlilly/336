@@ -66,7 +66,7 @@ var col = '600cd1c7bca934583e40dc83';
                   }).done(function(data) {
                    console.log(data);;
                    console.log(data[0].bns.length);
-                   console.log(data[0].bns[j].tname.toUpperCase());
+                   console.log(data[0].bns[0].tname.toUpperCase());
                    if (data[0].bns.length !== undefined){
                       Eye(data)
                    } else {alert("Because this is free, sometimes things take a moment to load,\nI will automatically try agian to load everything in 10 seconds.")
