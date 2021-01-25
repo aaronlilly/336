@@ -1,6 +1,5 @@
 var reGexP = [];
 let existingContent = [];
-let trainerNam = "";
 let trainBin = "";
 
 
@@ -9,7 +8,7 @@ $(document).ready(function () {
        var COOKI = getCookieD("name");
      if (COOKI != "") {
          cNBlank(COOKI);
-         let trainerNam = COOKI;
+         
     
       }    
   });
@@ -84,6 +83,14 @@ function Eye(data){
 //var trainername = "AARONAWEZOM";
 
 //var trainername = 'aaronawezom';
+
+var COOKI = getCookieD("name");
+     if (COOKI != "") {
+       
+         if(COOKI !== undefined){
+
+       
+
 console.log(trainerNam);
   console.log(trainerNam.toUpperCase());
 for(let j=0; j < data[0].bns.length; j++) {
@@ -96,6 +103,9 @@ trainBin = data[0].bns[j].bin;
   
 
 }}}
+  }
+    
+      }    
 
 
 function gotDBin(binny){
