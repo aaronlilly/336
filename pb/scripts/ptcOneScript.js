@@ -102,8 +102,9 @@ gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
   
 
-}}}
-  }
+}}
+  }//end undefined cooki
+  }//end cooki blank
     
       }    
 
