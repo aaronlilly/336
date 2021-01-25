@@ -91,13 +91,12 @@ var COOKI = getCookieD("name");
 
        
 
-console.log(trainerNam);
   console.log(trainerNam.toUpperCase());
 for(let j=0; j < data[0].bns.length; j++) {
   
   console.log(data[0].bns[j].tname.toUpperCase());
 
-if (trainerNam.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
+if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
 gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
   
