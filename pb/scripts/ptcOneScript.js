@@ -64,7 +64,9 @@ var col = '600cd1c7bca934583e40dc83';
                },
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) {
-                   console.log(data);
+                   console.log(data);;
+                   console.log(data[0].bns.length);
+                   console.log(data[0].bns[j].tname.toUpperCase());
                    if (data[0].bns.length !== undefined){
                       Eye(data, data[0].bns.length)
                    } else {alert("Because this is free, sometimes things take a moment to load,\nI will automatically try agian to load everything in 10 seconds.")
@@ -83,8 +85,11 @@ function Eye(data,x){
 
 //var trainername = 'aaronawezom';
 for(let j=0; j <  x; j++) {
+  console.log(trainerNam);
+  console.log(trainerNam.toUpperCase());
+  console.log(data[0].bns[j].tname.toUpperCase());
 
-if (trainerNam.toUpperCase() == data[0].bns[j].tname.toUpperCase()){
+if (trainerNam.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
 gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
   
