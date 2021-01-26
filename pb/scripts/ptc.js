@@ -45,7 +45,7 @@ alert("user name already exists,\nchose another name or login.");
 
  //add the bin created to the list of bins
  function IsDifferentNew(){
-
+ ajakc();
 newBin();
 
 }
@@ -195,11 +195,9 @@ $.ajax
 function naxt(data){
 
 
-  for(i= 0; i < data[0].bns.length;i++){
-console.log(data[0].bns[i].tname)
-console.log(data[0].bns[i].bin)
+ 
 lapel.push(data[0]);
-}
+
 thirdy();
 }
 
@@ -235,13 +233,35 @@ function neuBin(){
     });
 }
 function updateListFunt(responseText){
- 
+ console.log(responseText);
 
-resq.push(responseText);
-label.push(label[0][0]);
+resq.push(responseText);;
 var trainerName = $('#username').val();
-var createdBin = resp[0].id;
+var createdBin = resq[0].id;
 
-upLabel[0].bns.push({"tname": trainerName,"bin": createdBin});
+lapel.push({"tname": trainerName,"bin": createdBin});
+
+
+
+
+ $.ajax
+       ({
+           url: "https://api.jsonbin.io/b/" + c0l, 
+          method: "PUT",
+  versioning: false,
+          beforeSend: function (xhr) {
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.setRequestHeader("secret-key", mySecretKey);
+               },
+                  
+                 data: JSON.stringify(lapel),
+                  }).done(function(responseText) 
+                     {
+                      //console.log(responseText)
+      
+      ;                 
+    });
+
+}
 
 
