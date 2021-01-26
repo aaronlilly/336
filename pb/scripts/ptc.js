@@ -1,23 +1,23 @@
-var col = '600cd1c7bca934583e40dc83';
-var c0l = '600cd7113126bb747e9e2252';
-let label = [];
-let lapel = [];
+var label = [];
+let lapel =[];
 var upLabel = [];
 var labelTname = [];
 var resp = [];
-var resq = [];
+var col = '600cd1c7bca934583e40dc83';
+var c0l = '600cd7113126bb747e9e2252';
 
 
 // get bins from list of bins, put them in array //this is correct
  $(document).ready(function ()  
     {
-	ajack(col);
+	ajack(col)
+	ajakc(c0l)		 
+    });
 
-}
-});
+
 
 function ajack(col){
-		 $.ajax
+$.ajax
          ({
          method: "GET",
          beforeSend: function (xhr) {
@@ -28,20 +28,16 @@ function ajack(col){
                      {
                       //console.log(data)     
 			                 next(data);
-    });ajakc(c0l);
+});
 }
 
-
 function next(data){
-lapel.push(data);
+label.push(data);
 
-;
 
-//take just the names out of the array and put them in another array
-  //for(i= 0; i < label[0][0].bns.length;i++){
+  for(i= 0; i < data[0].bns.length;i++){
+console.log(data[0].bns[i].tname)
 
-for(i= 0; i < data[0].bns.length;i++){
-labelTname.push(data[0].bns[i].tname)
 }
 }
 ///end infoget
@@ -56,7 +52,6 @@ alert("user name already exists,\nchose another name or login.");
  function IsDifferentNew(){
 
 newBin();
-new8in();
 
 }
 //end bin list add
@@ -76,7 +71,8 @@ function IsDifferent(){
 //new
 function checkItNew()
 {
-var tNam = $('#username').val();
+var tNam = $('#username').val().toUpperCase();
+console.log(tNam)
         if(labelTname.includes(tNam))
         {
             IsSameNew();
@@ -117,7 +113,6 @@ $(document).ready(function() {
 $('#createNew').click(function(){
 checkItNew()
 cookiClik()
-
 });
 });
 //////end click events for buttons
@@ -140,7 +135,9 @@ function newBin(){
                  data:'{"results": [{"trainer": "' + $('#username').val() +'","have": [],"want": []}]}',
                   }).done(function(responseText) 
                      {
+                     
 			     updateListFunct(responseText)
+         
                       //console.log(responseText);                 
     });
  };
@@ -149,6 +146,8 @@ function newBin(){
 //then read out of array with json stringify //also seemingly good
 
 function updateListFunct(responseText){
+ 
+
 resp.push(responseText);
 upLabel.push(label[0][0]);
 var trainerName = $('#username').val();
@@ -157,35 +156,17 @@ var createdBin = resp[0].id;
 upLabel[0].bns.push({"tname": trainerName,"bin": createdBin});
 
 
- $.ajax
-       ({
-           url: "https://api.jsonbin.io/b/" + col, 
-          method: "PUT",
- 	versioning: false,
-          beforeSend: function (xhr) {
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader("secret-key", mySecretKey);
-               },
-                  
-                 data: JSON.stringify(upLabel),
-                  }).done(function(responseText) 
-                     {
-                      //console.log(responseText)
-			toastyFunct();
-			;                 
-    });
-
+// toastyFunct();
  }
 
 function toastyFunct(){
-
 alert("new account created!");
-
-
 window.location.href = "./ptcOne.html";
-
 }
-///////////////////////////////////////////////////////////
+
+
+////////////
+
 function ajakc(col){
 $.ajax
          ({
@@ -196,18 +177,32 @@ $.ajax
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) 
                      {
-                           
-			                 nekt(data);
+                      //console.log(data)     
+			                 naxt(data);
 });
 }
 
-function nekt(data){
-lapel.push(data);
+function naxt(data){
+
+
+  for(i= 0; i < data[0].bns.length;i++){
+console.log(data[0].bns[i].tname)
+console.log(data[0].bns[i].bin)
+lapel.push(data[0]);
+}
+thirdy();
 }
 
-function new8in(){
+
+function thirdy(){
+neuBin()
       
-       $.ajax
+      
+ 
+}
+
+function neuBin(){
+ $.ajax
        ({
           url: "https://api.jsonbin.io/b/",    
          method: "POST",
@@ -217,39 +212,13 @@ function new8in(){
                xhr.setRequestHeader("Content-Type", "application/json");
                xhr.setRequestHeader("secret-key", mySecretKey);
               },
-                  var cretedBin = Cookies.get('Name');
-
-                 data:'{"tname": trainerName,"bin": cretedBin}',
-                  }).done(function(responseText) 
-                     {
-			     updateListFunt(responseText)
-                                       
-    });
- };
-///
-function updateListFunt(responseText){
-resq.push(responseText);
-var trainerName = $('#username').val();
-var createdBin = resp[0].id;
-
-lapel[0].bns.push({"tname": trainerName,"bin": createdBin});
-
-
- $.ajax
-       ({
-           url: "https://api.jsonbin.io/b/" + col, 
-          method: "PUT",
- 	versioning: false,
-          beforeSend: function (xhr) {
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader("secret-key", mySecretKey);
-               },
                   
-                 data: JSON.stringify(lapel),
+                 data:'{"results": [{"trainer": "' + $('#username').val() +'","have": [],"want": []}]}',
                   }).done(function(responseText) 
                      {
-                      //
-			;                 
+                     
+			     updateListFunct(responseText)
+         
+                      //console.log(responseText);                 
     });
-
- }
+}
