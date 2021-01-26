@@ -64,7 +64,7 @@ var col = '600cd1c7bca934583e40dc83';
                },
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) {
-                   //console.log(data);;
+                   console.log(data);;
                    //console.log(data[0].bns.length);
                   // console.log(data[0].bns[0].tname.toUpperCase());
                    if (data[0].bns.length !== undefined){
@@ -87,10 +87,10 @@ var COOKI = getCookieD("name");
 for(let j=0; j < data[0].bns.length; j++) {
   
   console.log(data[0].bns[j].tname.toUpperCase());
-var trainer = "AARONAWEZOM";
+var trainername = "AARONAWEZOM";
 	//if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
 	
-if (trainer == data[0].bns[j].tname.toUpperCase()){  
+if (trainername == data[0].bns[j].tname.toUpperCase()){  
 gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
   
