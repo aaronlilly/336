@@ -1,8 +1,12 @@
- var col = '600cd1c7bca934583e40dc83';
 var label = [];
+let lapel =[];
 var upLabel = [];
 var labelTname = [];
 var resp = [];
+var resq = [];
+var col = '600cd1c7bca934583e40dc83';
+var c0l = '600cd7113126bb747e9e2252';
+
 
 
 // get bins from list of bins, put them in array //this is correct
@@ -167,9 +171,77 @@ function toastyFunct(){
 alert("new account created!");
 
 
-window.location.href = "./ptcOne.html";
+//window.location.href = "./ptcOne.html";
 
 }
 
+
+////////////////////////////////////
+function ajakc(){
+$.ajax
+         ({
+         method: "GET",
+         beforeSend: function (xhr) {
+               xhr.setRequestHeader("secret-key", mySecretKey);
+              },
+                  url: "https://api.jsonbin.io/b/" + c0l + "/latest"
+                  }).done(function(data) 
+                     {
+                      //console.log(data)     
+                      naxt(data);
+});
+}
+
+function naxt(data){
+
+
+  for(i= 0; i < data[0].bns.length;i++){
+console.log(data[0].bns[i].tname)
+console.log(data[0].bns[i].bin)
+lapel.push(data[0]);
+}
+thirdy();
+}
+
+
+function thirdy(){
+neuBin()
+      
+      
+ 
+}
+
+function neuBin(){
+  var trainerName = $('#username').val();
+   var  cretedBin = Cookies.get('Name');
+ $.ajax
+       ({
+          url: "https://api.jsonbin.io/b/",    
+         method: "POST",
+ //collection-id: myCol,
+         beforeSend: function (xhr) {
+          //xhr.setRequestHeader("collection-id", myCol);
+               xhr.setRequestHeader("Content-Type", "application/json");
+               xhr.setRequestHeader("secret-key", mySecretKey);
+              },
+                  
+                 data:'{"tname": trainerName,"bin": cretedBin}',
+                  }).done(function(responseText) 
+                     {
+                     
+          updateListFunt(responseText)
+         
+                      //console.log(responseText);                 
+    });
+}
+function updateListFunt(responseText){
+ 
+
+resq.push(responseText);
+label.push(label[0][0]);
+var trainerName = $('#username').val();
+var createdBin = resp[0].id;
+
+upLabel[0].bns.push({"tname": trainerName,"bin": createdBin});
 
 
