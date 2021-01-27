@@ -1,6 +1,6 @@
 var c0l = '600cd7113126bb747e9e2252';
 let binArray = [];
- var username = $("#username").val();
+
  var usernane = $("#uesrname").val();
 
 
@@ -16,7 +16,7 @@ let binArray = [];
                   url: "https://api.jsonbin.io/b/" + c0l + "/latest"
                   }).done(function(data) 
                      {
-                      console.log(data)     
+                      //console.log(data)     
                        next(data);
     });
 });
@@ -62,31 +62,38 @@ function newBin(){
 
 
 function updateListFunt(responseTextId){
-
-var data2send = '{tname:"'+ username + '",bin:"' + responseTextId +'"}'
-
-binArray.push(data2send)
+ var username = $("#username").val();
 
 
-console.log(data2send);
+
+var data2send = {tname: username , bin: responseTextId};
+
+
+binArray[0].bns.push(data2send)
+
 console.log(binArray);
- // $.ajax
- //       ({
- //           url: "https://api.jsonbin.io/b/" + c0l, 
- //          method: "PUT",
- //  versioning: false,
- //          beforeSend: function (xhr) {
- //                xhr.setRequestHeader("Content-Type", "application/json");
- //                xhr.setRequestHeader("secret-key", mySecretKey);
- //               },
- //                  //JSON.stringify(data2send),
- //                 data: data2send,
- //                  }).done(function(responseText) 
- //                     {
- //                      //console.log(responseText)
- //      toastyFunct();
-      // ;                 
-    // });
+
+
+
+
+ $.ajax
+        ({
+            url: "https://api.jsonbin.io/b/" + c0l, 
+          method: "PUT",
+   versioning: false,
+         beforeSend: function (xhr) {
+                xhr.setRequestHeader("Content-Type", "application/json");
+                 xhr.setRequestHeader("secret-key", mySecretKey);
+                },
+                             
+
+		data: JSON.stringify(data2send),
+                   }).done(function(responseText) 
+                     {
+                      //console.log(responseText)
+      toastyFunct();
+       ;                 
+     });
 
  }
 
