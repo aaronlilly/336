@@ -45,25 +45,24 @@ function newBin(){
                   }).done(function(responseText) 
                      {
            //updateListFunct(responseText)
-                      console.log(responseText);                 
+                         
+
+                        updateListFunt(responseText.id)
+
+                      //{success: true, data: Array(1), id: "...", private: true}
+                                   
     });
  };
-//updates list of trainers and bins with bin and trainer name
-//need to push data into array from response along with trainer name
-//then read out of array with json stringify //also seemingly good
-
-function updateListFunct(responseText){
-resp.push(responseText);
-upLabel.push(label[0][0]);
-var trainerName = $('#username').val();
-var createdBin = resp[0].id;
-
-upLabel[0].bns.push({"tname": trainerName,"bin": createdBin});
 
 
+function updateListFunct(responseTextId){
+
+var data2send = '{tname:"'+ username + '",bin:"' + responseTextId +'"}'
+
+binArray.push(data2send)
  $.ajax
        ({
-           url: "https://api.jsonbin.io/b/" + col, 
+           url: "https://api.jsonbin.io/b/" + c0l, 
           method: "PUT",
   versioning: false,
           beforeSend: function (xhr) {
@@ -71,7 +70,7 @@ upLabel[0].bns.push({"tname": trainerName,"bin": createdBin});
                 xhr.setRequestHeader("secret-key", mySecretKey);
                },
                   
-                 data: JSON.stringify(upLabel),
+                 data: JSON.stringify(data2send),
                   }).done(function(responseText) 
                      {
                       //console.log(responseText)
@@ -89,94 +88,4 @@ alert("new account created!");
 //window.location.href = "./ptcOne.html";
 
 }
-
-
-////////////////////////////////////
-function ajakc(){
-$.ajax
-         ({
-         method: "GET",
-         beforeSend: function (xhr) {
-               xhr.setRequestHeader("secret-key", mySecretKey);
-              },
-                  url: "https://api.jsonbin.io/b/" + c0l + "/latest"
-                  }).done(function(data) 
-                     {
-                      //console.log(data)     
-                      naxt(data);
-});
-}
-
-function naxt(data){
-
-
- 
-lapel.push(data[0]);
-
-thirdy();
-}
-
-
-function thirdy(){
-neuBin()
-      
-      
- 
-}
-
-function neuBin(){
-  var trainerName = $('#username').val();
-   var  cretedBin = Cookies.get('Name');
- $.ajax
-       ({
-          url: "https://api.jsonbin.io/b/",    
-         method: "POST",
- //collection-id: myCol,
-         beforeSend: function (xhr) {
-          //xhr.setRequestHeader("collection-id", myCol);
-               xhr.setRequestHeader("Content-Type", "application/json");
-               xhr.setRequestHeader("secret-key", mySecretKey);
-              },
-                  
-                 data:'{"tname": trainerName,"bin": cretedBin}',
-                  }).done(function(responseText) 
-                     {
-                     
-          updateListFunt(responseText)
-         
-                      //console.log(responseText);                 
-    });
-}
-function updateListFunt(responseText){
- console.log(responseText);
-
-resq.push(responseText);;
-var trainerName = $('#username').val();
-var createdBin = resq[0].id;
-
-lapel.push({"tname": trainerName,"bin": createdBin});
-
-
-
-
- $.ajax
-       ({
-           url: "https://api.jsonbin.io/b/" + c0l, 
-          method: "PUT",
-  versioning: false,
-          beforeSend: function (xhr) {
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader("secret-key", mySecretKey);
-               },
-                  
-                 data: JSON.stringify(lapel),
-                  }).done(function(responseText) 
-                     {
-                      //console.log(responseText)
-      
-      ;                 
-    });
-
-}
-
 
