@@ -23,9 +23,15 @@ let binArray = [];
 
 function next(data){
 binArray.push(data[0])
-newBin();
 }
 ///end infoget
+
+
+$(document).ready(function() {
+$('#createNew').click(function(){
+newBin();
+});
+});
 
 //creates bin in collection of bins (not a collection now)
 function newBin(){
@@ -55,28 +61,32 @@ function newBin(){
  };
 
 
-function updateListFunct(responseTextId){
+function updateListFunt(responseTextId){
 
 var data2send = '{tname:"'+ username + '",bin:"' + responseTextId +'"}'
 
 binArray.push(data2send)
- $.ajax
-       ({
-           url: "https://api.jsonbin.io/b/" + c0l, 
-          method: "PUT",
-  versioning: false,
-          beforeSend: function (xhr) {
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader("secret-key", mySecretKey);
-               },
-                  
-                 data: JSON.stringify(data2send),
-                  }).done(function(responseText) 
-                     {
-                      //console.log(responseText)
-      toastyFunct();
-      ;                 
-    });
+
+
+console.log(data2send);
+console.log(binArray);
+ // $.ajax
+ //       ({
+ //           url: "https://api.jsonbin.io/b/" + c0l, 
+ //          method: "PUT",
+ //  versioning: false,
+ //          beforeSend: function (xhr) {
+ //                xhr.setRequestHeader("Content-Type", "application/json");
+ //                xhr.setRequestHeader("secret-key", mySecretKey);
+ //               },
+ //                  //JSON.stringify(data2send),
+ //                 data: data2send,
+ //                  }).done(function(responseText) 
+ //                     {
+ //                      //console.log(responseText)
+ //      toastyFunct();
+      // ;                 
+    // });
 
  }
 
