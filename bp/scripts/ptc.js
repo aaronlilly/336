@@ -126,8 +126,8 @@ function newBin(){
                xhr.setRequestHeader("secret-key", mySecretKey);
               },
                   
-                 data:'{"results": [{"trainer": "' + $('#username').val() +'","have": [],"want": []}]}',
-                  }).done(function(responseText) 
+                 data:'[   {     "bns": [       {        "tname": "' + username + '", "bin": "'+ usernane+'"        }     ]   }]',
+                }).done(function(responseText) 
                      {
            updateListFunct(responseText)
                       //console.log(responseText);                 
