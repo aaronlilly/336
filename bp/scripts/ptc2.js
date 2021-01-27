@@ -1,12 +1,5 @@
-var label = [];
-let lapel =[];
-var upLabel = [];
-var labelTname = [];
-var resp = [];
-var resq = [];
-var col = '600cd1c7bca934583e40dc83';
 var c0l = '600cd7113126bb747e9e2252';
-
+let binArray = [];
 
 
 // get bins from list of bins, put them in array //this is correct
@@ -18,7 +11,7 @@ var c0l = '600cd7113126bb747e9e2252';
          beforeSend: function (xhr) {
                 xhr.setRequestHeader("secret-key", mySecretKey);
                },
-                  url: "https://api.jsonbin.io/b/" + col + "/latest"
+                  url: "https://api.jsonbin.io/b/" + c0l + "/latest"
                   }).done(function(data) 
                      {
                       //console.log(data)     
@@ -27,13 +20,9 @@ var c0l = '600cd7113126bb747e9e2252';
 });
 
 function next(data){
-label.push(data);
-;
-
-//take just the names out of the array and put them in another array
-  for(i= 0; i < label[0][0].bns.length;i++){
-labelTname.push(label[0][0].bns[i].tname)
-}
+console.log(data)
+binArray.push(data[0])
+console.log(binArray);
 }
 ///end infoget
 /////////////login/newclick
