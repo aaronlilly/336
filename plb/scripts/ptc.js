@@ -69,7 +69,8 @@ alert("user name already exists,\nchose another name or login.");
  //add the bin created to the list of bins
  function IsDifferentNew(){
 
-newBin();
+//newBin();
+createNewAccount();
 
 }
 //end bin list add
@@ -120,8 +121,6 @@ $(document).ready(function() {
 $('#logIn').click(function(){
 checkIt()
 cookiClik()
-// var x = document.cookie;
-// console.log(x);
 });
 });
 
@@ -129,7 +128,7 @@ cookiClik()
 $(document).ready(function() {
 $('#createNew').click(function(){
 checkItNew()
-cookiClik()
+
 });
 });
 //////end click events for buttons
@@ -203,7 +202,7 @@ var username = $("#username").val();
                xhr.setRequestHeader("secret-key", mySecretKey);
               },
                   
-                  data:'[{"bns":[{"tname":"' + username + '","bin":"'+ usernane+'"}]}]',
+                  data:'[{"bns":[{"tname":"' + username.toUpperCase() + '","bin":"'+ window.btoa(usernane) +'"}]}]',
               
                  //data:'{"results": [{"trainer": "' + $('#username').val() +'","have": [],"want": []}]}',
                   }).done(function(responseText) 
@@ -245,6 +244,11 @@ binArray[0].bns.push(data2send)
      });
 
  }
+
+
+function createNewAccount() {
+
+}
 
 
 
