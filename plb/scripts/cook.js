@@ -13,7 +13,7 @@ function cNBlank(COOKI){
  Cookies.set('name', page, { expires: 30, path: '' })
 Cookies.set('Name', paqe, { expires: 30, path: '' })
 
-cooki2(paqe);
+
 }
      
    
@@ -33,7 +33,3 @@ function cNBlank(COOKI){
   }
 
 
-function cooki2(page){
-  var call = '600cd7113126bb747e9e2252';
-  
-}
