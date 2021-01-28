@@ -88,9 +88,11 @@ console.log(binArray);
                              
 
 		data: JSON.stringify(binArray),
+//binArray..fail
+//JSON.stringify //success but at what cost?
                    }).done(function(responseText) 
                      {
-                      //console.log(responseText)
+                      console.log(responseText)
       toastyFunct();
        ;                 
      });
