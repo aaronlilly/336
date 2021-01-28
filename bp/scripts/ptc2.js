@@ -87,7 +87,7 @@ console.log(binArray);
                 },
                              
 
-		data: JSON.stringify(data2send),
+		data: JSON.stringify(binArray),
                    }).done(function(responseText) 
                      {
                       //console.log(responseText)
