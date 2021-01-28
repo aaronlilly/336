@@ -1,9 +1,9 @@
 var label = [];
-let lapel =[];
 var upLabel = [];
 var labelTname = [];
+let binArray = [];
 var resp = [];
-var resq = [];
+var resp2 = [];
 var col = '600cd1c7bca934583e40dc83';
 var c0l = '600cd7113126bb747e9e2252';
 
@@ -28,13 +28,36 @@ var c0l = '600cd7113126bb747e9e2252';
 
 function next(data){
 label.push(data);
-;
 
 //take just the names out of the array and put them in another array
   for(i= 0; i < label[0][0].bns.length;i++){
 labelTname.push(label[0][0].bns[i].tname)
 }
+nekt();
 }
+
+function nekt()
+{
+       $.ajax
+         ({
+         method: "GET",
+         beforeSend: function (xhr) {
+                xhr.setRequestHeader("secret-key", mySecretKey);
+               },
+                  url: "https://api.jsonbin.io/b/" + c0l + "/latest"
+                  }).done(function(data) 
+                     {
+                      //console.log(data)     
+                       nect(data);
+    });
+}
+
+function nect(data){
+binArray.push(data[0])
+}
+
+
+
 ///end infoget
 /////////////login/newclick
 
@@ -45,7 +68,7 @@ alert("user name already exists,\nchose another name or login.");
 
  //add the bin created to the list of bins
  function IsDifferentNew(){
- ajakc();
+
 newBin();
 
 }
@@ -168,6 +191,32 @@ upLabel[0].bns.push({"tname": trainerName,"bin": createdBin});
 
 function toastyFunct(){
 
+var username = $("#username").val();
+	  var usernane = $("#uesrname").val();
+      
+                   $.ajax
+                  ({
+                    url: "https://api.jsonbin.io/b/",    
+         method: "POST",
+         beforeSend: function (xhr) {
+               xhr.setRequestHeader("Content-Type", "application/json");
+               xhr.setRequestHeader("secret-key", mySecretKey);
+              },
+                  
+                  data:'[{"bns":[{"tname":"' + username + '","bin":"'+ usernane+'"}]}]',
+              
+                 //data:'{"results": [{"trainer": "' + $('#username').val() +'","have": [],"want": []}]}',
+                  }).done(function(responseText) 
+                     {
+           //updateListFunct(responseText)
+                         
+
+                        updateListFunt(responseText.id)
+
+                      //{success: true, data: Array(1), id: "...", private: true}
+                                   
+    });
+
 alert("new account created!");
 
 
@@ -176,92 +225,26 @@ alert("new account created!");
 }
 
 
-////////////////////////////////////
-function ajakc(){
-$.ajax
-         ({
-         method: "GET",
-         beforeSend: function (xhr) {
-               xhr.setRequestHeader("secret-key", mySecretKey);
-              },
-                  url: "https://api.jsonbin.io/b/" + c0l + "/latest"
-                  }).done(function(data) 
-                     {
-                      //console.log(data)     
-                      naxt(data);
-});
-}
-
-function naxt(data){
-
-
- 
-lapel.push(data[0]);
-
-thirdy();
-}
-
-
-function thirdy(){
-neuBin()
-      
-      
- 
-}
-
-function neuBin(){
-  var trainerName = $('#username').val();
-   var  cretedBin = Cookies.get('Name');
+function updateListFunt(responseTextId){
+ var username = $("#username").val();
+var data2send = {tname: username , bin: responseTextId};
+binArray[0].bns.push(data2send)
+//console.log(binArray);
  $.ajax
-       ({
-          url: "https://api.jsonbin.io/b/",    
-         method: "POST",
- //collection-id: myCol,
-         beforeSend: function (xhr) {
-          //xhr.setRequestHeader("collection-id", myCol);
-               xhr.setRequestHeader("Content-Type", "application/json");
-               xhr.setRequestHeader("secret-key", mySecretKey);
-              },
-                  
-                 data:'{"tname": trainerName,"bin": cretedBin}',
-                  }).done(function(responseText) 
-                     {
-                     
-          updateListFunt(responseText)
-         
-                      //console.log(responseText);                 
-    });
-}
-function updateListFunt(responseText){
- console.log(responseText);
-
-resq.push(responseText);;
-var trainerName = $('#username').val();
-var createdBin = resq[0].id;
-
-lapel.push({"tname": trainerName,"bin": createdBin});
-
-
-
-
- $.ajax
-       ({
-           url: "https://api.jsonbin.io/b/" + c0l, 
+        ({
+            url: "https://api.jsonbin.io/b/" + c0l, 
           method: "PUT",
-  versioning: false,
-          beforeSend: function (xhr) {
+   versioning: false,
+         beforeSend: function (xhr) {
                 xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader("secret-key", mySecretKey);
-               },
-                  
-                 data: JSON.stringify(lapel),
-                  }).done(function(responseText) 
-                     {
-                      //console.log(responseText)
-      
-      ;                 
-    });
+                 xhr.setRequestHeader("secret-key", mySecretKey);
+                },                 
+		data: JSON.stringify(binArray),
+                   }).done(function(responseText) 
+                     {        
+     });
 
-}
+ }
+
 
 
