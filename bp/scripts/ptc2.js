@@ -1,5 +1,6 @@
 var c0l = '600cd7113126bb747e9e2252';
 let binArray = [];
+let resp2 =[];
 
  var usernane = $("#uesrname").val();
 
@@ -35,6 +36,8 @@ newBin();
 
 //creates bin in collection of bins (not a collection now)
 function newBin(){
+	 var username = $("#username").val();
+	  var usernane = $("#uesrname").val();
       
                    $.ajax
                   ({
@@ -45,7 +48,7 @@ function newBin(){
                xhr.setRequestHeader("secret-key", mySecretKey);
               },
                   
-                  data:'[   {     "bns": [       {        "tname": "' + username + '", "bin": "'+ usernane+'"        }     ]   }]',
+                  data:'[{"bns":[{"tname":"' + username + '","bin":"'+ usernane+'"}]}]',
               
                  //data:'{"results": [{"trainer": "' + $('#username').val() +'","have": [],"want": []}]}',
                   }).done(function(responseText) 
