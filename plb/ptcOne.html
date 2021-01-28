@@ -1,0 +1,286 @@
+<html>
+<head>
+	
+	<title>Pokemon Trading Center  </title>
+   <meta name="viewport" content="width=device-width, initial-scale=0.6">
+<link rel="icon" href="./images/favoptc.png" type="image/x-icon"/>
+<link rel="shortcut icon" href="./images/favoptc.png" type="image/x-icon"/>
+<link rel="apple-touch-icon" sizes="16x16" href="./images/favoptc.png"><html>
+<head>
+	
+	
+
+	<script src="./scripts/sec/retz.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+<!--Toastr Min CSS --> 
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css'> 
+
+<!--Toastr Min JS --> 
+<script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js'></script>
+<!--Font Awesome --> 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+
+<script src="./scripts/vars.js"></script>
+  <script src="pokemonNamez.js"></script>
+<link rel="stylesheet" href="./scripts/ptcOneStyle.css">
+
+</script>
+
+<style>
+
+.pokSelctd{background-color: lightblue;}
+.pokRemov{background-color: #ff595e;}
+.hidMe{display:none;}
+ 
+</style>
+
+
+
+
+</head>
+
+ 
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-red mb-4">
+  <span id="menYou"><button type="button" class="btn btn-success" id="menMe">Menu</button></span>
+  <span style="float:right; margin-left: 2%;">Welcome <span id ="trainerInfoHere" style="font-color:lightblue;"></span>. </span> 
+</nav>
+
+<div class="footer"></div>
+
+
+
+  <div id ="xboxs" style="display: none;"></div>
+  
+
+
+<div id ="innerBody">
+  <div id="topper" style="height:45%;overflow-y:scroll;">
+
+<div id="additionAl"><span id="addition">
+
+ <!-- <input type="text" id="addfname" placeholder=" Add By" style="margin-top:5px;border: 3px solid #ccc; border-radius: 4px; width:80%;margin-bottom:2px;"></span>  -->
+  Add By - 
+
+<div>
+<!-- <button type="button" class="btn btn-primary" id="DexNumAdd" style="margin-top:1px;margin-left: 2%;">Dex#</button><button type="button" class="btn btn-success" id="PokNamAdd" style="margin-top:1px;margin-left: 1%;">Name</button> --><button type="button" class="btn btn-info" id="selectAdd" style="margin-top:1px;margin-left: 1%;">Selection</button>
+</div>
+
+<div id="selClick">
+<span style="margin-left:2%;"> Add to - <br></span>
+<span id="havi">
+<div class="btn btn-Primary"  data-toggle="modal" data-target="#myModal1"  style="margin-left:2%;margin-top:2%;">Pokemon I Have.</div></span>
+
+<span id="wanti">
+ <div class="btn btn-Success" data-toggle="modal" data-target="#myModal2"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.</div></span>
+ </div>
+
+<div id="hideAdd" style="float:right;margin-top:5%;"><button type="button" class="btn btn-outline-warning">Close This Section</button></div></div>
+
+
+
+<div id="subtractionAl"><span id="subtraction"> 
+<span style="margin-left:2%;"> Remove By - <br> </span>
+<!--   <input type="text" id="subtractfname" placeholder=" Remove By" style="margin-top:5px;border: 3px solid #ccc;
+  border-radius: 4px; width:80%;"></span> <button type="button" class="btn btn-primary" id="DexNumSub" style="margin-top:1px;margin-left: 2%;">Dex#</button><button type="button" class="btn btn-success" id="PokNamSub" style="margin-top:1px;margin-left: 1%;">Name</button> -->
+
+  <button type="button" class="btn btn-info" id="selectSub" style="margin-top:1px;margin-left: 1%;">Selection</button></span>
+
+<div id="subClick">
+<span id="haviRemov">
+<div class="btn btn-Primary"  data-toggle="modal" data-target="#myModal4"  style="margin-left:2%;margin-top:2%;">Pokemon I Have.</div></span>
+
+<span id="wantiRemov">
+ <div class="btn btn-Success" data-toggle="modal" data-target="#myModal3"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.</div></span>
+
+</div>
+
+<div id="hideSubtract" style="float:right;margin-top:5%;"><button type="button" class="btn btn-outline-warning">Close This Section</button></div></div>
+
+
+<div class="ViewAll">
+    <span class="badge badge-warning">Pokemon I Have.</span>
+    <div id="havePaste"> [ Empty ] </div>
+</div>
+<div class="addMenuUp">
+
+</div>
+
+
+</div>
+<div id="bottommer" style="height:45%;;overflow-y:scroll;">
+  <div class="ViewAll"><span class="badge badge-warning">Pokemon I Want.</span>
+  <div id="wantPaste">  [ Empty ] </div>
+  </div>
+  <div class="addMenuUp">
+  </div>
+ </div>
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+
+  <!-- Trigger the modal with a button -->
+ 
+
+
+
+
+
+
+  <!-- Modal 1-->
+     
+<div class="modal fade" id="myModal1" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Have.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="row" id="pokHav">
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelHav()">Cancel </button>
+        <!-- <button type="button" class="btn btn-secondary" onclick="meanTo();">Close
+        --> <button type="button" class="btn btn-primary" onclick="saveSelected()">Add Selected</button>  
+         <!-- onclick="saveSelected() -->
+             </div>
+    </div>
+  </div>
+</div>
+<!-- end modal 1 -->
+
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+ 
+
+
+
+  <!-- Modal 2-->
+     
+<div class="modal fade" id="myModal2" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Want.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="row" id="pokWan">
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelWant()">Cancel </button>
+        <!-- <button type="button" class="btn btn-secondary" onclick="meanTo();">Close
+        --> <button type="button" class="btn btn-primary" onclick="saveSelected2()">Add Selected</button>  
+         <!-- onclick="saveSelected() -->
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- end modal 2 -->
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+
+
+
+
+  <!-- Modal 3-->
+     
+<div class="modal fade" id="myModal3" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon To Remove from "Want" list.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="row" id="wantPaste2">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cancel </button>
+        <!-- <button type="button" class="btn btn-secondary" onclick="meanTo();">Close
+        --> <button type="button" class="btn btn-danger" onclick="removeSelected()">Remove Selected</button>  
+         <!-- onclick="saveSelected() -->
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- end of modal 3 -->
+
+ <!-- Modal 3-->
+     
+<div class="modal fade" id="myModal4" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog"  role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon To Remove from "Have" list.</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="row" id="havPaste2">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal">Cancel </button>
+        <!-- <button type="button" class="btn btn-secondary" onclick="meanTo();">Close
+        --> <button type="button" class="btn btn-danger" onclick="removeSelected2()">Remove Selected</button>  
+         <!-- onclick="saveSelected() -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- end -->
+
+</div>
+<input type="checkbox" id="haveX" style="display:none;">
+<input type="checkbox" id="wantX" style="display:none;">
+
+</body>
+
+
+
+
+<script src="./scripts/ptcOneScript.js"></script>
+
+</html>
+
