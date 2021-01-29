@@ -249,8 +249,13 @@ binArray[0].bns.push(data2send)
 function createNewAccount() {
 $('.log-form').addClass('hidd');
 $('.log-form2').removeClass('hidd');
-
 }
 
 
 
+$(document).ready(function() {
+$('#createNewNow').click(function(){
+
+//newBin();
+});
+});
