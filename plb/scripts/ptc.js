@@ -255,7 +255,7 @@ $('.log-form2').removeClass('hidd');
 
 $(document).ready(function() {
 $('#createNewNow').click(function(){
-
+$("input:text").val("Glenn Quagmire");
 //newBin();
 });
 });
