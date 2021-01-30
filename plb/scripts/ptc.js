@@ -6,6 +6,7 @@ var resp = [];
 var resp2 = [];
 var col = '600cd1c7bca934583e40dc83';
 var c0l = '600cd7113126bb747e9e2252';
+let binlabel =[];
 
 
 
@@ -79,6 +80,7 @@ createNewAccount();
 ///////////////is same is different funcitons
 //login
 function IsSame(){
+  checkTheBin();
 //log in funciton here
 }
 
@@ -264,3 +266,37 @@ $('#createNewNow').click(function(){
 newBin();
 });
 });
+
+
+/////
+
+  //get bins
+ 
+  //check if username matches
+  //ifit does get that bin
+  //check if bin number matches
+  //if it does, continue....
+
+
+function checkTheBin(){
+
+var colly = '600cd1c7bca934583e40dc83'
+
+ $.ajax
+         ({
+         method: "GET",
+         beforeSend: function (xhr) {
+                xhr.setRequestHeader("secret-key", mySecretKey);
+               },
+                  url: "https://api.jsonbin.io/b/" + colly + "/latest"
+                  }).done(function(data) 
+                     {
+                      //console.log(data)     
+                      //next
+                      binlabel.push(data);
+                      console.log(data);
+
+                      console.log(data[0].bns[0].tname)
+    });
+
+}
