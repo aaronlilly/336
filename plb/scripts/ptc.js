@@ -128,6 +128,8 @@ cookiClik()
 $(document).ready(function() {
 $('#createNew').click(function(){
 checkItNew()
+var name = $("#username").val()
+  $("#usernaem").val(name);
 
 });
 });
@@ -254,8 +256,10 @@ $('.log-form2').removeClass('hidd');
 
 
 $(document).ready(function() {
+
 $('#createNewNow').click(function(){
-$("input:text").val("Glenn Quagmire");
+
+
 //newBin();
 });
 });
