@@ -21,7 +21,7 @@ var c0l = '600cd7113126bb747e9e2252';
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) 
                      {
-                      console.log(data)     
+                      //console.log(data)     
                        next(data);
     });
 });
@@ -242,7 +242,8 @@ binArray[0].bns.push(data2send)
                 },                 
 		data: JSON.stringify(binArray),
                    }).done(function(responseText) 
-                     {        
+                     {alert("now log in with username and password")
+                      window.location.href = "./ptc.html";
      });
 
  }
@@ -260,6 +261,6 @@ $(document).ready(function() {
 $('#createNewNow').click(function(){
 
 
-//newBin();
+newBin();
 });
 });
