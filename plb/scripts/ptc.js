@@ -21,7 +21,7 @@ var c0l = '600cd7113126bb747e9e2252';
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) 
                      {
-                      //console.log(data)     
+                      console.log(data)     
                        next(data);
     });
 });
@@ -90,7 +90,7 @@ function IsDifferent(){
 //new
 function checkItNew()
 {
-var tNam = $('#username').val();
+var tNam = $('#username').val().toUpperCase();
         if(labelTname.includes(tNam))
         {
             IsSameNew();
