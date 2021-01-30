@@ -104,7 +104,7 @@ var tNam = $('#username').val().toUpperCase();
 //login
 function checkIt()
 {
-var tNam = $('#username').val();
+var tNam = $('#username').val().toUpperCase();
   //bins[0].bns.includes(name)
         if(labelTname.includes(tNam))
         {
@@ -293,10 +293,17 @@ var colly = '600cd1c7bca934583e40dc83'
                      {
                       //console.log(data)     
                       //next
-                      binlabel.push(data);
-                      console.log(data);
+                      //binlabel.push(data);
+                     
 
-                      console.log(data[0].bns[0].tname)
+                      //console.log(data[0].bns[0].tname)
+                            //for 
+                            for(i= 0; i < data[0].bns.length;i++){
+                      if ($('#username').val().toUpperCase(); == data[0].bns[i].tname){
+                        //check other
+                      }
+
+                    }
     });
 
 }
