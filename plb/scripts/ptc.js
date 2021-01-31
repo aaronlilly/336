@@ -330,7 +330,8 @@ $.ajax
                 };
 
 function binO(data2){
-     if ($('#uesrnamee').val().btoa() == data2){
+   
+     if (window.btoa($('#uesrnamee').val().btoa())== data2){
                         
                              cookiClik();
                              alert("log in successful..")
