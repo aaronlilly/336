@@ -301,13 +301,13 @@ var colly = '600cd7113126bb747e9e2252'
                             for(i= 0; i < data[0].bns.length;i++){
                       if ($('#username').val().toUpperCase() == data[0].bns[i].tname.toUpperCase()){
                         //check other
-                              binD(data[0].bns[i].bin);
+                              binD(data[0].bns[i].bin,data[0].bns[i].tname);
                                      
                                         }
                                                            }
     });
 
-function binD(dataz){
+function binD(dataz,datas){
 
 $.ajax
          ({
@@ -317,7 +317,7 @@ $.ajax
                },
                   url: "https://api.jsonbin.io/b/" + dataz + "/latest"
                   }).done(function(data){
-                    if ($('#username').val().toUpperCase() == data[0].bns[i].tname.toUpperCase()){
+                    if ($('#username').val().toUpperCase() == datas.toUpperCase()){
                         
                               binO(data[0].bns[i].bin);
                                      
