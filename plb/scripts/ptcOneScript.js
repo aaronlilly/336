@@ -40,8 +40,7 @@ $(document).ready(function () {
   function rFunction() {
     var C00KI = getCookieD("Name");
     
-    ////let trainBin2 = window.btoa(low)
-
+ 
 
      pageLoad();
   }
@@ -481,7 +480,10 @@ $('#additionAl').css({
 //save from modal
 function saveSelected(){
 
-for(var i = 0; i < haveP.length; i++){
+ var CODKI= Cookies.get('nane');
+       if (CODKI != "" && CODKI !== undefined) {
+
+       	for(var i = 0; i < haveP.length; i++){
 existingContent[0].results[0].have.push(haveP[i])}
 
 
@@ -489,6 +491,12 @@ existingContent[0].results[0].have.push(haveP[i])}
 alert2();
 deSelectUnchk();
 $('#myModal1').modal('hide');
+         
+      }else {alert("something is wrong, you might need to enable cookies to continue\n I'll reload the log in page.")
+    window.location.href = "./ptc.html";
+}
+
+
 
 }
 

@@ -2,12 +2,7 @@ let existingContent = [];
 let trainBin = "";
 
 
- $(document).ready(function () { 
- var CODKI= Cookies.get('nane');
-     //alert(COOKI);
-       if (CODKI != "") {
-         cNCBlank(CODKI);
-      }
+
 
 
 $(document).ready(function () {
@@ -18,6 +13,14 @@ $(document).ready(function () {
     
       }    
   });
+  
+
+ $(document).ready(function () { 
+ var CODKI= Cookies.get('nane');
+     //alert(COOKI);
+       if (CODKI != "") {
+         cNCBlank(CODKI);
+      }
   
   function cNcBlank(COOKI){
     if(COOKI !== undefined){

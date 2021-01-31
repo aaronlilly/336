@@ -13,7 +13,7 @@ function cNBlank(COOKI){
        
  Cookies.set('name', page, { expires: 30, path: '' })
 Cookies.set('Name', paqe, { expires: 30, path: '' })
-Cookies.set('nane', page, { expires: 1, path: '' })
+Cookies.set('nane', pade, { expires: 1, path: '' })
 
 }
      
