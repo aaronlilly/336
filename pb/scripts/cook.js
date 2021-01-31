@@ -9,11 +9,12 @@ function cNBlank(COOKI){
  let uInput2 = $('#uesrname').val();
  var page = uInput;
  var paqe = window.btoa(uInput2);
+ var pade = "flight";
        
  Cookies.set('name', page, { expires: 30, path: '' })
 Cookies.set('Name', paqe, { expires: 30, path: '' })
+Cookies.set('nane', page, { expires: 1, path: '' })
 
-cooki2(paqe);
 }
      
    
@@ -33,7 +34,3 @@ function cNBlank(COOKI){
   }
 
 
-function cooki2(page){
-  var call = '600cd7113126bb747e9e2252';
-  
-}

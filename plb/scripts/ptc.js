@@ -122,7 +122,7 @@ var tNam = $('#username').val().toUpperCase();
 $(document).ready(function() {
 $('#logIn').click(function(){
 checkIt()
-cookiClik()
+
 });
 });
 
@@ -280,7 +280,7 @@ newBin();
 
 function checkTheBin(){
 
-var colly = '600cd1c7bca934583e40dc83'
+var colly = '600cd7113126bb747e9e2252'
 
  $.ajax
          ({
@@ -299,11 +299,39 @@ var colly = '600cd1c7bca934583e40dc83'
                       //console.log(data[0].bns[0].tname)
                             //for 
                             for(i= 0; i < data[0].bns.length;i++){
-                      if ($('#username').val().toUpperCase(); == data[0].bns[i].tname){
+                      if ($('#username').val().toUpperCase() == data[0].bns[i].tname.toUpperCase()){
                         //check other
-                      }
-
-                    }
+                              binD(data[0].bns[i].bin);
+                                     
+                                        }
+                                                           }
     });
 
+function binD(dataz){
+
+$.ajax
+         ({
+         method: "GET",
+         beforeSend: function (xhr) {
+                xhr.setRequestHeader("secret-key", mySecretKey);
+               },
+                  url: "https://api.jsonbin.io/b/" + dataz + "/latest"
+                  }).done(function(data){
+                    if ($('#username').val().toUpperCase() == data[0].bns[i].tname.toUpperCase()){
+                        
+                              binO(data[0].bns[i].bin);
+                                     
+                                        }
+                                               
+                  }
+                  )}
+                };
+
+function binO(data2){
+     if ($('#uesrnamee').val().btoa() == data[0].bns[i].bin){
+                        
+                             cookiClik();
+                             alert("log in successful..")
+                                     window.location.href = "./ptcOne.html";
+                                        }
 }

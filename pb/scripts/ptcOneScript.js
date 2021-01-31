@@ -2,6 +2,13 @@ let existingContent = [];
 let trainBin = "";
 
 
+ $(document).ready(function () { 
+ var CODKI= Cookies.get('nane');
+     //alert(COOKI);
+       if (CODKI != "") {
+         cNCBlank(CODKI);
+      }
+
 
 $(document).ready(function () {
        var COOKI = getCookieD("name");
@@ -12,6 +19,18 @@ $(document).ready(function () {
       }    
   });
   
+  function cNcBlank(COOKI){
+    if(COOKI !== undefined){
+    
+       pageLoad(COOKI);
+      
+  
+    }else {alert("please enable cookies and reload page.")
+    window.location.href = "./ptc.html";}
+
+  }
+
+
   function cNBlank(COOKI){
     if(COOKI !== undefined){
     $('#trainerInfoHere').html(COOKI);
@@ -53,7 +72,8 @@ $(document).ready(function () {
 
 
  
-function pageLoad() {
+function pageLoad(url) {
+  if (url == "flight"){
   let existingContent = [];
 var col = '600cd1c7bca934583e40dc83'; 
        $.ajax
@@ -75,6 +95,7 @@ var col = '600cd1c7bca934583e40dc83';
                         }
 
                    });
+}
 }
 function Eye(data){
 
