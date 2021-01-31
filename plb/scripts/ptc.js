@@ -318,10 +318,10 @@ $.ajax
                   url: "https://api.jsonbin.io/b/" + dataz + "/latest"
                   }).done(function(data){
                     //console.log(datas);
-                    console.log(data)
+                    //console.log(data)
                     if ($('#username').val().toUpperCase() == datas.toUpperCase()){
                         
-                              binO(data[0].bns[i].bin);
+                              binO(data[0].bns[0].bin);
                                      
                                         }
                                                
@@ -330,7 +330,7 @@ $.ajax
                 };
 
 function binO(data2){
-     if ($('#uesrnamee').val().btoa() == data[0].bns[i].bin){
+     if ($('#uesrnamee').val().btoa() == data2){
                         
                              cookiClik();
                              alert("log in successful..")
