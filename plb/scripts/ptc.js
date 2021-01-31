@@ -317,6 +317,7 @@ $.ajax
                },
                   url: "https://api.jsonbin.io/b/" + dataz + "/latest"
                   }).done(function(data){
+                    console.log(datas);
                     if ($('#username').val().toUpperCase() == datas.toUpperCase()){
                         
                               binO(data[0].bns[i].bin);
