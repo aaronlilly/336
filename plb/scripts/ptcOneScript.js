@@ -119,7 +119,7 @@ gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
   
 
-}else {COOKI = "GUEST"
+}else if (COOKI = "GUEST") {
   alert("You are currently using the guest account,\n anything you do won't be saved to your trainer info.\n make sure you are using/enabling cookies to allow this site to work correctly. ")
   }
 } 
