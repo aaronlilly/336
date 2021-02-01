@@ -494,7 +494,7 @@ $('#additionAl').css({
 // }
 
 // //save from modal
-// function saveSelected(){
+ function saveSelected(){
 
 
 
@@ -514,7 +514,7 @@ $('#myModal1').modal('hide');
     window.location.href = "./ptc.html";
 }
 
-
+}
 
 
 
