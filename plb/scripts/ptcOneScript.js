@@ -19,7 +19,7 @@ $(document).ready(function () {
  var CODKI= Cookies.get('nane');
      //alert(COOKI);
        if (CODKI != "") {
-         cNCBlank(CODKI);
+         cNcBlank(CODKI);
       }
 });
 		   
