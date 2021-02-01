@@ -3,6 +3,8 @@ let trainBin = "";
 
 
 
+
+
 $(document).ready(function () {
        var COOKI = getCookieD("name");
      if (COOKI != "") {
@@ -12,6 +14,26 @@ $(document).ready(function () {
       }    
   });
   
+
+ $(document).ready(function () { 
+ var CODKI= Cookies.get('nane');
+     //alert(COOKI);
+       if (CODKI != "") {
+         cNCBlank(CODKI);
+      }
+  
+  function cNcBlank(COOKI){
+    if(COOKI !== undefined){
+    
+       pageLoad(COOKI);
+      
+  
+    }else {alert("please enable cookies and reload page.")
+    window.location.href = "./ptc.html";}
+
+  }
+
+
   function cNBlank(COOKI){
     if(COOKI !== undefined){
     $('#trainerInfoHere').html(COOKI);
@@ -40,7 +62,8 @@ $(document).ready(function () {
   function rFunction() {
     var C00KI = getCookieD("Name");
     
- 
+    ////let trainBin2 = window.btoa(low)
+
 
      pageLoad();
   }
@@ -52,7 +75,8 @@ $(document).ready(function () {
 
 
  
-function pageLoad() {
+function pageLoad(url) {
+  if (url == "flight"){
   let existingContent = [];
 var col = '600cd1c7bca934583e40dc83'; 
        $.ajax
@@ -63,7 +87,7 @@ var col = '600cd1c7bca934583e40dc83';
                },
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) {
-                   //console.log(data);;
+                   console.log(data);;
                    //console.log(data[0].bns.length);
                   // console.log(data[0].bns[0].tname.toUpperCase());
                    if (data[0].bns.length !== undefined){
@@ -74,6 +98,7 @@ var col = '600cd1c7bca934583e40dc83';
                         }
 
                    });
+}
 }
 function Eye(data){
 
@@ -86,19 +111,18 @@ var COOKI = getCookieD("name");
 for(let j=0; j < data[0].bns.length; j++) {
   
   console.log(data[0].bns[j].tname.toUpperCase());
-  //cooki testing - trainerNam;
-//var COOKI = trainerNam;
-//var trainername = "AARONAWEZOM";
-	if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
+var trainername = "AARONAWEZOM";
+	//if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
 	
 if (trainername == data[0].bns[j].tname.toUpperCase()){  
 gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
   
 
-}}
-  } else {COOKI = "GUEST"
+}
+} else {COOKI = "GUEST"
   alert("You are currently using the guest account,\n anything you do won't be saved to your trainer info.\n make sure you are using/enabling cookies to allow this site to work correctly. ")
+  }
   }//end undefined cooki 
   }//end cooki blank
     
@@ -479,31 +503,10 @@ $('#additionAl').css({
 
 
 
-// function getCookieD(cname) {
-//   var name = cname + "=";
-//   var decodedCookie = decodeURIComponent(document.cookie);
-//   var ca = decodedCookie.split(';');
-//   for(var i = 0; i <ca.length; i++) {
-//     var c = ca[i];
-//     while (c.charAt(0) == ' ') {
-//       c = c.substring(1);
-//     }
-//     if (c.indexOf(name) == 0) {
-//       return c.substring(name.length, c.length);
-//     }
-//   }
-//   return "";
-// }
+//save from modal
+function saveSelected(){
 
-// //save from modal
- function saveSelected(){
-
-
-
- var CODKI= getCookieD('nane');
-       if (CODKI != "" && CODKI !== undefined) {
-
-       	for(var i = 0; i < haveP.length; i++){
+for(var i = 0; i < haveP.length; i++){
 existingContent[0].results[0].have.push(haveP[i])}
 
 
@@ -511,13 +514,8 @@ existingContent[0].results[0].have.push(haveP[i])}
 alert2();
 deSelectUnchk();
 $('#myModal1').modal('hide');
-         
-      }else {alert("something is wrong, you might need to enable cookies to continue\n I'll reload the log in page.")
-    window.location.href = "./ptc.html";
-}
 
 }
-
 
 
 function saveSelected2(){
