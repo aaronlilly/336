@@ -87,7 +87,7 @@ for(let j=0; j < data[0].bns.length; j++) {
   
   console.log(data[0].bns[j].tname.toUpperCase());
   //cooki testing - trainerNam;
-var trainername = trainerNam;
+var COOKI = trainerNam;
 //var trainername = "AARONAWEZOM";
 	//if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
 	
