@@ -21,7 +21,8 @@ $(document).ready(function () {
        if (CODKI != "") {
          cNCBlank(CODKI);
       }
-  
+ }
+		   
   function cNcBlank(COOKI){
     if(COOKI !== undefined){
     
