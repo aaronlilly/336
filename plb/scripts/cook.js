@@ -9,10 +9,11 @@ function cNBlank(COOKI){
  let uInput2 = $('#uesrname').val();
  var page = uInput;
  var paqe = window.btoa(uInput2);
+  var pade = "flight";
        
  Cookies.set('name', page, { expires: 30, path: '' })
 Cookies.set('Name', paqe, { expires: 30, path: '' })
-
+Cookies.set('nane', pade, { expires: 1, path: '' })
 
 }
      
