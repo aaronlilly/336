@@ -477,10 +477,28 @@ $('#additionAl').css({
 
 
 
-//save from modal
-function saveSelected(){
+// function getCookieD(cname) {
+//   var name = cname + "=";
+//   var decodedCookie = decodeURIComponent(document.cookie);
+//   var ca = decodedCookie.split(';');
+//   for(var i = 0; i <ca.length; i++) {
+//     var c = ca[i];
+//     while (c.charAt(0) == ' ') {
+//       c = c.substring(1);
+//     }
+//     if (c.indexOf(name) == 0) {
+//       return c.substring(name.length, c.length);
+//     }
+//   }
+//   return "";
+// }
 
- var CODKI= Cookies.get('nane');
+// //save from modal
+// function saveSelected(){
+
+
+
+ var CODKI= getCookieD('nane');
        if (CODKI != "" && CODKI !== undefined) {
 
        	for(var i = 0; i < haveP.length; i++){
