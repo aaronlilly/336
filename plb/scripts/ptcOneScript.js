@@ -516,7 +516,6 @@ $('#myModal1').modal('hide');
 
 
 
-}
 
 
 function saveSelected2(){
