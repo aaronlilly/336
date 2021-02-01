@@ -32,7 +32,7 @@ label.push(data);
 
 //take just the names out of the array and put them in another array
   for(i= 0; i < label[0][0].bns.length;i++){
-labelTname.push(label[0][0].bns[i].tname)
+labelTname.push(label[0][0].bns[i].tname.toUpperCase())
 }
 nekt();
 }
@@ -131,7 +131,7 @@ $(document).ready(function() {
 $('#createNew').click(function(){
 checkItNew()
 var name = $("#username").val()
-  $("#usernaem").val(name);
+ // i dont know what 1042 $("#usernaem").val(name);
 
 });
 });
