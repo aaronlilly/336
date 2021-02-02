@@ -1,0 +1,55 @@
+  #additionAl{width:320px;border: solid;border-color: #17A2B8; border-radius: 5%;border-width:thin;display:none;float:left;margin-right:2%;height: auto;}
+
+
+
+#addition{margin:2%;}
+
+  #subtractionAl{width:320px;border: solid;border-color: #DC3545; border-radius: 5%;border-width:thin;display:none;float:right;margin-left:2%;height: auto;}
+
+
+
+#subtraction{margin:2%;}
+
+.ViewAll{display: none;}
+
+#selClick{display: none;}
+#subClick{display: none;}
+
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+/*//
+*/
+
+#innerBody{margin-left:1%;font-size: 20px;}
+
+#hav{float:left;margin-top:8%;margin-left:20%}
+#wanna{float:left;margin-top:8%;margin-left:32%}
+
+ body {
+  background-image: url('../images/ballcenter.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #212529;
+   color: white;
+   text-align: center;
+   padding:1% 0% 1% 1%;
+}
+
+.bg-red{
+	background-color: firebrick;
+}
+
+#endOfToast{margin-top:30%;}
+#clearly{margin-left:75%;}
+#toastTop{font-size: 18px;margin-left: 20%; text-decoration: underline;};
+
+
