@@ -7,7 +7,7 @@ function cNBlank(COOKI){
    function cookiClik(){
      let uInput = $('#username').val();
  let uInput2 = $('#uesrname').val();
- var page = uInput;
+ var page.toUpperCase() = uInput;
  var paqe = window.btoa(uInput2);
  var pade = "flight";
        

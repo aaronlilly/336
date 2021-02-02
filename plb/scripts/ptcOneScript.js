@@ -115,12 +115,12 @@ for(let j=0; j < data[0].bns.length; j++) {
 //var trainername = "AARONAWEZOM";
 	//if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
 	
-if (COOKI == data[0].bns[j].tname.toUpperCase()){  
+if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
 gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
   
 //here
-}else if (COOKI = "GUEST") {
+}else if (COOKI.toUpperCase() = "GUEST") {
   alert("You are currently using the guest account,\n anything you do won't be saved to your trainer info.\n make sure you are using/enabling cookies to allow this site to work correctly. ")
   }
 } 
