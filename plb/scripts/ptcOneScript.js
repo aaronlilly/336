@@ -105,7 +105,7 @@ function Eye(data){
 
 var COOKI = getCookieD("name");
      if (COOKI != "") {
-       
+       console.log(COOKI);
          if(COOKI !== undefined){
 
       
