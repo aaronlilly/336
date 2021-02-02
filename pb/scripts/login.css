@@ -33,7 +33,7 @@ padding:1% 3% 3% 10%;
 .inputbox{margin:0% 0% 0% 5%;
   border-radius:10%;
   border-color: royalblue;
-width:250px;}
+width:230px;}
 
 @grey:#2a2a2a;
 @blue:#1fb5bf;
@@ -124,6 +124,8 @@ transform: translate(0%,0%);
     }
   
 }
+
+
 
 /*.half-circle {
     width: 200px;
