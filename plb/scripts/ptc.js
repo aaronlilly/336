@@ -166,7 +166,7 @@ function newBin(){
 function updateListFunct(responseText){
 resp.push(responseText);
 upLabel.push(label[0][0]);
-var trainerName = $('#username').val();
+var trainerName = $('#username').val().toUpperCase();
 var createdBin = resp[0].id;
 
 upLabel[0].bns.push({"tname": trainerName,"bin": createdBin});
@@ -229,7 +229,7 @@ alert("new account created!");
 
 
 function updateListFunt(responseTextId){
- var username = $("#username").val();
+ var username = $("#username").val().toUpperCase();
 var data2send = {tname: username , bin: responseTextId};
 binArray[0].bns.push(data2send)
 //console.log(binArray);
