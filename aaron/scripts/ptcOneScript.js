@@ -437,19 +437,28 @@ $("#pokHav").html("");
              };
 
 
-
+//selected440
 function secondary(cId,i,data){
 //if checked
  if ($("#" + cId +"box").prop('checked')) 
    {
   chk(cId,i,data);
 $('#'+cId).removeClass('pokSelctd');
+//ifshiny
+if ($("#" + "shinyX").prop('checked')){
+  $('#'+cId).find( "img" ).removeClass('hue');
+}
     }    
  //if not checked
    else{
-  //console.log(cId);IvysaurX
+  
    notchk(cId,i,data);
 $('#'+cId).addClass('pokSelctd');
+  //ifshiny
+if ($("#" + "shinyX").prop('checked')){
+  $('#'+cId).find( "img" ).addClass('hue');
+}
+
      }
 }          
 
@@ -795,8 +804,16 @@ var pNotes = data.PokemonTradingCenter[x].notes;
 var pPur = data.PokemonTradingCenter[x].purified;
 var pShiny = data.PokemonTradingCenter[x].shiny;
 
+
+//if (shinyX) if ($("#" + "shinyX").prop('checked')){
+
+  if ($("#" + "shinyX").prop('checked')){
+ haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :"[\"true\"]","datecaught" : dC, "notes": pNotes})
+    
+  }else{
+
      haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
-     $("#" + cId +"box").prop('checked',true);
+     $("#" + cId +"box").prop('checked',true);}
     
     
 }
@@ -1023,9 +1040,10 @@ function alert4(){alert("Pokemon will be removed when the list updated using the
 //      }
          
 function option(which){
-  alert(which);
+
 if ($("#" + which +"X").prop('checked'))
 {
+
   chkOpt(which);
 }
 else
