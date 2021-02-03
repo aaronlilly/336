@@ -152,7 +152,8 @@
   <div class="modal-dialog"  role="document">
     <div class="modal-content">
      <div class="modal-header">
-        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Have.</h5>
+        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Have. <br><span style="margin-left:10%;"><button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelHav()">Cancel </button>
+		<button type="button" class="btn btn-primary" onclick="saveSelected()"></span>Add Selected</button>  </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -163,9 +164,8 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelHav()">Cancel </button>
-        <!-- <button type="button" class="btn btn-secondary" onclick="meanTo();">Close
-        --> <button type="button" class="btn btn-primary" onclick="saveSelected()">Add Selected</button>  
-         <!-- onclick="saveSelected() -->
+        <button type="button" class="btn btn-primary" onclick="saveSelected()">Add Selected</button>  
+       
              </div>
     </div>
   </div>
