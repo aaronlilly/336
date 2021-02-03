@@ -6,10 +6,10 @@
    "Type2": "Steel",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10158.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 77,
@@ -18,10 +18,10 @@
    "Type2": "Psychic",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10159.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 78,
@@ -30,10 +30,10 @@
    "Type2": "Fairy",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10160.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 83,
@@ -42,10 +42,10 @@
    "Type2": "Fighting",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10163.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 110,
@@ -54,10 +54,10 @@
    "Type2": "Fairy",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10164.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 122,
@@ -66,10 +66,10 @@
    "Type2": "Ice",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10165.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 263,
@@ -78,10 +78,10 @@
    "Type2": "Normal",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10171.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 264,
@@ -90,10 +90,10 @@
    "Type2": "Normal",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10172.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 554,
@@ -102,10 +102,10 @@
    "Type2": "Ice",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10173.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 555,
@@ -114,10 +114,10 @@
    "Type2": "Ice",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10174.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 562,
@@ -126,10 +126,10 @@
    "Type2": "Ground",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10176.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 618,
@@ -138,10 +138,10 @@
    "Type2": " Steel",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10177.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 862,
@@ -150,10 +150,10 @@
    "Type2": "Normal",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/862.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 863,
@@ -162,10 +162,10 @@
    "Type2": "Steel",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/863.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 865,
@@ -174,10 +174,10 @@
    "Type2": "Fighting",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/865.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 866,
@@ -186,10 +186,10 @@
    "Type2": "Ice",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/866.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  },
  {
    "Dex": 867,
@@ -198,9 +198,9 @@
    "Type2": "Ground",
    "imaj": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/867.png",
    "Region": "Galar",
-   "shiny": true,
-   "purified": "no",
-   "datecaught": "no",
-   "notes": "no"
+   "shiny": "["true"]",
+   "purified": "[]",
+   "datecaught": "[]",
+   "notes": "[]"
  }
 ]
