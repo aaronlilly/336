@@ -80,6 +80,8 @@ $(document).ready(function () {
 
  
 function pageLoad(url) {
+getAlolanPok();
+getGalarianPok();
   //aar if (url == "flight"){
   let existingContent = [];
 var col = '600cd1c7bca934583e40dc83'; 
@@ -391,6 +393,7 @@ $('#topper').show();};
 
 //get all pokemon available
 function getallPok(){
+
 var current = "";
 $("#pokHav").html("");
                   $("#pokWan").html("");
@@ -1059,3 +1062,40 @@ function notchkOpt(which)
   //check it
   $("#" + which +"X").prop('checked',true)
 }
+
+
+///get alo/galor pok
+
+function getAlolanPok(){
+//$("#pokAlolanHav").html("");
+                  
+        $.ajax({
+            method: "GET",
+            url: "https://aaronlilly.github.io/336/alolan.json"
+               }).done(function(data) 
+                  { 
+
+                      console.log(data);
+                   
+                     
+                    
+                });
+             };
+
+
+function getGalarianPok(){
+
+//$("#pokAlolanHav").html("");
+                //  $("#pokAlolanWan").html("");
+        $.ajax({
+            method: "GET",
+            url: "https://aaronlilly.github.io/336/galar.json"
+               }).done(function(data) 
+                  { 
+
+                      console.log(data);
+                   
+                     
+                    
+                });
+             };
