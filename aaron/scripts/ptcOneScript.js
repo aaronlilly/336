@@ -1004,3 +1004,45 @@ $('#'+existingContent[0].results[0].want[i].Name +"cov").removeClass('pokRemov')
 }
 
 function alert4(){alert("Pokemon will be removed when the list updated using the menu button")};
+
+
+
+////purified shiny
+
+// //if checked
+//  if ($("#" + cId +"box").prop('checked')) 
+//    {
+//   chk(cId,i,data);
+// $('#'+cId).removeClass('pokSelctd');
+//     }    
+//  //if not checked
+//    else{
+//   //console.log(cId);IvysaurX
+//    notchk(cId,i,data);
+// $('#'+cId).addClass('pokSelctd');
+//      }
+         
+function option(which){
+  alert(which);
+if ($("#" + which +"X").prop('checked'))
+{
+  chkOpt(which);
+}
+else
+{
+  notchkOpt(which);
+}
+
+}
+
+function chkOpt(which)
+{
+  //uncheck it
+  $("#" + which +"X").prop('checked',false)
+}
+
+function notchkOpt(which)
+{
+  //check it
+  $("#" + which +"X").prop('checked',true)
+}
