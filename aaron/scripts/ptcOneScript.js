@@ -444,10 +444,7 @@ function secondary(cId,i,data){
    {
   chk(cId,i,data);
 $('#'+cId).removeClass('pokSelctd');
-//ifshiny
-if ($("#" + "shinyX").prop('checked')){
-  $('#'+cId).find( "img" ).removeClass('hue');
-}
+
     }    
  //if not checked
    else{
@@ -455,9 +452,7 @@ if ($("#" + "shinyX").prop('checked')){
    notchk(cId,i,data);
 $('#'+cId).addClass('pokSelctd');
   //ifshiny
-if ($("#" + "shinyX").prop('checked')){
-  $('#'+cId).find( "img" ).addClass('hue');
-}
+
 
      }
 }          
@@ -807,16 +802,16 @@ var pShiny = data.PokemonTradingCenter[x].shiny;
 
 //if (shinyX) if ($("#" + "shinyX").prop('checked')){
 
-  if ($("#" + "shinyX").prop('checked')){
- haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :"[\"true\"]","datecaught" : dC, "notes": pNotes})
+//   if ($("#" + "shinyX").prop('checked')){
+//  haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :"[\"true\"]","datecaught" : dC, "notes": pNotes})
     
-  }else{
+//   }else{
 
      haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
      $("#" + cId +"box").prop('checked',true);}
     
     
-}
+// }
 
 function notchk2(cId,x,data){
 var pDex = data.PokemonTradingCenter[x].Dex;
