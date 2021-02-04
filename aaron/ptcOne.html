@@ -55,10 +55,15 @@
   <span style="float:right; margin-left: 2%;">Welcome <span id ="trainerInfoHere" style="font-color:lightblue;"></span>. </span> 
 </nav>
 
-<div class="btn btn-Primary"  data-toggle="modal" data-target="#alolanHav"  style="margin-left:2%;margin-top:2%;">Pokemon I Have.</div>
-<div class="btn btn-Primary"  data-toggle="modal" data-target="#galarHav"  style="margin-left:2%;margin-top:2%;">Pokemon I Have.</div>
-<div class="btn btn-Primary"  data-toggle="modal" data-target="#alolanWan"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.</div>
-<div class="btn btn-Primary"  data-toggle="modal" data-target="#galarWan"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.</div>
+<button class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="top" title="Alolan"><i class="fas fa-font"  data-toggle="modal" data-target="#alolanHav" ></i></button>
+
+<button class="btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="Galarian"><i class="fab fa-google"  data-toggle="modal" data-target="#galorHav" ></i></button>
+
+
+<button class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="top" title="Alolan"><i class="fas fa-font" data-toggle="modal" data-target="#alolanWan" ></i></button>
+
+
+<button class="btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="Galarian"><i class="fab fa-google"  data-toggle="modal" data-target="#galorWan" ></i></button>
 
 
 <div class="footer"></div>
@@ -136,11 +141,6 @@
 </div>
 
 
-//<div class="btn btn-Primary"  data-toggle="modal" data-target="#alolanHav"  style="margin-left:2%;margin-top:2%;">Pokemon I Have.</div>
-//<div class="btn btn-Primary"  data-toggle="modal" data-target="#galarHav"  style="margin-left:2%;margin-top:2%;">Pokemon I Have.</div>
-//<div class="btn btn-Primary"  data-toggle="modal" data-target="#alolanWan"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.</div>
-//<div class="btn btn-Primary"  data-toggle="modal" data-target="#galarWan"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.</div>
-
 
   <!-- Alolan Hav-->
 <div class="container">
@@ -214,7 +214,13 @@
   <div class="modal-dialog"  role="document">
     <div class="modal-content">
      <div class="modal-header">
-        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Have. <br><button class="btn btn-outline-danger" id="shiny" onclick="option('shiny')"><span style="color: Tomato;"><i class="far fa-star fa-lg"></i></button></span>  <button class="btn btn-outline-primary" id="purified"  onclick="option('purified')"><span style=" color: Dodgerblue;"><i class="fas fa-tint fa-lg"></i></span></button><span style="margin-left:5px;"><button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelHave()">Cancel </button>
+        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Have. <br><button class="btn btn-outline-danger" id="shiny" onclick="option('shiny')"><span style="color: Tomato;"><i class="far fa-star fa-lg"></i></button></span>  <button class="btn btn-outline-primary" id="purified"  onclick="option('purified')"><span style=" color: Dodgerblue;"><i class="fas fa-tint fa-lg"></i></span></button><span style="margin-left:5px;">
+
+<button class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="top" title="Alolan"><i class="fas fa-font"  data-toggle="modal" data-target="#alolanHav" ></i></button>
+
+<button class="btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="Galarian"><i class="fab fa-google"  data-toggle="modal" data-target="#galorHav" ></i></button>
+
+          <button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelHave()">Cancel </button>
     <button type="button" class="btn btn-primary" onclick="saveSelected()"></span>Add Selected</button>  </h5> 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -343,11 +349,3 @@
 <input type="checkbox" id="shinyX" style="display:none;">
 <input type="checkbox" id="purifiedX"style="display:none;">
 </body>
-
-
-<!--  style="display:none;"> -->
-
-<script src="./scripts/ptcOneScript.js"></script>
-
-</html>
-
