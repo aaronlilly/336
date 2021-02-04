@@ -55,6 +55,11 @@
   <span style="float:right; margin-left: 2%;">Welcome <span id ="trainerInfoHere" style="font-color:lightblue;"></span>. </span> 
 </nav>
 
+<div class="btn btn-Primary"  data-toggle="modal" data-target="#alolanHav"  style="margin-left:2%;margin-top:2%;">Pokemon I Have.</div>
+<div class="btn btn-Primary"  data-toggle="modal" data-target="#galarHav"  style="margin-left:2%;margin-top:2%;">Pokemon I Have.</div>
+<div class="btn btn-Primary"  data-toggle="modal" data-target="#alolanWan"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.</div>
+<div class="btn btn-Primary"  data-toggle="modal" data-target="#galarWan"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.</div>
+
 
 <div class="footer"></div>
 
@@ -131,12 +136,65 @@
 </div>
 
 
+//<div class="btn btn-Primary"  data-toggle="modal" data-target="#alolanHav"  style="margin-left:2%;margin-top:2%;">Pokemon I Have.</div>
+//<div class="btn btn-Primary"  data-toggle="modal" data-target="#galarHav"  style="margin-left:2%;margin-top:2%;">Pokemon I Have.</div>
+//<div class="btn btn-Primary"  data-toggle="modal" data-target="#alolanWan"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.</div>
+//<div class="btn btn-Primary"  data-toggle="modal" data-target="#galarWan"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.</div>
 
 
+  <!-- Alolan Hav-->
+<div class="container">
+  <!-- Trigger the modal with a button -->
+<div class="modal fade" id="alolanHav" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog"  role="document">
+    <div class="modal-content">
+     <div class="modal-header">
+        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Have. <br><button class="btn btn-outline-danger" id="shiny" onclick="option('shiny')"><span style="color: Tomato;"><i class="far fa-star fa-lg"></i></button></span>  <button class="btn btn-outline-primary" id="purified"  onclick="option('purified')"><span style=" color: Dodgerblue;"><i class="fas fa-tint fa-lg"></i></span></button><span style="margin-left:5px;"><button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelHave()">Cancel </button>
+    <button type="button" class="btn btn-primary" onclick="saveSelected()"></span>Add Selected</button>  </h5> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="row" id="alolanpokHav">
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="alolancancelHave()">Cancel </button>
+        <button type="button" class="btn btn-primary" onclick="alolansaveSelected()">Choose Selected</button>  
+       
+             </div>
+    </div>
+  </div>
+</div>
+<!-- end alolan hav -->
 
-
-
-
+  <!-- Alolan Wan-->
+<div class="container">
+  <!-- Trigger the modal with a button -->
+<div class="modal fade" id="alolanWan" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="gridSystemModalLabel">
+  <div class="modal-dialog"  role="document">
+    <div class="modal-content">
+     <div class="modal-header">
+        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Want. <br><button class="btn btn-outline-danger" id="shiny" onclick="option('shiny')"><span style="color: Tomato;"><i class="far fa-star fa-lg"></i></button></span>  <button class="btn btn-outline-primary" id="purified"  onclick="option('purified')"><span style=" color: Dodgerblue;"><i class="fas fa-tint fa-lg"></i></span></button><span style="margin-left:5px;"><button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelHave()">Cancel </button>
+    <button type="button" class="btn btn-primary" onclick="alolansaveSelected2()"></span>Add Selected</button>  </h5> 
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         <div class="row" id="alolanpokWant">
+         </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="alolancancelWant()">Cancel </button>
+        <button type="button" class="btn btn-primary" onclick="alolansaveSelected2()">Choose Selected</button>  
+       
+             </div>
+    </div>
+  </div>
+</div>
+<!-- end alolan hav -->
 
 
 <div class="container">
@@ -168,7 +226,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelHave()">Cancel </button>
-        <button type="button" class="btn btn-primary" onclick="saveSelected()">Add Selected</button>  
+        <button type="button" class="btn btn-primary" onclick="saveSelected()">Choose Selected</button>  
        
              </div>
     </div>
@@ -203,7 +261,7 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelWant()">Cancel </button>
         <!-- <button type="button" class="btn btn-secondary" onclick="meanTo();">Close
-        --> <button type="button" class="btn btn-primary" onclick="saveSelected2()">Add Selected</button>  
+        --> <button type="button" class="btn btn-primary" onclick="saveSelected2()">Choose Selected</button>  
          <!-- onclick="saveSelected() -->
       </div>
     </div>
@@ -276,7 +334,10 @@
 
 <!-- end -->
 
+ 
 </div>
+
+
 <input type="checkbox" id="haveX" style="display:none;">
 <input type="checkbox" id="wantX" style="display:none;">
 <input type="checkbox" id="shinyX" style="display:none;">
