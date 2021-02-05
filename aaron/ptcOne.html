@@ -137,8 +137,14 @@
   <div class="modal-dialog"  role="document">
     <div class="modal-content">
      <div class="modal-header">
-        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Want. - Galarian  <br><button class="btn btn-outline-danger" id="shiny" onclick="option('shiny')"><span style="color: Tomato;"><i class="far fa-star fa-lg"></i></button></span>  <button class="btn btn-outline-primary" id="purified"  onclick="option('purified')"><span style=" color: Dodgerblue;"><i class="fas fa-tint fa-lg"></i></span></button><span style="margin-left:5px;"><button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="galoriancancelHave()">Cancel </button>
-    <button type="button" class="btn btn-primary" onclick="galoriansaveSelected()"></span>Add Selected</button>  </h5> 
+        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Want. - Galarian  <br>
+
+<button class="btn btn-outline-danger" id="shiny" onclick="option('shiny')"><span style="color: Tomato;"><i class="far fa-star fa-lg"></i></button></span>  
+<button class="btn btn-outline-primary" id="purified"  onclick="option('purified')"><span style=" color: Dodgerblue;"><i class="fas fa-tint fa-lg"></i></span></button>
+<span style="margin-left:5px;"><button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="galoriancancelHave()">Cancel </button>
+<button type="button" class="btn btn-primary" onclick="galoriansaveSelected()"></span>Add Selected</button>  
+<button class="btn btn-outline-warning" data-dismiss="modal" data-toggle="modal" data-target="#myModal2" ><span style="color: Sunflower;"><i class="fas fa-home"  data-toggle="tooltip" data-placement="top" title="Back"></i></span> </h5>
+ 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -178,7 +184,11 @@
 
            <span style="margin-left:5px;"><button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="galoriancancelHave()">Cancel </button>
 
-    <button type="button" class="btn btn-primary" onclick="galoriansaveSelected()"></span>Add Selected</button>  </h5> 
+    <button type="button" class="btn btn-primary" onclick="galoriansaveSelected()"></span>Add Selected</button>  
+
+<button data-dismiss="modal" data-toggle="modal" data-target="#myModal1" class="btn btn-outline-warning"><span style="color: Sunflower;">
+<i class="fas fa-home" data-toggle="tooltip" data-placement="top" title="Back"></i></span> </h5>
+ 
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -205,8 +215,18 @@
   <div class="modal-dialog"  role="document">
     <div class="modal-content">
      <div class="modal-header">
-        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Have. - Alolan <br><button class="btn btn-outline-danger" id="shiny" onclick="option('shiny')"><span style="color: Tomato;"><i class="far fa-star fa-lg"></i></button></span>  <button class="btn btn-outline-primary" id="purified"  onclick="option('purified')"><span style=" color: Dodgerblue;"><i class="fas fa-tint fa-lg"></i></span></button><span style="margin-left:5px;"><button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelHave()">Cancel </button>
-    <button type="button" class="btn btn-primary" onclick="saveSelected()"></span>Add Selected</button>  </h5> 
+        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Have. - Alolan <br>
+
+<button class="btn btn-outline-danger" id="shiny" data-toggle="tooltip" data-placement="top" title="Shiny" onclick="option('shiny')"><span style="color: Tomato;"><i class="far fa-star fa-lg"></i></button></span>  
+<button class="btn btn-outline-primary" id="purified" onclick="option('purified')" data-toggle="tooltip" data-placement="top" title="Purified"><span style=" color: Dodgerblue;"><i class="fas fa-tint fa-lg"></i></span></button><span style="margin-left:5px;">
+
+<button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelHave()">Cancel </button>
+
+<button type="button" class="btn btn-primary" onclick="saveSelected()"></span>Add Selected</button>  
+
+<button data-dismiss="modal" data-toggle="modal" data-target="#myModal1" class="btn btn-outline-warning"><span style="color: Sunflower;"><i class="fas fa-home" data-toggle="tooltip" data-placement="top" title="Back"></i></span> </h5>
+
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -232,8 +252,28 @@
   <div class="modal-dialog"  role="document">
     <div class="modal-content">
      <div class="modal-header">
-        <h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Want. - Alolan <br><button class="btn btn-outline-danger" id="shiny" onclick="option('shiny')"><span style="color: Tomato;"><i class="far fa-star fa-lg"></i></button></span>  <button class="btn btn-outline-primary" id="purified"  onclick="option('purified')"><span style=" color: Dodgerblue;"><i class="fas fa-tint fa-lg"></i></span></button><span style="margin-left:5px;"><button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelHave()">Cancel </button>
-    <button type="button" class="btn btn-primary" onclick="alolansaveSelected2()"></span>Add Selected</button>  </h5> 
+
+<h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Want. - Alolan <br>
+
+<button class="btn btn-outline-danger"  data-toggle="tooltip" data-placement="top" title="Shiny" id="shiny" onclick="option('shiny')"><span style="color: Tomato;"><i class="far fa-star fa-lg"></i></button></span> 
+
+ <button class="btn btn-outline-primary" id="purified" data-toggle="tooltip" data-placement="top" title="Purified" onclick="option('purified')"><span style=" color: Dodgerblue;"><i class="fas fa-tint fa-lg"></i></span></button><span style="margin-left:5px;">
+
+<button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelHave()">Cancel </button>
+    <button type="button" class="btn btn-primary" onclick="alolansaveSelected2()"></span>Add Selected</button> 
+
+<span data-toggle="tooltip" data-placement="top" title="Back">
+<button class="btn btn-outline-warning" data-dismiss="modal" data-toggle="modal" data-target="#myModal2" ></span>
+<span style="color: Sunflower;"><i class="fas fa-home"></i></span> 
+
+
+</h5>
+
+
+
+
+
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -250,7 +290,7 @@
     </div>
   </div>
 </div>
-<!-- end alolan hav -->
+<!-- end alolan want -->
 
 
 <div class="container">
@@ -278,10 +318,10 @@
 
  <button class="btn btn-outline-primary" id="purified"  data-toggle="tooltip" data-placement="top" title="Purified" onclick="option('purified')"><span style=" color: Dodgerblue;"><i class="fas fa-tint fa-lg"></i></span></button>
 
-<button class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="top" title="Alolan"><i class="fas fa-font" class="close" data-dismiss="modal" data-toggle="modal" data-target="#alolanHav" ></i></button>
+<span data-dismiss="modal" data-toggle="modal" data-target="#alolanHav"><button class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="top" title="Alolan">
+<i class="fas fa-font"></i></button></span>
 
-
-<button class="btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="Galarian"><i class="fab fa-google" class="close" data-dismiss="modal" data-toggle="modal" data-target="#galorHav" ></i></button>
+<span  data-dismiss="modal" data-toggle="modal" data-target="#galorHav"><button class="btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="Galarian"><i class="fab fa-google"></i></button><span>
 
 <button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelHave()">Cancel </button>
     <button type="button" class="btn btn-primary" onclick="saveSelected()"></span>Add Selected</button>  </h5> 
@@ -322,9 +362,10 @@
 <i class="far fa-star fa-lg"></i></button></span>  
 <button class="btn btn-outline-primary" id="purified"   data-toggle="tooltip" data-placement="top" title="Purified" onclick="option('purified')"><span style=" color: Dodgerblue;"><i class="fas fa-tint fa-lg"></i></span></button>
 
-<button class="btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="Galarian"><i class="fab fa-google"  data-toggle="modal" data-target="#galorWan" ></i></button>
+<span data-dismiss="modal" data-toggle="modal" data-target="#galorWan"><button class="btn btn-outline-dark" data-toggle="tooltip" data-placement="top" title="Galarian"><i class="fab fa-google"></i></button><span>
 
-<button class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="top" title="Alolan"><i class="fas fa-font"  data-toggle="modal" data-target="#alolanWan" ></i></button>
+
+<span data-dismiss="modal" data-toggle="modal" data-target="#alolanWan"><button class="btn btn-outline-secondary" data-toggle="tooltip" data-placement="top" title="Alolan"><i class="fas fa-font"></i></button></span>
 
 <button type="button" class="btn btn-secondary"  data-dismiss="modal" onclick="cancelWant()">Cancel </button>
         <button type="button" class="btn btn-primary" onclick="saveSelected2()">Add Selected</button></h5></span> 
