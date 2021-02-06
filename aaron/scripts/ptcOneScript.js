@@ -440,7 +440,7 @@ $("#pokHav").html("");
              };
 
 
-//selected440
+
 function secondary(cId,i,data){
 //if checked
  if ($("#" + cId +"box").prop('checked')) 
@@ -1074,11 +1074,16 @@ function getAlolanPok(){
             url: "https://aaronlilly.github.io/336/alolan.json"
                }).done(function(data) 
                   { 
+                     for(let a=0; a <  data.PokemonTradingCenterAlolan.length; a++) {
+			//console.log(data.PokemonTradingCenterAlolan[a].Name);
+			
 
-                      console.log(data);
-                   
-                     
-                    
+                    $("#alolanpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterAlolan[a].Name
+                        + '">'+ '<figure>'+
+                        '<img src ="' + data.PokemonTradingCenterAlolan[a].imaj + '"style=\"width:96px;\">'
+                         + '<figcaption>' + data.PokemonTradingCenterAlolan[a].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>');
+}
                 });
              };
 
@@ -1093,7 +1098,7 @@ function getGalarianPok(){
                }).done(function(data) 
                   { 
 
-                      console.log(data);
+                     // console.log(data);
                    
                      
                     
