@@ -1076,16 +1076,28 @@ function getAlolanPok(){
                   { 
                      for(let a=0; a <  data.PokemonTradingCenterAlolan.length; a++) {
 			//console.log(data.PokemonTradingCenterAlolan[a].Name);
-			
+			$("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'box">');
+                   
 
                     $("#alolanpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterAlolan[a].Name
                         + '">'+ '<figure>'+
                         '<img src ="' + data.PokemonTradingCenterAlolan[a].imaj + '"style=\"width:96px;\">'
                          + '<figcaption>' + data.PokemonTradingCenterAlolan[a].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
+
+$('#'+ data.PokemonTradingCenterAlolan[a].Name).click(function(){
+                            var current = $(this).attr('id');
+                            
+
+			aloPokGot(current, a,data);
+                          });
 }
                 });
              };
+
+
+
+//$("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'box">');
 
 
 function getGalarianPok(){
@@ -1097,10 +1109,37 @@ function getGalarianPok(){
             url: "https://aaronlilly.github.io/336/galar.json"
                }).done(function(data) 
                   { 
-
-                     // console.log(data);
+		for(let a=0; a <  data.PokemonTradingCenterGalar.length; a++) {
+                    $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'box">');
                    
-                     
+                      $("#galarpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name
+                        + '">'+ '<figure>'+
+                        '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
+                         + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>'); 
+
+				$('#'+ data.PokemonTradingCenterGalar[a].Name).click(function(){
+                            var current = $(this).attr('id');
+                            //let current = currentId;
+                        //secondary(current,i,data);
+
+			galPokGot(current, a,data);
+                          });
+			}
+
+
+			
+		
+
+			})
                     
-                });
-             };
+                };
+             
+function galPokGot(current, a,data){
+alert(current+"gala");
+}
+
+function aloPokGot(current, a,data){
+alert(current+"alo");
+}
+
