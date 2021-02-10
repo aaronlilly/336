@@ -26,7 +26,7 @@ $(document).ready(function () {
          cNcBlank(CODKI);
       }
 });
-		   
+       
   function cNcBlank(COOKI){
     if(COOKI !== undefined){
     
@@ -122,8 +122,8 @@ for(let j=0; j < data[0].bns.length; j++) {
   //console.log(data[0].bns[j].tname.toUpperCase());
 //aar //var trainername = "AARONAWEZOM";
 var trainername = "AARONAWEZOM";
-	//if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
-	
+  //if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
+  
 if (trainername == data[0].bns[j].tname.toUpperCase()){  
 gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
@@ -927,17 +927,17 @@ deSelectUnchk3();
 
 for(var i = 0; i < RhaveP.length; i++){
 for(var e = 0; e < existingContent[0].results[0].have.length; e++){
-	// for(var i = 0; i < RhaveP.length; i++){
+  // for(var i = 0; i < RhaveP.length; i++){
 //if (existingContent[0].results[0].have[e].Name == RhaveP[i].Name)
 
 var CT = existingContent[0].results[0].have[e];
 var RT = RhaveP[i];
 
-		if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
-		{
-		existingContent[0].results[0].have.splice(e,1);
-		} else { } 
-	}
+    if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
+    {
+    existingContent[0].results[0].have.splice(e,1);
+    } else { } 
+  }
 
 }
 
@@ -978,17 +978,17 @@ deSelectUnchk3();
 
 for(var i = 0; i < RwantP.length; i++){
 for(var e = 0; e < existingContent[0].results[0].want.length; e++){
-	
+  
 //if (existingContent[0].results[0].want[e].Name == RwantP[i].Name)
 
 var CT = existingContent[0].results[0].want[e];
 var RT = RwantP[i];
 
-		if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
-		{
-		existingContent[0].results[0].want.splice(e,1);
-		} else { } 
-	}
+    if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
+    {
+    existingContent[0].results[0].want.splice(e,1);
+    } else { } 
+  }
 
 }
 
@@ -1075,8 +1075,8 @@ function getAlolanPok(){
                }).done(function(data) 
                   { 
                      for(let a=0; a <  data.PokemonTradingCenterAlolan.length; a++) {
-			//console.log(data.PokemonTradingCenterAlolan[a].Name);
-			$("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'box">');
+      //console.log(data.PokemonTradingCenterAlolan[a].Name);
+      $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'box">');
                    
 
                     $("#alolanpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterAlolan[a].Name
@@ -1085,11 +1085,24 @@ function getAlolanPok(){
                          + '<figcaption>' + data.PokemonTradingCenterAlolan[a].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
 
+                     $("#alolanpokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterAlolan[a].Name
+                        + 'x">'+ '<figure>'+
+                        '<img src ="' + data.PokemonTradingCenterAlolan[a].imaj + '"style=\"width:96px;\">'
+                         + '<figcaption>' + data.PokemonTradingCenterAlolan[a].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>');
+
 $('#'+ data.PokemonTradingCenterAlolan[a].Name).click(function(){
                             var current = $(this).attr('id');
-                            
+                            var leftover = "none";
 
-			aloPokGot(current, a,data);
+      aloPokGot(current, a,data,leftover);
+                          });
+
+$('#'+ data.PokemonTradingCenterAlolan[a].Name +"x").click(function(){
+                            var current = $(this).attr('id');
+                            var leftover = "x";
+
+      aloPokGot(current, a,data,leftover);
                           });
 }
                 });
@@ -1109,37 +1122,60 @@ function getGalarianPok(){
             url: "https://aaronlilly.github.io/336/galar.json"
                }).done(function(data) 
                   { 
-		for(let a=0; a <  data.PokemonTradingCenterGalar.length; a++) {
-                    $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'box">');
+    for(let a=0; a <  data.PokemonTradingCenterGalar.length; a++) {
+                    $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galbox">');
                    
                       $("#galarpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name
-                        + '">'+ '<figure>'+
+                        + 'gal">'+ '<figure>'+
                         '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
                          + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>'); 
 
-				$('#'+ data.PokemonTradingCenterGalar[a].Name).click(function(){
+
+       $("#galarpokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name
+                        + 'galx">'+ '<figure>'+
+                        '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
+                         + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>'); 
+
+
+        $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
                             var current = $(this).attr('id');
+                            var leftover = "x";
                             //let current = currentId;
                         //secondary(current,i,data);
 
-			galPokGot(current, a,data);
+      galPokGot(current, a,data,leftover);
                           });
-			}
+
+         $('#'+ data.PokemonTradingCenterGalar[a].Name + "gal").click(function(){
+                            var current = $(this).attr('id');
+                            var leftover = "none";
+                            //let current = currentId;
+                        //secondary(current,i,data);
+
+      galPokGot(current, a,data,leftover);
+                          });
+      }
 
 
-			
-		
+      
+    
 
-			})
+      })
                     
                 };
              
-function galPokGot(current, a,data){
-alert(current+"gala");
+function galPokGot(current, a,data,leftover){
+  if (leftover == "x") {
+    alert ("galar want was clicked")
+  } else (alert ("galar have was clicked"))
+// alert(current);
 }
 
-function aloPokGot(current, a,data){
-alert(current+"alo");
-}
+function aloPokGot(current, a,data,leftover){
+  if (leftover == "x"){
+alert("alol want was clicked");
+  }
 
+}
