@@ -1079,30 +1079,28 @@ function getAlolanPok(){
       $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'alhavbox">');
                    $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'alwanbox">');
 
-                    $("#alolanpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterAlolan[a].Name
-                        + 'alo">'+ '<figure>'+
+                    $("#alolanpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterAlolan[a].Name + 'alo">'+ '<figure>'+
                         '<img src ="' + data.PokemonTradingCenterAlolan[a].imaj + '"style=\"width:96px;\">'
                          + '<figcaption>' + data.PokemonTradingCenterAlolan[a].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
 
-                     $("#alolanpokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterAlolan[a].Name
-                        + 'alox">'+ '<figure>'+
+                     $("#alolanpokWant").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterAlolan[a].Name  + 'alox">'+ '<figure>'+
                         '<img src ="' + data.PokemonTradingCenterAlolan[a].imaj + '"style=\"width:96px;\">'
                          + '<figcaption>' + data.PokemonTradingCenterAlolan[a].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
 
-$('#'+ data.PokemonTradingCenterAlolan[a].Name).click(function(){
+$('#'+ data.PokemonTradingCenterAlolan[a].Name+"alo").click(function(){
                             var current = $(this).attr('id');
-                            var leftover = "none";
+                            var leftover = "alhav";
 
-      aloPokGot(current, a,data,leftover);
+      gaPokGot(current, a,data,leftover);
                           });
 
-$('#'+ data.PokemonTradingCenterAlolan[a].Name +"x").click(function(){
+$('#'+ data.PokemonTradingCenterAlolan[a].Name +"alox").click(function(){
                             var current = $(this).attr('id');
-                            var leftover = "x";
+                            var leftover = "alox";
 
-      aloPokGot(current, a,data,leftover);
+      gaPokGot(current, a,data,leftover);
                           });
 }
                 });
@@ -1125,8 +1123,7 @@ function getGalarianPok(){
                     $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galhavbox">');
 $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galwanbox">');
                    
-                      $("#galarpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name
-                        + 'gal">'+ '<figure>'+
+                      $("#galarpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name         + 'gal">'+ '<figure>'+
                         '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
                          + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>'); 
@@ -1141,20 +1138,22 @@ $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGal
 
         $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
                             var current = $(this).attr('id');
-                            var leftover = "x";
-                            //let current = currentId;
-                        //secondary(current,i,data);
+                            var leftover = "galx";
 
-      galPokGot(current, a,data,leftover);
+			
+
+
+
+      gaPokGot(current, a,data,leftover);
                           });
 
          $('#'+ data.PokemonTradingCenterGalar[a].Name + "gal").click(function(){
                             var current = $(this).attr('id');
-                            var leftover = "none";
+                            var leftover = "galhav";
                             //let current = currentId;
                         //secondary(current,i,data);
 
-      galPokGot(current, a,data,leftover);
+      gaPokGot(current, a,data,leftover);
                           });
       }
 
@@ -1166,22 +1165,16 @@ $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGal
                     
                 };
              
-function galPokGot(current, a,data,leftover){
-  if (leftover == "x") {
+function gaPokGot(current, a,data,leftover){
+  if (leftover == "galx") {
     alert ("galar want was clicked")
-  } else (alert ("galar have was clicked"));
+  } else if (leftover == "alox"){
+   alert ("alo want was clicked");
+} else if (leftover == "galhav")
+{
+alert("gal hav was clicked")
+} else if (leftover == "alhav"){
+alert("al have was clicked");
 
 }
-
-function aloPokGot(current, a,data,leftover){
-  if (leftover == "x"){
-alert("alol want was clicked");
-  }else  (alert ("alolan have was clicked"));
-
-}
-
-
-alogalcheck(){
-
-
 }
