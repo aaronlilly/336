@@ -1078,7 +1078,7 @@ function getAlolanPok(){
       //console.log(data.PokemonTradingCenterAlolan[a].Name);
       $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'alhavbox">');
                    $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'alwanbox">');
-
+ $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'alwanbox">');
                     $("#alolanpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterAlolan[a].Name + 'alo">'+ '<figure>'+
                         '<img src ="' + data.PokemonTradingCenterAlolan[a].imaj + '"style=\"width:96px;\">'
                          + '<figcaption>' + data.PokemonTradingCenterAlolan[a].Name + 
@@ -1146,14 +1146,30 @@ $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGal
 
       gaPokGot(current, a,data,leftover);
                           });
-
+//galhav click
          $('#'+ data.PokemonTradingCenterGalar[a].Name + "gal").click(function(){
                             var current = $(this).attr('id');
                             var leftover = "galhav";
-                            //let current = currentId;
-                        //secondary(current,i,data);
 
-      gaPokGot(current, a,data,leftover);
+
+		//if not checked
+		if($("#" + leftover +"box").prop('checked',false)){
+
+		//check it
+		$("#" + leftover +"box").prop('checked',true)
+
+	}//if checked
+	else if ($("#" + leftover +"box").prop('checked',true))
+
+	
+	{
+	//uncheck it 
+	$("#" + leftover +"box").prop('checked',false)
+
+	
+		}
+
+     
                           });
       }
 
@@ -1164,17 +1180,7 @@ $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGal
       })
                     
                 };
-             
-function gaPokGot(current, a,data,leftover){
-  if (leftover == "galx") {
-    alert ("galar want was clicked")
-  } else if (leftover == "alox"){
-   alert ("alo want was clicked");
-} else if (leftover == "galhav")
-{
-alert("gal hav was clicked")
-} else if (leftover == "alhav"){
-alert("al have was clicked");
 
-}
-}
+
+
+
