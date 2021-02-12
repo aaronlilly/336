@@ -1150,20 +1150,41 @@ $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGal
          $('#'+ data.PokemonTradingCenterGalar[a].Name + "gal").click(function(){
                             var current = $(this).attr('id');
                             var leftover = "galhav";
+  var pDex = data.PokemonTradingCenterGalar[a].Dex;
+var pName = data.PokemonTradingCenterGalar[a].Name;
+var pReg = data.PokemonTradingCenterGalar[a].Region;
+var pType1 = data.PokemonTradingCenterGalar[a].Type1;
+var pType2 = data.PokemonTradingCenterGalar[a].Type2;
+var pImj = data.PokemonTradingCenterGalar[a].imaj;
+var dC = data.PokemonTradingCenterGalar[a].datecaught;
+var pNotes = data.PokemonTradingCenterGalar[a].notes;
+var pPur = data.PokemonTradingCenterGalar[a].purified;
+var pShiny = data.PokemonTradingCenterGalar[a].shiny;
+
+
 
 
 		//if not checked
-		if($("#" + leftover +"box").prop('checked',false)){
+		if($("#" + current + leftover +"box").prop('checked',false)){
+//push in     
+haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
 
+console.log(current + leftover);
+console.log("was unchecked should be checked now");
 		//check it
 		$("#" + leftover +"box").prop('checked',true)
 
 	}//if checked
 	else if ($("#" + leftover +"box").prop('checked',true))
+	{//uncheck it 
 
-	
-	{
-	//uncheck it 
+ for (j = 0; j < haveP.length; j++) 
+          {
+             if(haveP[j].Name == pName)
+              {
+                haveP.splice(j,1);
+              }
+}
 	$("#" + leftover +"box").prop('checked',false)
 
 	
