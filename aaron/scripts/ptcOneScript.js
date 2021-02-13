@@ -1095,19 +1095,42 @@ function getAlolanPok(){
                          '</figcaption>'+'</figure>'+'</div></div>');
 
 $('#'+ data.PokemonTradingCenterAlolan[a].Name+"alo").click(function(){
+           var aDex = data.PokemonTradingCenterAlolan[a].Dex;
+var aName = data.PokemonTradingCenterAlolan[a].Name;
+var aReg = data.PokemonTradingCenterAlolan[a].Region;
+var aType1 = data.PokemonTradingCenterAlolan[a].Type1;
+var aType2 = data.PokemonTradingCenterAlolan[a].Type2;
+var aImj = data.PokemonTradingCenterAlolan[a].imaj;
+var adC = data.PokemonTradingCenterAlolan[a].datecaught;
+var aNotes = data.PokemonTradingCenterAlolan[a].notes;
+var aPur = data.PokemonTradingCenterAlolan[a].purified;
+var aShiny = data.PokemonTradingCenterAlolan[a].shiny;
                             var curre = $(this).attr('id');
                             
 
-                              console.log(curre);
+                              
 
                                if($("#" + curre + "havbox").prop('checked'))
             {
   
+    for (k = 0; k < haveP.length; k++) 
+           {
+              if(haveP[k].Name == aName)
+              {
+                haveP.splice(k,1);
+               }
+
+
                $('#'+curre).removeClass('pokSelctd');
+
+               
+           }
 
                 $("#" + curre + "havbox").prop('checked',false)
 
              }else { 
+               haveP.push({"Dex" :aDex, "Name" : aName, "Type1" : aType1, "Type2" : aType2, "imaj" : aImj, "Region" :aReg, "shiny" :aShiny,"datecaught" : adC, "notes": aNotes})
+
                       $('#'+curre).addClass('pokSelctd');
 
 
@@ -1117,19 +1140,36 @@ $('#'+ data.PokemonTradingCenterAlolan[a].Name+"alo").click(function(){
                           });
 
 $('#'+ data.PokemonTradingCenterAlolan[a].Name +"alox").click(function(){
+         var aDex = data.PokemonTradingCenterAlolan[a].Dex;
+var aName = data.PokemonTradingCenterAlolan[a].Name;
+var aReg = data.PokemonTradingCenterAlolan[a].Region;
+var aType1 = data.PokemonTradingCenterAlolan[a].Type1;
+var aType2 = data.PokemonTradingCenterAlolan[a].Type2;
+var aImj = data.PokemonTradingCenterAlolan[a].imaj;
+var adC = data.PokemonTradingCenterAlolan[a].datecaught;
+var aNotes = data.PokemonTradingCenterAlolan[a].notes;
+var aPur = data.PokemonTradingCenterAlolan[a].purified;
+var aShiny = data.PokemonTradingCenterAlolan[a].shiny;
                             var curre = $(this).attr('id');
 
                             console.log(curre);
 
             if($("#" + curre + "wanbox").prop('checked'))
             {
-  
+          for (k = 0; k < wantP.length; k++) 
+           {
+              if(wantP[k].Name == aName)
+              {
+                wantP.splice(k,1);
+               }
+           }
                $('#'+curre).removeClass('pokSelctd');
 
                 $("#" + curre + "wanbox").prop('checked',false)
 
              }else { 
                       $('#'+curre).addClass('pokSelctd');
+                         wantP.push({"Dex" :aDex, "Name" : aName, "Type1" : aType1, "Type2" : aType2, "imaj" : aImj, "Region" :aReg, "shiny" :aShiny,"datecaught" : adC, "notes": aNotes})
 
 
                       $("#"+curre +"wanbox").prop('checked',true)
