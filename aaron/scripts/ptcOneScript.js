@@ -547,20 +547,20 @@ $('#myModal2').modal('hide');
 
 
 //end save selected modal /have
-function cancelHave(){
-deSelectUnchk()
-$("#haveX").prop('checked',false)
+function galariancancelHave(){
+gadeSelectUnchk()
+
 }
 
 ///deselect what u selected in modal
-function deSelectUnchk() {
+function gadeSelectUnchk() {
 
-  for(var i=0; i <  pokemonNameArray.length; i++) 
+  for(var i=0; i <   GalarianAr.length; i++) 
    {
-     if ($("#" + pokemonNameArray[i] +"box").prop('checked'))
+     if ($("#" +  GalarianAr +"box").prop('checked'))
      {
-      $("#" + pokemonNameArray[i] +"box").prop('checked',false);
-     $('#'+pokemonNameArray[i]).removeClass('pokSelctd');
+      $("#" +  GalarianAr +"box").prop('checked',false);
+     $('#'+ GalarianAr).removeClass('pokSelctd');
      }
      let haveP = [];
          }
@@ -1079,7 +1079,7 @@ function getAlolanPok(){
 
  // $("#otherbox").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'aloxwanbox">');
 
-
+AlolanAr.push(data.PokemonTradingCenterAlolan[a].Name)
 
       $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'alohavbox">');
                    $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'aloxwanbox">');
@@ -1194,7 +1194,7 @@ function getGalarianPok(){
                   { 
     for(let a=0; a <  data.PokemonTradingCenterGalar.length; a++) {
 
-
+         GalarianAr.push(data.PokemonTradingCenterGalar[a].Name)
 
                     $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galhavbox">');
 
@@ -1354,3 +1354,10 @@ var gShiny = data.PokemonTradingCenterGalar[a].shiny;
 //     $("#" + current + "havbox").prop('checked',false);
     
 //     }
+
+
+
+function cancelHave(){
+deSelectUnchk()
+$("#haveX").prop('checked',false)
+}
