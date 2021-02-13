@@ -1076,9 +1076,14 @@ function getAlolanPok(){
                   { 
                      for(let a=0; a <  data.PokemonTradingCenterAlolan.length; a++) {
       //console.log(data.PokemonTradingCenterAlolan[a].Name);
-      $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'alhavbox">');
-                   $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'alwanbox">');
- $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'alwanbox">');
+
+ $("#otherbox").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'alohavbox">');
+
+
+
+      $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'alohavbox">');
+                   $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterAlolan[a].Name +'alowanbox">');
+ 
                     $("#alolanpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterAlolan[a].Name + 'alo">'+ '<figure>'+
                         '<img src ="' + data.PokemonTradingCenterAlolan[a].imaj + '"style=\"width:96px;\">'
                          + '<figcaption>' + data.PokemonTradingCenterAlolan[a].Name + 
@@ -1090,18 +1095,44 @@ function getAlolanPok(){
                          '</figcaption>'+'</figure>'+'</div></div>');
 
 $('#'+ data.PokemonTradingCenterAlolan[a].Name+"alo").click(function(){
-                            var current = $(this).attr('id');
-                            var leftover = "alhav";
+                            var curre = $(this).attr('id');
+                            
 
-      gaPokGot(current, a,data,leftover);
+                              console.log(curre);
+
+                               if($("#" + curre + "havbox").prop('checked'))
+            {
+  
+               $('#'+curre).removeClass('pokSelctd');
+
+                $("#" + curre + "havbox").prop('checked',false)
+
+             }else { 
+                      $('#'+curre).addClass('pokSelctd');
+
+
+                      $("#"+curre +"havbox").prop('checked',true)
+              }
+    
                           });
 
 $('#'+ data.PokemonTradingCenterAlolan[a].Name +"alox").click(function(){
-                            var current = $(this).attr('id');
-                            var leftover = "alox";
+                            var curre = $(this).attr('id');
 
-      gaPokGot(current, a,data,leftover);
-                          });
+            if($("#" + curre + "havbox").prop('checked'))
+            {
+  
+               $('#'+curre).removeClass('pokSelctd');
+
+                $("#" + curre + "havbox").prop('checked',false)
+
+             }else { 
+                      $('#'+curre).addClass('pokSelctd');
+
+
+                      $("#"+curre +"havbox").prop('checked',true)
+              }
+                                                                      });
 }
                 });
              };
@@ -1122,10 +1153,10 @@ function getGalarianPok(){
     for(let a=0; a <  data.PokemonTradingCenterGalar.length; a++) {
                     $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galhavbox">');
 
-$("#otherbox").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galwanbox">');
+// $("#otherbox").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galxwanbox">');
 
 
-$("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galwanbox">');
+$("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galxwanbox">');
                    
                       $("#galarpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name   + 'gal">'+ '<figure>'+
                         '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
@@ -1142,30 +1173,45 @@ $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGal
 //galwant click
         $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
                             var curre = $(this).attr('id');
-                            var leftover = "galx";
+                            
+                            console.log(curre);
+
+            if($("#" + curre + "wanbox").prop('checked'))
+            {
+  
+               $('#'+curre).removeClass('pokSelctd');
+
+                $("#" + curre + "wanbox").prop('checked',false)
+
+             }else { 
+                      $('#'+curre).addClass('pokSelctd');
+
+
+                      $("#"+curre +"wanbox").prop('checked',true)
+              }
 
 			
 
-                          });
+                                                                               });
 //galhav click
          $('#'+ data.PokemonTradingCenterGalar[a].Name + "gal").click(function(){
-var curre = $(this).attr('id');
+          var curre = $(this).attr('id');
 
-if($("#" + curre + "havbox").prop('checked'))
-      {
+            if($("#" + curre + "havbox").prop('checked'))
+            {
   
-        $('#'+curre).removeClass('pokSelctd');
+               $('#'+curre).removeClass('pokSelctd');
 
-        $("#" + curre + "havbox").prop('checked',false)
+                $("#" + curre + "havbox").prop('checked',false)
 
-      }else { 
-              $('#'+curre).addClass('pokSelctd');
+             }else { 
+                      $('#'+curre).addClass('pokSelctd');
 
 
-            $("#"+curre +"havbox").prop('checked',true)
-            }
+                      $("#"+curre +"havbox").prop('checked',true)
+              }
 
-									      })
+									                                                             })
                     
                 };
 
