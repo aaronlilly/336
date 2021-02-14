@@ -584,6 +584,21 @@ function deSelectUnchk2() {
          }
 }
 
+//might be wrong
+//need to add galar/whatever    
+function deSelectUnchk() {
+
+  for(var i=0; i <  pokemonNameArray.length; i++) 
+   {
+     if ($("#" + pokemonNameArray[i] +"xbox").prop('checked'))
+     {
+      $("#" + pokemonNameArray[i] +"xbox").prop('checked',false);
+     $('#'+pokemonNameArray[i]).removeClass('pokSelctd');
+     }
+     let wantP = [];
+         }
+}
+
 
 //end deselect for have. 
 
@@ -1303,54 +1318,6 @@ var gShiny = data.PokemonTradingCenterGalar[a].shiny;
 })
 }
 
-
-//haveP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"datecaught" : gdC, "notes": gNotes})
-//var current = $(this).attr('id');
-  //                          var leftover = "galhav";
-//var gDex = data.PokemonTradingCenterGalar[a].Dex;
-//var gName = data.PokemonTradingCenterGalar[a].Name;
-//var gReg = data.PokemonTradingCenterGalar[a].Region;
-//var gType1 = data.PokemonTradingCenterGalar[a].Type1;
-//var gType2 = data.PokemonTradingCenterGalar[a].Type2;
-//var gImj = data.PokemonTradingCenterGalar[a].imaj;
-//var gdC = data.PokemonTradingCenterGalar[a].datecaught;
-//var gNotes = data.PokemonTradingCenterGalar[a].notes;
-//var gPur = data.PokemonTradingCenterGalar[a].purified;
-//var gShiny = data.PokemonTradingCenterGalar[a].shiny;
-
-
-
-
-
-///haveP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"datecaught" : gdC, "notes": gNotes})
-//$("#" + current + "havbox").prop('checked',true)
-
-
-
-
-//        var current = $(this).attr('id');
-//   var leftover = "galhav";
-//   var gDex = data.PokemonTradingCenterGalar[a].Dex;
-// var gName = data.PokemonTradingCenterGalar[a].Name;
-// var gReg = data.PokemonTradingCenterGalar[a].Region;
-// var gType1 = data.PokemonTradingCenterGalar[a].Type1;
-// var gType2 = data.PokemonTradingCenterGalar[a].Type2;
-// var gImj = data.PokemonTradingCenterGalar[a].imaj;
-// var gdC = data.PokemonTradingCenterGalar[a].datecaught;
-// var gNotes = data.PokemonTradingCenterGalar[a].notes;
-// var gPur = data.PokemonTradingCenterGalar[a].purified;
-// var gShiny = data.PokemonTradingCenterGalar[a].shiny;
-
-// if($("#" + current + "havbox").prop('checked',false))
-//   {
-//     console.log("is not checked")
-
-//   }else if($("#" + current + "havbox").prop('checked',true))
-//     {
-//       console.log("is checked")
-//     $("#" + current + "havbox").prop('checked',false);
-    
-//     }
 
 
 
