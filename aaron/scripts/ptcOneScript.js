@@ -548,14 +548,7 @@ $('#myModal2').modal('hide');
 
 //end save selected modal /have
 function galariancancelHave(){
-gadeSelectUnchk()
-
-}
-
-///deselect what u selected in modal
-function gadeSelectUnchk() {
-
-  for(var i=0; i <   GalarianAr.length; i++) 
+ for(var i=0; i <   GalarianAr.length; i++) 
    {
      if ($("#" +  GalarianAr +"box").prop('checked'))
      {
@@ -563,8 +556,12 @@ function gadeSelectUnchk() {
      $('#'+ GalarianAr).removeClass('pokSelctd');
      }
      let haveP = [];
+     //fix this eventually
          }
+
 }
+
+
 
 
 
