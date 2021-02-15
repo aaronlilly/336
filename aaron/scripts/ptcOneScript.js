@@ -161,7 +161,7 @@ $.ajax
                     $('#havePaste').append("<img src='" + Owned[o].imaj +"' style=\"width:96px;\"'>");
 
                    $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
-                        '<img src ="' + data.results[0].have[o].imaj + '">'
+                        '<img src ="' + data.results[0].have[o].imaj + '" style =\"width:96px;\">'
                          + '<figcaption>' + data.results[0].have[o].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
                    $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[o].Name +'ownbox">');
