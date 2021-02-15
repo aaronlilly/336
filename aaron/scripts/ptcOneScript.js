@@ -158,7 +158,8 @@ $.ajax
          $('#havPaste2').html("");
                        $('#havePaste').html("");
                 for(let o = 0; o < Owned.length; o++) {
-                    $('#havePaste').append("<img src='" + Owned[o].imaj +"'>");
+                    $('#havePaste').append("<img src='" + Owned[o].imaj +"' style=\"width:96px;\"'>");
+
                    $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
                         '<img src ="' + data.results[0].have[o].imaj + '">'
                          + '<figcaption>' + data.results[0].have[o].Name + 
