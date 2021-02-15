@@ -517,7 +517,7 @@ $('#additionAl').css({
 
 
 //save from modal
-function saveSelected(){
+function saveSelected(which){
 
 for(var i = 0; i < haveP.length; i++){
 existingContent[0].results[0].have.push(haveP[i])}
@@ -526,12 +526,14 @@ existingContent[0].results[0].have.push(haveP[i])}
 // push this to api
 alert2();
 deSelectUnchk();
+deSelectgalo(which);
+
 $('#myModal1').modal('hide');
 
 }
 
 
-function saveSelected2(){
+function saveSelected2(which){
 
 for(var i = 0; i < wantP.length; i++){
 existingContent[0].results[0].want.push(wantP[i])}
@@ -540,6 +542,9 @@ existingContent[0].results[0].want.push(wantP[i])}
 // push this to api
 alert2();
 deSelectUnchk2();
+
+deSelectgalo(which);
+
 $('#myModal2').modal('hide');
 
 }
@@ -1325,3 +1330,76 @@ function cancelHave(){
 deSelectUnchk()
 $("#haveX").prop('checked',false)
 }
+
+
+function deSelectgalo(which) {
+
+  if (which == "galhav")
+      {
+         $('#galarHav').modal('hide');
+            for(var i=0; i <   GalarianAr.length; i++){
+                 if ($("#" +  GalarianAr[i] +"gal"+"havbox").prop('checked'))
+                 {
+                      $('#'+ GalarianAr[i] +"gal").removeClass('pokSelctd')
+                    $("#" +  GalarianAr[i] +"gal"+"havbox").prop('checked',false)
+                 }
+            }
+
+      } else   if (which == "galwan")
+          {
+            $('#galarWan').modal('hide');
+
+            for(var i=0; i <   GalarianAr.length; i++){
+              if ($("#" +  GalarianAr[i] +"gal"+"wanbox").prop('checked'))
+                 {
+                   $('#'+ GalarianAr[i] +"galx").removeClass('pokSelctd')
+                  $("#" +  GalarianAr[i] +"gal"+"wanbox").prop('checked',false)
+                 }
+
+            }
+
+          }else if(which == "alohav")
+          {
+            $('#alolanHav').modal('hide');
+
+           for(var i=0; i <   AlolanAr.length; i++){
+            if ($("#" +  AlolanAr[i] +"alo"+"havbox").prop('checked'))
+                 {
+                    $('#'+ AlolanAr[i] +"alo").removeClass('pokSelctd')
+                    $("#" +  AlolanAr[i] +"alo"+"havbox").prop('checked',false)
+                 }
+            }
+          }else if(which == "alowan")
+              {
+
+                $('#alolanWan').modal('hide');
+
+                 for(var i=0; i <   AlolanAr.length; i++){
+                    if ($("#" +  AlolanAr[i] +"alo"+"wanbox").prop('checked'))
+                        {
+                            $('#'+ AlolanAr[i] +"alox").removeClass('pokSelctd')
+                         $("#" +  AlolanAr[i] +"alo"+"wanbox").prop('checked',false) 
+                        }
+
+                  } 
+              }  
+}     
+
+           //name alo, name alox
+//if($("#" + curre + "havbox").prop('checked') 
+
+  // for(var i=0; i <  pokemonNameArray.length; i++) 
+  //  {
+  //    if ($("#" + pokemonNameArray[i] +"xbox").prop('checked'))
+  //    {
+  //     $("#" + pokemonNameArray[i] +"xbox").prop('checked',false);
+  //    $('#'+pokemonNameArray[i]+"x").removeClass('pokSelctd');
+  //    }
+  //    let wantP = [];
+  //        }
+
+
+
+//name of props for x box
+
+//name pof id to remove class from. 
