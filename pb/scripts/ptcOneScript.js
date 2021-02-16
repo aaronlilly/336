@@ -88,7 +88,7 @@ var col = '600cd1c7bca934583e40dc83';
                },
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) {
-                   console.log(data);;
+                   //console.log(data);;
                    //console.log(data[0].bns.length);
                   // console.log(data[0].bns[0].tname.toUpperCase());
                    if (data[0].bns.length !== undefined){
@@ -105,13 +105,13 @@ function Eye(data){
 
 var COOKI = getCookieD("name");
      if (COOKI != "") {
-       console.log(COOKI);
+       //console.log(COOKI);
          if(COOKI !== undefined){
 
       
 for(let j=0; j < data[0].bns.length; j++) {
   
-  console.log(data[0].bns[j].tname.toUpperCase());
+  //console.log(data[0].bns[j].tname.toUpperCase());
 //var trainername = "AARONAWEZOM";
 	//if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
 	
@@ -642,7 +642,7 @@ function send3(){
                  data: JSON.stringify(existingContent[0]),
                   }).done(function(responseText) 
                      {
-                      console.log(responseText)
+                      //console.log(responseText)
       toastyFunct();
       ;                 
     });
@@ -888,7 +888,7 @@ function removeSelected(){
 //come back here and make it more than name matching
 //if (existingContent[0].results[0].want.Name ==  RwantP)
 
-console.log(RwantP);
+//console.log(RwantP);
 
 // push this to api
 //alert2();
