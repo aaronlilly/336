@@ -2,6 +2,13 @@ let existingContent = [];
 let trainBin = "";
 
 
+//aaro
+ $(document).ready(function () { 
+pageLoad();
+     
+});//aaro
+
+
 $(document).ready(function () {
        var COOKI = getCookieD("name");
      if (COOKI != "") {
@@ -19,15 +26,14 @@ $(document).ready(function () {
          cNcBlank(CODKI);
       }
 });
-		   
+       
   function cNcBlank(COOKI){
     if(COOKI !== undefined){
     
        pageLoad(COOKI);
       
   
-    }else {alert("please enable cookies and reload page.")
-    window.location.href = "./ptc.html";}
+    }//-aaron else {alert("please enable cookies and reload page.")    window.location.href = "./ptc.html";}
 
   }
 
@@ -74,9 +80,9 @@ $(document).ready(function () {
 
  
 function pageLoad(url) {
-  getAlolanPok();
+getAlolanPok();
 getGalarianPok();
-  if (url == "flight"){
+  //aar if (url == "flight"){
   let existingContent = [];
 var col = '600cd1c7bca934583e40dc83'; 
        $.ajax
@@ -87,7 +93,7 @@ var col = '600cd1c7bca934583e40dc83';
                },
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) {
-                   //console.log(data);;
+                   ////console.log(data);;//listofbinstr
                    //console.log(data[0].bns.length);
                   // console.log(data[0].bns[0].tname.toUpperCase());
                    if (data[0].bns.length !== undefined){
@@ -99,34 +105,36 @@ var col = '600cd1c7bca934583e40dc83';
 
                    });
 }
-}
+//}aar
+
 function Eye(data){
 
-var COOKI = getCookieD("name");
-     if (COOKI != "") {
-       //console.log(COOKI);
-         if(COOKI !== undefined){
 
+//aar
+//var COOKI = getCookieD("name");
+  //   if (COOKI != "") {
+    //   console.log(COOKI);
+      //   if(COOKI !== undefined){
+//aar
       
 for(let j=0; j < data[0].bns.length; j++) {
   
   //console.log(data[0].bns[j].tname.toUpperCase());
-//var trainername = "AARONAWEZOM";
-	//if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
-	
-if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
+//aar //var trainername = "AARONAWEZOM";
+var trainername = "AARONAWEZOM";
+  //if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
+  
+if (trainername == data[0].bns[j].tname.toUpperCase()){  
 gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
   
-//here
-}else if (COOKI.toUpperCase() == "GUEST") {
-  alert("You are currently using the guest account,\n anything you do won't be saved to your trainer info.\n make sure you are using/enabling cookies to allow this site to work correctly. ")
-  }
+//aar}else if (COOKI.toUpperCase() == "GUEST") {  alert("You are currently using the guest account,\n anything you do won't e saved to your trainer info.\n make sure you are using/enabling cookies to allow this site to work correctly. ")  
+}
 } 
   }//end undefined cooki 
-  }//end cooki blank
+ // }//end cooki blank - un // aar
     
-      }    
+    //aarthisun//  }    
 
 
 function gotDBin(binny){
@@ -150,9 +158,10 @@ $.ajax
          $('#havPaste2').html("");
                        $('#havePaste').html("");
                 for(let o = 0; o < Owned.length; o++) {
-                    $('#havePaste').append("<img src='" + Owned[o].imaj +"'>");
+                    $('#havePaste').append("<img src='" + Owned[o].imaj +"' style=\"width:96px;\"'>");
+
                    $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
-                        '<img src ="' + data.results[0].have[o].imaj + '">'
+                        '<img src ="' + data.results[0].have[o].imaj + '" style =\"width:96px;\">'
                          + '<figcaption>' + data.results[0].have[o].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
                    $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[o].Name +'ownbox">');
@@ -382,7 +391,8 @@ $('#topper').show();};
 
 
 ///add click within menu
-///============================================================================
+//================================================
+//get all pokemon available
 function getallPok(){
 
 var current = "";
