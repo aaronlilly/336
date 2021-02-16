@@ -2,6 +2,9 @@ let existingContent = [];
 let trainBin = "";
 
 
+
+
+
 $(document).ready(function () {
        var COOKI = getCookieD("name");
      if (COOKI != "") {
@@ -19,7 +22,7 @@ $(document).ready(function () {
          cNcBlank(CODKI);
       }
 });
-		   
+       
   function cNcBlank(COOKI){
     if(COOKI !== undefined){
     
@@ -74,8 +77,6 @@ $(document).ready(function () {
 
  
 function pageLoad(url) {
-  getAlolanPok();
-getGalarianPok();
   if (url == "flight"){
   let existingContent = [];
 var col = '600cd1c7bca934583e40dc83'; 
@@ -87,7 +88,7 @@ var col = '600cd1c7bca934583e40dc83';
                },
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) {
-                   //console.log(data);;
+                   console.log(data);;
                    //console.log(data[0].bns.length);
                   // console.log(data[0].bns[0].tname.toUpperCase());
                    if (data[0].bns.length !== undefined){
@@ -104,16 +105,16 @@ function Eye(data){
 
 var COOKI = getCookieD("name");
      if (COOKI != "") {
-       //console.log(COOKI);
+       console.log(COOKI);
          if(COOKI !== undefined){
 
       
 for(let j=0; j < data[0].bns.length; j++) {
   
-  //console.log(data[0].bns[j].tname.toUpperCase());
+  console.log(data[0].bns[j].tname.toUpperCase());
 //var trainername = "AARONAWEZOM";
-	//if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
-	
+  //if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
+  
 if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
 gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
@@ -376,6 +377,15 @@ toastr["success"]('<span style="margin-right:20%; font-size:10px;">Menu </span> 
 function rePaint(){ $('#topper').hide();
 $('#topper').get(0).offsetHeight;
 $('#topper').show();};
+
+////end first toast -menu click
+
+
+
+///add click within menu
+
+//get all pokemon available
+//=============================
 
 ////end first toast -menu click
 
