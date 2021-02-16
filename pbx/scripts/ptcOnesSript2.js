@@ -1,7 +1,7 @@
+var reGexP = [];
 let existingContent = [];
+let trainerNam = "";
 let trainBin = "";
-
-
 
 
 
@@ -9,37 +9,16 @@ $(document).ready(function () {
        var COOKI = getCookieD("name");
      if (COOKI != "") {
          cNBlank(COOKI);
-         
+         let trainerNam = COOKI;
     
       }    
   });
   
-
- $(document).ready(function () { 
- var CODKI= Cookies.get('nane');
-     //alert(COOKI);
-       if (CODKI != "") {
-         cNcBlank(CODKI);
-      }
-});
-		   
-  function cNcBlank(COOKI){
-    if(COOKI !== undefined){
-    
-       pageLoad(COOKI);
-      
-  
-    }else {alert("please enable cookies and reload page.")
-    window.location.href = "./ptc.html";}
-
-  }
-
-
   function cNBlank(COOKI){
     if(COOKI !== undefined){
     $('#trainerInfoHere').html(COOKI);
 
-      rFunction();
+      regentFunction();
   
     }
   }
@@ -60,13 +39,10 @@ $(document).ready(function () {
 }
 
 
-  function rFunction() {
-    var C00KI = getCookieD("Name");
-    
+  function regentFunction() {
+    var C00KI = getCookieD("regentName");
+    reGexP.push(C00KI);
     ////let trainBin2 = window.btoa(low)
-
-
-     pageLoad();
   }
 
 
@@ -74,12 +50,13 @@ $(document).ready(function () {
 ///get list of bins
 //if trainer name same as what is in the list of bins, get the bin for that trainer
 
-
+$(document).ready(function () {
+    pageLoad();
+   });
  
-function pageLoad(url) {
-  if (url == "flight"){
+function pageLoad() {
   let existingContent = [];
-var col = '600cd1c7bca934583e40dc83'; 
+var col = '6001d6a3e31fbc3bdef42055'; 
        $.ajax
          ({
          method: "GET",
@@ -88,46 +65,22 @@ var col = '600cd1c7bca934583e40dc83';
                },
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) {
-                   console.log(data);;
-                   //console.log(data[0].bns.length);
-                  // console.log(data[0].bns[0].tname.toUpperCase());
-                   if (data[0].bns.length !== undefined){
-                      Eye(data)
-                   } else {alert("Because this is free, sometimes things take a moment to load,\nI will automatically try agian to load everything in 10 seconds.")
-
-                        setTimeout(function(){pageLoad();},10000);
-                        }
-
+                      Eye(data, data[0].bns.length)
                    });
 }
-}
-function Eye(data){
+function Eye(data,x){
 
-var COOKI = getCookieD("name");
-     if (COOKI != "") {
-       console.log(COOKI);
-         if(COOKI !== undefined){
+  //cooki testing - trainerNam;
+//var trainername = "T4RYNITUP";
+var trainername = "AARONAWEZOM";
+for(let j=0; j <  x; j++) {
 
-      
-for(let j=0; j < data[0].bns.length; j++) {
-  
-  console.log(data[0].bns[j].tname.toUpperCase());
-//var trainername = "AARONAWEZOM";
-	//if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
-	
-if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
+if (trainername == data[0].bns[j].tname.toUpperCase()){
 gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
   
-//here
-}else if (COOKI.toUpperCase() == "GUEST") {
-  alert("You are currently using the guest account,\n anything you do won't be saved to your trainer info.\n make sure you are using/enabling cookies to allow this site to work correctly. ")
-  }
-} 
-  }//end undefined cooki 
-  }//end cooki blank
-    
-      }    
+
+}}}
 
 
 function gotDBin(binny){
@@ -298,7 +251,7 @@ toastr.options = {
   "positionClass": "toast-top-center",
   "preventDuplicates": false,
   "onclick": null,
-  "showDuration": "700",
+  "showDuration": "300",
   "hideDuration": "1000",
   "timeOut": "5000",
   "extendedTimeOut": "1000",
@@ -907,17 +860,17 @@ deSelectUnchk3();
 
 for(var i = 0; i < RhaveP.length; i++){
 for(var e = 0; e < existingContent[0].results[0].have.length; e++){
-	// for(var i = 0; i < RhaveP.length; i++){
+  // for(var i = 0; i < RhaveP.length; i++){
 //if (existingContent[0].results[0].have[e].Name == RhaveP[i].Name)
 
 var CT = existingContent[0].results[0].have[e];
 var RT = RhaveP[i];
 
-		if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
-		{
-		existingContent[0].results[0].have.splice(e,1);
-		} else { } 
-	}
+    if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
+    {
+    existingContent[0].results[0].have.splice(e,1);
+    } else { } 
+  }
 
 }
 
@@ -958,17 +911,17 @@ deSelectUnchk3();
 
 for(var i = 0; i < RwantP.length; i++){
 for(var e = 0; e < existingContent[0].results[0].want.length; e++){
-	
+  
 //if (existingContent[0].results[0].want[e].Name == RwantP[i].Name)
 
 var CT = existingContent[0].results[0].want[e];
 var RT = RwantP[i];
 
-		if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
-		{
-		existingContent[0].results[0].want.splice(e,1);
-		} else { } 
-	}
+    if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
+    {
+    existingContent[0].results[0].want.splice(e,1);
+    } else { } 
+  }
 
 }
 
