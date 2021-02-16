@@ -391,7 +391,7 @@ $('#topper').show();};
 
 
 ///add click within menu
-
+//================================================
 //get all pokemon available
 function getallPok(){
 
