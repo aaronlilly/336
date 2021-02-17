@@ -74,7 +74,7 @@ $(document).ready(function () {
 
  
 function pageLoad(url) {
-    getAlolanPok();
+    //getAlolanPok();
   getGalarianPok();
   if (url == "flight"){
   let existingContent = [];
