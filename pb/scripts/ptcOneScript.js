@@ -1083,12 +1083,14 @@ function alert4(){alert("Pokemon will be removed when the list updated using the
                            '</figcaption>'+'</figure>'+'</div></div>'); 
 
 
+ $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
+
+alert("data.PokemonTradingCenterGalar[a].Name")
+ });
 
 //have box
 //Meowth-galargal
- $('#Meowth-galargal').click(function(){
-alert("M")
-  });
+ 
 
   //galwant click
   //         $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
@@ -1176,6 +1178,9 @@ alert("M")
                   //                                                                })
                       
                   };
+                  $('#Meowth-galargal').click(function(){
+alert("M")
+  });
 
 
 
