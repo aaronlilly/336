@@ -74,6 +74,8 @@ $(document).ready(function () {
 
  
 function pageLoad(url) {
+    getAlolanPok();
+  getGalarianPok();
   if (url == "flight"){
   let existingContent = [];
 var col = '600cd1c7bca934583e40dc83'; 
