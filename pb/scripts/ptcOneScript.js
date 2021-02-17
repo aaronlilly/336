@@ -1280,3 +1280,4 @@ $(document).ready(function () {
            GalarianAr.push(data.PokemonTradingCenterGalar[a].Name)
          }
   });
+               };
