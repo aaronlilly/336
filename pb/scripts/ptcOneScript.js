@@ -1064,7 +1064,7 @@ function alert4(){alert("Pokemon will be removed when the list updated using the
            GalarianAr.push(data.PokemonTradingCenterGalar[a].Name)
 
                       $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galhavbox">');
-$("#otherbox").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galhavbox">');
+//$("#otherbox").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galhavbox">');
 
 
 
@@ -1086,7 +1086,7 @@ $("#otherbox").append('<input type="checkbox" id="' +  data.PokemonTradingCenter
 
 //have box
 //Meowth-galargal
- $('#'+ "Meowth-galargal").click(function(){
+ $('#Meowth-galargal').click(function(){
 alert("M")
   });
 
