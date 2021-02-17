@@ -75,7 +75,7 @@ $(document).ready(function () {
  
 function pageLoad(url) {
     //getAlolanPok();
-  getGalarianPok();
+  //getGalarianPok();
   if (url == "flight"){
   let existingContent = [];
 var col = '600cd1c7bca934583e40dc83'; 
@@ -1051,42 +1051,42 @@ function alert4(){alert("Pokemon will be removed when the list updated using the
 
 
 
-  function getGalarianPok(){
+//   function getGalarianPok(){
 
 
-          $.ajax({
-              method: "GET",
-              url: "https://aaronlilly.github.io/336/galar.json"
-                 }).done(function(data) 
-                    { 
-      for(let a=0; a <  data.PokemonTradingCenterGalar.length; a++) {
+//           $.ajax({
+//               method: "GET",
+//               url: "https://aaronlilly.github.io/336/galar.json"
+//                  }).done(function(data) 
+//                     { 
+//       for(let a=0; a <  data.PokemonTradingCenterGalar.length; a++) {
 
-           GalarianAr.push(data.PokemonTradingCenterGalar[a].Name)
+//            GalarianAr.push(data.PokemonTradingCenterGalar[a].Name)
 
-                      $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galhavbox">');
-//$("#otherbox").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galhavbox">');
+//                       $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galhavbox">');
+// //$("#otherbox").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galhavbox">');
 
 
 
-  $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galxwanbox">');
+//   $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galxwanbox">');
                      
-                        $("#galarpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name   + 'gal">'+ '<figure>'+
-                          '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
-                           + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
-                           '</figcaption>'+'</figure>'+'</div></div>'); 
+//                         $("#galarpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name   + 'gal">'+ '<figure>'+
+//                           '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
+//                            + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
+//                            '</figcaption>'+'</figure>'+'</div></div>'); 
 
 
-         $("#galarpokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name
-                          + 'galx">'+ '<figure>'+
-                          '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
-                           + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
-                           '</figcaption>'+'</figure>'+'</div></div>'); 
+//          $("#galarpokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name
+//                           + 'galx">'+ '<figure>'+
+//                           '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
+//                            + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
+//                            '</figcaption>'+'</figure>'+'</div></div>'); 
 
 
- $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
+//  $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
 
-alert("data.PokemonTradingCenterGalar[a].Name")
- });
+// alert("data.PokemonTradingCenterGalar[a].Name");
+//  });
 
 //have box
 //Meowth-galargal
@@ -1177,15 +1177,15 @@ alert("data.PokemonTradingCenterGalar[a].Name")
 
                   //                                                                })
                       
-                  };
-                  $('#Meowth-galargal').click(function(){
-alert("M")
-  });
+//                   };
+//                   $('#Meowth-galargal').click(function(){
+// alert("M")
+//   });
 
 
 
-  })
-  }
+//   })
+//   }
 
 
 
@@ -1267,3 +1267,16 @@ alert("M")
   //name of props for x box
 
   //name pof id to remove class from. 
+
+
+$(document).ready(function () {
+      $.ajax({
+              method: "GET",
+              url: "https://aaronlilly.github.io/336/galar.json"
+                 }).done(function(data) 
+                    { 
+      for(let a=0; a <  data.PokemonTradingCenterGalar.length; a++) {
+
+           GalarianAr.push(data.PokemonTradingCenterGalar[a].Name)
+         }
+  });
