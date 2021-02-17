@@ -1082,6 +1082,14 @@ $("#otherbox").append('<input type="checkbox" id="' +  data.PokemonTradingCenter
                            + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
                            '</figcaption>'+'</figure>'+'</div></div>'); 
 
+
+
+//have box
+//Meowth-galargal
+ $('#'+ "Meowth-galargal").click(function(){
+alert("M")
+  });
+
   //galwant click
   //         $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
   //           var gDex = data.PokemonTradingCenterGalar[a].Dex;
