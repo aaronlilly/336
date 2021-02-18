@@ -1298,49 +1298,58 @@ $(document).ready(function () {
                           '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
                            + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
                            '</figcaption>'+'</figure>'+'</div></div>'); 
+
   $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
-            var gDex = data.PokemonTradingCenterGalar[a].Dex;
-  var gName = data.PokemonTradingCenterGalar[a].Name;
-  var gReg = data.PokemonTradingCenterGalar[a].Region;
-  var gType1 = data.PokemonTradingCenterGalar[a].Type1;
-  var gType2 = data.PokemonTradingCenterGalar[a].Type2;
-  var gImj = data.PokemonTradingCenterGalar[a].imaj;
-  var gdC = data.PokemonTradingCenterGalar[a].datecaught;
-  var gNotes = data.PokemonTradingCenterGalar[a].notes;
-  var gPur = data.PokemonTradingCenterGalar[a].purified;
-  var gShiny = data.PokemonTradingCenterGalar[a].shiny;
-                              var curre = $(this).attr('id');
+     var curre = $(this).attr('id');
+           galwant(data,cur,a)
+               });
+};
+
+function galwant(data,cur,a)
+{
+  alert(cur);
+}
+  //  var gDex = data.PokemonTradingCenterGalar[a].Dex;
+  // var gName = data.PokemonTradingCenterGalar[a].Name;
+  // var gReg = data.PokemonTradingCenterGalar[a].Region;
+  // var gType1 = data.PokemonTradingCenterGalar[a].Type1;
+  // var gType2 = data.PokemonTradingCenterGalar[a].Type2;
+  // var gImj = data.PokemonTradingCenterGalar[a].imaj;
+  // var gdC = data.PokemonTradingCenterGalar[a].datecaught;
+  // var gNotes = data.PokemonTradingCenterGalar[a].notes;
+  // var gPur = data.PokemonTradingCenterGalar[a].purified;
+  // var gShiny = data.PokemonTradingCenterGalar[a].shiny;
+  //                             var curre = $(this).attr('id');
                               
                               
 
-              if($("#" + curre + "wanbox").prop('checked'))
-              {
+  //             if($("#" + curre + "wanbox").prop('checked'))
+  //             {
     
-     for (k = 0; k < wantP.length; k++) 
-             {
-                if(wantP[k].Name == gName)
-                {
-                  wantP.splice(k,1);
-                 }
-             }
-                 $('#'+curre).removeClass('pokSelctd');
+  //    for (k = 0; k < wantP.length; k++) 
+  //            {
+  //               if(wantP[k].Name == gName)
+  //               {
+  //                 wantP.splice(k,1);
+  //                }
+  //            }
+  //                $('#'+curre).removeClass('pokSelctd');
 
-                  $("#" + curre + "wanbox").prop('checked',false)
+  //                 $("#" + curre + "wanbox").prop('checked',false)
 
-               }else { 
+  //              }else { 
 
-                 wantP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"datecaught" : gdC, "notes": gNotes})
+  //                wantP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"datecaught" : gdC, "notes": gNotes})
 
-                        $('#'+curre).addClass('pokSelctd');
+  //                       $('#'+curre).addClass('pokSelctd');
 
 
-                        $("#"+curre +"wanbox").prop('checked',true)
-                }
+  //                       $("#"+curre +"wanbox").prop('checked',true)
+  //               }
 
         
 
-                                                                                 });
-         
-         }
-  });
-               });
+  //               });
+
+  //        }
+  // });
