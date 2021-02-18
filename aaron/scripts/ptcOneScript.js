@@ -1299,7 +1299,7 @@ $(document).ready(function () {
                            + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
                            '</figcaption>'+'</figure>'+'</div></div>'); 
 
-         
+
   $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
             var gDex = data.PokemonTradingCenterGalar[a].Dex;
   var gName = data.PokemonTradingCenterGalar[a].Name;
@@ -1338,11 +1338,8 @@ $(document).ready(function () {
 
                         $("#"+curre +"wanbox").prop('checked',true)
                 }
-
-        
-
-                                                                                 });
+            });//end click
          
-         }
+       }
   });
-               });
+});
