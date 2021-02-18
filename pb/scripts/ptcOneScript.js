@@ -1303,8 +1303,9 @@ $(document).ready(function () {
      var curre = $(this).attr('id');
            galwant(data,cur,a)
                });
-};
-});
+}
+}
+               });
 
 
 function galwant(data,cur,a)
