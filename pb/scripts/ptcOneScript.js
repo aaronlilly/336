@@ -1278,6 +1278,26 @@ $(document).ready(function () {
       for(let a=0; a <  data.PokemonTradingCenterGalar.length; a++) {
 
            GalarianAr.push(data.PokemonTradingCenterGalar[a].Name)
+
+
+           
+                      $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galhavbox">');
+
+
+
+  $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galxwanbox">');
+                     
+                        $("#galarpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name   + 'gal">'+ '<figure>'+
+                          '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
+                           + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
+                           '</figcaption>'+'</figure>'+'</div></div>'); 
+
+
+         $("#galarpokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name
+                          + 'galx">'+ '<figure>'+
+                          '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
+                           + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
+                           '</figcaption>'+'</figure>'+'</div></div>'); 
          }
   });
                });
