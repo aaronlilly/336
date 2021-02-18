@@ -1304,7 +1304,7 @@ $(document).ready(function () {
            galwant(data,cur,a)
                });
 }
-}
+});
                });
 
 
