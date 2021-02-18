@@ -1298,8 +1298,7 @@ $(document).ready(function () {
                           '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
                            + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
                            '</figcaption>'+'</figure>'+'</div></div>'); 
-
-         $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
+  $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
             var gDex = data.PokemonTradingCenterGalar[a].Dex;
   var gName = data.PokemonTradingCenterGalar[a].Name;
   var gReg = data.PokemonTradingCenterGalar[a].Region;
@@ -1338,6 +1337,10 @@ $(document).ready(function () {
                         $("#"+curre +"wanbox").prop('checked',true)
                 }
 
+        
+
+                                                                                 });
+         
          }
   });
                });
