@@ -1301,7 +1301,7 @@ $(document).ready(function () {
 
   $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
            
-               });
+            
 
 
 
@@ -1343,9 +1343,10 @@ $(document).ready(function () {
                         $("#"+curre +"wanbox").prop('checked',true)
                 }
 
-        
+           });
 
                 };
+                
 
          })
   });
