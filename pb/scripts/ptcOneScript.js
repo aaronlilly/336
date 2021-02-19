@@ -1347,5 +1347,5 @@ $(document).ready(function () {
 
                 };
 
-         }
+         })
   });
