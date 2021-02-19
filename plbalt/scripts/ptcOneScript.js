@@ -2,6 +2,9 @@ let existingContent = [];
 let trainBin = "";
 
 
+
+
+
 $(document).ready(function () {
        var COOKI = getCookieD("name");
      if (COOKI != "") {
@@ -74,8 +77,6 @@ $(document).ready(function () {
 
  
 function pageLoad(url) {
-    //getAlolanPok();
-  //getGalarianPok();
   if (url == "flight"){
   let existingContent = [];
 var col = '600cd1c7bca934583e40dc83'; 
@@ -87,7 +88,7 @@ var col = '600cd1c7bca934583e40dc83';
                },
                   url: "https://api.jsonbin.io/b/" + col + "/latest"
                   }).done(function(data) {
-                  //console.log(data);;
+                   console.log(data);;
                    //console.log(data[0].bns.length);
                   // console.log(data[0].bns[0].tname.toUpperCase());
                    if (data[0].bns.length !== undefined){
@@ -104,13 +105,13 @@ function Eye(data){
 
 var COOKI = getCookieD("name");
      if (COOKI != "") {
-       //console.log(COOKI);
+       console.log(COOKI);
          if(COOKI !== undefined){
 
       
 for(let j=0; j < data[0].bns.length; j++) {
   
- // console.log(data[0].bns[j].tname.toUpperCase());
+  console.log(data[0].bns[j].tname.toUpperCase());
 //var trainername = "AARONAWEZOM";
 	//if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
 	
@@ -150,9 +151,9 @@ $.ajax
          $('#havPaste2').html("");
                        $('#havePaste').html("");
                 for(let o = 0; o < Owned.length; o++) {
-                    $('#havePaste').append("<img src='" + Owned[o].imaj +"'style=\"width:96px;\">");
+                    $('#havePaste').append("<img src='" + Owned[o].imaj +"'>");
                    $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
-                        '<img src ="' + data.results[0].have[o].imaj + '"style=\"width:96px;\">'
+                        '<img src ="' + data.results[0].have[o].imaj + '">'
                          + '<figcaption>' + data.results[0].have[o].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
                    $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[o].Name +'ownbox">');
@@ -210,9 +211,9 @@ var pShiny = data.results[0].have[o].shiny;
     $('#wantPaste2').html("");
                        for(let c = 0; c < Covet.length; c++) {
 
-                   $('#wantPaste').append("<img src='" + Covet[c].imaj +"'style=\"width:96px;\">");
+                   $('#wantPaste').append("<img src='" + Covet[c].imaj +"'>");
                   $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[c].Name + [c] + 'cov">'+ '<figure>'+
-                        '<img src ="' +Covet[c].imaj + '"style=\"width:96px;\">'
+                        '<img src ="' +Covet[c].imaj + '">'
                          + '<figcaption>' + Covet[c].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
 
@@ -398,13 +399,13 @@ $("#pokHav").html("");
                       {   
                        $("#pokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
                         + '">'+ '<figure>'+
-                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '"style=\"width:96px;\">'
+                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '">'
                          + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
                      
                          $("#pokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
                         + 'x">'+ '<figure>'+
-                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '"style=\"width:96px;\">'
+                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '">'
                          + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
 
@@ -513,7 +514,6 @@ existingContent[0].results[0].have.push(haveP[i])}
 // push this to api
 alert2();
 deSelectUnchk();
-deSelectgalo(which);
 $('#myModal1').modal('hide');
 
 }
@@ -528,25 +528,10 @@ existingContent[0].results[0].want.push(wantP[i])}
 // push this to api
 alert2();
 deSelectUnchk2();
- deSelectgalo(which);
 $('#myModal2').modal('hide');
 
 }
 
-  //end save selected modal /have
-  function galariancancelHave(){
-   for(var i=0; i <   GalarianAr.length; i++) 
-     {
-       if ($("#" +  GalarianAr +"box").prop('checked'))
-       {
-        $("#" +  GalarianAr +"box").prop('checked',false);
-       $('#'+ GalarianAr).removeClass('pokSelctd');
-       }
-       let haveP = [];
-       //fix this eventually
-           }
-
-  }
 
 
 //end save selected modal /have
@@ -657,7 +642,7 @@ function send3(){
                  data: JSON.stringify(existingContent[0]),
                   }).done(function(responseText) 
                      {
-                     // console.log(responseText)
+                      console.log(responseText)
       toastyFunct();
       ;                 
     });
@@ -1014,333 +999,3 @@ $('#'+existingContent[0].results[0].want[i].Name +"cov").removeClass('pokRemov')
 }
 
 function alert4(){alert("Pokemon will be removed when the list updated using the menu button")};
-
-/////////1052tues
-         
-  function option(which){
-
-  if ($("#" + which +"X").prop('checked'))
-  {
-
-    chkOpt(which);
-  }
-  else
-  {
-    notchkOpt(which);
-  }
-
-  }
-
-  function chkOpt(which)
-  {
-    //uncheck it
-    $("#" + which +"X").prop('checked',false)
-  }
-
-  function notchkOpt(which)
-  {
-    //check it
-    $("#" + which +"X").prop('checked',true)
-  }
-
-
-  ///get alo/galor pok
-
-  
-
-
-
-
-//   function getGalarianPok(){
-
-
-//           $.ajax({
-//               method: "GET",
-//               url: "https://aaronlilly.github.io/336/galar.json"
-//                  }).done(function(data) 
-//                     { 
-//       for(let a=0; a <  data.PokemonTradingCenterGalar.length; a++) {
-
-//            GalarianAr.push(data.PokemonTradingCenterGalar[a].Name)
-
-//                       $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galhavbox">');
-// //$("#otherbox").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galhavbox">');
-
-
-
-//   $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galxwanbox">');
-                     
-//                         $("#galarpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name   + 'gal">'+ '<figure>'+
-//                           '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
-//                            + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
-//                            '</figcaption>'+'</figure>'+'</div></div>'); 
-
-
-//          $("#galarpokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name
-//                           + 'galx">'+ '<figure>'+
-//                           '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
-//                            + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
-//                            '</figcaption>'+'</figure>'+'</div></div>'); 
-
-
-//  $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
-
-// alert("data.PokemonTradingCenterGalar[a].Name");
-//  });
-
-//have box
-//Meowth-galargal
- 
-
-  //galwant click
-  //         $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
-  //           var gDex = data.PokemonTradingCenterGalar[a].Dex;
-  // var gName = data.PokemonTradingCenterGalar[a].Name;
-  // var gReg = data.PokemonTradingCenterGalar[a].Region;
-  // var gType1 = data.PokemonTradingCenterGalar[a].Type1;
-  // var gType2 = data.PokemonTradingCenterGalar[a].Type2;
-  // var gImj = data.PokemonTradingCenterGalar[a].imaj;
-  // var gdC = data.PokemonTradingCenterGalar[a].datecaught;
-  // var gNotes = data.PokemonTradingCenterGalar[a].notes;
-  // var gPur = data.PokemonTradingCenterGalar[a].purified;
-  // var gShiny = data.PokemonTradingCenterGalar[a].shiny;
-  //                             var curre = $(this).attr('id');
-                              
-                              
-
-  //             if($("#" + curre + "wanbox").prop('checked'))
-  //             {
-    
-  //    for (k = 0; k < wantP.length; k++) 
-  //            {
-  //               if(wantP[k].Name == gName)
-  //               {
-  //                 wantP.splice(k,1);
-  //                }
-  //            }
-  //                $('#'+curre).removeClass('pokSelctd');
-
-  //                 $("#" + curre + "wanbox").prop('checked',false)
-
-  //              }else { 
-
-  //                wantP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"datecaught" : gdC, "notes": gNotes})
-
-  //                       $('#'+curre).addClass('pokSelctd');
-
-
-  //                       $("#"+curre +"wanbox").prop('checked',true)
-  //               }
-
-        
-
-  //                                                                                });
-  // //galhav click
-  //          $('#'+ data.PokemonTradingCenterGalar[a].Name + "gal").click(function(){
-  //           var gDex = data.PokemonTradingCenterGalar[a].Dex;
-  // var gName = data.PokemonTradingCenterGalar[a].Name;
-  // var gReg = data.PokemonTradingCenterGalar[a].Region;
-  // var gType1 = data.PokemonTradingCenterGalar[a].Type1;
-  // var gType2 = data.PokemonTradingCenterGalar[a].Type2;
-  // var gImj = data.PokemonTradingCenterGalar[a].imaj;
-  // var gdC = data.PokemonTradingCenterGalar[a].datecaught;
-  // var gNotes = data.PokemonTradingCenterGalar[a].notes;
-  // var gPur = data.PokemonTradingCenterGalar[a].purified;
-  // var gShiny = data.PokemonTradingCenterGalar[a].shiny;
-  //           var curre = $(this).attr('id');
-
-  //             if($("#" + curre + "havbox").prop('checked'))
-  //             {
-
-  //               for (k = 0; k < haveP.length; k++) 
-  //            {
-  //               if(haveP[k].Name == gName)
-  //               {
-  //                 haveP.splice(k,1);
-  //                }
-  //            }
-
-    
-  //                $('#'+curre).removeClass('pokSelctd');
-
-  //                 $("#" + curre + "havbox").prop('checked',false)
-
-  //              }else { 
-
-  //               haveP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"datecaught" : gdC, "notes": gNotes})
-
-  //                       $('#'+curre).addClass('pokSelctd');
-
-
-  //                       $("#"+curre +"havbox").prop('checked',true)
-  //               }
-
-                  //                                                                })
-                      
-//                   };
-//                   $('#Meowth-galargal').click(function(){
-// alert("M")
-//   });
-
-
-
-//   })
-//   }
-
-
-
-
-  function cancelHave(){
-  deSelectUnchk()
-  $("#haveX").prop('checked',false)
-  }
-
-
-  function deSelectgalo(which) {
-
-    if (which == "galhav")
-        {
-           $('#galarHav').modal('hide');
-              for(var i=0; i <   GalarianAr.length; i++){
-                   if ($("#" +  GalarianAr[i] +"gal"+"havbox").prop('checked'))
-                   {
-                        $('#'+ GalarianAr[i] +"gal").removeClass('pokSelctd')
-                      $("#" +  GalarianAr[i] +"gal"+"havbox").prop('checked',false)
-                   }
-              }
-
-        } else   if (which == "galwan")
-            {
-              $('#galarWan').modal('hide');
-
-              for(var i=0; i <   GalarianAr.length; i++){
-                if ($("#" +  GalarianAr[i] +"gal"+"wanbox").prop('checked'))
-                   {
-                     $('#'+ GalarianAr[i] +"galx").removeClass('pokSelctd')
-                    $("#" +  GalarianAr[i] +"gal"+"wanbox").prop('checked',false)
-                   }
-
-              }
-
-            }else if(which == "alohav")
-            {
-              $('#alolanHav').modal('hide');
-
-             for(var i=0; i <   AlolanAr.length; i++){
-              if ($("#" +  AlolanAr[i] +"alo"+"havbox").prop('checked'))
-                   {
-                      $('#'+ AlolanAr[i] +"alo").removeClass('pokSelctd')
-                      $("#" +  AlolanAr[i] +"alo"+"havbox").prop('checked',false)
-                   }
-              }
-            }else if(which == "alowan")
-                {
-
-                  $('#alolanWan').modal('hide');
-
-                   for(var i=0; i <   AlolanAr.length; i++){
-                      if ($("#" +  AlolanAr[i] +"alo"+"wanbox").prop('checked'))
-                          {
-                              $('#'+ AlolanAr[i] +"alox").removeClass('pokSelctd')
-                           $("#" +  AlolanAr[i] +"alo"+"wanbox").prop('checked',false) 
-                          }
-
-                    } 
-                }  
-  }     
-
-             //name alo, name alox
-  //if($("#" + curre + "havbox").prop('checked') 
-
-    // for(var i=0; i <  pokemonNameArray.length; i++) 
-    //  {
-    //    if ($("#" + pokemonNameArray[i] +"xbox").prop('checked'))
-    //    {
-    //     $("#" + pokemonNameArray[i] +"xbox").prop('checked',false);
-    //    $('#'+pokemonNameArray[i]+"x").removeClass('pokSelctd');
-    //    }
-    //    let wantP = [];
-    //        }
-
-
-
-  //name of props for x box
-
-  //name pof id to remove class from. 
-
-
-$(document).ready(function () {
-      $.ajax({
-              method: "GET",
-              url: "https://aaronlilly.github.io/336/galar.json"
-                 }).done(function(data) 
-                    { 
-      for(let a=0; a <  data.PokemonTradingCenterGalar.length; a++) {
-
-           GalarianAr.push(data.PokemonTradingCenterGalar[a].Name)
-
-
-
-                      $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galhavbox">');
-
-
-
-  $("#xboxs").append('<input type="checkbox" id="' +  data.PokemonTradingCenterGalar[a].Name +'galxwanbox">');
-                     
-                        $("#galarpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name   + 'gal">'+ '<figure>'+
-                          '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
-                           + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
-                           '</figcaption>'+'</figure>'+'</div></div>'); 
-
-
-         $("#galarpokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.PokemonTradingCenterGalar[a].Name
-                          + 'galx">'+ '<figure>'+
-                          '<img src ="' + data.PokemonTradingCenterGalar[a].imaj + '"style=\"width:96px;\">'
-                           + '<figcaption>' + data.PokemonTradingCenterGalar[a].Name + 
-                           '</figcaption>'+'</figure>'+'</div></div>'); 
-
-  $('#'+ data.PokemonTradingCenterGalar[a].Name + "galx").click(function(){
-    var gDex = data.PokemonTradingCenterGalar[a].Dex; var gName = data.PokemonTradingCenterGalar[a].Name;   var gReg = data.PokemonTradingCenterGalar[a].Region;   var gType1 = data.PokemonTradingCenterGalar[a].Type1;   var gType2 = data.PokemonTradingCenterGalar[a].Type2;   var gImj = data.PokemonTradingCenterGalar[a].imaj;   var gdC = data.PokemonTradingCenterGalar[a].datecaught;   var gNotes = data.PokemonTradingCenterGalar[a].notes;   var gPur = data.PokemonTradingCenterGalar[a].purified;   var gShiny = data.PokemonTradingCenterGalar[a].shiny; var curre = $(this).attr('id');
-                              
-              if($("#" + curre + "wanbox").prop('checked'))
-              {
-                for (k = 0; k < wantP.length; k++) 
-                  {
-                    if(wantP[k].Name == gName)
-                    {
-                       wantP.splice(k,1);
-                    }
-                  }
-                $('#'+curre).removeClass('pokSelctd');
-                $("#" + curre + "wanbox").prop('checked',false)
-               }else { 
-                       wantP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"datecaught" : gdC, "notes": gNotes})
-                       $('#'+curre).addClass('pokSelctd');
-                       $("#"+curre +"wanbox").prop('checked',true)
-                     }
-  });
-
-    $('#'+ data.PokemonTradingCenterGalar[a].Name + "gal").click(function(){
-    var gDex = data.PokemonTradingCenterGalar[a].Dex; var gName = data.PokemonTradingCenterGalar[a].Name;   var gReg = data.PokemonTradingCenterGalar[a].Region;   var gType1 = data.PokemonTradingCenterGalar[a].Type1;   var gType2 = data.PokemonTradingCenterGalar[a].Type2;   var gImj = data.PokemonTradingCenterGalar[a].imaj;   var gdC = data.PokemonTradingCenterGalar[a].datecaught;   var gNotes = data.PokemonTradingCenterGalar[a].notes;   var gPur = data.PokemonTradingCenterGalar[a].purified;   var gShiny = data.PokemonTradingCenterGalar[a].shiny; var curre = $(this).attr('id');
-                              
-              if($("#" + curre + "havbox").prop('checked'))
-              {
-                for (k = 0; k < haveP.length; k++) 
-                  {
-                    if(haveP[k].Name == gName)//this might be an issue with non-galar.nonalo
-                    {
-                       haveP.splice(k,1);
-                    }
-                  }
-                $('#'+curre).removeClass('pokSelctd');
-                $("#" + curre + "havbox").prop('checked',false)
-               }else { 
-                       haveP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"datecaught" : gdC, "notes": gNotes})
-                       $('#'+curre).addClass('pokSelctd');
-                       $("#"+curre +"havbox").prop('checked',true)
-                     }
-  });
-
-                };
-         })
-  });
