@@ -150,9 +150,9 @@ $.ajax
          $('#havPaste2').html("");
                        $('#havePaste').html("");
                 for(let o = 0; o < Owned.length; o++) {
-                    $('#havePaste').append("<img src='" + Owned[o].imaj +"'>");
+                    $('#havePaste').append("<img src='" + Owned[o].imaj +"' style=\"width:96px;\">");
                    $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
-                        '<img src ="' + data.results[0].have[o].imaj + '">'
+                        '<img src ="' + data.results[0].have[o].imaj + ' style=\"width:96px;\"">'
                          + '<figcaption>' + data.results[0].have[o].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
                    $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[o].Name +'ownbox">');
@@ -210,9 +210,9 @@ var pShiny = data.results[0].have[o].shiny;
     $('#wantPaste2').html("");
                        for(let c = 0; c < Covet.length; c++) {
 
-                   $('#wantPaste').append("<img src='" + Covet[c].imaj +"'>");
+                   $('#wantPaste').append("<img src='" + Covet[c].imaj +"' style=\"width:96px;\">");
                   $('#wantPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].want[c].Name + [c] + 'cov">'+ '<figure>'+
-                        '<img src ="' +Covet[c].imaj + '">'
+                        '<img src ="' +Covet[c].imaj + ' style=\"width:96px;\"">'
                          + '<figcaption>' + Covet[c].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
 
@@ -504,7 +504,7 @@ $('#additionAl').css({
 
 
 //save from modal
-function saveSelected(){
+function saveSelected(which){
 
 for(var i = 0; i < haveP.length; i++){
 existingContent[0].results[0].have.push(haveP[i])}
@@ -519,7 +519,7 @@ $('#myModal1').modal('hide');
 }
 
 
-function saveSelected2(){
+function saveSelected2(which){
 
 for(var i = 0; i < wantP.length; i++){
 existingContent[0].results[0].want.push(wantP[i])}
