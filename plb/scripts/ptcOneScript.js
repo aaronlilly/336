@@ -504,7 +504,7 @@ $('#additionAl').css({
 
 
 //save from modal
-function saveSelected(){
+function saveSelected(which){
 
 for(var i = 0; i < haveP.length; i++){
 existingContent[0].results[0].have.push(haveP[i])}
@@ -519,7 +519,7 @@ $('#myModal1').modal('hide');
 }
 
 
-function saveSelected2(){
+function saveSelected2(which){
 
 for(var i = 0; i < wantP.length; i++){
 existingContent[0].results[0].want.push(wantP[i])}
