@@ -11,14 +11,14 @@ function getallPok(){
 var current = "";
         $.ajax({
             method: "GET",
-            url: "https://aaronlilly.github.io/336/336ptc.json"
+            url: "https://aaronlilly.github.io/336/336lang.json"
                }).done(function(data) 
                   { 
 
                        for(let i=0; i <  pokemonNameArray.length; i++) 
                       {   
                        $("#pokList").append('<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        + '">'+ '<figure>'+
+                        + '">'+'<div id="lang">'+ data.PokemonTradingCenter[i].lang +'</div>' +'<figure>'+
                         '<img src ="' + data.PokemonTradingCenter[i].imaj + '"style=\"width:96px;\">'
                          + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
                          '</figcaption>'+'</figure>'+'</div>');
