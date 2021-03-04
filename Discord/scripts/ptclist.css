@@ -1,0 +1,37 @@
+#innerBody{margin-left:10%;font-size: 16px;margin-right:2%;}
+ body {
+  background-image: url('../images/ballcenter.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+
+}
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #212529;
+   color: white;
+   text-align: center;
+   padding:1% 0% 1% 1%;
+}
+
+.bg-red{
+	background-color: firebrick;
+padding:1% 0% 1% 1%;
+}
+#imjs{margin:50%;}
+
+#pokList{ display: flex; flex-wrap:wrap; margin-bottom:5%;}
+
+figure {
+    display: inline-block;
+    margin: 20px; /* adjust as needed */
+}
+figure img {
+    vertical-align: top;
+}
+figure figcaption {
+    text-align: center;
+}
