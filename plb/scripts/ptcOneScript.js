@@ -402,12 +402,31 @@ $("#pokHav").html("");
                          + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
                      
+			      //purHav
+			      $("#purpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                        + 'pur">'+ '<figure>'+
+                        '<img src ="' + data.PokemonTradingCenter[i].imaj + ' class ="purifiedx" >'
+                         + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>');
+			      
+			      
+			      
+			      
+			      
                          $("#pokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
                         + 'x">'+ '<figure>'+
                         '<img src ="' + data.PokemonTradingCenter[i].imaj + '"style=\"width:96px;\">'
                          + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
 
+			          //purWan
+			      $("#purpokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                        + 'purx">'+ '<figure>'+
+                        '<img src ="' + data.PokemonTradingCenter[i].imaj + ' class ="purifiedx" >'
+                         + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>');
+			      
+			      
 
                          $('#'+ pokemonNameArray[i]).click(function(){
                             var currentId = $(this).attr('id');
@@ -423,6 +442,21 @@ $("#pokHav").html("");
                         secondary2(current,i,data);
                           });
 
+			      
+			         $('#'+ pokemonNameArray[i]+'purx').click(function(){
+      
+                            var current = $(this).attr('id');
+
+                        secondary3(current,i,data);
+                          });
+			      
+			       $('#'+ pokemonNameArray[i]+'pur').click(function(){
+      
+                            var current = $(this).attr('id');
+
+                        secondary3(current,i,data);
+                          });
+			      
                       }
                    
                      
@@ -462,7 +496,20 @@ $('#'+cId).addClass('pokSelctd');
      }
 }          
 
-
+function secondary3(cId,i,data){
+//if checked
+ if ($("#" + cId +"box").prop('checked')) 
+   {
+  chk3(cId,i,data);
+$('#'+cId).removeClass('pokSelctd');
+    }    
+ //if not checked
+   else{
+  //console.log(cId);IvysaurX
+   notchk3(cId,i,data);
+$('#'+cId).addClass('pokSelctd');
+     }
+}       
 ///end add click menu
 
 
