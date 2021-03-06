@@ -852,7 +852,7 @@ var pNotes = data.PokemonTradingCenter[x].notes;
 var pPur = data.PokemonTradingCenter[x].purified;
 var pShiny = data.PokemonTradingCenter[x].shiny;
 
-     haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+     haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified":pPur,"datecaught" : dC, "notes": pNotes})
      $("#" + cId +"box").prop('checked',true);
     
     
@@ -872,7 +872,25 @@ var pShiny = data.PokemonTradingCenter[x].shiny;
 
  
     //console.log(cId);
-     wantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+     wantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified":pPur, "datecaught" : dC, "notes": pNotes})
+    $("#" + cId +"box").prop('checked',true);
+    }
+
+function notchk3(cId,x,data){
+var pDex = data.PokemonTradingCenter[x].Dex;
+var pName = data.PokemonTradingCenter[x].Name;
+var pReg = data.PokemonTradingCenter[x].Region;
+var pType1 = data.PokemonTradingCenter[x].Type1;
+var pType2 = data.PokemonTradingCenter[x].Type2;
+var pImj = data.PokemonTradingCenter[x].imaj;
+var dC = data.PokemonTradingCenter[x].datecaught;
+var pNotes = data.PokemonTradingCenter[x].notes;
+var pPur = data.PokemonTradingCenter[x].purified;
+var pShiny = data.PokemonTradingCenter[x].shiny;
+
+ 
+    //console.log(cId);
+     wantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified":["true"], datecaught" : dC, "notes": pNotes})
     $("#" + cId +"box").prop('checked',true);
     }
 
@@ -1199,7 +1217,7 @@ $(document).ready(function () {
                 $('#'+curre).removeClass('pokSelctd');
                 $("#" + curre + "wanbox").prop('checked',false)
                }else { 
-                       wantP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"datecaught" : gdC, "notes": gNotes})
+                       wantP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"purified":gPur,"datecaught" : gdC, "notes": gNotes})
                        $('#'+curre).addClass('pokSelctd');
                        $("#"+curre +"wanbox").prop('checked',true)
                      }
@@ -1220,7 +1238,7 @@ $(document).ready(function () {
                 $('#'+curre).removeClass('pokSelctd');
                 $("#" + curre + "havbox").prop('checked',false)
                }else { 
-                       haveP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"datecaught" : gdC, "notes": gNotes})
+                       haveP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"purified":gPur,"datecaught" : gdC, "notes": gNotes})
                        $('#'+curre).addClass('pokSelctd');
                        $("#"+curre +"havbox").prop('checked',true)
                      }
@@ -1293,7 +1311,7 @@ $.ajax({
                   $("#" + curre + "havbox").prop('checked',false)
 
                }else { 
-                 haveP.push({"Dex" :aDex, "Name" : aName, "Type1" : aType1, "Type2" : aType2, "imaj" : aImj, "Region" :aReg, "shiny" :aShiny,"datecaught" : adC, "notes": aNotes})
+                 haveP.push({"Dex" :aDex, "Name" : aName, "Type1" : aType1, "Type2" : aType2, "imaj" : aImj, "Region" :aReg, "shiny" :aShiny,"purified":aPur,"datecaught" : adC, "notes": aNotes})
 
                         $('#'+curre).addClass('pokSelctd');
 
@@ -1333,7 +1351,7 @@ $.ajax({
 
                }else { 
                         $('#'+curre).addClass('pokSelctd');
-                           wantP.push({"Dex" :aDex, "Name" : aName, "Type1" : aType1, "Type2" : aType2, "imaj" : aImj, "Region" :aReg, "shiny" :aShiny,"datecaught" : adC, "notes": aNotes})
+                           wantP.push({"Dex" :aDex, "Name" : aName, "Type1" : aType1, "Type2" : aType2, "imaj" : aImj, "Region" :aReg, "shiny" :aShiny,"purified":aPur,"datecaught" : adC, "notes": aNotes})
 
 
                         $("#"+curre +"wanbox").prop('checked',true)
