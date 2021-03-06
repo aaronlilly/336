@@ -447,7 +447,7 @@ $("#pokHav").html("");
       
                             var current = $(this).attr('id');
 
-                        secondary3(current,i,data);
+                        secondary4(current,i,data);
                           });
 			      
 			       $('#'+ pokemonNameArray[i]+'pur').click(function(){
@@ -875,6 +875,26 @@ var pShiny = data.PokemonTradingCenter[x].shiny;
      wantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified":pPur, "datecaught" : dC, "notes": pNotes})
     $("#" + cId +"box").prop('checked',true);
     }
+
+    function chk3(cId,i,data){
+
+var pName = data.PokemonTradingCenter[i].Name;
+
+///keep em seperate//this removes from array and uncecks
+    $("#" + cId +"box").prop('checked',false)
+
+     if($("#wantX").prop('checked',true))
+        {
+          for (j = 0; j < wantP.length; j++) 
+          {
+             if(wantP[j].Name == pName)
+              {
+                wantP.splice(j,1);
+              }
+          }
+        }
+      
+        }
 
 function notchk3(cId,x,data){
 var pDex = data.PokemonTradingCenter[x].Dex;
