@@ -890,7 +890,7 @@ var pShiny = data.PokemonTradingCenter[x].shiny;
 
  
     //console.log(cId);
-     wantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified":["true"], datecaught" : dC, "notes": pNotes})
+     wantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified":["true"], datecaught : dC, "notes": pNotes})
     $("#" + cId +"box").prop('checked',true);
     }
 
