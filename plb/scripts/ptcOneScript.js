@@ -447,14 +447,14 @@ $("#pokHav").html("");
       
                             var current = $(this).attr('id');
 
-                        secondary4(current,i,data);
+                        secondary3(current,i,data);
                           });
 			      
 			       $('#'+ pokemonNameArray[i]+'pur').click(function(){
       
                             var current = $(this).attr('id');
 
-                        secondary3(current,i,data);
+                        secondary4(current,i,data);
                           });
 			      
                       }
@@ -911,6 +911,46 @@ var pShiny = data.PokemonTradingCenter[x].shiny;
  
     //console.log(cId);
      wantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified":["true"], datecaught : dC, "notes": pNotes})
+    $("#" + cId +"box").prop('checked',true);
+    }
+
+
+
+ function chk4(cId,i,data){
+
+var pName = data.PokemonTradingCenter[i].Name;
+
+///keep em seperate//this removes from array and uncecks
+    $("#" + cId +"box").prop('checked',false)
+
+     if($("#haveX").prop('checked',true))
+        {
+          for (j = 0; j < haveP.length; j++) 
+          {
+             if(haveP[j].Name == pName)
+              {
+                haveP.splice(j,1);
+              }
+          }
+        }
+      
+        }
+
+function notchk4(cId,x,data){
+var pDex = data.PokemonTradingCenter[x].Dex;
+var pName = data.PokemonTradingCenter[x].Name;
+var pReg = data.PokemonTradingCenter[x].Region;
+var pType1 = data.PokemonTradingCenter[x].Type1;
+var pType2 = data.PokemonTradingCenter[x].Type2;
+var pImj = data.PokemonTradingCenter[x].imaj;
+var dC = data.PokemonTradingCenter[x].datecaught;
+var pNotes = data.PokemonTradingCenter[x].notes;
+var pPur = data.PokemonTradingCenter[x].purified;
+var pShiny = data.PokemonTradingCenter[x].shiny;
+
+ 
+    //console.log(cId);
+     haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified":["true"], datecaught : dC, "notes": pNotes})
     $("#" + cId +"box").prop('checked',true);
     }
 

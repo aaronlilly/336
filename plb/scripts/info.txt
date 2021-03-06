@@ -1,7 +1,7 @@
- $("#purpokHav")  + 'pur"> $('#'+ pokemonNameArray[i]+'pur').click( secondary3(
+ $("#purpokHav")  + 'pur"> $('#'+ pokemonNameArray[i]+'pur').click( secondary4(
 
 
- $("#purpokWan") + 'purx">     $('#'+ pokemonNameArray[i]+'purx').click(   secondary4(
+ $("#purpokWan") + 'purx">     $('#'+ pokemonNameArray[i]+'purx').click(   secondary3(
 
 
 https://aaronlilly.github.io/336/plb/ptc.html
