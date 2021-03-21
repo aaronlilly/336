@@ -422,7 +422,7 @@ $("#pokHav").html("");
 			          //purWan
 			      $("#purpokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
                         + 'purx">'+ '<figure>'+
-                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '" class ="purifiedx" >'
+                        '<img class ="purifiedx" src ="' + data.PokemonTradingCenter[i].imaj + '"  >'
                          + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
 			      
