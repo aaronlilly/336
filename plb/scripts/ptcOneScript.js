@@ -410,7 +410,8 @@ $("#pokHav").html("");
                          '</figcaption>'+'</figure>'+'</div></div>');
 			      
 			      
-			      
+			                 
+                       $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'purbox">');
 			      
 			      
                          $("#pokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
@@ -498,7 +499,7 @@ $('#'+cId).addClass('pokSelctd');
 
 function secondary3(cId,i,data){
 //if checked
- if ($("#" + cId +"box").prop('checked')) 
+ if ($("#" + cId +"purbox").prop('checked')) 
    {
   chk3(cId,i,data);
 $('#'+cId).removeClass('pokSelctd');
