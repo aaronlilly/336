@@ -413,7 +413,7 @@ $("#pokHav").html("");
 			      
 			                 
                        $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'purbox">');
-			      
+			      $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'purxbox">');
 			      
                          $("#pokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
                         + 'x">'+ '<figure>'+
@@ -424,7 +424,7 @@ $("#pokHav").html("");
 			          //purWan
 			      $("#purpokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
                         + 'purx">'+ '<figure>'+
-                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '"  >'
+                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '" style=\"filter: drop-shadow(10px 2px 4px #4444dd) drop-shadow(-10px 2px 4px #4444dd)\" >'
                          + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
 			      
