@@ -512,6 +512,21 @@ $('#'+cId).removeClass('pokSelctd');
 $('#'+cId).addClass('pokSelctd');
      }
 }       
+
+function secondary4(cId,i,data){
+//if checked
+ if ($("#" + cId +"box").prop('checked')) 
+   {
+  chk4(cId,i,data);
+$('#'+cId).removeClass('pokSelctd');
+    }    
+ //if not checked
+   else{
+  //console.log(cId);IvysaurX
+   notchk4(cId,i,data);
+$('#'+cId).addClass('pokSelctd');
+     }
+}     
 ///end add click menu
 
 
