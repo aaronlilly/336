@@ -499,7 +499,8 @@ $('#'+cId).addClass('pokSelctd');
 
 function secondary3(cId,i,data){
 //if checked
- if ($("#" + cId +"purbox").prop('checked')) 
+alert(cId);
+ if ($("#" + cId +"box").prop('checked')) 
    {
   chk3(cId,i,data);
 $('#'+cId).removeClass('pokSelctd');
