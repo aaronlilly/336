@@ -449,14 +449,14 @@ $("#pokHav").html("");
       
                             var current = $(this).attr('id');
 
-                        secondary3(current,i,data);
+                        secondary4(current,i,data);
                           });
 			      
 			       $('#'+ pokemonNameArray[i]+'pur').click(function(){
       
                             var current = $(this).attr('id');
 
-                        secondary4(current,i,data);
+                        secondary3(current,i,data);
                           });
 			      
                       }
@@ -500,7 +500,6 @@ $('#'+cId).addClass('pokSelctd');
 
 function secondary3(cId,i,data){
 //if checked
-alert(cId);
  if ($("#" + cId +"box").prop('checked')) 
    {
   chk3(cId,i,data);
