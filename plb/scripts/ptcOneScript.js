@@ -412,12 +412,12 @@ $("#pokHav").html("");
 			      
 			      
 			                 
-                       $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'purbox">');
-			      $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'purxbox">');
+                         $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'purbox">');
+			                   $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'purxbox">');
 			      
                          $("#pokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        + 'x">'+ '<figure>'+
-                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '"style=\"width:96px;\">'
+                         + 'x">'+ '<figure>'+
+                         '<img src ="' + data.PokemonTradingCenter[i].imaj + '"style=\"width:96px;\">'
                          + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
 
@@ -448,6 +448,7 @@ $("#pokHav").html("");
 			         $('#'+ pokemonNameArray[i]+'purx').click(function(){
       
                             var current = $(this).attr('id');
+                            alert(current);//44221
 
                         secondary4(current,i,data);
                           });
