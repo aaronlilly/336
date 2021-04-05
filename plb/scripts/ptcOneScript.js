@@ -119,9 +119,10 @@ gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
   
 //here
-}else if (COOKI.toUpperCase() == "GUEST") {
-  alert("You are currently using the guest account,\n anything you do won't be saved to your trainer info.\n make sure you are using/enabling cookies to allow this site to work correctly. ")
-  }
+}
+// else if (COOKI.toUpperCase() == "GUEST") {
+//   alert("You are currently using the guest account,\n anything you do won't be saved to your trainer info.\n make sure you are using/enabling cookies to allow this site to work correctly. ")
+//   }
 } 
   }//end undefined cooki 
   }//end cooki blank
@@ -150,11 +151,23 @@ $.ajax
          $('#havPaste2').html("");
                        $('#havePaste').html("");
                 for(let o = 0; o < Owned.length; o++) {
+                  if (haveP[o].purified){
+
                     $('#havePaste').append("<img src='" + Owned[o].imaj +"'style=\"width:96px;\">");
                    $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
                         '<img src ="' + data.results[0].have[o].imaj + '"style=\"width:96px;\">'
                          + '<figcaption>' + data.results[0].have[o].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
+
+                  }else{
+                    $('#havePaste').append("<img src='" + Owned[o].imaj +"'style=\"width:96px;\">");
+                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
+                        '<img src ="' + data.results[0].have[o].imaj + '"style=\"width:96px;\">'
+                         + '<figcaption>' + data.results[0].have[o].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>')
+                  }
+
+                    
                    $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[o].Name +'ownbox">');
 
                         $('#' + data.results[0].have[o].Name + [o]+ "own").click(function() {
@@ -444,14 +457,14 @@ $("#pokHav").html("");
                         secondary2(current,i,data);
                           });
 
-			      //want pure click
+			      //hav pure click
 			         $('#'+ pokemonNameArray[i]+'purx').click(function(){
       
                             var current = $(this).attr('id');
 
 
                         secondary3(current,i,data);
-                        //was secondary 4
+                        4
                           });
 			      
 			       $('#'+ pokemonNameArray[i]+'pur').click(function(){
