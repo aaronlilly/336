@@ -444,20 +444,21 @@ $("#pokHav").html("");
                         secondary2(current,i,data);
                           });
 
-			      
+			      //want pure click
 			         $('#'+ pokemonNameArray[i]+'purx').click(function(){
       
                             var current = $(this).attr('id');
-                            alert(current);//44221
 
-                        secondary4(current,i,data);
+
+                        secondary3(current,i,data);
+                        //was secondary 4
                           });
 			      
 			       $('#'+ pokemonNameArray[i]+'pur').click(function(){
       
                             var current = $(this).attr('id');
 
-                        secondary3(current,i,data);
+                        secondary4(current,i,data);
                           });
 			      
                       }
