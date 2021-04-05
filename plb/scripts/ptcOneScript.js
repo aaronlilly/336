@@ -151,11 +151,11 @@ $.ajax
          $('#havPaste2').html("");
                        $('#havePaste').html("");
                 for(let o = 0; o < Owned.length; o++) {
-                  if (haveP[o].purified){
+                  if (haveP[o].purified !== undefined){   //4/5/2021
 
-                    $('#havePaste').append("<img src='" + Owned[o].imaj +"'style=\"width:96px;\">");
+                    $('#havePaste').append("<img src='" + Owned[o].imaj +"'style=\" filter: drop-shadow(10px 2px 4px #4444dd) drop-shadow(-10px 2px 4px #4444dd); width:96px;\">");
                    $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
-                        '<img src ="' + data.results[0].have[o].imaj + '"style=\"width:96px;\">'
+                        '<img src ="' + data.results[0].have[o].imaj + '" style=\"filter: drop-shadow(10px 2px 4px #4444dd) drop-shadow(-10px 2px 4px #4444dd);width:96px;\">'
                          + '<figcaption>' + data.results[0].have[o].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
 
@@ -464,7 +464,7 @@ $("#pokHav").html("");
 
 
                         secondary3(current,i,data);
-                        4
+                        
                           });
 			      
 			       $('#'+ pokemonNameArray[i]+'pur').click(function(){
