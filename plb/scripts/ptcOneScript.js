@@ -151,7 +151,7 @@ $.ajax
          $('#havPaste2').html("");
                        $('#havePaste').html("");
                 for(let o = 0; o < Owned.length; o++) {
-                   if (Owned[o].purified === undefined){   //4/5/2021 !
+                   if (Owned[o].purified !== undefined){   //4/5/2021 !
 
                     $('#havePaste').append("<img src='" + Owned[o].imaj +"'style=\" filter: drop-shadow(10px 2px 4px #4444dd) drop-shadow(-10px 2px 4px #4444dd); width:96px;\">");
                    $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
@@ -213,9 +213,9 @@ var pNotes = data.results[0].have[o].notes;
 var pPur = data.results[0].have[o].purified;
 var pShiny = data.results[0].have[o].shiny;
 
-     RhaveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+     RhaveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified" : pPur, "datecaught" : dC, "notes": pNotes})
     
-}
+}//,"purified" : pPur
                        });
 
                   } 
