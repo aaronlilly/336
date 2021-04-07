@@ -26,7 +26,7 @@ $(document).ready(function () {
        pageLoad(COOKI);
       
   
-    }else {alert("please enable cookies and reload page.")
+    }else {alert("your session has timed out, please log in again.")
     window.location.href = "./ptc.html";}
 
   }
@@ -152,12 +152,12 @@ $.ajax
                        $('#havePaste').html("");
                 for(let o = 0; o < Owned.length; o++) {
                    if (Owned[o].purified !== undefined){   //4/5/2021 !
-
+                       if (Owned[o].purified == "true" ){ 
                     $('#havePaste').append("<img src='" + Owned[o].imaj +"'style=\" filter: drop-shadow(10px 2px 4px #4444dd) drop-shadow(-10px 2px 4px #4444dd); width:96px;\">");
                    $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
                         '<img src ="' + data.results[0].have[o].imaj + '" style=\"filter: drop-shadow(10px 2px 4px #4444dd) drop-shadow(-10px 2px 4px #4444dd);width:96px;\">'
                          + '<figcaption>' + data.results[0].have[o].Name + 
-                         '</figcaption>'+'</figure>'+'</div></div>')
+                         '</figcaption>'+'</figure>'+'</div></div>')}
 
                   }else{
                     //existingContent[0].results[0].have[0].Name
