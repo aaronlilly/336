@@ -1,3 +1,12 @@
+
+$(document).ready(function () {
+       getallPok();
+  });
+  
+
+
+
+
 function getallPok(){
         $.ajax({
             method: "GET",
