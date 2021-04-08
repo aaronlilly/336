@@ -26,7 +26,7 @@ $(document).ready(function () {
        pageLoad(COOKI);
       
   
-    }else {alert("please enable cookies and reload page.")
+    }else {alert("your session has timed out, please log in again.")
     window.location.href = "./ptc.html";}
 
   }
@@ -151,15 +151,16 @@ $.ajax
          $('#havPaste2').html("");
                        $('#havePaste').html("");
                 for(let o = 0; o < Owned.length; o++) {
-                  if (haveP[o].purified){
-
-                    $('#havePaste').append("<img src='" + Owned[o].imaj +"'style=\"width:96px;\">");
+                   if (Owned[o].purified !== undefined && Owned[o].purified == "true"){   //4/5/2021 ! existingContent[0].results[0].have[0].purified
+                      
+                    $('#havePaste').append("<img src='" + Owned[o].imaj +"'style=\" filter: drop-shadow(10px 2px 4px #4444dd) drop-shadow(-10px 2px 4px #4444dd); width:96px;\">");
                    $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
-                        '<img src ="' + data.results[0].have[o].imaj + '"style=\"width:96px;\">'
+                        '<img src ="' + data.results[0].have[o].imaj + '" style=\"filter: drop-shadow(10px 2px 4px #4444dd) drop-shadow(-10px 2px 4px #4444dd);width:96px;\">'
                          + '<figcaption>' + data.results[0].have[o].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
 
                   }else{
+                    //existingContent[0].results[0].have[0].Name
                     $('#havePaste').append("<img src='" + Owned[o].imaj +"'style=\"width:96px;\">");
                    $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
                         '<img src ="' + data.results[0].have[o].imaj + '"style=\"width:96px;\">'
@@ -212,9 +213,9 @@ var pNotes = data.results[0].have[o].notes;
 var pPur = data.results[0].have[o].purified;
 var pShiny = data.results[0].have[o].shiny;
 
-     RhaveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
+     RhaveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified" : pPur, "datecaught" : dC, "notes": pNotes})
     
-}
+}//,"purified" : pPur
                        });
 
                   } 
@@ -464,7 +465,7 @@ $("#pokHav").html("");
 
 
                         secondary3(current,i,data);
-                        4
+                        
                           });
 			      
 			       $('#'+ pokemonNameArray[i]+'pur').click(function(){
@@ -942,7 +943,7 @@ var pShiny = data.PokemonTradingCenter[x].shiny;
 
  
     //console.log(cId);
-     wantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified":["true"], datecaught : dC, "notes": pNotes})
+     wantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified": pPur, datecaught : dC, "notes": pNotes})
     $("#" + cId +"box").prop('checked',true);
     }
 
@@ -982,7 +983,7 @@ var pShiny = data.PokemonTradingCenter[x].shiny;
 
  
     //console.log(cId);
-     haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified":["true"], datecaught : dC, "notes": pNotes})
+     haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified":pPur, datecaught : dC, "notes": pNotes})
     $("#" + cId +"box").prop('checked',true);
     }
 
