@@ -15,7 +15,7 @@ function getallPok(){
                 { 
                     for(let i=0; i <  pokemonNameArray.length; i++) 
                     {  
-                    	$("#pWant").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                    	$("#pWantBody").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
                         + '">'+ '<figure>'+
                         '<img src ="' + data.PokemonTradingCenter[i].imaj + '"style=\"width:96px;\">'
                         + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
