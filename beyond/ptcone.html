@@ -39,27 +39,43 @@
   		<script src="./scripts/ptcOne.js"></script>
       <script src="./scripts/ptcOneGather.js"></script>
       <link rel='stylesheet' href='./css/ptcOne.css'> 
+      <script src="./scripts/toastedOne.js"></script>
   	<!-- End Custom Scripts -->
 <head>
 
 <body>
-  
+
 <!--   NAV BAR -->
  <nav class="navbar navbar-expand-md navbar-dark bg-red mb-4">
     <span id="menYou"><button type="button" class="btn btn-success" id="menMe">Menu</button></span>
     <span style="float:right; margin-left: 2%;">Welcome <span id ="trainerInfoHere" style="font-color:lightblue;"></span>. </span> 
  </nav>
-  <!--   NAV BAR -->
-
- <!--  Want Modal  Activator Button-->
- <div class="btn btn-Primary"  data-toggle="modal" data-target="#pWant"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.
- </div>
- <!-- end Want Modal  Activator Button-->
+  <!--End  NAV BAR -->
 
 
+  
+  <div id ="innerBody">
+    <div id="topper" style="height:45%;overflow-y:scroll;">
+      <div id="additionAl"><span id="addition">
+        Add By - 
+        <div>
+          <button type="button" class="btn btn-info" id="selectAdd" style="margin-top:1px;margin-left: 1%;">Selection</button>
+        </div>
+        <div id="selClick">
+          <span style="margin-left:2%;"> Add to - <br></span>
+          <span id="havi">
+            <div class="btn btn-Primary"  data-toggle="modal" data-target="#pWant"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.
+            </div>
+        </div>
+          </span>
+    </div>
+  </div>
 
 
 
+
+<div id ="xboxs" style="display:none;"></div>
+  <div class="footer"></div>
 </body>
 
 
