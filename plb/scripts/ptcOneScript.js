@@ -736,7 +736,7 @@ function send3(){
                  data: JSON.stringify(existingContent[0]),
                   }).done(function(responseText) 
                      {
-                     // console.log(responseText)
+                      console.log(responseText)
       toastyFunct();
       ;                 
     });
