@@ -2,6 +2,11 @@ let existingContent = [];
 let trainBin = "";
 
 
+ $(document).ready(function () { 
+ pageLoad();
+});
+
+
 $(document).ready(function () {
        var COOKI = getCookieD("name");
      if (COOKI != "") {
@@ -19,15 +24,14 @@ $(document).ready(function () {
          cNcBlank(CODKI);
       }
 });
-		   
+       
   function cNcBlank(COOKI){
     if(COOKI !== undefined){
     
        pageLoad(COOKI);
       
   
-    }else {alert("your session has timed out, please log in again.")
-    window.location.href = "./ptc.html";}
+    }//else {alert("please enable cookies and reload page.")    window.location.href = "./ptc.html";}
 
   }
 
@@ -76,7 +80,7 @@ $(document).ready(function () {
 function pageLoad(url) {
     //getAlolanPok();
   //getGalarianPok();
-  if (url == "flight"){
+  //if (url == "flight"){
   let existingContent = [];
 var col = '600cd1c7bca934583e40dc83'; 
        $.ajax
@@ -99,35 +103,33 @@ var col = '600cd1c7bca934583e40dc83';
 
                    });
 }
-}
+//}
 function Eye(data){
 
-var COOKI = getCookieD("name");
-     if (COOKI != "") {
+//var COOKI = getCookieD("name");
+    // if (COOKI != "") {
        //console.log(COOKI);
-         if(COOKI !== undefined){
+      //   if(COOKI !== undefined){
 
       
 for(let j=0; j < data[0].bns.length; j++) {
   
  // console.log(data[0].bns[j].tname.toUpperCase());
-//var trainername = "AARONAWEZOM";
-	//if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
-	
-if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
+var trainername = "AARONAWEZOM";
+  //if (COOKI.toUpperCase() == data[0].bns[j].tname.toUpperCase()){  
+  
+if (trainername == data[0].bns[j].tname.toUpperCase()){  
 gotDBin(data[0].bns[j].bin)
 trainBin = data[0].bns[j].bin;
   
-//here
-}
-// else if (COOKI.toUpperCase() == "GUEST") {
-//   alert("You are currently using the guest account,\n anything you do won't be saved to your trainer info.\n make sure you are using/enabling cookies to allow this site to work correctly. ")
-//   }
+
+//}else if (COOKI.toUpperCase() == "GUEST") {  alert("You are currently using the guest account,\n anything you do won't be saved to your trainer info.\n make sure you are using/enabling cookies to allow this site to work correctly. ")
+  }
 } 
   }//end undefined cooki 
-  }//end cooki blank
+ // }//end cooki blank
     
-      }    
+   //   }    
 
 
 function gotDBin(binny){
@@ -151,24 +153,11 @@ $.ajax
          $('#havPaste2').html("");
                        $('#havePaste').html("");
                 for(let o = 0; o < Owned.length; o++) {
-                   if (Owned[o].purified !== undefined && Owned[o].purified == "true"){   //4/5/2021 ! existingContent[0].results[0].have[0].purified
-                      
-                    $('#havePaste').append("<img src='" + Owned[o].imaj +"'style=\" filter: drop-shadow(10px 2px 4px #4444dd) drop-shadow(-10px 2px 4px #4444dd); width:96px;\">");
-                   $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
-                        '<img src ="' + data.results[0].have[o].imaj + '" style=\"filter: drop-shadow(10px 2px 4px #4444dd) drop-shadow(-10px 2px 4px #4444dd);width:96px;\">'
-                         + '<figcaption>' + data.results[0].have[o].Name + 
-                         '</figcaption>'+'</figure>'+'</div></div>')
-
-                  }else{
-                    //existingContent[0].results[0].have[0].Name
                     $('#havePaste').append("<img src='" + Owned[o].imaj +"'style=\"width:96px;\">");
                    $('#havPaste2').append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ data.results[0].have[o].Name  + [o]  + 'own">'+ '<figure>'+
                         '<img src ="' + data.results[0].have[o].imaj + '"style=\"width:96px;\">'
                          + '<figcaption>' + data.results[0].have[o].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>')
-                  }
-
-                    
                    $("#xboxs").append('<input type="checkbox" id="' + data.results[0].have[o].Name +'ownbox">');
 
                         $('#' + data.results[0].have[o].Name + [o]+ "own").click(function() {
@@ -213,9 +202,9 @@ var pNotes = data.results[0].have[o].notes;
 var pPur = data.results[0].have[o].purified;
 var pShiny = data.results[0].have[o].shiny;
 
-     RhaveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified" : pPur, "datecaught" : dC, "notes": pNotes})
+     RhaveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
     
-}//,"purified" : pPur
+}
                        });
 
                   } 
@@ -416,33 +405,12 @@ $("#pokHav").html("");
                          + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
                      
-			      //purHav
-			      $("#purpokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        + 'pur">'+ '<figure>'+
-                        // '<img src ="' + data.PokemonTradingCenter[i].imaj + '" class ="purifiedx" >'
-                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '" style=\"filter: drop-shadow(10px 2px 4px #4444dd) drop-shadow(-10px 2px 4px #4444dd)\" >'
-                         + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
-                         '</figcaption>'+'</figure>'+'</div></div>');
-			      
-			      
-			                 
-                         $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'purbox">');
-			                   $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'purxbox">');
-			      
                          $("#pokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                         + 'x">'+ '<figure>'+
-                         '<img src ="' + data.PokemonTradingCenter[i].imaj + '"style=\"width:96px;\">'
+                        + 'x">'+ '<figure>'+
+                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '"style=\"width:96px;\">'
                          + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
                          '</figcaption>'+'</figure>'+'</div></div>');
 
-			          //purWan
-			      $("#purpokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        + 'purx">'+ '<figure>'+
-                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '" style=\"filter: drop-shadow(10px 2px 4px #4444dd) drop-shadow(-10px 2px 4px #4444dd)\" >'
-                         + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
-                         '</figcaption>'+'</figure>'+'</div></div>');
-			      
-			      
 
                          $('#'+ pokemonNameArray[i]).click(function(){
                             var currentId = $(this).attr('id');
@@ -458,23 +426,6 @@ $("#pokHav").html("");
                         secondary2(current,i,data);
                           });
 
-			      //hav pure click
-			         $('#'+ pokemonNameArray[i]+'purx').click(function(){
-      
-                            var current = $(this).attr('id');
-
-
-                        secondary3(current,i,data);
-                        
-                          });
-			      
-			       $('#'+ pokemonNameArray[i]+'pur').click(function(){
-      
-                            var current = $(this).attr('id');
-
-                        secondary4(current,i,data);
-                          });
-			      
                       }
                    
                      
@@ -514,35 +465,7 @@ $('#'+cId).addClass('pokSelctd');
      }
 }          
 
-function secondary3(cId,i,data){
-//if checked
- if ($("#" + cId +"box").prop('checked')) 
-   {
-  chk3(cId,i,data);
-$('#'+cId).removeClass('pokSelctd');
-    }    
- //if not checked
-   else{
-  //console.log(cId);IvysaurX
-   notchk3(cId,i,data);
-$('#'+cId).addClass('pokSelctd');
-     }
-}       
 
-function secondary4(cId,i,data){
-//if checked
- if ($("#" + cId +"box").prop('checked')) 
-   {
-  chk4(cId,i,data);
-$('#'+cId).removeClass('pokSelctd');
-    }    
- //if not checked
-   else{
-  //console.log(cId);IvysaurX
-   notchk4(cId,i,data);
-$('#'+cId).addClass('pokSelctd');
-     }
-}     
 ///end add click menu
 
 
@@ -737,7 +660,7 @@ function send3(){
                  data: JSON.stringify(existingContent[0]),
                   }).done(function(responseText) 
                      {
-                      console.log(responseText)
+                     // console.log(responseText)
       toastyFunct();
       ;                 
     });
@@ -885,7 +808,7 @@ var pNotes = data.PokemonTradingCenter[x].notes;
 var pPur = data.PokemonTradingCenter[x].purified;
 var pShiny = data.PokemonTradingCenter[x].shiny;
 
-     haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified":pPur,"datecaught" : dC, "notes": pNotes})
+     haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
      $("#" + cId +"box").prop('checked',true);
     
     
@@ -905,85 +828,7 @@ var pShiny = data.PokemonTradingCenter[x].shiny;
 
  
     //console.log(cId);
-     wantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified":pPur, "datecaught" : dC, "notes": pNotes})
-    $("#" + cId +"box").prop('checked',true);
-    }
-
-    function chk3(cId,i,data){
-
-var pName = data.PokemonTradingCenter[i].Name;
-
-///keep em seperate//this removes from array and uncecks
-    $("#" + cId +"box").prop('checked',false)
-
-     if($("#wantX").prop('checked',true))
-        {
-          for (j = 0; j < wantP.length; j++) 
-          {
-             if(wantP[j].Name == pName)
-              {
-                wantP.splice(j,1);
-              }
-          }
-        }
-      
-        }
-
-function notchk3(cId,x,data){
-var pDex = data.PokemonTradingCenter[x].Dex;
-var pName = data.PokemonTradingCenter[x].Name;
-var pReg = data.PokemonTradingCenter[x].Region;
-var pType1 = data.PokemonTradingCenter[x].Type1;
-var pType2 = data.PokemonTradingCenter[x].Type2;
-var pImj = data.PokemonTradingCenter[x].imaj;
-var dC = data.PokemonTradingCenter[x].datecaught;
-var pNotes = data.PokemonTradingCenter[x].notes;
-var pPur = data.PokemonTradingCenter[x].purified;
-var pShiny = data.PokemonTradingCenter[x].shiny;
-
- 
-    //console.log(cId);
-     wantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified": pPur, datecaught : dC, "notes": pNotes})
-    $("#" + cId +"box").prop('checked',true);
-    }
-
-
-
- function chk4(cId,i,data){
-
-var pName = data.PokemonTradingCenter[i].Name;
-
-///keep em seperate//this removes from array and uncecks
-    $("#" + cId +"box").prop('checked',false)
-
-     if($("#haveX").prop('checked',true))
-        {
-          for (j = 0; j < haveP.length; j++) 
-          {
-             if(haveP[j].Name == pName)
-              {
-                haveP.splice(j,1);
-              }
-          }
-        }
-      
-        }
-
-function notchk4(cId,x,data){
-var pDex = data.PokemonTradingCenter[x].Dex;
-var pName = data.PokemonTradingCenter[x].Name;
-var pReg = data.PokemonTradingCenter[x].Region;
-var pType1 = data.PokemonTradingCenter[x].Type1;
-var pType2 = data.PokemonTradingCenter[x].Type2;
-var pImj = data.PokemonTradingCenter[x].imaj;
-var dC = data.PokemonTradingCenter[x].datecaught;
-var pNotes = data.PokemonTradingCenter[x].notes;
-var pPur = data.PokemonTradingCenter[x].purified;
-var pShiny = data.PokemonTradingCenter[x].shiny;
-
- 
-    //console.log(cId);
-     haveP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"purified":pPur, datecaught : dC, "notes": pNotes})
+     wantP.push({"Dex" :pDex, "Name" : pName, "Type1" : pType1, "Type2" : pType2, "imaj" : pImj, "Region" :pReg, "shiny" :pShiny,"datecaught" : dC, "notes": pNotes})
     $("#" + cId +"box").prop('checked',true);
     }
 
@@ -1080,17 +925,17 @@ deSelectUnchk3();
 
 for(var i = 0; i < RhaveP.length; i++){
 for(var e = 0; e < existingContent[0].results[0].have.length; e++){
-	// for(var i = 0; i < RhaveP.length; i++){
+  // for(var i = 0; i < RhaveP.length; i++){
 //if (existingContent[0].results[0].have[e].Name == RhaveP[i].Name)
 
 var CT = existingContent[0].results[0].have[e];
 var RT = RhaveP[i];
 
-		if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
-		{
-		existingContent[0].results[0].have.splice(e,1);
-		} else { } 
-	}
+    if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
+    {
+    existingContent[0].results[0].have.splice(e,1);
+    } else { } 
+  }
 
 }
 
@@ -1131,17 +976,17 @@ deSelectUnchk3();
 
 for(var i = 0; i < RwantP.length; i++){
 for(var e = 0; e < existingContent[0].results[0].want.length; e++){
-	
+  
 //if (existingContent[0].results[0].want[e].Name == RwantP[i].Name)
 
 var CT = existingContent[0].results[0].want[e];
 var RT = RwantP[i];
 
-		if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
-		{
-		existingContent[0].results[0].want.splice(e,1);
-		} else { } 
-	}
+    if (CT.Name == RT.Name && CT.notes == RT.notes && CT.shiny == RT.shiny && CT.purified == RT.purified && CT.datecaught == RT.datecaught)
+    {
+    existingContent[0].results[0].want.splice(e,1);
+    } else { } 
+  }
 
 }
 
@@ -1310,7 +1155,7 @@ $(document).ready(function () {
                 $('#'+curre).removeClass('pokSelctd');
                 $("#" + curre + "wanbox").prop('checked',false)
                }else { 
-                       wantP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"purified":gPur,"datecaught" : gdC, "notes": gNotes})
+                       wantP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"datecaught" : gdC, "notes": gNotes})
                        $('#'+curre).addClass('pokSelctd');
                        $("#"+curre +"wanbox").prop('checked',true)
                      }
@@ -1331,7 +1176,7 @@ $(document).ready(function () {
                 $('#'+curre).removeClass('pokSelctd');
                 $("#" + curre + "havbox").prop('checked',false)
                }else { 
-                       haveP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"purified":gPur,"datecaught" : gdC, "notes": gNotes})
+                       haveP.push({"Dex" :gDex, "Name" : gName, "Type1" : gType1, "Type2" : gType2, "imaj" : gImj, "Region" :gReg, "shiny" :gShiny,"datecaught" : gdC, "notes": gNotes})
                        $('#'+curre).addClass('pokSelctd');
                        $("#"+curre +"havbox").prop('checked',true)
                      }
@@ -1404,7 +1249,7 @@ $.ajax({
                   $("#" + curre + "havbox").prop('checked',false)
 
                }else { 
-                 haveP.push({"Dex" :aDex, "Name" : aName, "Type1" : aType1, "Type2" : aType2, "imaj" : aImj, "Region" :aReg, "shiny" :aShiny,"purified":aPur,"datecaught" : adC, "notes": aNotes})
+                 haveP.push({"Dex" :aDex, "Name" : aName, "Type1" : aType1, "Type2" : aType2, "imaj" : aImj, "Region" :aReg, "shiny" :aShiny,"datecaught" : adC, "notes": aNotes})
 
                         $('#'+curre).addClass('pokSelctd');
 
@@ -1444,7 +1289,7 @@ $.ajax({
 
                }else { 
                         $('#'+curre).addClass('pokSelctd');
-                           wantP.push({"Dex" :aDex, "Name" : aName, "Type1" : aType1, "Type2" : aType2, "imaj" : aImj, "Region" :aReg, "shiny" :aShiny,"purified":aPur,"datecaught" : adC, "notes": aNotes})
+                           wantP.push({"Dex" :aDex, "Name" : aName, "Type1" : aType1, "Type2" : aType2, "imaj" : aImj, "Region" :aReg, "shiny" :aShiny,"datecaught" : adC, "notes": aNotes})
 
 
                         $("#"+curre +"wanbox").prop('checked',true)
@@ -1453,3 +1298,53 @@ $.ajax({
   }
                   });
               });
+
+
+
+/////////////////2/21/2021
+
+function getallshinyPok(){
+var current = "";
+$("#pokHav").html("");
+                  $("#pokWan").html("");
+        $.ajax({
+            method: "GET",
+            url: "https://aaronlilly.github.io/336/336ptc.json"
+               }).done(function(data) 
+                  { 
+
+                      for(let i=0; i <  pokemonNameArray.length; i++) 
+                      {   
+                       $("#pokHav").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                        + '">'+ '<figure>'+
+                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '"style=\"width:96px;\">'
+                         + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>');
+                     
+                         $("#pokWan").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                        + 'x">'+ '<figure>'+
+                        '<img src ="' + data.PokemonTradingCenter[i].imaj + '"style=\"width:96px;\">'
+                         + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
+                         '</figcaption>'+'</figure>'+'</div></div>');
+
+
+                         $('#'+ pokemonNameArray[i]).click(function(){
+                            var currentId = $(this).attr('id');
+                            let current = currentId;
+                        secondary(current,i,data);
+                          });
+      
+      $('#'+ pokemonNameArray[i]+'x').click(function(){
+      
+                            var currentId = $(this).attr('id');
+                            let current = currentId;
+    //console.log(current); Ivysaurx
+                        secondary2(current,i,data);
+                          });
+
+                      }
+                   
+                     
+                    
+                });
+             };
