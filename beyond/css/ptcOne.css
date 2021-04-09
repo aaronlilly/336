@@ -1,4 +1,8 @@
- 
+ #innerBody{
+ 	margin-left:1%;font-size: 20px;
+ }
+
+
 .imjs{
  	float:left;
  }
@@ -21,3 +25,10 @@ figcaption {
 #selClick{display: none;}
 #subClick{display: none;}
 /*end menu*/
+
+.bg-red{
+	background-color: firebrick;
+}
+#endOfToast{margin-top:30%;}
+#clearly{margin-left:75%;}
+#toastTop{font-size: 18px;margin-left: 20%; text-decoration: underline;};
