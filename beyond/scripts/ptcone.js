@@ -1,3 +1,14 @@
+//toast menu
+$(document).ready(function() 
+{
+      toastR();
+      $('#menYou').click(function() {
+          toastR();
+        });
+});
+//end toast menu
+
+
 //Modal Function
 
 function saveSelected(text)
@@ -8,15 +19,7 @@ alert(text);
 //End Motal Funct
 
 
-//toast menu
-$(document).ready(function() 
-{
-    	toastR();
-    	$('#menYou').click(function() {
-       		toastR();
-        });
-});
-//end toast menu
+
 
 
 //menyou
@@ -71,3 +74,7 @@ $('#additionAl').css({
 
 });
 //menyou
+
+
+
+

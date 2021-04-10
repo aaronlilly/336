@@ -3,6 +3,7 @@
 	<title>
 		Pokemon Trading Center
 	</title>
+
 	<!-- Icon -->
 		<meta name="viewport" content="width=device-width, initial-scale=0.6">
  		<link rel="icon" href="./images/favoptc.png" type="image/x-icon"/>
@@ -36,10 +37,10 @@
   		</style>
   	<!-- End In Doc Style -->
   	<!-- Custom Scripts -->
+    <script src="./scripts/toastedOne.js"></script>
   		<script src="./scripts/ptcOne.js"></script>
       <script src="./scripts/ptcOneGather.js"></script>
       <link rel='stylesheet' href='./css/ptcOne.css'> 
-      <script src="./scripts/toastedOne.js"></script>
   	<!-- End Custom Scripts -->
 <head>
 
@@ -66,8 +67,13 @@
           <span id="havi">
             <div class="btn btn-Primary"  data-toggle="modal" data-target="#pWant"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.
             </div>
+            <span id="havi">
+            <div class="btn btn-success"  data-toggle="modal" data-target="#myModal1"  style="margin-left:2%;margin-top:2%;">Pokemon I Have.
+            </div>
+          </span>
         </div>
           </span>
+
           <div id="hideAdd" style="float:right;margin-top:5%;">
           <button type="button" class="btn btn-outline-warning">Close This Section</button>
         </div>
@@ -112,8 +118,13 @@
     			</div>
   			</div>
 		</div>
-	<!-- End pWant -->
+	<!-- End pWant modal-->
 
 <!--   End Modals -->
+
+<!-- Check Boxes -->
+<div id ="xboxs" style="display:none;"></div>
+<!-- End Check Boxes -->
+
 
 </html>
