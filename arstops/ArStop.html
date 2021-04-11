@@ -1,7 +1,7 @@
 <html>
 <head>
 	<title>
-		Pokemon Trading Center
+		Ar Stops
 	</title>
 	<!-- Icon -->
 		<meta name="viewport" content="width=device-width, initial-scale=0.6">
@@ -42,10 +42,10 @@
   	<!-- End Custom Scripts -->
 <head>
 <body>
- <div class="btn btn-Primary"  data-toggle="modal" data-target="#pWant"  style="margin-left:2%;margin-top:2%;">Pokemon I Want.
+ <div class="btn btn-Primary"  data-toggle="modal" data-target="#pWant"  style="margin-left:2%;margin-top:2%;">Add A Stop
  </div>
-
-
+List of Stops
+<div id="pWantBody">                </div>
 
 
 
@@ -61,12 +61,8 @@
   			<div class="modal-dialog"  role="document">
     			<div class="modal-content">
      				<div class="modal-header">
-        				<h5 class="modal-title" id="gridSystemModalLabel">Select The Pokemon You Want.   <br>
-							<button type="button" class="btn btn-primary" onclick="saveSelected('pWant')">Choose Selected
-							</button>  
-							<!-- <button class="btn btn-outline-warning" data-dismiss="modal" data-toggle="modal" data-target="#myModal2" >
-								<span style="color: Sunflower;"><i class="fas fa-home"  data-toggle="tooltip" data-placement="top" title="Back"></i>
-								</span>  -->
+        				<h5 class="modal-title" id="gridSystemModalLabel">Add A Stop  <br>
+							<button type="button" class="btn btn-primary" onclick="saveSelected('pWant')"> Add to Database
 							</button>
 						</h5>
         					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -74,11 +70,10 @@
        						 </button>
       				</div>
       				<div class="modal-body">
-         				<div class="row" id="pWantBody">
-         				</div>
+
       				</div>
       				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" onclick="saveSelected('pWant')">Choose Selected</button>  
+					<button type="button" class="btn btn-primary" onclick="saveSelected('pWant')">Add to Database</button>  
        				</div>
     			</div>
   			</div>
