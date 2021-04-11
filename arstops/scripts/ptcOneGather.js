@@ -25,8 +25,15 @@ function getallPok(){
             )};    
 
 
-               //<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
-                        // + '">'+ '<figure>'+
-                        // '<img src ="' + data.PokemonTradingCenter[i].imaj + '"style=\"width:96px;\">'
-                        // + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
-                        // '</figcaption>'+'</figure>'+'</div></div>'
+          
+  function saveSelected(){
+    var stopName = $('#sName').val();
+    var nearStreet = $('#nName').val();
+     var area = $('#aName').val();
+
+     alert("You just added " + stopName +" near " + nearStreet + " street " + " in " + area);
+
+  }
+
+
+  //https://api.jsonbin.io/b/6072657b0ed6f819bea8a5fc

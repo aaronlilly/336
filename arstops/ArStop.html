@@ -62,12 +62,12 @@ List of Stops
 		<div class="container">
  		 <!-- Trigger the modal with a button -->
 		<div class="modal fade" id="pWant" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="gridSystemModalLabel">
-  			<div class="modal-dialog"  role="document">
+  			<div class="modal-dialog modal-lg">
     			<div class="modal-content">
      				<div class="modal-header">
         				<h5 class="modal-title" id="gridSystemModalLabel">Add A Stop  <br>
-							<button type="button" class="btn btn-primary" onclick="saveSelected('pWant')"> Add to Database
-							</button>
+							<!-- <button type="button" class="btn btn-primary" onclick="saveSelected('pWant')"> Add to Database
+							</button> -->
 						</h5>
         					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
          					 <span aria-hidden="true">&times;</span>
@@ -77,7 +77,7 @@ List of Stops
                 <input type="text" id="sName" placeholder="Stop Name"> <input type="text" id="nName" placeholder="Near Street Name" style='margin-left:2%;'>  <input type="text" id="aName" placeholder="Area Name" style='margin-left:2%;'> <br><br>
       				</div>
       				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" onclick="saveSelected('pWant')">Add to Database</button>  
+					<button type="button" class="btn btn-primary" onclick="saveSelected()">Add to Database</button>  
        				</div>
     			</div>
   			</div>
