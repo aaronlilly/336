@@ -43,8 +43,12 @@
 <head>
 <body>
  <div class="btn btn-Primary"  data-toggle="modal" data-target="#pWant"  style="margin-left:2%;margin-top:2%;">Add A Stop
+
  </div>
+<h4 style="margin-left: 2%;">
+<br>
 List of Stops
+</h4>
 <div id="pWantBody">                </div>
 
 
@@ -70,7 +74,7 @@ List of Stops
        						 </button>
       				</div>
       				<div class="modal-body">
-
+                <input type="text" id="sName" placeholder="Stop Name"> <input type="text" id="nName" placeholder="Near Street Name" style='margin-left:2%;'>  <input type="text" id="aName" placeholder="Area Name" style='margin-left:2%;'> <br><br>
       				</div>
       				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" onclick="saveSelected('pWant')">Add to Database</button>  
