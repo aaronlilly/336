@@ -44,6 +44,7 @@ function getallPok() {
 
           
   function saveSelected(){
+var radioValue = $("input[name='reliability]:checked").val();
     var stopName = $('#sName').val();
     var nearStreet = $('#nName').val();
      var area = $('#aName').val();
@@ -70,6 +71,6 @@ existingContent[0].ArStops.push({"Name"  : stopName, "NearStreet" : nearStreet, 
 
 //Name: "TimeCapsule", NearStreet: "?", Area: "?"}
      alert("You just added " + stopName +" near " + nearStreet + " street " + " in " + area);
-
+alert(radioValue);
   }
 
