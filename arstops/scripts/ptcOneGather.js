@@ -1,4 +1,6 @@
 
+let existingContent = [];
+
 $(document).ready(function () {
        getallPok();
   });
@@ -10,7 +12,7 @@ const mySecretKey = "$2b$10$.zB2DmsGaG7VD7oTTSJ5a.qkLaSUSpwFfe49Ytg7/mhD/nl/ql3v
 
  
 function getallPok() {
-  let existingContent = [];
+  // let existingContent = [];
     //https://api.jsonbin.io/b/6072657b0ed6f819bea8a5fc
 
        $.ajax
@@ -20,15 +22,18 @@ function getallPok() {
                 xhr.setRequestHeader("secret-key", mySecretKey);
                },
                   url: "https://api.jsonbin.io/b/6072657b0ed6f819bea8a5fc"
-                  // + "/latest"
+                   + "/latest"
                   }).done(function(data) {
+
+                    //push to an array
+                    existingContent.push(data);
                  
                       $("#pWantBody").append("<u> Stop Name</u> "+ " " + "<u> NearStreet</u> " + " " + "<u> Area</u> " +" <br>");
 
                  
                     for(let i=0; i < data.ArStops.length; i++) 
                     {  
-                     $("#pWantBody").append(data.ArStops[i].Name +" " + data.ArStops[i].NearStreet + " " + data.ArStops[i].Area  );
+                     $("#pWantBody").append(data.ArStops[i].Name +" " + data.ArStops[i].NearStreet + " " + data.ArStops[i].Area +"<br>" );
                      }
                    
 
@@ -43,32 +48,28 @@ function getallPok() {
     var nearStreet = $('#nName').val();
      var area = $('#aName').val();
 
+existingContent[0].ArStops.push({"Name"  : stopName, "NearStreet" : nearStreet, "Area" :area });
 
-     
+ $.ajax
+       ({
+           url: "https://api.jsonbin.io/b/6072657b0ed6f819bea8a5fc", 
+          method: "PUT",
+  versioning: false,
+          beforeSend: function (xhr) {
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.setRequestHeader("secret-key", mySecretKey);
+               },
+                  
+                 data: JSON.stringify(existingContent[0]),
+                  }).done(function(responseText) 
+                     {
+                      console.log(responseText)
+     //toastyFunct();
+      ;                 
+    });
 
-
-     
-
+//Name: "TimeCapsule", NearStreet: "?", Area: "?"}
      alert("You just added " + stopName +" near " + nearStreet + " street " + " in " + area);
 
   }
 
-
-
-// Demo
-// function getallPok(){
-//         $.ajax({
-//             method: "GET",
-//             url: "https://aaronlilly.github.io/336/arstops/scripts/Demo.json"
-//                }).done(function(data) 
-//                 { 
-
-//                   $("#pWantBody").append("<u> Stop Name</u> "+ " " + "<u> NearStreet</u> " + " " + "<u> Area</u> " +" <br>");
-
-                 
-//                     for(let i=0; i < data.ArStops.length; i++) 
-//                     {  
-//                      $("#pWantBody").append(data.ArStops[i].Name +" " + data.ArStops[i].NearStreet + " " + data.ArStops[i].Area  );
-//                      }
-//                 }
-//             )};    
