@@ -25,6 +25,10 @@ function getallPok() {
                    + "/latest"
                   }).done(function(data) {
 
+                    $('waiting').css("display":"block");
+                    //clear
+                    $("#pWantBody").html('');
+
                     //push to an array
                     existingContent.push(data);
                  

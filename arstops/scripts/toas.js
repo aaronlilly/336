@@ -14,13 +14,31 @@ toastr.options = {
   "showEasing": "swing",
   "hideEasing": "linear",
   "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
+  "hideMethod": "fadeOut",
+  "tapToDismiss": false
 }
 
-toastr["success"]('<button type="button" id="okBtn" class="btn btn-primary">Close me</button><button type="button" id="surpriseBtn" class="btn" style="margin: 0 8px 0 8px">Surprise me</button></div>')
- $('#clearly').click(function() 
+
+
+toastr["success"]('<button type="button" id="okBtn" class="btn btn-primary">Close me</button></div>')
+ $('#okBtn').click(function() 
   {
+    alert("Database Updating, allow a few moments for data to show...");
+
+    window.open('#', "_self");
+    
+
+
+    // $('#sName').html('');
+    // $('#nName').html('');
+    // $('#aName').html('');
+
+   
+
+//document.getElementById('#sName').value='';
+
   toastr.remove();       
+
   })
       toastr.options.onHidden = function(){}; 
  $('.toast-close-button').click(function() {});
