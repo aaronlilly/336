@@ -22,22 +22,10 @@
     <!--  Js Variables -->
     
   	<!--  End Js Variables -->
-  	<!-- In Doc Style -->
-  		 <style>
-		    .pokSelctd{background-color: lightblue;}
-		    .pokRemov{background-color: #ff595e;}
-		    .hidMe{display:none;}
-		    .purifiedx
-		    	{
-		    		filter: drop-shadow(10px 2px 4px #4444dd) 
-		    		drop-shadow(-10px 2px 4px #4444dd)
-		    	};
-  		</style>
-  	<!-- End In Doc Style -->
   	<!-- Custom Scripts -->
   		<script src="./scripts/ptcOne.js"></script>
       <script src="./scripts/ptcOneGather.js"></script>
-      <link rel='stylesheet' href='./css/ptcOne.css'> 
+      <script src="./scripts/toas.js"></script>
   	<!-- End Custom Scripts -->
 <head>
 <body>
@@ -74,6 +62,11 @@ List of Stops
       				</div>
       				<div class="modal-body">
                 <input type="text" id="sName" placeholder="Stop Name"> <input type="text" id="nName" placeholder="Near Street Name" style='margin-left:2%;'>  <input type="text" id="aName" placeholder="Area Name" style='margin-left:2%;'> <br><br>
+                Reliability :
+                <span style="margin-left:2%;"><label><input type="radio" name="reliability" value="persistent"> Persistent</label> </span>
+                <span style="margin-left:2%;"><label><input type="radio" name="reliability" value="intermittent"> Intermittent</label></span>
+
+                <span style="margin-left:2%;"><label><input type="radio" name="reliability" value="unconfrimed" checked="checked"> Unconfirmed</label></span>
       				</div>
       				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" onclick="saveSelected()">Add to Database</button>  

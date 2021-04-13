@@ -28,12 +28,12 @@ function getallPok() {
                     //push to an array
                     existingContent.push(data);
                  
-                      $("#pWantBody").append("<u> Stop Name</u> "+ " " + "<u> NearStreet</u> " + " " + "<u> Area</u> " +" <br>");
+                      $("#pWantBody").append("<u> Stop Name</u> "+ " " + "<u> NearStreet</u> " + " " + "<u> Area</u> " + " <u>Reliability</u> "+ "<br>");
 
                  
                     for(let i=0; i < data.ArStops.length; i++) 
                     {  
-                     $("#pWantBody").append(data.ArStops[i].Name +" " + data.ArStops[i].NearStreet + " " + data.ArStops[i].Area +"<br>" );
+                     $("#pWantBody").append(data.ArStops[i].Name +" " + data.ArStops[i].NearStreet + " " + data.ArStops[i].Area + " " + data.ArStops.reliability +"<br>" );
                      }
                    
 
@@ -44,33 +44,37 @@ function getallPok() {
 
           
   function saveSelected(){
-var radioValue = $("input[name='reliability]:checked").val();
+var radioValue = $("input[name='reliability']:checked").val();
     var stopName = $('#sName').val();
     var nearStreet = $('#nName').val();
      var area = $('#aName').val();
 
-existingContent[0].ArStops.push({"Name"  : stopName, "NearStreet" : nearStreet, "Area" :area });
+existingContent[0].ArStops.push({"Name"  : stopName, "NearStreet" : nearStreet, "Area" :area , "reliability" : radioValue });
 
- $.ajax
-       ({
-           url: "https://api.jsonbin.io/b/6072657b0ed6f819bea8a5fc", 
-          method: "PUT",
-  versioning: false,
-          beforeSend: function (xhr) {
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader("secret-key", mySecretKey);
-               },
+
+
+ // $.ajax
+ //       ({
+ //           url: "https://api.jsonbin.io/b/6072657b0ed6f819bea8a5fc", 
+ //          method: "PUT",
+ //  versioning: false,
+ //          beforeSend: function (xhr) {
+ //                xhr.setRequestHeader("Content-Type", "application/json");
+ //                xhr.setRequestHeader("secret-key", mySecretKey);
+ //               },
                   
-                 data: JSON.stringify(existingContent[0]),
-                  }).done(function(responseText) 
-                     {
-                      console.log(responseText)
-     //toastyFunct();
-      ;                 
-    });
+ //                 data: JSON.stringify(existingContent[0]),
+ //                  }).done(function(responseText) 
+ //                     {
+ //                      console.log(responseText)
+ //     //toastyFunct();
+ //      ;                 
+ //    });
 
 //Name: "TimeCapsule", NearStreet: "?", Area: "?"}
-     alert("You just added " + stopName +" near " + nearStreet + " street " + " in " + area);
-alert(radioValue);
+     //alert("You just added " + stopName +" near " + nearStreet + " street " + " in " + area + " with the reliability of " + radioValue);
+//alert(radioValue);
+toastyFunct();
+
   }
 
