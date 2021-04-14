@@ -20,7 +20,7 @@ toastr.options = {
 
 
 
-toastr["success"]('<button type="button" id="okBtn" class="btn btn-primary">Close me</button></div>')
+toastr["success"]('<button type="button" id="okBtn" class="btn btn-primary">Send Data to database</button></div>')
  $('#okBtn').click(function() 
   {
     
