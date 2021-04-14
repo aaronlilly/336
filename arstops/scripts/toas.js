@@ -1,4 +1,4 @@
-function toastyFunct(){
+function toastyFunct(stopName,nearStreet,area){
 toastr.options = {
  "closeButton": true,
   "debug": false,
@@ -23,7 +23,11 @@ toastr.options = {
 toastr["success"]('<button type="button" id="okBtn" class="btn btn-primary">Close me</button></div>')
  $('#okBtn').click(function() 
   {
-    alert("Database Updating, allow a few moments for data to show...");
+    
+    var radioValue = $("input[name='reliability']:checked").val();
+   
+
+    alert( "You just added " + stopName +" near " + nearStreet + " street " + " in " + area + " with the reliability of " + radioValue +" ... \r\n Database Updating, allow a few moments for data to show...");
 
     window.open('#', "_self");
     

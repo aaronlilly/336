@@ -25,7 +25,7 @@ function getallPok() {
                    + "/latest"
                   }).done(function(data) {
 
-                    $('waiting').css("display":"block");
+                    $('#waiting').css("display","block");
                     //clear
                     $("#pWantBody").html('');
 
@@ -57,28 +57,28 @@ existingContent[0].ArStops.push({"Name"  : stopName, "NearStreet" : nearStreet, 
 
 
 
- // $.ajax
- //       ({
- //           url: "https://api.jsonbin.io/b/6072657b0ed6f819bea8a5fc", 
- //          method: "PUT",
- //  versioning: false,
- //          beforeSend: function (xhr) {
- //                xhr.setRequestHeader("Content-Type", "application/json");
- //                xhr.setRequestHeader("secret-key", mySecretKey);
- //               },
+ $.ajax
+       ({
+           url: "https://api.jsonbin.io/b/6072657b0ed6f819bea8a5fc", 
+          method: "PUT",
+  versioning: false,
+          beforeSend: function (xhr) {
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.setRequestHeader("secret-key", mySecretKey);
+               },
                   
- //                 data: JSON.stringify(existingContent[0]),
- //                  }).done(function(responseText) 
- //                     {
- //                      console.log(responseText)
- //     //toastyFunct();
- //      ;                 
- //    });
+                 data: JSON.stringify(existingContent[0]),
+                  }).done(function(responseText) 
+                     {
+                      console.log(responseText)
+     //toastyFunct();
+      ;                 
+    });
 
 //Name: "TimeCapsule", NearStreet: "?", Area: "?"}
      //alert("You just added " + stopName +" near " + nearStreet + " street " + " in " + area + " with the reliability of " + radioValue);
 //alert(radioValue);
-toastyFunct();
+toastyFunct(stopName,nearStreet,area,radioValue);
 
   }
 
