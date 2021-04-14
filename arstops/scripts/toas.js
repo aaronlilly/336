@@ -24,10 +24,10 @@ toastr["success"]('<button type="button" id="okBtn" class="btn btn-primary">Send
  $('#okBtn').click(function() 
   {
     
-    var radioValue = $("input[name='reliability']:checked").val();
+   let radioValue2 = $("input[name='reliability']:checked").val();
    
 
-    alert( "You just added " + stopName +" near " + nearStreet + " street " + " in " + area + " with the reliability of " + radioValue +" ... \r\n Database Updating, allow a few moments for data to show...");
+    alert( "You just added " + stopName +" near " + nearStreet + " street " + " in " + area + " with the reliability of " + radioValue2 +" ... \r\n Database Updating, allow a few moments for data to show...");
 
     window.open('#', "_self");
     

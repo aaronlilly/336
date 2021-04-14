@@ -48,7 +48,7 @@ function getallPok() {
 
           
   function saveSelected(){
-var radioValue = $("input[name='reliability']:checked").val();
+let radioValue = $("input[name='reliability']:checked").val();
     var stopName = $('#sName').val();
     var nearStreet = $('#nName').val();
      var area = $('#aName').val();
