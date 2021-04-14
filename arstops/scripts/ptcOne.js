@@ -1,8 +1,8 @@
 //Modal Function
 
-function saveSelected(text)
-{
-alert(text);
-}
+// function saveSelected(text)
+// {
+// alert(text);
+// }
 
 //End Motal Funct

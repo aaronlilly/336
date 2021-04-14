@@ -26,6 +26,11 @@
   		<script src="./scripts/ptcOne.js"></script>
       <script src="./scripts/ptcOneGather.js"></script>
       <script src="./scripts/toas.js"></script>
+<style>
+.initHide{display:none;};
+.showMe{display:block;};
+</style>
+
   	<!-- End Custom Scripts -->
 <head>
 <body>
@@ -71,7 +76,9 @@ List of Stops
                 <span style="margin-left:2%;"><label><input type="radio" name="reliability" value="unconfrimed" checked="checked"> Unconfirmed</label></span>
       				</div>
       				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" onclick="saveSelected()">Add to Database</button>  
+
+                <span id='hiddenButtonContainer' class="initHide"><button type="button" class="btn btn-primary" disabled>Add to Database</button></span>
+					<span id="buttonContainer"><button type="button" class="btn btn-primary" id='dbAdd' onclick="saveSelected()">Add to Database</button>  
        				</div>
     			</div>
   			</div>

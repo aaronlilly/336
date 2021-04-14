@@ -9,8 +9,8 @@ toastr.options = {
   "onclick": null,
   "showDuration": "700",
   "hideDuration": "1000",
-  "timeOut": "5000",
-  "extendedTimeOut": "2500",
+  "timeOut": "0",
+  "extendedTimeOut": "0",
   "showEasing": "swing",
   "hideEasing": "linear",
   "showMethod": "fadeIn",
@@ -29,8 +29,8 @@ toastr["success"]('<button type="button" id="okBtn" class="btn btn-primary">Send
 
     alert( "You just added " + stopName +" near " + nearStreet + " street " + " in " + area + " with the reliability of " + radioValue2 +" ... \r\n Database Updating, allow a few moments for data to show...");
 
-    window.open('#', "_self");
-    
+   // window.open('#', "_self");
+   
 
 
     // $('#sName').html('');
@@ -42,7 +42,8 @@ toastr["success"]('<button type="button" id="okBtn" class="btn btn-primary">Send
 //document.getElementById('#sName').value='';
 
   toastr.remove();       
-
+   window.open('https://aaronlilly.github.io//336/arstops/ArStop.html', "_self");
+// window.open('#', "_self");
   })
       toastr.options.onHidden = function(){}; 
  $('.toast-close-button').click(function() {});

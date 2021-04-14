@@ -44,10 +44,21 @@ function getallPok() {
                    });
 }
 
+// $(document).ready(function () {
+//        $('#dbAdd').click(function() {
+// saveSelected();
+//        }
+//   });
 
+
+
+ //onclick="saveSelected()
 
           
   function saveSelected(){
+$('#dbAdd').addClass("initHide");
+$('#hiddenButtonContainer').removeClass('initHide');
+
 let radioValue = $("input[name='reliability']:checked").val();
     var stopName = $('#sName').val();
     var nearStreet = $('#nName').val();
@@ -57,23 +68,23 @@ existingContent[0].ArStops.push({"Name"  : stopName, "NearStreet" : nearStreet, 
 
 
 
- $.ajax
-       ({
-           url: "https://api.jsonbin.io/b/6072657b0ed6f819bea8a5fc", 
-          method: "PUT",
-  versioning: false,
-          beforeSend: function (xhr) {
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.setRequestHeader("secret-key", mySecretKey);
-               },
+ // $.ajax
+ //       ({
+ //           url: "https://api.jsonbin.io/b/6072657b0ed6f819bea8a5fc", 
+ //          method: "PUT",
+ //  versioning: false,
+ //          beforeSend: function (xhr) {
+ //                xhr.setRequestHeader("Content-Type", "application/json");
+ //                xhr.setRequestHeader("secret-key", mySecretKey);
+ //               },
                   
-                 data: JSON.stringify(existingContent[0]),
-                  }).done(function(responseText) 
-                     {
-                      console.log(responseText)
-     //toastyFunct();
-      ;                 
-    });
+ //                 data: JSON.stringify(existingContent[0]),
+ //                  }).done(function(responseText) 
+ //                     {
+ //                      console.log(responseText)
+ //     //toastyFunct();
+ //      ;                 
+ //    });
 
 //Name: "TimeCapsule", NearStreet: "?", Area: "?"}
      //alert("You just added " + stopName +" near " + nearStreet + " street " + " in " + area + " with the reliability of " + radioValue);
