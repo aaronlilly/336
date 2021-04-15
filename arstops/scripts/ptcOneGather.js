@@ -55,7 +55,7 @@ $('table#tablish thead').append('<tr><th>Stop Name</th><th>NearStreet</th><th>Ar
 
                        // $("#pWantBody2").append('\r\n<style type=\"text\/css\">\r\n.tftable {font-size:12px;color:#333333;width:100%;border-width: 1px;border-color: #729ea5;border-collapse: collapse;}\r\n.tftable th {font-size:12px;background-color:#acc8cc;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;text-align:left;}\r\n.tftable tr {background-color:#d4e3e5;}\r\n.tftable td {font-size:12px;border-width: 1px;padding: 8px;border-style: solid;border-color: #729ea5;}\r\n.tftable tr:hover {background-color:#ffffff;}\r\n<\/style>\r\n');
 
-$('table#tablish thead').append('<tr><td>' +data.ArStops[i].Name +"</td><td>" + data.ArStops[i].NearStreet + "</td><td> " + data.ArStops[i].Area + "</td><td> " + data.ArStops[i].reliability +"</td><td>"+ data.ArStops[i].taskFor+ "</td></tr>" );
+$('table#tablish thead').append('<tr><td>' +data.ArStops[i].Name +"</td><td>" + data.ArStops[i].NearStreet + "</td><td> " + data.ArStops[i].Area + "</td><td> " + data.ArStops[i].reliability + "</td><td>"+ data.ArStops[i].taskFor + "</td></tr>" );
                      
                      }
                      $("#pWantBody2").append('</tbody></table>');
