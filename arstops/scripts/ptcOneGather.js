@@ -88,7 +88,7 @@ let radioValue = $("input[name='reliability']:checked").val();
 
 let taskFor = $("input[name='task4']:checked").val();
     
-existingContent[0].ArStops.push({"Name"  : stopName, "NearStreet" : nearStreet, "Area" :area , "reliability" : radioValue, "taskFor" : tname});
+existingContent[0].ArStops.push({"Name"  : stopName, "NearStreet" : nearStreet, "Area" :area , "reliability" : radioValue, "taskFor" : taskFor});
 
 
 
