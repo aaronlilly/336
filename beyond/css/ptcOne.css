@@ -5,10 +5,12 @@
 
 .imjs{
  	float:left;
+ 	width:96px;
+ 	
  }
 
 figcaption {
-  padding: 2px;
+  font-size: 14px;
   text-align: center;
 }
 

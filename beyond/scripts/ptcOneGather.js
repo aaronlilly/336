@@ -15,11 +15,22 @@ function getallPok(){
                 { 
                     for(let i=0; i <  pokemonNameArray.length; i++) 
                     {  
+                      //pwant
                     	$("#pWantBody").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
                         + '">'+ '<figure>'+
                         '<img src ="' + data.PokemonTradingCenter[i].imaj + '"style=\"width:96px;\">'
                         + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
                         '</figcaption>'+'</figure>'+'</div></div>');
+                      //pwant
+
+                      //phave
+                      $("#pHaveBody").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
+                        + "H" +'">'+ '<figure>'+
+                        '<img src ="' + data.PokemonTradingCenter[i].imaj  +'"style=\"width:96px;\">'
+                        + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
+                        '</figcaption>'+'</figure>'+'</div></div>');
+
+
                    	}
                 }
             )};    
