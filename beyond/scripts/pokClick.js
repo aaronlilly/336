@@ -1,11 +1,10 @@
-function pokClick(id,i,data)
+function pokClick(id,i,data,text)
 {
 
-  alert(id);
  //if checked
  if ($("#" + id +"box").prop('checked')) 
    {
-    //check(id,i,data);
+    check(id,i,data,text);
     $("#" + id +"box").prop('checked',false)
     $('#'+id).removeClass('pokSelctd');
    }    
@@ -13,19 +12,20 @@ function pokClick(id,i,data)
  //if not checked
   else
   {
-   // notcheck(id,i,data);
+   notcheck(id,i,data,text);
    $("#" + id +"box").prop('checked',true);
     $('#'+id).addClass('pokSelctd');
   }     
 }
 
-
-function check(id){
-
+//this function runs if the above checked is true
+function check(id,i,data,text){
+alert(text + "was checked")
 
 }
 
-function notcheck(id)
+//this function runs if the above checked is not true (else)
+function notcheck(id,i,data,text)
 {
-
+alert(text + "was not checked")
 }
