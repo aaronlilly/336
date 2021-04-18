@@ -25,7 +25,7 @@ function getallPok(){
                         '</figcaption>'+'</figure>'+'</div></div>');
 
                         //chx box
-                      $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'wantbox">');
+                      $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'box">');
                       //end pwant
 
                       //phave
@@ -36,9 +36,23 @@ function getallPok(){
                         '</figcaption>'+'</figure>'+'</div></div>');
 
                         //chx box
-                       $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i]+"H" +'havebox">');
+                       $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i]+"H" +'box">');
                       //end phave
 
+                      //pokClick
+                      $('#'+ pokemonNameArray[i]+"H").click(function() {
+                         var cId = $(this).attr('id');
+                         pokClick(cId,i,data)
+                         
+
+                        });
+
+                      $('#'+ pokemonNameArray[i]).click(function() {
+                         var cId = $(this).attr('id');
+                         pokClick(cId,i,data)
+                         
+
+                        });
 
                    	}
                 }

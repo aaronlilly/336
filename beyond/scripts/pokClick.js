@@ -1,28 +1,31 @@
+function pokClick(id,i,data)
+{
 
-$(document).ready(function () {
-    
-
-     $('#Bulbasaur').click(function() {
-       alert("hi")
-         });
-
-        for(let i=0; i <  pokemonNameArray.length; i++) 
-                    { 
-                       var currentId = $(this).attr('id');
-                      
-                     /* $('#'+ pokemonNameArray[i]+"H").click(function() {
-                          alert(currentId);
-
-                        });*/
-
-                      // $('#'+ pokemonNameArray[i]).click(function() {
-                      //     alert(currentId + "non");
-
-                      //   });
-                    }
-                      
-});
+  alert(id);
+ //if checked
+ if ($("#" + id +"box").prop('checked')) 
+   {
+    //check(id,i,data);
+    $("#" + id +"box").prop('checked',false)
+    $('#'+id).removeClass('pokSelctd');
+   }    
   
+ //if not checked
+  else
+  {
+   // notcheck(id,i,data);
+   $("#" + id +"box").prop('checked',true);
+    $('#'+id).addClass('pokSelctd');
+  }     
+}
 
 
+function check(id){
 
+
+}
+
+function notcheck(id)
+{
+
+}
