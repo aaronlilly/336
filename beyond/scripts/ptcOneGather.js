@@ -1,6 +1,8 @@
 
 $(document).ready(function () {
        getallPok();
+       
+                      
   });
   
 
@@ -21,14 +23,21 @@ function getallPok(){
                         '<img src ="' + data.PokemonTradingCenter[i].imaj + '"style=\"width:96px;\">'
                         + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
                         '</figcaption>'+'</figure>'+'</div></div>');
-                      //pwant
+
+                        //chx box
+                      $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i] +'wantbox">');
+                      //end pwant
 
                       //phave
                       $("#pHaveBody").append( '<div class="col-sm-3">' +'<div class="imjs"'+ 'id="'+ pokemonNameArray[i]
                         + "H" +'">'+ '<figure>'+
                         '<img src ="' + data.PokemonTradingCenter[i].imaj  +'"style=\"width:96px;\">'
-                        + '<figcaption>' +data.PokemonTradingCenter[i].Name + 
+                        + '<figcaption>' + data.PokemonTradingCenter[i].Name + 
                         '</figcaption>'+'</figure>'+'</div></div>');
+
+                        //chx box
+                       $("#xboxs").append('<input type="checkbox" id="' + pokemonNameArray[i]+"H" +'havebox">');
+                      //end phave
 
 
                    	}
